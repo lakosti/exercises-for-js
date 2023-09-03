@@ -59,7 +59,7 @@
 // check(someValue);
 // console.log(someValue);
 
-//ЗАДАЧА 1  ЗАГАДКА_____________________________________
+//ЗАДАЧА 1  ЗАГАДКА________________________________________________________________________________
 
 // function check(text, answer) {
 //     let message = prompt(text);
@@ -122,7 +122,7 @@
 // console.log(createStr(['Max', 'John', 'Mark'])); // max , john and Mark like this
 // console.log(createStr(['Alex', 'Jacob', 'Mark', 'Max', 'Oleg'])); //alex, jacob and 2 others like this
 
-//ЗАДАЧА 4 за допомогою функції відібрати ті елементи які дублюються в масиві___________________________________________
+//ЗАДАЧА 4 за допомогою функції відібрати ті елементи які дублюються / повторюються в масиві___________________________________________
 
 // function getCommonElements(arr) {
 //     const result = [];
@@ -268,7 +268,7 @@
 //     for (const element of array) {
 //         if (arg.includes(element)) {
 //             newArr.push(element);
-//             console.log(`${element} - is everywhere `);
+//             // console.log(`${element} - is everywhere `);
 //         }
 //     }
 //     return newArr;
@@ -432,23 +432,59 @@
 // console.log(findLargestNumber(2, 17, 94, 265));
 // console.log(findLargestNumber(49, 4, 7, 86, 12, 26));
 
-// знайти найбільше число коли масив в масиві
+// знайти найбільше число коли масив в масиві (приклад рекурсії) (відео м2 у2 1:52:00)_____________________________________________
 
-function findLargestNumber() {
-    // const arr = Array.from(arguments)
-    const arr = [...arguments];
-    let largestNum;
+// function findLargestNumber() {
+//     let largestNum;
 
-    for (const num of arr) {
-        if (typeof num === 'number') {
-            largestNum = num;
-            break;
-        }
-    }
+//     for (const num of arguments) {
+//         if (typeof num === 'number') {
+//             largestNum = num;
+//             break;
+//         }
+//     }
+//     //шукаємо перше найбільше число не в масиві це 19 і призначаємо в largestNum
 
-    return largestNum;
-}
+//     for (const num of arguments) {
+//         if (typeof num === 'number') {
+//             if (num > largestNum) {
+//                 largestNum = num;
+//             }
+//             //потім перебираємо решту чисел и перевизначаємо 19 на найбільше якщо є
+//         } else {
+//             largestNum = findLargestNumber(...num);
+//             // розпилення масиву прибирає одні дужки [[1, 556], 9, 95] => [1, 556], 9, 95 потім знову розпилили і маємо 1, 556...
+//         }
+//     }
 
-console.log(findLargestNumber(2, 17, 94, 265));
-console.log(findLargestNumber(49, 4, 7, 86, 12, 26));
-console.log(findLargestNumber([1, 5, 9, 95], 49, 4, 7, 12, 26));
+//     return largestNum;
+// }
+
+// console.log(findLargestNumber(2, 17, 94, 265));
+// console.log(findLargestNumber(49, 4, 7, 86, 12, 26));
+// console.log(findLargestNumber([[1, 556], 9, 95], 19, 4, 7, 12, 26));
+
+//ЗАДАЧА 22 середнє значення неоднакова кількість елементів псевдомасив________________________________________
+
+// function calAverage() {
+//     console.log(arguments);
+//     let total = 0;
+//     for (const item of arguments) {
+//         total += item;
+//     }
+//     return total / arguments.length;
+// }
+// console.log(calAverage(1, 2, 3, 4));
+// console.log(calAverage(14, 8, 2));
+// console.log(calAverage(27, 43, 2, 8, 36));
+
+//ЗАДАЧА 23 функція для переведення хвилин у години_________________________________
+
+// function formatTime(minutes) {
+//     const hours = Math.floor(minutes / 60);
+//     const min = Math.floor(minutes % 60);
+
+//     return `${hours.toString().padStart(2, 0)}:${min.toString().padStart(2, 0)}`;
+// }
+// console.log(formatTime(70));
+// console.log(formatTime(1444));
