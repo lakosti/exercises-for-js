@@ -115,4 +115,30 @@
 // const value = incomingValue || defaultValue; //якщо ввдене значення буде якесь фолсі значення то виведеться дефолтне
 // console.log(value);
 
-//8
+//8 зробити першу літеру великою / заглавною_________________________________
+
+// const str = 'string not starting';
+// const largestStr = str[0].toUpperCase();
+// console.log(largestStr);
+// const total = largestStr + str.slice(1);
+// console.log(total);
+
+//9 приклад канкатенації з рядками________________________________
+
+// const age = 25;
+// const name = 'oleg';
+// console.log('hello my name is ' + name + ' I`m ' + age + ' years old'); //конкатенація
+
+//10 обрахунки зп витрат та премії
+
+// let value = Number(prompt('what is your salary?'));
+// let total = value * 1.15;
+// alert(`Ваша зп: ${total}`);
+// total *= 0.9;
+// alert(`після сплати податків залишилось ${total}`);
+// total -= 190;
+// alert(`after shops left cash ${total}`);
+// total /= 2;
+// alert(`you give cash wife and left ${total}`);
+
+//11
