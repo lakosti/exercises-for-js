@@ -355,12 +355,4 @@
 //     return `${companyName} has ${repairBots + defenceBots} bots in stock`;
 // }
 
-// console.log(getBotReport({ companyName: 'Cybor system', repairBots: 150, defenceBots: 50 })); //було
-const emailInputName = 'email';
-const passwordInputName = 'password';
-
-const credentials = {
-    [emailInputName]: 'email',
-    [passwordInputName]: 'password',
-};
-console.log(credentials);
+// console.log(getBotReport({ companyName: 'Cybor system', repairBots: 150, defenceBots: 50 }));

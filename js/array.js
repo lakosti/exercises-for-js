@@ -261,7 +261,7 @@
 // }
 // console.log(total);
 
-//ЗАДАЧА 8 Добавляємо і удаляємо карточки______________________________
+//ЗАДАЧА 8 Добавляємо і удаляємо карточки__________________________________
 
 // const cards = ['card - 1', 'card - 2', 'card - 3', 'card - 4', 'card - 5'];
 
@@ -305,7 +305,7 @@
 // }
 // console.log(arr);
 
-//ЗАДАЧА 9 Знайти всі співпадіння в масиві __________________________
+//ЗАДАЧА 9 Знайти всі співпадіння в масиві _________________________________
 
 // const arr = ['a', 'b', 'c', 'b'];
 // let counter = 0;
@@ -317,7 +317,7 @@
 // }
 // console.log(counter);
 
-//ЗАДАЧА 10 видалити з масиву елементи що не є типом даних number_________________________
+//ЗАДАЧА 10 видалити з масиву елементи що не є типом даних number________________________________________________________
 
 // const arr = [3, 'hello', null, 42, false];
 
@@ -380,7 +380,7 @@
 //     console.log(`${n} - ${arr[i]}`);
 // }
 
-//ЗАДАЧА 16 подвійна умова  в циклі_____________________________________
+//ЗАДАЧА 16 подвійна умова  в циклі вивести номер тел на імя користувача__________________________________________________
 
 // let names = 'jacob, alex, olleg, ivan, thtyyhy';
 // let numbers = '111111111, 000000000, 222222222, 333333333';
@@ -405,3 +405,28 @@
 //     }
 // }
 // console.log(langs);
+
+//ЗАДАЧА 18 знайти найдовше слово в рядку або вілібрати декілька найдовших_________________________________
+
+// function findLongestWord(string) {
+//     const str = string.split(' ');
+//     let biggestWord = str[0];
+//     const allWords = [];
+
+//     for (const item of str) {
+//         if (item.length > biggestWord.length) {
+//             biggestWord = item;
+//         }
+//     }
+
+//     for (const item of str) {
+//         if (item.length === biggestWord.length) {
+//             allWords.push(item);
+//         }
+//     }
+//     return allWords;
+// }
+
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog swimmi'));
+// // console.log(findLongestWord('Google do a roll'));
+// // console.log(findLongestWord('May the force be with you'));

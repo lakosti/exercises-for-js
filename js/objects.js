@@ -1,3 +1,23 @@
+//пербір об'єкту
+
+// for (const product of products) {
+//     // console.log(product); // один об'єкт
+//     for (const key in product) {
+//         // console.log(key); // ключі об'єкту
+//         // console.log(product[key]); // властивість / значення об'єкту
+//         if (propName === key) {
+//             values.push(product[key]); //пушемо значення ключа
+//         }
+//     }
+// }
+
+///перевірити чи є ключ в об'єкті
+
+// for (const product of products) {
+//     if(argument in product){
+//     push()
+// }
+
 //===================== методи об'єкту ========
 
 // const test = 10;
@@ -357,6 +377,28 @@
 // }
 // console.log(sum);
 
+/// ЗАДАЧА перебрати масив об'єктів та по назві повернути суму____________________________________________________
+
+// const products = [
+//     { name: 'Radar', price: 1300, quantity: 4 },
+//     { name: 'Scanner', price: 2700, quantity: 3 },
+//     { name: 'Droid', price: 400, quantity: 7 },
+//     { name: 'Grip', price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//     for (const product of products) {
+//         if (productName === product.name) {
+//             return product.price;
+//         }
+//     }
+//     return null;
+// }
+// console.log(getProductPrice('Radar'));
+// console.log(getProductPrice('Grip'));
+// console.log(getProductPrice('Scanner'));
+// console.log(getProductPrice('Engine'));
+
 //ЗАДАЧА 7 написати функцію яка приймає масив об'єктів рахує та повертає загальну вартість каміння з таким ім'ям ціною та кількістью об'єкта_______________________________
 
 // const stones = [
@@ -376,6 +418,7 @@
 //         quantity: 7,
 //     },
 // ];
+
 // function calcTotalPrice(stones, stoneName) {
 //     // let sum = 0;
 //     for (const stone of stones) {
@@ -392,8 +435,57 @@
 // }
 // console.log(calcTotalPrice(stones, 'yth'));
 
-// EXAMPLE 8 - Комплексні завдання
-// Напиши скрипт управління особистим кабінетом інтернет банку. Є об'єкт account в якому необхідно реалізувати методи для роботи з балансом та історією транзакцій.______________________________________________
+// EXAMPLE 7 якщо існує такий ключ повертає його значення // повернення значення ключів____________________________________________________________
+
+// function getAllPropValues(propName) {
+//     const values = [];
+
+//     //перший варіант
+
+//     // for (const product of products) {
+//     //     if (product.hasOwnProperty(propName)) {
+//     //         values.push(product[propName]);
+//     //     }
+//     // }
+
+//     ////інший варіант
+
+//     // for (const product of products) {
+//     //     // console.log(product); // один об'єкт
+//     //     for (const key in product) {
+//     //         // console.log(key); // ключі об'єкту
+//     //         // console.log(product[key]); // властивість / значення об'єкту
+//     //         if (propName === key) {
+//     //             values.push(product[key]); //пушемо значення ключа
+//     //         }
+//     //     }
+//     // }
+
+//     //ще один варіант
+
+//     for (const product of products) {
+//         propName in product ? values.push(product[propName]) : null;
+//     }
+
+//     return values;
+// }
+
+// // Приклад використання
+// const products = [
+//     { name: 'Radar', quantity: 4, price: 1300 },
+//     { name: 'Scanner', quantity: 3, price: 2700 },
+//     { name: 'Droid', quantity: 7, price: 400 },
+//     { name: 'Grip', quantity: 9, price: 1200 },
+// ];
+
+// console.log(getAllPropValues('name'));
+// console.log(getAllPropValues('quantity'));
+// console.log(getAllPropValues('price'));
+// console.log(getAllPropValues('category'));
+
+// EXAMPLE 8 - Комплексні завдання______________________________________________
+
+// Напиши скрипт управління особистим кабінетом інтернет банку. Є об'єкт account в якому необхідно реалізувати методи для роботи з балансом та історією транзакцій.
 
 /*
  * Типів транзакцій всього два.
@@ -512,3 +604,264 @@
 // // console.log(account.getBalance());
 // // console.log(account.getTransactionDetails(16));
 // console.log(account.getTransactionTotal(Transaction.WITHDRAW));
+
+//ЗАВДАННЯ 9 доповнити функцію щоб вона повертала новий об'єкт  з доданими властивостями id та createAt а також list зі значенням default якщо немає такої властивості_________________________________________________
+
+// function createContact(partialContact) {
+//     return {
+//         list: 'default', // якщо напишемо після спреда то у всіх буде значення default
+//         ...partialContact, // спред // зібрали об'єкти
+//     };
+// }
+// console.log(
+//     createContact({
+//         id: generateId(),
+//         createdAt: new Date(),
+//         name: 'Mango',
+//         email: 'mango@mail.com',
+//         list: 'friends',
+//     })
+// );
+
+// console.log(
+//     createContact({
+//         name: 'Poly',
+//         email: 'poly@mail.com',
+//     })
+// );
+
+// //генеруємо id _____________
+// function generateId() {
+//     return '_' + Math.random().toString(36).substr(2, 9);
+// }
+
+//ЗАВДАННЯ 10 Написати функцію щоб вона повертала новий об'єкт із властивістю FullName замість firstName / lastName_________________________________________
+
+//алгоритм
+//1 розпакувати об'єкт
+//2 дістати потрібні дані ( в даному випадку це first last)
+//3 решту об'єкту зарестети
+// 4 поєднати ці два елементи
+// 5 зібрати об'єкт
+
+// function transformUsername({ firstName, lastName, ...props }) {
+//     console.log(props); // в даному випадку це рест (залишок)
+//     return {
+//         fullName: `${firstName} ${lastName}`,
+//         ...props, // розпилюємо // це вже spred // повераємо нашу решту даних
+//     };
+// }
+// console.log(
+//     transformUsername({
+//         id: 1,
+//         firstName: 'Jacob',
+//         lastName: 'Mercer',
+//         email: 'j.mercer@mail.com',
+//         friendCount: 40,
+//     })
+// );
+
+// console.log(
+//     transformUsername({
+//         id: 2,
+//         firstName: 'Adrian',
+//         lastName: 'Cross',
+//         email: 'a.cross@mail.com',
+//         friendCount: 20,
+//     })
+// );
+
+////ЗАДАЧА 11 Повертає суму кількості власних ключів у об'єкта_________________________________________________________________
+
+// function countProps(object) {
+//     let propCount = 0;
+//     // Change code below this line
+//     for (const key in object) {
+//         if (object.hasOwnProperty(key)) {
+//             propCount += [key].length;
+//         }
+//     }
+
+//     // Change code above this line
+//     return propCount;
+// }
+// console.log(countProps({}));
+// console.log(countProps({ name: 'Mango', age: 2 }));
+// console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
+
+//ЗАДАЧА 12 функція буде приймати 3 параметри та повертати/ формувати об'єкт покупки та суму_____________________________________________________________
+
+// function createBasket(product, quantity, price) {
+//     // const totalPrice = quantity * price;
+//     //1 варіант
+//     const basket = {
+//         name: product,
+//         quantity,
+//         price,
+//         totalPrice: quantity * price,
+//     };
+//     return basket;
+
+//     //2 варінт буде краще
+//     // return {
+//     //     name: product,
+//     //     quantity,
+//     //     price,
+//     //     totalPrice: quantity * price,
+//     // };
+// }
+
+// const result = createBasket('pizza', 3, 120); // результат функції зберігаємо у змінну і далі можемо нею маніпулювати
+// console.log(result);
+
+// console.log(createBasket('apple', 13, 1200));
+
+//ЗАДАЧА 13 функція повертає рядок з інформацією про те скільки було користувачів та який середній час оренди за один комп___________________________________________
+
+// const players = {
+//     Den: 60,
+//     Kate: 130,
+//     William: 45,
+//     Mattew: 120,
+//     Ethan: 40,
+//     David: 55,
+// };
+// function getTime(obj) {
+//     // const countPlayers = Object.keys(obj)?.length; // отримуємо кількість ключів
+//     // const values = Object.values(obj);
+//     // console.log(values);
+//     // let totalTime = 0;
+//     // for (const value of values) {
+//     //     totalTime += value;
+//     // }
+//     // console.log(totalTime);
+//     // return `Count of players ${countPlayers}, average time ${totalTime / countPlayers}`;
+
+//     //переписуємо на ентріес
+
+//     const entries = Object.entries(obj);
+//     let totalPrice = 0;
+//     for (const entry of entries) {
+//         console.log(entry);
+//         totalPrice += entry[1];
+//     }
+//     console.log(totalPrice);
+//     return `${entries.length} players - ${totalPrice / entries.length} average time`;
+// }
+// console.log(getTime(players));
+
+//ЗАДАЧА 14 функція повертає імена юзерів у яких є дана книга // порахувати  вік в юзерів (перебрати масив об'єктів)__________________________________
+
+// const friends = [
+//     {
+//         name: 'Anna',
+//         books: ['Bible', 'Harry Potter'],
+//         age: 21,
+//     },
+//     { name: 'Bob', books: ['War and peace', 'Romeo and Juliet'], age: 26 },
+//     { name: 'Alice', books: ['War and peace', 'Romeo and Juliet'] },
+//     {
+//         name: 'Oleksii',
+//         books: ['Bible', 'War and peace', 'Harry Potter', 'Romeo and Juliet'],
+//         age: 26,
+//     },
+// ];
+// function getUsers(arr, bookName) {
+//     // let users = '';
+//     let users = [];
+//     for (const user of arr) {
+//         if (user.books.includes(bookName)) {
+//             // users += `${user.name}, `;
+//             // console.log(users);
+//             users.push(user.name);
+//         }
+//     }
+//     return users.join(', '); // перетворюємо рядок
+// }
+// console.log(getUsers(friends, 'Harry Potter'));
+
+// //немає одного ключа(щоб не було NaN ми виконуємо перевірку, якщо значення є то додаємо)
+
+// function getTotalAge(arr) {
+//     let totalAge = 0;
+//     //variant 1
+//     // for (const user of arr) {
+//     //     if (user.hasOwnProperty('age')) {
+//     //         totalAge += user.age;
+//     //     }
+//     // }
+//     // return totalAge;
+
+//     //variant 2 in
+//     for (const user of arr) {
+//         if ('age' in user) {
+//             totalAge += user.age;
+//         }
+//     }
+//     return totalAge;
+// }
+
+// console.log(getTotalAge(friends));
+
+//ЗАДАЧА 15 створити метод який буде повертати учнів факультету // та їх бали_____________________________________
+
+// const hogvargs = {
+//     griffindor: [
+//         {
+//             name: 'Harry',
+//             points: 17,
+//         },
+//         {
+//             name: 'Hermiona',
+//             points: 19,
+//         },
+//         {
+//             name: 'Ron',
+//             points: 14,
+//         },
+//     ],
+//     slizerin: [
+//         {
+//             name: 'Draco',
+//             points: 17,
+//         },
+//         {
+//             name: 'Goyl',
+//             points: 14,
+//         },
+//         {
+//             name: 'Crabbe',
+//             points: 5,
+//         },
+//     ],
+//     // getUserList(faculty) {
+//     //     if (!(faculty in this)) {
+//     //         // завжди перевіряємо чи є такий ключ // негативний сценарій
+//     //         return 'Not found';
+//     //     }
+//     //     const students = [];
+//     //     for (const student of this[faculty]) {
+//     //         //передаємо параметр який прийде як змінна
+//     //         students.push(student.name); //беремо одного студента з властивістью яка нам потрібна
+//     //     }
+//     //     return students;
+//     //     // return students.join(', ')
+//     // },
+//     getTotalPoints(faculty) {
+//         if (!this.hasOwnProperty(faculty)) {
+//             return 'Not found';
+//         }
+//         let totalPoint = 0;
+//         for (const point of this[faculty]) {
+//             totalPoint += point.points;
+//         }
+//         return totalPoint;
+//     },
+// };
+// // console.log(hogvargs.getUserList('griffindor'));
+// // // console.log(hogvargs.getUserList('orlan'));
+// // console.log(hogvargs.getUserList('slizerin'));
+
+// console.log(hogvargs.getTotalPoints('griffindor'));
+// console.log(hogvargs.getTotalPoints('slizerin'));
+// console.log(hogvargs.getTotalPoints('orlan'));
