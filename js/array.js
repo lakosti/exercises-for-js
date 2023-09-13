@@ -1,6 +1,8 @@
 // const arr = ['mango', 'kiwi', 'apple', 'plum'];
 // console.table(arr);
 
+//array.lenght = 0 --- очищення масиву//очистити масив
+
 //псевдомасив
 
 // function arg() {

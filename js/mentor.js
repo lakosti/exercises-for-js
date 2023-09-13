@@ -141,4 +141,71 @@
 // total /= 2;
 // alert(`you give cash wife and left ${total}`);
 
-//11
+//11 створит функцію та підрахувати суму зарплат співробітників в об'єкті____________________________________
+
+// const salary = {
+//     mango: 100,
+//     poly: 160,
+//     ajax: 1470,
+// };
+// function totalSumm(salaries) {
+//     let total = 0;
+//     for (const value of Object.values(salaries)) {
+//         total += value;
+//     }
+//     return total;
+// }
+// console.log(totalSumm(salary));
+
+//12 створити об'єкт з 3 методами один перемножає, інший рахує суму, інший приймає властивості об'єкта____________________________________________
+
+// const calculator = {
+//     read(a, b) {
+//         this.val1 = a;
+//         this.val2 = b;
+//     },
+//     multiply() {
+//         return this.val1 * this.val2;
+//     },
+//     sum() {
+//         return this.val1 + this.val2;
+//     },
+// };
+// calculator.read(2, 4);
+// console.log(calculator);
+// console.log(calculator.sum());
+// console.log(calculator.multiply());
+
+//13 операції з масивом (ченінг)_____________________________________
+
+// const arr = ['best', 'the', 'foo', 'ts', 'js'];
+// arr.splice(arr.indexOf('foo'), 1);
+
+// const result = arr.reverse().join(' ');
+// console.log(result);
+
+//14 порахувати елементи в об'єкті і вивести їх назву та кількість__________________________________________________
+
+//алгоритм 1 об'єднати всі об'єкти в один
+
+// const tweets = [
+//     { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+//     { id: '001', likes: 2, tags: ['html', 'css'] },
+//     { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+//     { id: '003', likes: 8, tags: ['css', 'react', 'nodejs'] },
+// ];
+// const allTags = tweets.flatMap(tweet => tweet.tags); //поєднали всі теги
+// console.log(allTags);
+
+// const stats = allTags.reduce(
+//     (acc, item) => {
+//         return {
+//             ...acc,
+//             [item]: acc[item] ? acc[item] + 1 : 1,
+//         };
+//     },
+//     {} //== acc сховище = reduce
+// );
+// console.log(stats);
+
+//15

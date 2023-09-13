@@ -1,6 +1,17 @@
 //щоб пропуститти якийсь елемент при дескруктирізації ----  _, або просто ,
 //загалом використовують до 3 деструктирізацій, далі через крапку звертаються
-// (збирає/зліва) = spread(розпиляє/зправа)
+
+// rest ----  збирає  зліва
+// spread --- розпиляє  зправа
+
+// const numbers = [1, 2, 3];
+// const copy = [...numbers]; // spread = (1,2,3)
+
+// const number = [1, 2, 3];
+// const [first, ...arg] = number; // rest = [2,3] а якщо об'єкт  то {}
+// console.log(arg);
+
+//у функціях -- де параметри function foo(...props) // rest а там де агрументи foo(...numbers) // spread
 
 //задача 1 знайти найменшу та найбільшу температуру____________________________________
 
@@ -314,7 +325,7 @@
 // // arr2.splice(0, 1);
 // console.log(arr1 === arr2); //false
 
-//ЗАДАЧА перше значення помножене на наступне
+//ЗАДАЧА 1  перше значення помножене на наступне_______________________________
 
 // const arr1 = [12, 22, 3, 14, 45, 16, 57];
 
@@ -332,7 +343,7 @@
 // }
 // foo(1, 2, 3, 4, 5, 6);
 
-//ЗАДАЧА 1 Деструктирізація_______________________________________________
+//ЗАДАЧА 2 Деструктирізація_______________________________________________
 
 // //JS Doc //* */
 // /**
@@ -356,3 +367,62 @@
 // }
 
 // console.log(getBotReport({ companyName: 'Cybor system', repairBots: 150, defenceBots: 50 }));
+
+//ЗАДАЧА 3 отримати імена всіх користувачів_____________________________
+
+// const users = [{ name: 'Kate' }, { name: 'Alex' }, { name: 'Mark' }, {}];
+// const names = [];
+// for (const { name = 'Name nor found' } of users) {
+//     names.push(name);
+// }
+// console.log(names);
+
+//ЗАДАЧА 4 деструктуризація____________________________________________
+
+// const user = {
+//     id: 1,
+//     username: 'harry-potter',
+//     profile: {
+//         name: 'harry',
+//         surname: 'Potter',
+//         age: 25,
+//     },
+// };
+
+// const {
+//     profile,
+//     profile: { name, surname },
+//     username,
+// } = user;
+// console.log(profile);
+// console.log(name);
+// console.log(surname);
+// console.log(username);
+
+//ЗАДАЧА 5 деструктуризація для функції - обов'язково робимо  = {}____________________________
+
+// const user = {
+//     name: 'Yagor',
+//     price: 2015,
+//     category: 'veniche',
+//     details: {
+//         brand: 'Samsung',
+//         color: 'Black',
+//         weight: '15.5',
+//     },
+// };
+
+// function displayProductInfo({
+//     name,
+//     price,
+//     category,
+//     details: { brand, color, weight } = {},
+// } = {}) {
+//     console.log(`назва товару: ${name}`);
+//     console.log(`назва товару: ${price}`);
+//     console.log(`назва товару: ${category}`);
+//     console.log(`назва товару: ${brand}`);
+//     console.log(`назва товару: ${color}`);
+// }
+
+// displayProductInfo(user);
