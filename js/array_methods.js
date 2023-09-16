@@ -1,5 +1,6 @@
 //----------------------------Methods-----------------------------------
 //в перебираючих методах масиву важливий порядок параметрів
+//їх не можна break  or  continue
 
 //1. for each як заміна форму
 // повертає underfined тому не можна присвоїти у змінну
@@ -26,50 +27,50 @@
 
 const players = [
     {
-        id: Date.now(),
+        id: 'player-1',
         name: 'Poly',
         timePlayed: 310,
         points: 54,
         online: false,
     },
     {
-        id: Date.now(),
+        id: 'player-2',
         name: 'Mango',
         timePlayed: 470,
         points: 92,
         online: true,
     },
     {
-        id: Date.now(),
+        id: 'player-3',
         name: 'Kiwi',
         timePlayed: 230,
         points: 48,
         online: true,
     },
     {
-        id: Date.now(),
+        id: 'player-4',
         name: 'Ajax',
         timePlayed: 150,
         points: 71,
         online: false,
     },
     {
-        id: Date.now(),
+        id: 'player-5',
         name: 'Chelsy',
         timePlayed: 80,
         points: 48,
         online: true,
     },
 ];
-// // вернули всі імена
+// // вернули всі імена______________________________________
 // const playersName = players.map(player => player.name);
 // console.log(`playersName`, playersName);
 
-// // повернули id
+// // повернули id____________________________________________
 // const getId = players.map(player => player.id);
 // console.log(getId);
 
-// ///потрібно повернути кілька значень
+// ///потрібно повернути кілька значень______________________________
 // const getNameAndPoint = players.map(({ name, points }) => {
 //     return {
 //         name,
@@ -78,17 +79,50 @@ const players = [
 // });
 // console.log(getNameAndPoint);
 
-//обновити масив
-const updatedPlayers = players.map(player => {
-    console.log(player);
+//обновити масив_____________________________________________
+// const updatedPlayers = players.map(player => {
+//     console.log(player);
 
-    //поверне копію
-    return {
-        ...player,
-        points: Number((player.points * 1.1).toFixed(1)), // 10%
-    };
+//     //поверне копію
+//     return {
+//         ...player,
+//         points: Number((player.points * 1.1).toFixed(1)), // 10%
+//     };
+// });
+// console.log(updatedPlayers);
+
+//щось змінити в одного гравця_______________________________
+
+// const playerIdUpdated = 'player-3';
+
+// const changeOnePlayer = players.map(player => {
+//     console.log(player.id);
+//     if (playerIdUpdated === player.id) {
+//         console.log('we found the player need update');
+
+//         return {
+//             ...player,
+//             timePlayed: player.timePlayed + 100,
+//         };
+//     }
+//     return player;
+// });
+// console.table(changeOnePlayer);
+
+////переписуємо на тернарний_______________________________
+
+const playerIdUpdated = 'player-3';
+
+const changeOnePlayer = players.map(player => {
+    console.log(player.id);
+    return playerIdUpdated === player.id
+        ? {
+              ...player,
+              timePlayed: player.timePlayed + 100,
+          }
+        : player;
 });
-console.log(updatedPlayers);
+console.table(changeOnePlayer);
 
 ////////ПРАКТИКА________________________________________________
 
