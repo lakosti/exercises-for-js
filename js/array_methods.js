@@ -1,8 +1,9 @@
 //----------------------------Methods-----------------------------------
 //в перебираючих методах масиву важливий порядок параметрів
 //їх не можна break  or  continue
+//деструкт у функціях =  ({}) = (({online}) => online)
 
-//1. for each як заміна форму
+//1. for each  ----   як заміна форму
 // повертає underfined тому не можна присвоїти у змінну
 // перебирає елементи завжди з початку
 // приймає в параметрах колбек функцію
@@ -10,9 +11,39 @@
 // не працює break та return
 //мутує масив
 //arr.forEach(function (_, idx) -- коли айтем не потрібен
-//2. map ---- не змінює оригінальний масив, повертає масив такої самої довжини як оригінальний
 
-//map =============
+//2. map ----використовується коли потрібно взяти якесь одне значення або обновити щось, поілементно перебирає
+// повертає масив такої самої довжини як оригінальний
+//не змінює оригінальний масив
+//перебирає масив поелементно
+//може витягнути якісь певні властивості наприклад всі імена / очки ...
+//може змінити масив не мутуючи справжній масив і щось обновити
+
+//3. filter ---- робить лише фільтрацію за якоюсь умовою, находить БАГАТО з БАГАТЬОХ елементів
+//повертає новий масив (пустий або з елементами)
+//не змінює оригінальний
+//його колбек функція повертає або тру або фолс
+//якщо тру то елемент добавляеться в масив а якщо фолс то ні
+
+//4. find -- знайти унікальний елемент, ОДИН з колекції
+//повертає ПЕРШИЙ елемент який задовольняє умову
+//якщо умова фолс повертає underfined
+//часто використовують для пошуку айді чи імені
+
+//5. every --- поілементо перебирає оригінальний масив
+//повертає тру якщо ВСІ елементи масива можуть щось і фолс якщо хоч один не удовлітворяє умову
+
+//6. some --- також перебирає поелементно і ХОЧА б ОДИН удовлітворяє умову поверне тру
+// якщо ні один не задовільняє поверне фолс
+
+//7. reduce (універсальний) -- поілементно перебирає ориг масив
+//повертає що завгодно
+//бере багато і робить щось одне
+//можна порахувати загальну суму масиву
+//має два параметри (аккумулятор, число)
+//acc = total also acc = arr[0] by default
+
+// -------------------------------------------MAP ------------
 
 // const numbers = [5, 10, 15, 20, 25];
 
@@ -23,45 +54,43 @@
 // console.log('numbers', numbers);
 // console.log('doubleNums', doubleNums);
 
-// map ============
-
-const players = [
-    {
-        id: 'player-1',
-        name: 'Poly',
-        timePlayed: 310,
-        points: 54,
-        online: false,
-    },
-    {
-        id: 'player-2',
-        name: 'Mango',
-        timePlayed: 470,
-        points: 92,
-        online: true,
-    },
-    {
-        id: 'player-3',
-        name: 'Kiwi',
-        timePlayed: 230,
-        points: 48,
-        online: true,
-    },
-    {
-        id: 'player-4',
-        name: 'Ajax',
-        timePlayed: 150,
-        points: 71,
-        online: false,
-    },
-    {
-        id: 'player-5',
-        name: 'Chelsy',
-        timePlayed: 80,
-        points: 48,
-        online: true,
-    },
-];
+// const players = [
+//     {
+//         id: 'player-1',
+//         name: 'Poly',
+//         timePlayed: 310,
+//         points: 54,
+//         online: false,
+//     },
+//     {
+//         id: 'player-2',
+//         name: 'Mango',
+//         timePlayed: 470,
+//         points: 92,
+//         online: true,
+//     },
+//     {
+//         id: 'player-3',
+//         name: 'Kiwi',
+//         timePlayed: 230,
+//         points: 48,
+//         online: true,
+//     },
+//     {
+//         id: 'player-4',
+//         name: 'Ajax',
+//         timePlayed: 150,
+//         points: 71,
+//         online: false,
+//     },
+//     {
+//         id: 'player-5',
+//         name: 'Chelsy',
+//         timePlayed: 80,
+//         points: 48,
+//         online: true,
+//     },
+// ];
 // // вернули всі імена______________________________________
 // const playersName = players.map(player => player.name);
 // console.log(`playersName`, playersName);
@@ -111,20 +140,197 @@ const players = [
 
 ////переписуємо на тернарний_______________________________
 
-const playerIdUpdated = 'player-3';
+// const playerIdUpdated = 'player-3';
 
-const changeOnePlayer = players.map(player => {
-    console.log(player.id);
-    return playerIdUpdated === player.id
-        ? {
-              ...player,
-              timePlayed: player.timePlayed + 100,
-          }
-        : player;
-});
-console.table(changeOnePlayer);
+// const changeOnePlayer = players.map(player =>
+//     playerIdUpdated === player.id ? { ...player, timePlayed: player.timePlayed + 100 } : player
+// );
+// console.table(changeOnePlayer);
 
-////////ПРАКТИКА________________________________________________
+//---------------------------------FILTER ------------------
+//задача 1
+// const arr = [1, 2, 3, 4, 5, 6];
+// const filtredArr = arr.filter(number => number > 3 && number < 6); // 4,5
+// console.log(filtredArr);
+
+//задача 2
+// const players = [
+//     {
+//         id: 'player-1',
+//         name: 'Poly',
+//         timePlayed: 310,
+//         points: 54,
+//         online: false,
+//     },
+//     {
+//         id: 'player-2',
+//         name: 'Mango',
+//         timePlayed: 470,
+//         points: 92,
+//         online: true,
+//     },
+//     {
+//         id: 'player-3',
+//         name: 'Kiwi',
+//         timePlayed: 230,
+//         points: 48,
+//         online: true,
+//     },
+//     {
+//         id: 'player-4',
+//         name: 'Ajax',
+//         timePlayed: 150,
+//         points: 71,
+//         online: false,
+//     },
+//     {
+//         id: 'player-5',
+//         name: 'Chelsy',
+//         timePlayed: 80,
+//         points: 48,
+//         online: true,
+//     },
+// ];
+// //вивести тільки онлайн користувачів + деструктуризація__________________
+
+// const getOnlyOnlinePlayers = players.filter(({ online }) => online);
+// console.log(getOnlyOnlinePlayers);
+
+//вивести тільки офлайн__________________________________
+
+// const getOfflinePlayers = players.filter(player => !player.online);
+// console.log(getOfflinePlayers);
+
+//вивести тих в кого час три більше 250_____________________
+
+// const getPlayersTime = players.filter(({ timePlayed }) => timePlayed > 250);
+// console.log(getPlayersTime);
+
+//--------------------------FIND-----------------------------------
+//знайти число 15
+// const arr = [2, 3, 5, 9, 7, 15, 25];
+// const findNum = arr.find(number => number === 15);
+// console.log(findNum);
+
+// знайти юзера з айді 3_______________________________
+
+// const players = [
+//     {
+//         id: 'player-1',
+//         name: 'Poly',
+//         timePlayed: 310,
+//         points: 54,
+//         online: false,
+//     },
+//     {
+//         id: 'player-2',
+//         name: 'Mango',
+//         timePlayed: 470,
+//         points: 92,
+//         online: true,
+//     },
+//     {
+//         id: 'player-3',
+//         name: 'Kiwi',
+//         timePlayed: 230,
+//         points: 48,
+//         online: true,
+//     },
+//     {
+//         id: 'player-4',
+//         name: 'Ajax',
+//         timePlayed: 150,
+//         points: 71,
+//         online: false,
+//     },
+//     {
+//         id: 'player-5',
+//         name: 'Chelsy',
+//         timePlayed: 80,
+//         points: 48,
+//         online: true,
+//     },
+// ];
+// const idToFind = 'player-3';
+// const findUser = players.find(({ id }) => id === idToFind);
+// console.log(findUser);
+
+//знайти по імені________________________________________
+
+// const nameToFind = 'Poly';
+// const findNameUser = players.find(({ name }) => name === nameToFind);
+// console.log(findNameUser);
+
+//перевикористання для знаходження айді______________________________
+// const findPlayerById = (allPlayer, playerId) => allPlayer.find(({ id }) => id === playerId);
+
+// console.log(findPlayerById(players, 'player-3'));
+// console.log(findPlayerById(players, 'player-4'));
+
+//--------------------EVERY / SOME---------------------------
+
+// const players = [
+//     {
+//         id: 'player-1',
+//         name: 'Poly',
+//         timePlayed: 310,
+//         points: 54,
+//         online: false,
+//     },
+//     {
+//         id: 'player-2',
+//         name: 'Mango',
+//         timePlayed: 470,
+//         points: 92,
+//         online: true,
+//     },
+//     {
+//         id: 'player-3',
+//         name: 'Kiwi',
+//         timePlayed: 230,
+//         points: 48,
+//         online: true,
+//     },
+//     {
+//         id: 'player-4',
+//         name: 'Ajax',
+//         timePlayed: 150,
+//         points: 71,
+//         online: false,
+//     },
+//     {
+//         id: 'player-5',
+//         name: 'Chelsy',
+//         timePlayed: 80,
+//         points: 48,
+//         online: true,
+//     },
+// ];
+//every перевірити чи всі онлайн
+// const isAllOnline = players.every(({ online }) => online);
+// console.log(isAllOnline); // false  бо не всі онлайн
+
+//some // хоч хтось онлайн є
+// const isAnyOnline = players.some(({ online }) => online);
+// console.log(isAnyOnline);
+
+//some
+// const isHereProGamer = players.some(player => player.timePlayed > 400);
+// console.log(isHereProGamer);
+
+//---------------------------------REDUCE--------------------
+
+const numbers = [5, 10, 15, 20, 25];
+const total = numbers.reduce((acc, number) => {
+    //acc = total or acc = arr[0]
+    console.log('acc', acc);
+    console.log('number', number);
+
+    return 100;
+}, 0);
+console.log(total);
+
+////////__________________ПРАКТИКА____________________________
 
 //ЗАДАЧА 1 for each (перебирає елементи масиву завжди з початку)  не працює break____________________
 
