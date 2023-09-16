@@ -1,4 +1,5 @@
 //єдиний варіант зробити щось потім або щось за умовою це функція - колбек
+//for each (перебирає елементи масиву завжди з початку)  не працює break
 
 // //функція вищого порядку
 // const fnA = function (message, callback) {
@@ -125,6 +126,8 @@
 // const r2 = filter([1, 2, 3, 4, 5, 6, 7, 8, 9], function (value) {
 //     return value <= 4;
 // });
+//стрелочна функція
+// const r2 = filter([1, 2, 3, 4, 5, 6, 7, 8, 9], value => value <= 4;
 // console.log(r2);
 
 // //ЗАДАЧА 1 фільтрація масиву об'єктів _____________________________________
@@ -236,43 +239,178 @@
 // console.log(rounder3(86.5458));
 // console.log(rounder4(46.66648));
 
-//Задача 4 захист приватних даних (зарплат)__________________________________
+//Задача 4 захист приватних даних (зарплат) приватні змінні__________________________________
 
-function salaryManage(employeeName, baseSalary) {
-    let salary = baseSalary;
+// function salaryManage(employeeName, baseSalary = 0) {
+//     let salary = baseSalary; // не можна змінити цю змінну вона замкнена
 
-    function changeBy(amount) {
-        salary += amount;
-    }
-    return {
-        reise(amount) {
-            changeBy(amount);
-        },
-        lower(amount) {
-            changeBy(amount);
-        },
-        current() {
-            return `Your salary ${employeeName} - ${salary}`;
-        },
-    };
-}
+//     function changeBy(amount) {
+//         salary += amount;
+//     }
+//     return {
+//         reise(amount) {
+//             if (amount > 1000) {
+//                 console.log('Error');
+//             }
+//             changeBy(amount);
+//         },
+//         lower(amount) {
+//             changeBy(amount);
+//         },
+//         current() {
+//             return `Your salary ${employeeName} - ${salary}`;
+//         },
+//     };
+// }
+// const salaryCount = salaryManage('Mango', 5000);
+// console.log(salaryCount.reise(1000));
+// console.log(salaryCount.reise(2000));
+
+// console.log(salaryCount);
+// console.log(salaryCount.current());
 
 // другой пример
 
-function myLock() {
-    let value = 'hello';
+// function myLock() {
+//     let value = 0;
 
-    function add() {
-        value += num;
-    }
+//     function add(num) {
+//         value += num;
+//     }
 
-    return {
-        add,
-        getValue() {
-            return value;
-        },
-    };
-}
-const lock = myLock();
-console.log(lock);
-console.log(lock.getValue());
+//     return {
+//         add,
+//         getValue() {
+//             return value;
+//         },
+//     };
+// }
+// const lock = myLock();
+// console.log(lock);
+// console.log(lock.getValue());
+// lock.add(10);
+// console.log(lock.getValue());
+
+/////////////////////////ARTEM///////////////////////////
+
+//ЗАДАЧА 1 калькулятор_______________________
+
+// const arr = [2, 6, 1, 7, 3];
+
+// //функція лише для перебору
+// function each(arr, callback) {
+//     let total = arr[0];
+
+//     for (let i = 1; i < arr.length; i += 1) {
+//         total = callback(total, arr[i]);
+//     }
+//     return total;
+// }
+
+// // функція для якоїсь певної дії
+// function add(first, second) {
+//     return first + second;
+// }
+// function substract(first, second) {
+//     return first - second;
+// }
+
+// console.log(each(arr, add)); //add - це наш другий параметр - колбек
+// console.log(each(arr, substract));
+
+//Задача 2 ____________________________
+// Створити функцію createProduct(obj, callback) -яка приймає об'єкт товару без id а також колбек, Функція ств об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому ств об'єкт
+//logProduct (product) колбек приймає об'єкт продукту і логуючий його в консоль
+//logTotalPrice(product) - колбек що приймає об'єкт продукту і логіює загальну вартість товару в консоль
+
+// function createProduct(obj, callback) {
+//     const product = {
+//         id: Date.now(),
+//         ...obj,
+//     };
+//     callback(product);
+//     console.log(product);
+// }
+
+// function logProduct(obj) {
+//     console.log(`Product ${obj.name}`);
+// }
+// function logTotalPrice({ price, quantity }) {
+//     //деструкт
+//     console.log(`Total price: ${price * quantity}`);
+// }
+
+// createProduct({ name: 'apple', price: 30, quantity: 3 }, logProduct);
+// createProduct({ name: 'peach', price: 40, quantity: 5 }, logTotalPrice);
+
+//ЗАДАЧА 3 ТРАНЗАКЦІЯ__________________________________________
+
+// const TRANSATION_LIMIT = 1000;
+
+// const account = {
+//     userName: 'Jacob',
+//     balance: 400,
+//     withdraw(amount, onSuccess, onError) {
+//         if (amount > TRANSATION_LIMIT) {
+//             onError(`Error you TRANSATION_LIMIT is ${TRANSATION_LIMIT} `);
+//             return; // якщо залогували помилку зразу виходимо
+//         } else if (this.balance < amount) {
+//             onError(`Not enought money `);
+//             return;
+//         }
+//         this.balance -= amount;
+//         onSuccess(`Succesfully ${amount}, balance ${this.balance}`);
+//     },
+//     deposit(amount, onSuccess, onError) {
+//         if (amount > `Error you TRANSATION_LIMIT is ${TRANSATION_LIMIT} `) {
+//             onError(`Your limit  ${TRANSATION_LIMIT}`);
+//             return; // якщо пропустило ретерн то добавимо на баланс
+//         } else if (amount <= 0) {
+//             onError(`Nice try bro, but you amount must be more than 0`);
+//             return;
+//         }
+//         this.balance += amount;
+//         onSuccess(`Operation succesffuly, you balance ${this.balance}`);
+//     },
+// };
+
+// function handleSuccess(message) {
+//     console.log(`Success! ${message}`);
+// }
+
+// function handleError(message) {
+//     console.log(`Error! ${message}`);
+// }
+
+// account.withdraw(2000, handleSuccess, handleError);
+// account.withdraw(600, handleSuccess, handleError);
+// account.withdraw(300, handleSuccess, handleError);
+// account.deposit(0, handleSuccess, handleError);
+// account.deposit(-600, handleSuccess, handleError);
+// account.deposit(600, handleSuccess, handleError);
+
+//задача 4 помножити кожне число на 2 або відняти 10 чи додати 5___________________________________________
+
+// function each(array, callback) {
+//     const newArr = [];
+//     for (const item of array) {
+//         newArr.push(callback(item));
+//     }
+//     return newArr;
+// }
+
+// console.log(
+//     each([2, 3, 4], function (item) {
+//         return item - 10;
+//     })
+// );
+// console.log(
+//     each([2, 3, 4], function (item) {
+//         return item * 2;
+//     })
+// );
+// console.log(
+//     each([2, 3, 4], function (item) {
+//         return item + 10;
+//     })
+// );
