@@ -181,3 +181,10 @@
 // console.log(each([2, 3, 4], item => item + 10));
 // console.log(each([2.5, 3.2, 4.1], item => Math.ceil(item)));
 // console.log(each([2.9, 3.5, 4.2], item => Math.floor(item)));
+
+//задача 4 переписати на for each + arrow______________________________
+
+// const logItems = arr => arr.forEach((arr, idx) => console.log(` ${idx + 1} - ${arr}`));
+
+// logItems(['mango', 'banana', 'orange']);
+// logItems(['apple', 'plum', 'watermelon']);
