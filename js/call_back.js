@@ -414,3 +414,22 @@
 //         return item + 10;
 //     })
 // );
+
+// Колбек-функція
+// function greet(name) {
+//     console.log(`Ласкаво просимо ${name}.`);
+// }
+
+// function error(name) {
+//     console.log(`Error this customer is not find ${name}`);
+// }
+// // Функція вищого порядку
+// function registerGuest(name, callback) {
+//     console.log(`Реєструємо гостя ${name}.`);
+//     callback(name);
+// }
+
+// registerGuest('Mango', greet);
+// registerGuest('Poly', error);
+
+///////////////////////////////////////////////////////////////////

@@ -42,6 +42,7 @@
 //можна порахувати загальну суму масиву
 //має два параметри (аккумулятор, число)
 //acc = total also acc = arr[0] by default
+//acc = return на кожній ітерації
 
 // -------------------------------------------MAP ------------
 
@@ -318,17 +319,26 @@
 // const isHereProGamer = players.some(player => player.timePlayed > 400);
 // console.log(isHereProGamer);
 
-//---------------------------------REDUCE--------------------
+//---------------------------------REDUCE--------- -----------
 
 const numbers = [5, 10, 15, 20, 25];
 const total = numbers.reduce((acc, number) => {
     //acc = total or acc = arr[0]
+    //number item of arr
     console.log('acc', acc);
     console.log('number', number);
 
-    return 100;
-}, 0);
+    return acc + number;
+}, 0); //  0 = на першій ітерації
 console.log(total);
+
+//explain
+//acc = 0 -> num 5 = 0 + 5
+//acc = 5 -> num 10 = 5 + 10
+//acc = 15 -> num 15 = 15 + 15
+//acc = 30 -> num 20 = 30 + 20
+//acc = 50 -> num 25 = 50 + 25
+// total = 75
 
 ////////__________________ПРАКТИКА____________________________
 
