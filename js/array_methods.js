@@ -35,6 +35,7 @@
 
 //6. some --- також перебирає поелементно і ХОЧА б ОДИН удовлітворяє умову поверне тру
 // якщо ні один не задовільняє поверне фолс
+//приводить елементи до строки і сортірує по юнікоду
 
 //7. reduce (універсальний) -- поілементно перебирає ориг масив
 //повертає що завгодно
@@ -43,6 +44,9 @@
 //має два параметри (аккумулятор, число)
 //acc = total also acc = arr[0] by default
 //acc = return на кожній ітерації
+
+//sort -- сортірує поілементно по зростанню, повільний але для фронта норм
+//ЗМІНЮЄ ориг масив!!!!!!
 
 // -------------------------------------------MAP ------------
 
@@ -430,14 +434,14 @@
 
 //Задача 6 підрахунок кількості тегів _____________________________
 
-const tweets = [
-    { id: '000', likes: 5, tags: ['js', 'node.js'] },
-    { id: '001', likes: 2, tags: ['html', 'css'] },
-    { id: '002', likes: 17, tags: ['js', 'html', 'node.js'] },
-    { id: '003', likes: 8, tags: ['css', 'react'] },
-    { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
-];
-const allTags = tweets.reduce((acc, item) => [...acc, ...item.tags], []);
+// const tweets = [
+//     { id: '000', likes: 5, tags: ['js', 'node.js'] },
+//     { id: '001', likes: 2, tags: ['html', 'css'] },
+//     { id: '002', likes: 17, tags: ['js', 'html', 'node.js'] },
+//     { id: '003', likes: 8, tags: ['css', 'react'] },
+//     { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
+// ];
+// const allTags = tweets.reduce((acc, item) => [...acc, ...item.tags], []);
 // const countTags = allTags.reduce((acc, tag) => {
 //     console.log(acc); // по черзі
 //     if (tag in acc) {
@@ -471,15 +475,30 @@ const allTags = tweets.reduce((acc, item) => [...acc, ...item.tags], []);
 // console.log(countTags);
 
 ///перепис на тернарний
-const countTags = allTags.reduce((acc, tag) => {
-    console.log(acc); // по черзі
 
-    return {
-        ...acc,
-        [tag]: acc[tag] ? acc[tag] + 1 : 1,
-    };
-}, {});
-console.log(countTags);
+// const countTags = allTags.reduce((acc, tag) => {
+//     console.log(acc); // по черзі
+
+//     return {
+//         ...acc,
+//         [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//     };
+// }, {});
+// console.log(countTags);
+
+//---------------------------SORT------------------------------------
+//Сортирує по порядку цифри
+
+// const numbers = [1, 9, 6, 2, 3];
+// numbers.sort();
+// console.log(numbers);
+
+// //Сортирує по порядку букви
+// const letters = ['b', 'B', 'a', 'A'];
+// letters.sort();
+// console.log(letters);
+
+//ЗАДАЧА 1
 
 ////////__________________ПРАКТИКА____________________________
 

@@ -426,3 +426,90 @@
 // }
 
 // displayProductInfo(user);
+
+//ЗАДАЧА 6 налаштування по замовчуванню___________________________________
+
+// const defaultSettings = {
+//     theme: 'light',
+//     public: true,
+//     withPassword: false,
+//     minNumberOfQuestions: 10,
+//     timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//     public: false,
+//     withPassword: true,
+//     timePerQuestion: 30,
+// };
+// // Change code below this line
+// const finalSettings = { ...defaultSettings, ...overrideSettings };
+// console.log(finalSettings);
+
+/// ЗАДАЧА 7 повернення об'єкту з новими та дефолтними властивостями____________________________________________
+
+// function makeTask(data) {
+//     return {
+//         category: 'General',
+//         priority: 'Normal',
+//         completed: false,
+//         ...data,
+//     };
+// }
+// makeTask({});
+// console.log(makeTask({ category: 'Homemade', priority: 'Low', text: 'Take out the trash' }));
+// console.log(makeTask({ category: 'Finance', text: 'Take interest' }));
+// console.log(makeTask({ priority: 'Low', text: 'Choose shampoo' }));
+// console.log(makeTask({ text: 'Buy bread' }));
+
+/// ЗАДАЧА 8 поразувати суму з неоднаковою кількістью аргументів______________________________________
+
+// function add(...args) {
+//     let total = 0;
+//     for (const arg of args) {
+//         total += arg;
+//     }
+//     return total;
+// }
+
+// console.log(add(15, 27));
+// console.log(add(12, 4, 11, 48));
+// console.log(add(32, 6, 13, 19, 8));
+// console.log(add(74, 11, 62, 46, 12, 36));
+
+//ЗАДАЧА 9 порахувати суму елементів в тому випадку якщо вони більші за перше число__________________________________________
+
+// function addOverNum(a, ...args) {
+//     let total = 0;
+
+//     for (const arg of args) {
+//         if (arg > a) {
+//             total += arg;
+//         }
+//     }
+//     return total;
+// }
+
+// console.log(addOverNum(50, 15, 27));
+// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+// console.log(addOverNum(15, 32, 6, 13, 19, 8));
+// console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
+
+//ЗАДАЧА 10 перевірити на однакові числа в масиві і вивести в окремий масив______________________________________
+
+// function findMatches(array, ...args) {
+//     const matches = [];
+
+//     for (let i = 0; i < array.length; i++) {
+//         if (args.includes(array[i])) {
+//             matches.push(array[i]);
+//         }
+//     }
+//     return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+// console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+// console.log(findMatches([63, 11, 8, 29], 4, 7, 16, 8, 11, 5, 29));
+
+//ЗАДАЧА 11
