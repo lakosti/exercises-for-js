@@ -321,28 +321,169 @@
 
 //---------------------------------REDUCE--------- -----------
 
-const numbers = [5, 10, 15, 20, 25];
-const total = numbers.reduce((acc, number) => {
-    //acc = total or acc = arr[0]
-    //number item of arr
-    console.log('acc', acc);
-    console.log('number', number);
+//Задача 1 сума масива__________________________
 
-    return acc + number;
-}, 0); //  0 = на першій ітерації
-console.log(total);
+// const numbers = [5, 10, 15, 20, 25];
 
-//explain
-//acc = 0 -> num 5 = 0 + 5
-//acc = 5 -> num 10 = 5 + 10
-//acc = 15 -> num 15 = 15 + 15
-//acc = 30 -> num 20 = 30 + 20
-//acc = 50 -> num 25 = 50 + 25
-// total = 75
+// // const total = numbers.reduce((acc, number) => {
+// //     //acc = total or acc = arr[0]
+// //     //number item of arr
+// //     console.log('acc', acc);
+// //     console.log('number', number);
+
+// //     return acc + number;
+// // }, 0); //  0 = на першій ітерації
+
+// ///перепис на короткий синтаксис
+// const total = numbers.reduce((acc, number) => acc + number, 0);
+// console.log(total);
+
+// //explain
+// //acc = 0 -> num 5 = 0 + 5
+// //acc = 5 -> num 10 = 5 + 10
+// //acc = 15 -> num 15 = 15 + 15
+// //acc = 30 -> num 20 = 30 + 20
+// //acc = 50 -> num 25 = 50 + 25
+// // total = 75
+
+//Задача 2 зарплати співробітників з об'єкта________________________
+
+// const salary = {
+//     mango: 100,
+//     poly: 50,
+//     ajax: 150,
+// };
+// const totalSalary = Object.values(salary).reduce((total, value) => total + value, 0);
+// console.log(totalSalary);
+
+//Задача 3 загальна кількість годин скільки грали гравці______________________________
+// const players = [
+//     {
+//         id: 'player-1',
+//         name: 'Poly',
+//         timePlayed: 310,
+//         points: 54,
+//         online: false,
+//     },
+//     {
+//         id: 'player-2',
+//         name: 'Mango',
+//         timePlayed: 470,
+//         points: 92,
+//         online: true,
+//     },
+//     {
+//         id: 'player-3',
+//         name: 'Kiwi',
+//         timePlayed: 230,
+//         points: 48,
+//         online: true,
+//     },
+//     {
+//         id: 'player-4',
+//         name: 'Ajax',
+//         timePlayed: 150,
+//         points: 71,
+//         online: false,
+//     },
+//     {
+//         id: 'player-5',
+//         name: 'Chelsy',
+//         timePlayed: 80,
+//         points: 48,
+//         online: true,
+//     },
+// ];
+
+// // const totalTime = players.reduce((total, player) => total + player.timePlayed, 0);
+// //деструкт (якщо один то переваждно не деструкт)
+// const totalTime = players.reduce((total, { timePlayed }) => total + timePlayed, 0);
+// console.log(totalTime);
+
+//Задача 4 порахувати корзину товарів ___________________________________
+// const cart = [
+//     { label: 'apples', price: 100, quantity: 2 },
+//     { label: 'bananas', price: 120, quantity: 3 },
+//     { label: 'lemons', price: 70, quantity: 4 },
+// ];
+
+// const totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+// //деструк
+// // const totalAmount = cart.reduce((total, { price, quantity }) => {
+// //     return total + price * quantity;
+// // }, 0);
+// console.log(totalAmount);
+
+//Задача 5 збір всіх тегів_______________________________
+// const tweets = [
+//     { id: '000', likes: 5, tags: ['js', 'node.js'] },
+//     { id: '001', likes: 2, tags: ['html', 'css'] },
+//     { id: '002', likes: 17, tags: ['js', 'html', 'node.js'] },
+//     { id: '003', likes: 8, tags: ['css', 'react'] },
+//     { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
+// ];
+// const allTags = tweets.reduce((acc, item) => {
+//     // tags.push(...item.tags); // лінтер буде бити помилку
+//     return [...acc, ...item.tags];
+// }, []);
+// console.log(allTags);
+
+//Задача 6 підрахунок кількості тегів _____________________________
+
+const tweets = [
+    { id: '000', likes: 5, tags: ['js', 'node.js'] },
+    { id: '001', likes: 2, tags: ['html', 'css'] },
+    { id: '002', likes: 17, tags: ['js', 'html', 'node.js'] },
+    { id: '003', likes: 8, tags: ['css', 'react'] },
+    { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
+];
+const allTags = tweets.reduce((acc, item) => [...acc, ...item.tags], []);
+// const countTags = allTags.reduce((acc, tag) => {
+//     console.log(acc); // по черзі
+//     if (tag in acc) {
+//         //(acc.hasOwnProperty(tag))
+//         acc[tag] += 1;
+//         return acc;
+//     }
+//     acc[tag] = 1;
+//     return acc;
+// }, {});
+// console.log(countTags);
+//пояснення
+//якщо є такий тег то ми до нього додаємо 1, якщо такого тега немає то ми не заходимо в іф і просто цьому тегу ставимо 1 і так по кругу
+
+//перепис імутабельно // щоб не мутувати
+// const countTags = allTags.reduce((acc, tag) => {
+//     console.log(acc); // по черзі
+//     if (tag in acc) {
+//         // acc[tag] += 1;
+//         return {
+//             ...acc,
+//             [tag]: (acc[tag] += 1),
+//         };
+//     }
+//     // acc[tag] = 1;
+//     return {
+//         ...acc,
+//         [tag]: 1,
+//     };
+// }, {});
+// console.log(countTags);
+
+///перепис на тернарний
+const countTags = allTags.reduce((acc, tag) => {
+    console.log(acc); // по черзі
+
+    return {
+        ...acc,
+        [tag]: acc[tag] ? acc[tag] + 1 : 1,
+    };
+}, {});
+console.log(countTags);
 
 ////////__________________ПРАКТИКА____________________________
 
-//ЗАДАЧА 1 for each (перебирає елементи масиву завжди з початку)  не працює break____________________
+//ЗАДАЧА 1 for each (перебирає елементи масиву завжди з почату)  не працює break____________________
 
 // const arr = [2, 6, 1, 7, 3];
 // //item -- ітеруємий елемент
