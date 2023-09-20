@@ -1,4 +1,5 @@
-//----------------------------Methods-----------------------------------
+//console.log('abc'.charCodeAt(0)) -- перевірка по юнікоду
+//  ----------------------------Methods-----------------------------------
 //в перебираючих методах масиву важливий порядок параметрів
 //їх не можна break  or  continue
 //деструкт у функціях =  ({}) = (({online}) => online)
@@ -39,16 +40,35 @@
 
 //7. reduce (універсальний) -- поілементно перебирає ориг масив
 //повертає що завгодно
+//потрібно початкове значення як у let total
 //бере багато і робить щось одне
 //можна порахувати загальну суму масиву
-//має два параметри (аккумулятор, число)
+//має два обов'язкових параметри (аккумулятор, число) і також індекс та масив
 //acc = total also acc = arr[0] by default
 //acc = return на кожній ітерації
+//при роботі завжди повертаємо акамулятор reduce arr
 
 //sort -- сортірує поілементно по зростанню, повільний але для фронта норм
+//сортування рядків - const result = arr.sort(); -- не вказуємо умову
 //ЗМІНЮЄ ориг масив!!!!!!
+//тому робимо копію через сперд або слайс / краще спред [...spred]
+//.sort(a,b) => b-a) -- з більшого до меншого
+//.sort(a,b) => a-b) по дефолту з більшого до меншого
+//сортування за алфавітом -- const result = arr.sort((a,b)=> a.localeCompare(b))
+//спочатку завжди розпилюємо масив [...players].sort(())
 
-// -------------------------------------------MAP ------------
+//flat -- розглажування масива (arr.flat()) => arr.flat(2))
+//коли є масив в масиві і необхідно зробити один
+//не змінює старий масив
+//повертає результат своєї робити
+//розглажує лише на одну вкладеність по замовчуванні
+//щоб розгладити решту вкладеності пишемо в параметрах (2), (3) ... і так далі
+
+//flatMap -- якщо потрібно з'єднати кілька масивів в один, аналог reduce
+
+//findIndex -- знаходить індекс в об'єкта
+
+// --------------------------MAP ------------
 
 // const numbers = [5, 10, 15, 20, 25];
 
@@ -487,20 +507,121 @@
 // console.log(countTags);
 
 //---------------------------SORT------------------------------------
-//Сортирує по порядку цифри
+//Сортирує по порядку цифри______________________________
 
 // const numbers = [1, 9, 6, 2, 3];
 // numbers.sort();
 // console.log(numbers);
 
-// //Сортирує по порядку букви
+// //Сортирує по порядку букви___________________________
 // const letters = ['b', 'B', 'a', 'A'];
 // letters.sort();
 // console.log(letters);
 
-//ЗАДАЧА 1
+//принцип роботи сорт // cортування за зменшенням____________________
+// const numbers = [1, 9, 6, 2, 3];
 
-////////__________________ПРАКТИКА____________________________
+// numbers.sort((curentEl, nextEl) => {
+//     return nextEl - curentEl;
+// });
+// console.log(numbers);
+// const copy = [...numbers];
+// const ascSortNumbers = [...numbers].sort(a,b) => b-a); // зменшення
+// const ascSortNumbers = [...numbers].sort(a,b) => a-b); // збільшення
+// console.log(ascSortNumbers);
+
+//Задача 2 сортіровка об'єктів_______________________________
+
+// const players = [
+//     {
+//         id: 'player-1',
+//         name: 'Poly',
+//         timePlayed: 310,
+
+//         online: false,
+//     },
+//     {
+//         id: 'player-2',
+//         name: 'Mango',
+//         timePlayed: 470,
+
+//         online: true,
+//     },
+//     {
+//         id: 'player-3',
+//         name: 'Aiwi',
+//         timePlayed: 230,
+
+//         online: true,
+//     },
+//     {
+//         id: 'player-4',
+//         name: 'Ajax',
+//         timePlayed: 150,
+
+//         online: false,
+//     },
+//     {
+//         id: 'player-5',
+//         name: 'Chelsy',
+//         timePlayed: 80,
+
+//         online: true,
+//     },
+// ];
+// const sortByBestPlayers = [...players].sort(
+//     (prevPlayer, nextPlayer) => nextPlayer.timePlayed - prevPlayer.timePlayed
+// );
+// console.log(sortByBestPlayers);
+
+//Задача 3 сортування по першій букві імені_______________________________
+// const sortByNamePlayers = [...players].sort((firstName, nextName) => {
+//     if (firstName.name[0] > nextName.name[0]) {
+//         return 1;
+//     }
+//     if (!(firstName.name[0] > nextName.name[0])) {
+//         return -1;
+//     }
+// });
+// console.log(sortByNamePlayers);
+
+// console.log('abc'.charCodeAt(1));
+
+//----------------------------FLAT /FlatMap__________________________
+
+//розглаження
+
+// const array = [1, 2, [4, [5]], [6, [7, 8, [9]]]];
+// console.log(array.flat(3));
+// console.log(array);
+
+//ЗАДАЧА 1 взяти всі теги з масива за допомогою flatMap_____________________
+
+// const tweets = [
+//     { id: '000', likes: 5, tags: ['js', 'node.js'] },
+//     { id: '001', likes: 2, tags: ['html', 'css'] },
+//     { id: '002', likes: 17, tags: ['js', 'html', 'node.js'] },
+//     { id: '003', likes: 8, tags: ['css', 'react'] },
+//     { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
+// ];
+
+// // const getAllTags = tweets.map(tweet => tweet.tags).flat(); //двічі викликаємо цей метод
+
+// const getAllTags = tweets.flatMap(tweet => tweet.tags);
+// console.log(getAllTags);
+
+//flatMap
+
+// const result = tweets
+//     .flatMap(tweets => tweets.tags)
+//     .reduce((acc, tag) => {
+//         return {
+//             ...acc,
+//             [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//         };
+//     }, {});
+// console.log(result);
+///////////////////////////////ПРАКТИКА ////////////////////////
 
 //ЗАДАЧА 1 for each (перебирає елементи масиву завжди з почату)  не працює break____________________
 
@@ -566,3 +687,177 @@
 
 // console.log(calculateAverage(1, 2, 3, 4, 5, 6));
 // console.log(calculateAverage(1, 2, 3));
+
+// ЗАДАЧА 4 ченінг подвоїти значення елементів а потім отримати тільки більше 10 і відсортувати їх по збільшенню_________________________
+
+// const numbers = [20, 1, 5, 15, 2, 4, 3, 8, 9, 19, 13, 1, 3, 2];
+
+// // const getLowSixth = numbers.filter(item => item >= 10);
+// // console.log(getLowSixth);
+
+// // const multBuTwo = getLowSixth.map(item => item * 2);
+// // console.log(multBuTwo); // помножили на два
+
+// // const sortFromTopToBottom = getLowSixth.sort((pr, next) => next - pr);
+// // console.log(sortFromTopToBottom);
+
+// ////ченінг
+// const result = numbers
+//     .filter(item => item >= 10)
+//     .map(item => item * 2)
+//     .sort((a, b) => b - a);
+
+// console.log(result);
+
+//ЗАДАЧА 5 ченінг з початку вільтруємо тих хто онлайн а потім сортуємо по рангу_______________________________________
+
+// const players = [
+//     {
+//         id: 'player-1',
+//         name: 'Poly',
+//         timePlayed: 310,
+
+//         online: false,
+//     },
+//     {
+//         id: 'player-2',
+//         name: 'Mango',
+//         timePlayed: 470,
+
+//         online: true,
+//     },
+//     {
+//         id: 'player-3',
+//         name: 'Aiwi',
+//         timePlayed: 230,
+
+//         online: true,
+//     },
+//     {
+//         id: 'player-4',
+//         name: 'Ajax',
+//         timePlayed: 150,
+
+//         online: false,
+//     },
+//     {
+//         id: 'player-5',
+//         name: 'Chelsy',
+//         timePlayed: 80,
+
+//         online: true,
+//     },
+// ];
+// const result = players
+//     .filter(item => !item.online)
+//     .sort((pr, next) => next.timePlayed - pr.timePlayed);
+// console.log(result);
+
+//ЗАДАЧА 6 якщо число парне помножити на 2 (map) ______________
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// const result = arr.map(item => {
+//     if (!(item % 2)) {
+//         return item * 2;
+//     }
+//     return item;
+// });
+
+//неявне повернення + тернарний
+// const result = arr.map(item => (!(item % 2) ? item * 2 : item));
+// console.log(result);
+
+// -----map під капотом------
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// function customMap(arr, callback) {
+//     const result = [];
+//     for (let i = 0; i < arr.length; i += 1) {
+//         result.push(callback(arr[i]));
+//     }
+//     return result;
+// }
+// customMap(arr, foo);
+
+// function foo(item) {
+//     if (!(item % 2)) {
+//         return item * 2;
+//     }
+//     return item;
+// }
+// console.log(customMap(arr, foo));
+
+///flatMap
+
+// const user = [
+//     {
+//         name: 'Bred',
+//         skills: ['html', 'css'],
+//     },
+//     {
+//         name: 'Kayle',
+//         skills: ['js', 'react'],
+//     },
+//     {
+//         name: 'Ajax',
+//         skills: ['angular', 'vue'],
+//     },
+// ];
+
+//через map
+// const result = user.map(item => item.skills.map(skill => skill));
+// console.log(result);
+
+// через flat
+// const result = user.flatMap(skill => skill.skiils);
+// console.log(result);
+
+//find з масива user
+// const result = user.find(item => item.skills.includes('js')).name;
+// console.log(result);
+
+//findIndext
+// const result = user.findIndex(item => item.skills.includes('vue'));
+// console.log(result);
+
+//filter
+//відібрати непарні елементи // + ченінг
+
+// const arr = [2, 5, 3, 8, 46, 1, 22, 3, 5, 0];
+// const result = arr
+//     .filter(item => item % 2)
+//     .map((item, _, arr) => {
+//         console.log(arr); // результат виконання фільтра
+//         return item * 2;
+//     });
+// console.log(result);
+
+//SORT===========================================================
+
+// const user = [
+//     {
+//         name: 'Bred',
+//         skills: ['html', 'css'],
+//     },
+//     {
+//         name: 'Kayle',
+//         skills: ['js', 'react'],
+//     },
+//     {
+//         name: 'Ajax',
+//         skills: ['angular', 'vue'],
+//     },
+// ];
+
+// сортування рядків -- не вказуємо умову
+// const arr = ['s', 'a', 'f', 'A', 'B', 'S'];
+// // const result = arr.sort();
+// const result = arr.sort((a, b) => a.localeCompare(b));
+// console.log(result);
+// const result = [...user].sort((pr, next) => pr.name.localeCompare(next.name));
+// console.log(result);
+
+/////ЗАДАЧІ АРТЕМА//////////////////
+
+const cars = [{ make: 'Honda', model: 'CR-V' }];

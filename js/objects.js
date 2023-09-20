@@ -865,3 +865,77 @@
 // console.log(hogvargs.getTotalPoints('griffindor'));
 // console.log(hogvargs.getTotalPoints('slizerin'));
 // console.log(hogvargs.getTotalPoints('orlan'));
+
+//////ЗАДАЧА 16 видалити стару книгу і замінити / обновити на нову_____________________________________
+
+// const bookShelf = {
+//     books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+//     updateBook(oldName, newName) {
+//         const idx = this.books.indexOf(oldName);
+//         if (idx !== -1) {
+//             // якшо ця книга є то заміни // якщо немає то нічого не роби
+//             this.books.splice(idx, 1, newName);
+//             return newName;
+//         }
+//         return 'Not found';
+//     },
+// };
+
+// console.log(bookShelf.updateBook('Top', 'New'));
+// console.log(bookShelf.updateBook('Haze', 'Dungeon chronicles'));
+// console.log(bookShelf.updateBook('The last kingdom', 'Dune'));
+
+/// //ЗАДАЧА 17 додавання елемента / зілля в кінець масива___________________________
+// const atTheOldToad = {
+//     potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//     addPotion(potionName) {
+//         if (!this.potions.includes(potionName)) {
+//             this.potions.push(potionName);
+//             return this.potions;
+//         }
+//         return 'This potion already exists';
+//     },
+// };
+// console.log(atTheOldToad.potions);
+// console.log(atTheOldToad.addPotion('Invisibility'));
+// console.log(atTheOldToad.addPotion('Power potion'));
+// console.log(atTheOldToad.potions);
+
+/// ЗАДАЧА 18 видалення зілля (використання одного методу indexOf замість двух, вірно обробляємо значення коли немає в масиву -1 замість includes) _________________________________________
+// const atTheOldToad = {
+//     potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//     removePotion(potionName) {
+//         const idx = this.potions.indexOf(potionName);
+//         if (idx !== -1) {
+//             this.potions.splice(idx, 1);
+//             return this.potions;
+//         }
+//         return 'Not found';
+
+//     },
+// };
+
+// atTheOldToad.removePotion('Dragon breath');
+// atTheOldToad.removePotion('Speed potion');
+// console.log(atTheOldToad.removePotion('Tor'));
+// console.log(atTheOldToad.potions);
+
+//ЗАДАЧА 19 оновляємо / обновляємо зілля // об'єкт // елемент_______________
+// const atTheOldToad = {
+//     potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//     updatePotionName(oldName, newName) {
+//         const idx = this.potions.indexOf(oldName);
+//         if (idx !== -1) {
+//             this.potions.splice(idx, 1, newName);
+//             return this.potions;
+//         }
+//         return 'Not found';
+//     },
+// };
+// console.log(atTheOldToad.potions);
+// atTheOldToad.updatePotionName('Dragon breath', 'Polymorth');
+// console.log(atTheOldToad.potions);
+// atTheOldToad.updatePotionName('Stone skin', 'Invisibility');
+// console.log(atTheOldToad.potions);
+
+//ЗАДАЧА 20 всі попередні завдання в одному (видалення з об'єкту, додавання, оновлення / оновити)___________________
