@@ -1,9 +1,5 @@
-// const arr = ['mango', 'kiwi', 'apple', 'plum'];
-// console.table(arr);
 // перевірка на унікальні елементи
-
 // const getUniqueCourses = arr.filter((course, idx, arr) => arr.indexOf(course === idx));
-
 // console.log(getUniqueCourses(['html', 'js', 'css', 'js']));
 //array.lenght = 0 --- очищення масиву//очистити масив
 
@@ -436,3 +432,5 @@
 // console.log(findLongestWord('The quick brown fox jumped over the lazy dog swimmi'));
 // // console.log(findLongestWord('Google do a roll'));
 // // console.log(findLongestWord('May the force be with you'));
+
+/////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
