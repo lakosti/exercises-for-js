@@ -36,10 +36,23 @@
 
 //ЗАДАЧА 3 обробка значення underfined __________________________
 //є корзина з фруктами потрібно порахувати які і скільки фруктів всього
-const fruits = ['apple', 'cherry', 'berry', 'orange', 'apple', 'cherry', 'orange', 'lemon'];
-const result = fruits.reduce((acc, fruit) => {
-    console.log(fruit);
-});
+// const fruits = [
+//     'apple',
+//     'cherry',
+//     'berry',
+//     'orange',
+//     'cherry',
+//     'apple',
+//     'cherry',
+//     'orange',
+//     'lemon',
+// ];
+// const result = fruits.reduce((acc, fruit) => {
+//     acc[fruit] = (acc[fruit] || 0) + 1;
+//     // це ств ключ  якщо фрукт є то до нього просто +1, якщо фрукта немає то 0+1
+//     return acc;
+// }, {});
+// console.log(result);
 
 //ЗАДАЧА 4 пошук найменшого числа в масиві_______________________________________
 
