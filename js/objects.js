@@ -13,6 +13,9 @@
 
 ///перевірити чи є ключ в об'єкті
 
+//obj.hasOwnProperty(key)
+//key in obj
+
 // for (const product of products) {
 //     if(argument in product){
 //     push()

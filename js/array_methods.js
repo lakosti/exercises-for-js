@@ -860,4 +860,178 @@
 
 /////ЗАДАЧІ АРТЕМА//////////////////
 
-const cars = [{ make: 'Honda', model: 'CR-V' }];
+const cars = [
+    {
+        make: 'Honda',
+        model: 'CR-V',
+        type: 'suv',
+        amount: 14,
+        price: 24045,
+        onSale: true,
+    },
+    {
+        make: 'Honda',
+        model: 'Accord',
+        type: 'sedan',
+        amount: 2,
+        price: 22455,
+        onSale: true,
+    },
+    {
+        make: 'Mazda',
+        model: 'Mazda 6',
+        type: 'sedan',
+        amount: 8,
+        price: 24195,
+        onSale: false,
+    },
+    {
+        make: 'Mazda',
+        model: 'CX-9',
+        type: 'suv',
+        amount: 7,
+        price: 31520,
+        onSale: true,
+    },
+    {
+        make: 'Toyota',
+        model: '4Runner',
+        type: 'suv',
+        amount: 19,
+        price: 34210,
+        onSale: false,
+    },
+    {
+        make: 'Toyota',
+        model: 'Sequoia',
+        type: 'suv',
+        amount: 16,
+        price: 45560,
+        onSale: false,
+    },
+    {
+        make: 'Toyota',
+        model: 'Tacoma',
+        type: 'truck',
+        amount: 4,
+        price: 24320,
+        onSale: true,
+    },
+    {
+        make: 'Ford',
+        model: 'F-150',
+        type: 'truck',
+        amount: 11,
+        price: 27110,
+        onSale: true,
+    },
+    {
+        make: 'Ford',
+        model: 'Fusion',
+        type: 'sedan',
+        amount: 13,
+        price: 22120,
+        onSale: true,
+    },
+    {
+        make: 'Ford',
+        model: 'Explorer',
+        type: 'suv',
+        amount: 6,
+        price: 31660,
+        onSale: false,
+    },
+];
+
+// //ЗАДАЧА 1 (map) повертає масив моделей усіх авто______________________
+// const getModels = cars.map(car => car.model);
+// console.log(getModels);
+
+// //ЗАДАЧА 2 зміна прайсу // ціни в залежності від знижки_______
+// const returnTotalSum = (cars, discount) => {
+//     return cars.map(item => ({
+//         ...item,
+//         price: item.price * (1 - discount),
+//     })); //100 - disc
+// };
+// console.log(returnTotalSum(cars, 0.2));
+// console.log(returnTotalSum(cars, 0.4));
+
+// //ЗАДАЧА 3 відфільтрувати щоб ціна була менше параметра
+// const filtredByPrice = (cars, threshold) => {
+//     return cars.filter(({ price }) => price < threshold);
+// };
+// console.log(filtredByPrice(cars, 30000));
+// console.log(filtredByPrice(cars, 25000));
+
+//ЗАДАЧА 4 відібрати машини які на розпродажі onSale - true ____________________________
+
+// const getOnSaleCars = cars => cars.filter(({ onSale }) => onSale);
+// console.log(getOnSaleCars(cars));
+
+///ЗАДАЧА 4 знайти по машину по типу який цікавить________________
+
+// const getcarsWithType = (cars, type) => cars.filter(({ type: carType }) => carType === type);
+
+// console.log(getcarsWithType(cars, 'suv'));
+// console.log(getcarsWithType(cars, 'sedan'));
+
+//ЗАДАЧА 5 потрібно знайти Хонди які коштують менше 25 тисяч ________________
+
+// const getHonda = (cars, carPrice, carName) =>
+//     cars.filter(({ make, price }) => price < carPrice && make === carName);
+
+// console.log(getHonda(cars, 25000, 'Honda'));
+
+//ЗАДАЧА 6 метод повертає відсортований масив по сумі + деструкт __________________
+// const getRangePrice = cars => [...cars].sort(({ price: a }, { price: b }) => a - b);
+
+// console.log(getRangePrice(cars));
+// console.log(getRangePrice);
+
+//ЗАДАЧА відсортувати масив в алфавітному порядку та зворотньому в залежності від значення order____________________________________
+
+// const sortByModel = (cars, order) =>
+//     [...cars].sort(({ model: a }, { model: b }) =>
+//         order === 'asc' ? a.localeCompare(b) : b.localeCompare(a)
+//     );
+// //old variant
+// // if (order === 'asc') {
+// //     return [...cars].sort((a, b) => a.model.localeCompare(b.model));
+// // } else {
+// //     return [...cars].sort((a, b) => b.model.localeCompare(a.model));
+// // }
+
+// console.log(sortByModel(cars, 'asc')); //з першої до останньої
+// console.log(sortByModel(cars, 'desc')); // з останньої до першої
+
+//ЗАДАЧА порахувати скільки всього є автомобілів________________________
+
+// const getTotalAmount = cars => cars.reduce((acc, { amount }) => acc + amount, 0);
+
+// console.log(getTotalAmount(cars));
+
+//через total
+
+// function get(cars) {
+//     let total = 0;
+//     for (const { amount } of cars) {
+//         total += amount;
+//     }
+//     return total;
+// }
+// console.log(get(cars));
+
+//ЗАДАЧА відібрати машини які на розпродажі, і повернути їх моделі______________________ filter + map марка + модель
+
+// const getModelsOnSale = cars =>
+//     cars.filter(({ onSale }) => onSale).map(({ make, model }) => `${make} ${model}`);
+// console.log(getModelsOnSale(cars));
+
+//ЗАДАЧА повернення масиву onSale: true відсортованих за зростанням ціни
+
+// const rangeCars = cars => {
+//     return cars.filter(({ onSale }) => onSale).sort(({ price: a }, { price: b }) => a - b);
+// }; //оскільки ми сортували на фільтрі то спред не потрібен, оскільки фільтр повертає новий масив
+// console.log(rangeCars(cars));
+// console.log(cars);
