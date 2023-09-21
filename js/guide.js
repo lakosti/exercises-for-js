@@ -168,3 +168,5 @@
 //includes - також може містити два параметра
 //Array.isArray() -- перевірка на масив
 //метод padStart / padEnd працюють із типом стрінг, тому приводимо до стрінг
+
+/////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////

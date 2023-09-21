@@ -941,4 +941,4 @@
 // atTheOldToad.updatePotionName('Stone skin', 'Invisibility');
 // console.log(atTheOldToad.potions);
 
-//ЗАДАЧА 20 всі попередні завдання в одному (видалення з об'єкту, додавання, оновлення / оновити)___________________
+/////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
