@@ -1,11 +1,12 @@
 //console.log('abc'.charCodeAt(0)) -- перевірка по юнікоду
+//масив це підвид об'єкту
 //  ----------------------------Methods-----------------------------------
 //в перебираючих методах масиву важливий порядок параметрів
 //їх не можна break  or  continue
 //деструкт у функціях =  ({}) = (({online}) => online)
 
 //1. for each  ----   як заміна форму
-// повертає underfined тому не можна присвоїти у змінну
+// нічого не повертає лише underfined тому не можна присвоїти у змінну
 // перебирає елементи завжди з початку
 // приймає в параметрах колбек функцію
 // вказуємо в колбек функції такі параметри (сам елемент*, індекс, масив)
@@ -1038,3 +1039,52 @@
 // console.log(cars);
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+
+//ЗАДАЧА відбір унікальних елементів / неповторюваних___________________________
+
+// const students = [
+//     { name: 'Манго', courses: ['математика', 'фізика'] },
+//     { name: 'Полі', courses: ['інформатика', 'математика'] },
+//     { name: 'Ківі', courses: ['фізика', 'біологія'] },
+// ];
+
+////виходить що індекс масива arr.index на математиці поверне 0, а фактичний індекс по масиву на разі 3
+// const allCourses = students
+//     .flatMap(course => course.courses)
+//     .filter((item, idx, arr) => arr.indexOf(item) === idx);
+// console.log(allCourses);
+// // const uniqueCourses = allCourses.filter((item, idx, arr) => arr.indexOf(item) === idx);
+// // console.log(uniqueCourses);
+
+//ЗАДАЧА підрахунок повторюваних значень ___________________________
+// const tweets = [
+//     { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+//     { id: '001', likes: 2, tags: ['html', 'css'] },
+//     { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+//     { id: '003', likes: 8, tags: ['css', 'react'] },
+//     { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+// ];
+// //пушемо в акамулятор розпилені значення всіх тегів і повертаємо цей акамулятор
+// //огорнули у функцію для подальшого використання
+// const getTags = tweets =>
+//     tweets.reduce((acc, item) => {
+//         acc.push(...item.tags);
+//         return acc;
+//     }, []);
+// console.log(getTags(tweets));
+
+// const tags = getTags(tweets);
+
+// const getTagStats = (acc, tag) => {
+//     if (!acc.hasOwnProperty(tag)) {
+//         acc[tag] = 0;
+//     }
+//     acc[tag] += 1;
+
+//     return acc;
+// };
+// //передали колбек підрахунку і початкове значення
+// const countTag = tags => tags.reduce(getTagStats, {});
+
+// const tagCount = countTag(tags);
+// console.log(tagCount);

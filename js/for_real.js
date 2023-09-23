@@ -42,3 +42,40 @@
 // console.log(normalizedWords);
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+
+//ЗАДАЧА  ЛІЧИЛЬНИК_______________________
+// const counter = {
+//     value: 0,
+//     increment() {
+//         console.log('increment', this);
+//         this.value += 1;
+//     },
+//     decrement() {
+//         console.log('decrement', this);
+//         this.value -= 1;
+//     },
+// };
+// const decrementBtn = document.querySelector('.js-btn-less');
+// const incrementBtn = document.querySelector('.js-btn-add');
+// const textEl = document.querySelector('.js-btn-text');
+// // console.log(decrementBtn);
+// // console.log(incrementBtn);
+// // console.log(textEl);
+// incrementBtn.textContent = 'Збільшити'; //змінити текстовий контент
+
+// decrementBtn.addEventListener('click', function () {
+//     console.log('We less num');
+
+//     counter.decrement(); //передали метод об'єкта
+//     console.log(counter);
+
+//     textEl.textContent = counter.value;
+// });
+// incrementBtn.addEventListener('click', function () {
+//     console.log('We add num');
+
+//     counter.increment(); //передали метод об'єкта
+//     console.log(counter);
+
+//     textEl.textContent = counter.value;
+// });

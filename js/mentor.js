@@ -211,3 +211,163 @@
 //15
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+
+//ЗАДАЧА 1 маніпуляції з об'єктом // вивести ключ і значення_____
+
+// const user = {
+//     name: 'John',
+//     age: 20,
+//     hobby: 'tennis',
+//     premium: true,
+// };
+// const keys = Object.keys(user);
+// for (const key of keys) {
+//     console.log(`${key} : ${user[key]}`);
+// }
+
+//ЗАДАЧА 2 перебрати об'єкт та просумувати_____________________
+// const salaries = {
+//     mango: 100,
+//     poly: 160,
+//     ajax: 1470,
+// };
+// //for of
+// // const values = Object.values(salaries);
+// // let total = 0;
+// // for (const value of values) {
+// //     total += value;
+// // }
+
+// // console.log(total);
+
+// //for in + hasOwnProperty
+// let total = 0;
+// for (const key in salaries) {
+//     if (salaries.hasOwnProperty(key)) {
+//         total += salaries[key];
+//     }
+// }
+// console.log(total);
+
+// ЗАДАЧА 3 деструкт____
+// let user = {
+//     name: 'John',
+//     years: 30,
+// };
+
+// // const { name, years: age, isAdmin = false } = user;
+// // console.log(name, age, isAdmin);
+
+// //присвоюємо через змінні значення
+
+// const name = user.name;
+// const age = user.years;
+// const isAdmin = user.isAdmin || false;
+
+//ЗАДАЧА 4 ств функцію яка повертає ім'я працівника знайбільшою зп / зарплатою
+// якщо об'єкт пустий то повертається null
+///Object.entries  + деструкт
+//об'єкт це завжди тру_______________________________________________________________
+
+// let salaries = {
+//     John: 100,
+//     Pete: 300,
+//     Mary: 250,
+// };
+
+// function topSalary(salaries) {
+//     const arr = Object.entries(salaries);
+//     if (!arr.length) { // пустий об'єкт
+//         return null;
+//     }
+//     // let bigSalary = arr[0][1]; // значення зп першого в об'єкті 100
+//     let bigSalary = arr[0];
+//     console.log(bigSalary);
+//     for (const salary of arr) {
+//         if (salary[1] > bigSalary[1]) {
+//             console.log(salary[1]);
+//             console.log(bigSalary[1]);
+//             bigSalary = salary;
+//         }
+//     }
+//     return bigSalary[0];
+// }
+// console.log(topSalary(salaries));
+
+//////////////////деструкт
+
+// function getName(salaries) {
+//     const arr = Object.entries(salaries);
+//     if (!arr.length) {
+//         return null;
+//     }
+//     let biggestNum = arr[0];
+//     // console.log(biggestNum);
+//     for (const [key, value] of arr) {
+//         if (value > biggestNum[1]) {
+//             biggestNum = [key, value];
+//             // console.log(biggestNum);
+//         }
+//     }
+//     const [, key] = biggestNum; //400 без коми ім'я
+//     return key; // biggestNum = [oleg, 400] // biggestNum[0] = перший елемент
+// }
+// console.log(getName(salaries));
+
+//ЗАДАЧА 2 написати функцію яка перевііряє чи є елемент саме простим об'єктом а не масивом, чи null______________________________________
+
+// function isObj(payload) {
+//     return typeof payload === 'object' && !Array.isArray(payload) && payload !== null;
+// }
+// console.log(isObj({ a: 1 }));
+// console.log(isObj([]));
+// console.log(isObj(null));
+// console.log(isObj(1));
+// console.log(isObj(undefined));
+
+//ЗАДАЧА 3 напишіть дві функції // одна запитує ім'я користувача через prompt та викликає callback функцію // great callback що приймає ім'я і логує в консоль_____________________________________
+
+// function getYourName(callback) {
+//     const name = prompt('What your name');
+//     callback(name); // = great(name)
+// }
+
+// function great(name) {
+//     console.log(`Hello my name ${name}`);
+// }
+// getYourName(great);
+
+//ЗАДАЧА 4 функція ств об'єкт товару та id  і викликає callback який приймає об'єкт і виводить його в консоль___________________
+// const makeProduct = function (name, price, callback) {
+//     const product = {
+//         name,
+//         price,
+//         id: Date.now(),
+//     };
+//     callback(product);
+// };
+// function showProduct(product) {
+//     console.log(product);
+// }
+// makeProduct('apple', 200, showProduct);
+
+//ЗАДАЧА 5 // map //потрібно отримати масив імен струдентів та записати  їх великими літерами________________________________
+// let students = [
+//     { name: 'John', id: 123, marks: 98 },
+//     { name: 'Taras', id: 104, marks: 23 },
+//     { name: 'Nika', id: 115, marks: 45 },
+//     { name: 'Kate', id: 126, marks: 75 },
+// ];
+// const getName = students.map(({ name }) => name.toUpperCase());
+// console.log(getName);
+
+//ЗАДАЧА 6 /// потрібно знайти студентів у яких менше 50 балів і додати їм по 15 балів // потім перебрати масив і вивести тих у кого більше 50 і дадати їх оцінки____________________________
+//не використовуємо деструкт тому що filter повинен приймати масив об'єктів
+
+// const result = students
+//     .map(item => (item.marks < 50 ? (item.marks += 15) : item.marks))
+//     .filter(grade => grade > 50)
+//     .reduce((acc, item) => {
+//         return (acc += item);
+//     }, 0);
+// console.log(result);

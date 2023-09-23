@@ -190,3 +190,48 @@
 // logItems(['apple', 'plum', 'watermelon']);
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+
+//ЗАДАЧА 1 використовуючи колбеки зробити операції з функціями + передати старий об'єкт та створити id
+//function createProduct - створює новий об'єкт з id та розпилює туди старий об'єкт і приймає колбек___________________________________________
+// function createProduct(obj, callback) {
+//     const product = {
+//         id: Date.now(), //1970 значення в мілісекундах
+//         ...obj,
+//     };
+//     callback(product);
+// }
+// function logProduct(product) {
+//     console.log(product);
+// }
+// function logTotalPrice({ price, quantity }) {
+//     console.log(`Price = ${price * quantity}`);
+// }
+// createProduct({ name: 'apple', price: 30, quantity: 3 }, logProduct);
+// createProduct({ name: 'peach', price: 20, quantity: 5 }, logTotalPrice);
+
+//ЗАДАЧА 2 напишіть функцію яка приймає два параметри (масив чисел, колбек) // функція повертає  новий масив кожен елемент якого є результатом виконання колбек__________________________________
+// function each(arr, action) {
+//     const items = []; // повертає пустий масив
+
+//     // arr.forEach(item => {
+//     //     const result = action(item);
+//     //     items.push(result);
+//     // });
+//     // return items;
+
+//     //скорочена запис через фор іч
+
+//     arr.forEach(el => items.push(action(el)));
+//     return items;
+
+// }
+
+//через map
+
+// function each(arr, action) {
+//     return arr.map(item => action(item));
+// }
+// console.log(each([64, 49, 36, 25, 16], value => value * 2));
+// console.log(each([64, 49, 36, 25, 16], value => value - 10));
+// console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.ceil(value)));
+// console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.floor(value)));

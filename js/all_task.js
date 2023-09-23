@@ -3225,6 +3225,20 @@
 // const { } = playlist; // деструктурізація --- розпаковка
 // const { name = 'default', ratting, tracks, trackCount } = playlist;
 
+//дістаємо значення з імені
+// console.log(arr[0]); -- John: 300  -- перший елемент
+//console.log(arr[0][1]); -- 300 -- саме значення
+
+///перевірити чи є ключ в об'єкті
+
+//obj.hasOwnProperty(key)
+//key in obj
+
+// for (const product of products) {
+//     if(argument in product){
+//     push()
+// }
+
 //ПАТЕРН об'єкт налаштувань -- використовується коли у функції більше 3 аргументів
 
 // цикл for .. in для об'єкта краще не використовувати (він перебирає і унаслідовані елементи)

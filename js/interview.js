@@ -268,3 +268,173 @@
 // getDays(18); //4
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+
+//ЗАДАЧА 1 маніпуляції з об'єктом // вивести ключ і значення_____
+
+// const user = {
+//     name: 'John',
+//     age: 20,
+//     hobby: 'tennis',
+//     premium: true,
+// };
+// const keys = Object.keys(user);
+// for (const key of keys) {
+//     console.log(`${key} : ${user[key]}`);
+// }
+
+//ЗАДАЧА 2 перебрати об'єкт та просумувати_____________________
+// const salaries = {
+//     mango: 100,
+//     poly: 160,
+//     ajax: 1470,
+// };
+// //for of
+// // const values = Object.values(salaries);
+// // let total = 0;
+// // for (const value of values) {
+// //     total += value;
+// // }
+
+// // console.log(total);
+
+// //for in + hasOwnProperty
+// let total = 0;
+// for (const key in salaries) {
+//     if (salaries.hasOwnProperty(key)) {
+//         total += salaries[key];
+//     }
+// }
+// console.log(total);
+
+// ЗАДАЧА 3 деструкт____
+// let user = {
+//     name: 'John',
+//     years: 30,
+// };
+
+// // const { name, years: age, isAdmin = false } = user;
+// // console.log(name, age, isAdmin);
+
+// //присвоюємо через змінні значення
+
+// const name = user.name;
+// const age = user.years;
+// const isAdmin = user.isAdmin || false;
+
+//ЗАДАЧА 4 ств функцію яка повертає ім'я працівника знайбільшою зп / зарплатою
+// якщо об'єкт пустий то повертається null
+///Object.entries  + деструкт
+//об'єкт це завжди тру_______________________________________________________________
+
+// let salaries = {
+//     John: 100,
+//     Pete: 300,
+//     Mary: 250,
+// };
+
+// function topSalary(salaries) {
+//     const arr = Object.entries(salaries);
+//     if (!arr.length) {
+//         return null;
+//     }
+//     // let bigSalary = arr[0][1]; // значення зп першого в об'єкті 100
+//     let bigSalary = arr[0];
+//     console.log(bigSalary);
+//     for (const salary of arr) {
+//         if (salary[1] > bigSalary[1]) {
+//             console.log(salary[1]);
+//             console.log(bigSalary[1]);
+//             bigSalary = salary;
+//         }
+//     }
+//     return bigSalary[0];
+// }
+// console.log(topSalary(salaries));
+
+//////////////////деструкт
+
+// function topSalary(salaries) {
+//     const arr = Object.entries(salaries);
+//     if (!arr.length) {
+//         return null;
+//     }
+//     // let bigSalary = arr[0][1]; // значення зп першого в об'єкті 100
+//     let bigSalary = arr[0];
+//     for (const [key, value] of arr) {
+//         if (value > bigSalary[1]) {
+//             bigSalary = [key, value];
+//         }
+//     }
+//     const [key] = bigSalary;
+//     return key;
+// }
+
+// console.log(topSalary(salaries));
+
+//ЗАДАЧА 2 написати функцію яка перевііряє чи є елемент саме простим об'єктом а не масивом, чи null______________________________________
+
+// function isObj(payload) {
+//     return typeof payload === 'object' && !Array.isArray(payload) && payload !== null;
+// }
+// console.log(isObj({ a: 1 }));
+// console.log(isObj([]));
+// console.log(isObj(null));
+// console.log(isObj(1));
+// console.log(isObj(undefined));
+//ЗАДАЧА 1 використовуючи колбеки зробити операції з функціями + передати старий об'єкт та створити id
+//function createProduct - створює новий об'єкт з id та розпилює туди старий об'єкт і приймає колбек___________________________________________
+// function createProduct(obj, callback) {
+//     const product = {
+//         id: Date.now(), //1970 значення в мілісекундах
+//         ...obj,
+//     };
+//     callback(product);
+// }
+// function logProduct(product) {
+//     console.log(product);
+// }
+// function logTotalPrice({ price, quantity }) {
+//     console.log(`Price = ${price * quantity}`);
+// }
+// createProduct({ name: 'apple', price: 30, quantity: 3 }, logProduct);
+// createProduct({ name: 'peach', price: 20, quantity: 5 }, logTotalPrice);
+
+//ЗАДАЧА 2 напишіть функцію яка приймає два параметри (масив чисел, колбек) // функція повертає  новий масив кожен елемент якого є результатом виконання колбек__________________________________
+// function each(arr, action) {
+//     const items = []; // повертає пустий масив
+
+//     // arr.forEach(item => {
+//     //     const result = action(item);
+//     //     items.push(result);
+//     // });
+//     // return items;
+
+//     arr.forEach(el => items.push(action(el)));
+
+//     return items
+// }
+//через map
+
+// function each(arr, action) {
+//     return arr.map(item => action(item));
+// }
+// console.log(each([64, 49, 36, 25, 16], value => value * 2));
+// console.log(each([64, 49, 36, 25, 16], value => value - 10));
+// console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.ceil(value)));
+// console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.floor(value)));
+
+////ЗАДАЧА відбір унікальних елементів / неповторюваних___________________________
+
+// const students = [
+//     { name: 'Манго', courses: ['математика', 'фізика'] },
+//     { name: 'Полі', courses: ['інформатика', 'математика'] },
+//     { name: 'Ківі', courses: ['фізика', 'біологія'] },
+// ];
+
+////виходить що індекс масива arr.index на математиці поверне 0, а фактичний індекс по масиву на разі 3
+// const allCourses = students
+//     .flatMap(course => course.courses)
+//     .filter((item, idx, arr) => arr.indexOf(item) === idx);
+// console.log(allCourses);
+// // const uniqueCourses = allCourses.filter((item, idx, arr) => arr.indexOf(item) === idx);
+// // console.log(uniqueCourses);

@@ -435,3 +435,21 @@
 ///////////////////////////////////////////////////////////////////
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+
+//ЗАДАЧА 1 додавання нової властивості________________________
+// const obj = {
+//     skills: ['html', 'css', 'bem', 'css'],
+//     addSkills(Newskill) {
+//         const idx = this.skills.indexOf(Newskill);
+//         if (idx === -1) {
+//             this.skills.push(Newskill);
+//             return;
+//         }
+//     },
+// };
+// obj.addSkills('js');
+// obj.addSkills('next');
+// obj.addSkills('html');
+// obj.addSkills('git');
+// obj.addSkills('git');
+// console.log(obj.skills);
