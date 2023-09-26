@@ -79,3 +79,5 @@
 
 //     textEl.textContent = counter.value;
 // });
+
+///Jquery створення плагіну модуль 5 заняття 9 Репета (Siema - слайдер)
