@@ -7,6 +7,8 @@
 //прототипна цепочка
 //починаємо з кінця
 // методи збергіються на протатипі функції (саме посилання на них), бо якщо писати в конструкторі буде буже багато копій Car.prototype.sayHello = function () {}
+//геттери - отримують / виводять на екран
+//сеттери - устанавляють якісь зміни
 
 ///КЛАСС = ЧЕРТЕЖ
 //ЄКЗЕМПЛЯР = ФІЗИЧНО СТВ (об'єкт) // ств через new
@@ -156,24 +158,33 @@
 ////CLASS (той самий конструктор але новий синтаксис)
 
 class Car {
-    //стандратні властивості
+    //стандратні властивості класу
     static description = 'Опис автомобіля';
     static logInfo(carObj) {
         console.log('CarObj', carObj);
     }
-    #test = 'test'; //приватна властивість // не можна достукатися
+    #test = 'private properties'; //приватна властивість // не можна достукатися //на екземплярі
 
     constructor({ brand, model, price } = {}) {
         this.brand = brand;
-        this.model = model;
+        this._model = model;
         this.price = price;
     }
+
+    //те шо йде на прототип
 
     changePrice(newPrice) {
         this.price = newPrice;
     }
     changeModel(newModel) {
         this.model = newModel;
+    }
+    //GET/SET
+    get model() {
+        return this._model;
+    }
+    set model(newModel) {
+        this._model = newModel;
     }
 }
 
@@ -185,5 +196,8 @@ const carInstanse = new Car({
 // console.log(Car.description);
 // Car.logInfo(carInstanse);
 console.log(carInstanse);
+console.log(carInstanse.model); //get
+carInstanse.model = 'Q4'; // set
 // carInstanse.changeModel('RS-7');
 // console.log(Object.getPrototypeOf(carInstanse) === Car.prototype); // true
+console.log(carInstanse);
