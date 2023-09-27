@@ -157,47 +157,113 @@
 
 ////CLASS (той самий конструктор але новий синтаксис)
 
-class Car {
-    //стандратні властивості класу
-    static description = 'Опис автомобіля';
-    static logInfo(carObj) {
-        console.log('CarObj', carObj);
-    }
-    #test = 'private properties'; //приватна властивість // не можна достукатися //на екземплярі
+// class Car {
+//     //стандратні властивості класу
+//     static description = 'Опис автомобіля';
+//     static logInfo(carObj) {
+//         console.log('CarObj', carObj);
+//     }
+//     #test = 'private properties'; //приватна властивість // не можна достукатися //на екземплярі
 
-    constructor({ brand, model, price } = {}) {
-        this.brand = brand;
-        this._model = model;
-        this.price = price;
-    }
+//     constructor({ brand, model, price } = {}) {
+//         this.brand = brand;
+//         this._model = model;
+//         this.price = price;
+//     }
 
-    //те шо йде на прототип
+//     //те шо йде на прототип
 
-    changePrice(newPrice) {
-        this.price = newPrice;
-    }
-    changeModel(newModel) {
-        this.model = newModel;
-    }
-    //GET/SET
-    get model() {
-        return this._model;
-    }
-    set model(newModel) {
-        this._model = newModel;
-    }
-}
+//     changePrice(newPrice) {
+//         this.price = newPrice;
+//     }
+//     changeModel(newModel) {
+//         this.model = newModel;
+//     }
+//     //GET/SET
+//     get model() {
+//         return this._model; // получить
+//     }
+//     set model(newModel) {
+//         this._model = newModel; //  установить
+//     }
+// }
 
-const carInstanse = new Car({
-    brand: 'Audi',
-    model: 'Q3',
-    price: 35000,
-});
-// console.log(Car.description);
-// Car.logInfo(carInstanse);
-console.log(carInstanse);
-console.log(carInstanse.model); //get
-carInstanse.model = 'Q4'; // set
-// carInstanse.changeModel('RS-7');
-// console.log(Object.getPrototypeOf(carInstanse) === Car.prototype); // true
-console.log(carInstanse);
+// const carInstanse = new Car({
+//     brand: 'Audi',
+//     model: 'Q3',
+//     price: 35000,
+// });
+// // console.log(Car.description);
+// // Car.logInfo(carInstanse);
+// console.log(carInstanse);
+
+// // carInstanse.changeModel('RS-7');
+// // console.log(Object.getPrototypeOf(carInstanse) === Car.prototype); // true
+// console.log(carInstanse.model); //get
+// carInstanse.model = 'Q4'; // set
+// console.log(carInstanse);
+
+//НАСЛІДУВАННЯ // ГЕРОЇ
+
+// class Hero {
+//     constructor({ name = 'hero', xp = 0 } = {}) {
+//         this.name = name;
+//         this.xp = xp;
+//     }
+//     gainXp(amount) {
+//         console.log(`${this.name} отримує ${amount} очків `);
+//         this.xp += amount;
+//     }
+// }
+// //клас воїн наслідує клас hero
+// //потрібно в класі дитини(варіор) викликати батьківський клас
+// class Warrior extends Hero {
+//     constructor({ weapon, ...restProps } = {}) {
+//         super(restProps); // виклик конструктора
+//         this.weapon = weapon;
+//     }
+//     attack() {
+//         console.log(`${this.name} атакує використовуючи ${this.weapon}`);
+//     }
+// }
+// //берсерк наслідує воїна тому від нього extend
+
+// class Mage extends Hero {
+//     constructor({ spells, ...restProps } = {}) {
+//         super(restProps);
+//         this.spells = spells;
+//     }
+//     cast() {
+//         console.log(`${this.name} кастует`);
+//     }
+// }
+// class Berserk extends Warrior {
+//     constructor({ warcry, ...restProps } = {}) {
+//         super(restProps);
+
+//         this.warcry = warcry;
+//     }
+//     babyRange() {
+//         console.log(this.warcry);
+//     }
+// }
+// const mango = new Warrior({ name: 'mango', xp: 1000, weapon: 'алебарда' });
+// console.log(mango);
+
+// const poly = new Mage({ name: 'poly', xp: 500, spells: 'water' });
+// console.log(poly);
+
+// const ajax = new Berserk({ name: 'ajax', xp: 200, weapon: 'axe', warcry: 'aaaaaaa' });
+// console.log(ajax);
+// ajax.babyRange();
+// ajax.attack();
+// ajax.gainXp(300);
+
+// mango.attack();
+// mango.gainXp(1000);
+// poly.cast();
+// poly.gainXp(200);
+
+// console.log(Object.getPrototypeOf(mango) === Warrior.prototype); // true
+// console.log(Warrior.prototype.__proto__ === Hero.prototype); //true
+// console.log(Hero.prototype.__proto__ === Object.prototype); //true
