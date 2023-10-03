@@ -3,7 +3,7 @@
 //prototype
 //while
 
-//ЗАДАЧА 1 повернути літери як назву ключа і властивість  - скільки раз вона зустрічається в рядку (reduce)_____________________________________________
+//ЗАДАЧА 1 повернути літери як назву ключа а кількість разів що дублюється як властивість  - скільки раз вона зустрічається в рядку (reduce)_____________________________________________
 
 // const str = 'gughrgrjjgiorgjrildgegergrg';
 
@@ -40,6 +40,7 @@
 // console.log(logCars([]));
 
 //ЗАДАЧА 3 обробка значення underfined __________________________
+
 //є корзина з фруктами потрібно порахувати які і скільки фруктів всього
 // const fruits = [
 //     'apple',
@@ -199,7 +200,7 @@
 // );
 // console.log(stats);
 
-//ЗАДАЧА 11 калькулятор_______________________
+//ЗАДАЧА 11 калькулятор________________________________________
 
 // const arr = [2, 6, 1, 7, 3];
 
@@ -224,7 +225,8 @@
 // console.log(each(arr, add)); //add - це наш другий параметр - колбек
 // console.log(each(arr, substract));
 
-//Задача 12 ____________________________
+//Задача 12 __________________________________________________
+
 // Створити функцію createProduct(obj, callback) -яка приймає об'єкт товару без id а також колбек, Функція ств об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому ств об'єкт
 //logProduct (product) колбек приймає об'єкт продукту і логуючий його в консоль
 //logTotalPrice(product) - колбек що приймає об'єкт продукту і логіює загальну вартість товару в консоль
@@ -249,7 +251,7 @@
 // createProduct({ name: 'apple', price: 30, quantity: 3 }, logProduct);
 // createProduct({ name: 'peach', price: 40, quantity: 5 }, logTotalPrice);
 
-//ЗАДАЧА 13 РАВЛИК за день равлик проповзає на 7 м в гору а за ніч спускається на 2 метри вниз // за скільки він пройде 42 м , 17 м, 18 м
+//ЗАДАЧА 13 РАВЛИК за день равлик проповзає на 7 м в гору а за ніч спускається на 2 метри вниз // за скільки він пройде 42 м , 17 м, 18 м____________________________________________
 
 // function getDays(deps) {
 //     const daySpeed = 7;
@@ -274,7 +276,7 @@
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
 
-//ЗАДАЧА 1 маніпуляції з об'єктом // вивести ключ і значення_____
+//ЗАДАЧА 14 маніпуляції з об'єктом // вивести ключ і значення_______________________________
 
 // const user = {
 //     name: 'John',
@@ -287,7 +289,7 @@
 //     console.log(`${key} : ${user[key]}`);
 // }
 
-//ЗАДАЧА 2 перебрати об'єкт та просумувати_____________________
+//ЗАДАЧА 15 перебрати об'єкт та просумувати_____________________
 // const salaries = {
 //     mango: 100,
 //     poly: 160,
@@ -311,22 +313,8 @@
 // }
 // console.log(total);
 
-// ЗАДАЧА 3 деструкт____
-// let user = {
-//     name: 'John',
-//     years: 30,
-// };
+//ЗАДАЧА 15 ств функцію яка повертає ім'я працівника знайбільшою зп / зарплатою
 
-// // const { name, years: age, isAdmin = false } = user;
-// // console.log(name, age, isAdmin);
-
-// //присвоюємо через змінні значення
-
-// const name = user.name;
-// const age = user.years;
-// const isAdmin = user.isAdmin || false;
-
-//ЗАДАЧА 4 ств функцію яка повертає ім'я працівника знайбільшою зп / зарплатою
 // якщо об'єкт пустий то повертається null
 ///Object.entries  + деструкт
 //об'єкт це завжди тру_______________________________________________________________
@@ -376,7 +364,7 @@
 
 // console.log(topSalary(salaries));
 
-//ЗАДАЧА 2 написати функцію яка перевііряє чи є елемент саме простим об'єктом а не масивом, чи null______________________________________
+//ЗАДАЧА 16 написати функцію яка перевііряє чи є елемент саме простим об'єктом а не масивом, чи null______________________________________
 
 // function isObj(payload) {
 //     return typeof payload === 'object' && !Array.isArray(payload) && payload !== null;
@@ -386,7 +374,9 @@
 // console.log(isObj(null));
 // console.log(isObj(1));
 // console.log(isObj(undefined));
-//ЗАДАЧА 1 використовуючи колбеки зробити операції з функціями + передати старий об'єкт та створити id
+
+//ЗАДАЧА 17 використовуючи колбеки зробити операції з функціями + передати старий об'єкт та створити id
+
 //function createProduct - створює новий об'єкт з id та розпилює туди старий об'єкт і приймає колбек___________________________________________
 // function createProduct(obj, callback) {
 //     const product = {
@@ -398,13 +388,13 @@
 // function logProduct(product) {
 //     console.log(product);
 // }
-// function logTotalPrice({ price, quantity }) {
+// function logTotalPrice({ price, quantity })
 //     console.log(`Price = ${price * quantity}`);
 // }
 // createProduct({ name: 'apple', price: 30, quantity: 3 }, logProduct);
 // createProduct({ name: 'peach', price: 20, quantity: 5 }, logTotalPrice);
 
-//ЗАДАЧА 2 напишіть функцію яка приймає два параметри (масив чисел, колбек) // функція повертає  новий масив кожен елемент якого є результатом виконання колбек__________________________________
+//ЗАДАЧА 17 напишіть функцію яка приймає два параметри (масив чисел, колбек) // функція повертає  новий масив кожен елемент якого є результатом виконання колбек__________________________________
 // function each(arr, action) {
 //     const items = []; // повертає пустий масив
 
@@ -428,7 +418,7 @@
 // console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.ceil(value)));
 // console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.floor(value)));
 
-////ЗАДАЧА відбір унікальних елементів / неповторюваних___________________________
+////ЗАДАЧА 18 відбір унікальних елементів / неповторюваних___________________________
 
 // const students = [
 //     { name: 'Манго', courses: ['математика', 'фізика'] },
@@ -443,3 +433,130 @@
 // console.log(allCourses);
 // // const uniqueCourses = allCourses.filter((item, idx, arr) => arr.indexOf(item) === idx);
 // // console.log(uniqueCourses);
+
+////ЗАДАЧА 19 перевірити чи масив вкладений чи ні (дані з бекенду) - (лише рекурсія перевіряє чи масив вкладений) ВКЛАДЕНІСТЬ МАСИВУ____________
+
+// const arr = [0, 1, 2, [3, [4, [45]]]];
+
+// function findDepth(arr) {
+//     let depth = 0;
+
+//     for (const item of arr) {
+//         if (Array.isArray(item)) {
+//             depth += 1;
+//             depth += findDepth(item);
+//         }
+//     }
+//     return depth;
+// }
+// console.log(findDepth(arr));
+
+//ЗАДАЧА 20 знайти щасливе число - те яке зустрічається скільки ж раз скільки і його значення____________________ (наприклад 333)
+// let num = 122423335566;
+
+//ЗАДАЧА 21 ПЕРЕБІР УНІКАЛЬНИХ ЕЛЕМЕНТІВ________________________________________
+// const users = [
+//     { id: 1, name: 'John', age: 18, skills: ['JavaScript', 'HTML', 'CSS'] },
+//     { id: 2, name: 'Alice', age: 32, skills: ['Python', 'Data Analysis'] },
+//     { id: 3, name: 'Bob', age: 20, skills: ['JavaScript', 'React', 'Node.js'] },
+//     { id: 4, name: 'Emily', age: 40, skills: ['Java', 'Spring'] },
+//     { id: 5, name: 'alice', age: 12, skills: ['Python', 'Data Analysis'] },
+//     { id: 6, name: 'David', age: 22, skills: ['C++', 'C#'] },
+// ];
+
+// повернути імена тих хто старше 21
+
+// function getOlder(arr) {
+//     return arr.filter(({ age }) => age > 21).map(({ name }) => name);
+// }
+// console.log(getOlder(users));
+
+// const result = users
+//     .flatMap(({ skills }) => skills)
+//     .filter((item, idx, arr) => arr.indexOf(item) === idx);
+// console.log(result);
+
+//
+//ЗАДАЧА 22 пошук книги за назвою, якщо не знайдено то Not found_____________________________
+
+// const books = [
+//     {
+//         title: 'JavaScript: The Good Parts',
+//         author: 'Douglas Crockford',
+//         year: 2008,
+//     },
+//     {
+//         title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+//         author: 'Robert C. Martin',
+//         year: 2008,
+//     },
+//     {
+//         title: 'The Pragmatic Programmer: Your Journey to Mastery',
+//         author: 'Andrew Hunt, David Thomas',
+//         year: 1999,
+//     },
+//     {
+//         title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+//         author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+//         year: 1994,
+//     },
+//     {
+//         title: 'Refactoring: Improving the Design of Existing Code',
+//         author: 'Martin Fowler',
+//         year: 1999,
+//     },
+// ];
+
+// function getBook(arr, title) {
+//     const result = arr.find(({ title: bookName }) => bookName === title);
+
+//     return result || 'Not found';
+// }
+// console.log(getBook(books, 'Hello'));
+// console.log(getBook(books, 'Refactoring: Improving the Design of Existing Code'));
+
+//ЗАДАЧА  25 відсортувати за ціною менше 2 дол і вивести в алфавітному порядку + порядковий номер і перенос рядка, якщо не знайдено то нот фаунд_________________________
+
+// const products = [
+//     { id: 2, name: 'Banana', price: 0.99 }, //
+//     { id: 1, name: 'Apple', price: 1.99 }, //
+//     { id: 3, name: 'Orange', price: 2.49 }, //
+//     { id: 4, name: 'Grapes', price: 3.99 }, //
+// ];
+
+// function getProduct(arr) {
+//     const products = arr
+//         .filter(({ price }) => price < 0.2)
+//         .map(({ name }) => name)
+//         .sort((a, b) => a.localeCompare(b));
+
+//     return products.reduce(
+//         (acc, item, idx) => acc + `${idx + 1} - ${item}\n`,
+//         products.length ? 'Product list:\n' : 'Not found'
+//     );
+// }
+// console.log(getProduct(products));
+
+//ЗАДАЧА 26 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа________________________________________________________________________
+
+// const str = 'avavgrjgherafevrv';
+
+// // const obj = {};
+// // for (let i = 0; i < str.length; i++) {
+// //     console.log(str[i]);
+// //     if (str[i] in obj) {
+// //         // перевірити чи є ключ в об'єкті / якщо є то додаємо 1 / якщо немає то ми просто ств такий ключ і ставимо йому 1
+// //         obj[str[i]] += 1;
+// //     } else {
+// //         obj[str[i]] = 1;
+// //     } // щоб не писати else можна  зробити continue
+// // }
+// // console.log(obj);
+
+// /// 2 варіант
+
+// const result = str.split('').reduce((acc, item) => {
+//     item in acc ? (acc[item] += 1) : (acc[item] = 1);
+//     return acc;
+// }, {});
+// console.log(result);

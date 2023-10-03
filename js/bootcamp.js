@@ -138,14 +138,97 @@
 
 // const start = Number(prompt('Enter number of start arr'));
 // const theEnd = Number(prompt('Enter number of end arr'));
-// for (let i = start; i < theEnd; i++) {
+// let total = 0;
+// for (let i = start; i <= theEnd; i++) {
 //     if (i % 2) {
-//         console.log(i);
+//         total += i;
 //     }
 // }
+// console.log(total);
 
-// ЗАДАЧА 9 //генератор рандомних чисел
+// ЗАДАЧА 9 //генератор рандомних чисел_______________________________
 // const start = Number(prompt('Enter the first num'));
 // const end = Number(prompt('Enter the last num'));
 // const rand = Number((Math.random() * (end - start) + start).toFixed());
 // console.log(rand);
+
+//ЗАДАЧА 9 є число n, написати програму яка розбиває число n на на цифри і виводить на екран, рахує скільки чисел в n, знаходить суму, змінює порядок чисел на зворотній
+
+// const n = 123;
+// // const toStr = n + ''; //число переводити до числа
+// let toStr = n.toString();
+// let total = 0;
+// for (let i = 0; i < toStr.length; i++) {
+//     // total += +toStr[i];
+//     total += Number(toStr[i]);
+// }
+// console.log('кількість цифр', toStr.length);
+// console.log('їх сума', total);
+
+// // ///у зворотньому порядку
+// // for (let i = toStr.length - 1; i >= 0; i -= 1) {
+// //     console.log(toStr[i]);
+// // }
+// //while
+// let i = toStr.length - 1; //останній індекс
+// let reverseNum = '';
+// while (i >= 0) {
+//     reverseNum += toStr[i];
+//     // console.log(toStr[i]);
+//     i -= 1;
+// }
+// console.log('змінює цикл на зворотній', reverseNum);
+
+//ЗАДАЧА 10 Паліндром - коли слово читається однаково і з початку і з кінця// потрібно перевірити чи слово є паліндропом чи ні______________________________
+
+//через функцію_________________________________________
+
+// const name1 = 'Anna'.toLowerCase(); // true
+// const name2 = 'Oleg'.toLowerCase(); // false
+
+// const getName = function (name) {
+//     name = name.toLowerCase();
+//     // const revers = name.split('').reverse().join('');
+//     return name === name.split('').reverse().join('');
+//     // return name === reverse?true:false
+//     // if (name === revers) {
+//     //     return true;
+//     // } else {
+//     //     return false;
+//     // }
+// };
+
+// console.log(getName('Anna'));
+// console.log(getName('Oleg'));
+
+//виправлення коду на кращий варіант______________________
+
+// const getName = name => {
+//     name = name.toLowerCase();
+
+//     return name === name.split('').reverse().join('');
+// };
+// console.log(getName('Anna'));
+// console.log(getName('Oleg'));
+
+/////без функції та масиву___________________________________
+
+// let name = 'OLEG';
+// let name = 'Сел в озере березов лес';
+// let name = '12321';
+// let name = 'Anna';
+// name = name.toLowerCase();
+// let result = '';
+// for (let i = 0; i < name.length; i++) {
+//     if (name[i] === name[name.length - 1 - i]) {
+//         // i перша літера /друга ..       1 - і = 0 / і = 1/ і=2;
+//         //                             віднімаємо останню, потім передостанню, і тд
+//         if (name.length - 1 === i) {
+//             result = true;
+//         }
+//     } else {
+//         result = false;
+//         break;
+//     }
+// }
+// console.log(result);

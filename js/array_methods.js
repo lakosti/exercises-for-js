@@ -58,6 +58,7 @@
 //.sort(a,b) => a-b) по дефолту з більшого до меншого
 //сортування за алфавітом -- const result = arr.sort((a,b)=> a.localeCompare(b))
 //спочатку завжди розпилюємо масив [...players].sort(())
+//краще не робити деструктуризацію
 
 //flat -- розглажування масива (arr.flat()) => arr.flat(2))
 //коли є масив в масиві і необхідно зробити один
@@ -1088,3 +1089,209 @@
 
 // const tagCount = countTag(tags);
 // console.log(tagCount);
+
+//ЗАДАЧА середній бал кожного студента________________________________________
+
+// const students = [
+//     { name: 'John', grades: [80, 85, 90] }, //  { name: "John", average: 85 }
+//     { name: 'Alice', grades: [90, 95, 92] },
+//     { name: 'Bob', grades: [70, 80, 75] },
+//     { name: 'Emily', grades: [95, 92, 88] },
+//     { name: 'David', grades: [85, 88, 90] },
+// ];
+
+// function getAverage(arr) {
+//     const newArr = arr.map(({ name, grades }) => {
+//         const sum = grades.reduce((acc, item) => (acc += item), 0);
+//         return {
+//             name,
+//             average: Math.round(sum / grades.length),
+//         };
+//     });
+//     return newArr;
+// }
+// console.log(getAverage(students));
+
+//ЗАДАЧА  перевірити чи масив вкладений чи ні (дані з бекенду) - (лише рекурсія перевіряє чи масив вкладений) ВКЛАДЕНІСТЬ МАСИВУ____________
+
+// const arr = [0, 1, 2, [3, [4, [45]]]];
+
+// function findDepth(arr) {
+//     let depth = 0;
+
+//     for (const item of arr) {
+//         if (Array.isArray(item)) {
+//             depth += 1;
+//             depth += findDepth(item);
+//         }
+//     }
+//     return depth;
+// }
+// console.log(findDepth(arr));
+
+//ЗАДАЧА повернути імена тих хто старше 21_________________
+
+// const users = [
+//     { id: 1, name: 'John', age: 18, skills: ['JavaScript', 'HTML', 'CSS'] },
+//     { id: 2, name: 'Alice', age: 32, skills: ['Python', 'Data Analysis'] },
+//     { id: 3, name: 'Bob', age: 20, skills: ['JavaScript', 'React', 'Node.js'] },
+//     { id: 4, name: 'Emily', age: 40, skills: ['Java', 'Spring'] },
+//     { id: 5, name: 'alice', age: 12, skills: ['Python', 'Data Analysis'] },
+//     { id: 6, name: 'David', age: 22, skills: ['C++', 'C#'] },
+// ];
+
+// function getOlder(arr) {
+//     return arr.filter(({ age }) => age > 21).map(({ name }) => name);
+// }
+// console.log(getOlder(users));
+
+///ПЕРЕБІР УНІКАЛЬНИХ ЕЛЕМЕНТІВ
+
+// const result = users
+//     .flatMap(({ skills }) => skills)
+//     .filter((item, idx, arr) => arr.indexOf(item) === idx);
+// console.log(result);
+
+//ЗАДАЧА 22 пошук книги за назвою, якщо не знайдено то Not found через або _____________________________
+
+// const books = [
+//     {
+//         title: 'JavaScript: The Good Parts',
+//         author: 'Douglas Crockford',
+//         year: 2008,
+//     },
+//     {
+//         title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+//         author: 'Robert C. Martin',
+//         year: 2008,
+//     },
+//     {
+//         title: 'The Pragmatic Programmer: Your Journey to Mastery',
+//         author: 'Andrew Hunt, David Thomas',
+//         year: 1999,
+//     },
+//     {
+//         title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+//         author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+//         year: 1994,
+//     },
+//     {
+//         title: 'Refactoring: Improving the Design of Existing Code',
+//         author: 'Martin Fowler',
+//         year: 1999,
+//     },
+// ];
+
+// function getBook(arr, title) {
+//     const result = arr.find(({ title: bookName }) => bookName === title);
+
+//     return result || 'Not found';
+// }
+// console.log(getBook(books, 'Hello'));
+// console.log(getBook(books, 'Refactoring: Improving the Design of Existing Code'));
+
+//ЗАДАЧА 23 знайти суму ________________________________
+
+// const products = [
+//     { id: 1, name: 'T-shirt', price: 20, quantity: 3 }, // 20 * 3 = 60
+//     { id: 2, name: 'Jeans', price: 50, quantity: 2 },
+//     { id: 3, name: 'Sneakers', price: 80, quantity: 1 },
+//     { id: 4, name: 'Hat', price: 15, quantity: 4 },
+//     { id: 5, name: 'Socks', price: 5, quantity: 6 },
+// ];
+// function getTotal(arr) {
+//     return arr.reduce((acc, { price, quantity }) => acc + price * quantity, 0);
+// }
+// console.log(getTotal(products));
+
+//мій варіант
+// function getTotal(arr) {
+//     const result = arr.reduce((acc, { price, quantity }) => {
+//         const sum = price * quantity;
+//         return (acc + sum); // без =
+//     }, 0);
+//     return result;
+// }
+// console.log(getTotal(products));
+
+//ЗАДАЧА 24.
+
+// const books = [
+//     {
+//         title: 'JavaScript: The Good Parts',
+//         author: 'Douglas Crockford',
+//         year: 2008,
+//     },
+//     {
+//         title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+//         author: 'Robert C. Martin',
+//         year: 2008,
+//     },
+//     {
+//         title: 'The Pragmatic Programmer: Your Journey to Mastery',
+//         author: 'Andrew Hunt, David Thomas',
+//         year: 1999,
+//     },
+//     {
+//         title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+//         author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+//         year: 1994,
+//     },
+//     {
+//         title: 'Refactoring: Improving the Design of Existing Code',
+//         author: 'Martin Fowler',
+//         year: 1999,
+//     },
+// ];
+
+// function getSortArrToYear(arr) {
+//     return [...arr].sort((a, b) => b.year - a.year);
+// }
+// console.log(getSortArrToYear(books));
+
+//ЗАДАЧА  25 відсортувати за ціною менше 2 дол і вивести в алфавітному порядку + порядковий номер і перенос рядка, якщо не знайдено то нот фаунд______________________________________________________________
+
+// const products = [
+//     { id: 2, name: 'Banana', price: 0.99 }, //
+//     { id: 1, name: 'Apple', price: 1.99 }, //
+//     { id: 3, name: 'Orange', price: 2.49 }, //
+//     { id: 4, name: 'Grapes', price: 3.99 }, //
+// ];
+
+// function getProduct(arr) {
+//     const products = arr
+//         .filter(({ price }) => price < 0.2)
+//         .map(({ name }) => name)
+//         .sort((a, b) => a.localeCompare(b));
+
+//     return products.reduce(
+//         (acc, item, idx) => acc + `${idx + 1} - ${item}\n`,
+//         products.length ? 'Product list:\n' : 'Not found'
+//         //якщо елементи є то       тру         фолс
+//     );
+// }
+// console.log(getProduct(products));
+
+// //ЗАДАЧА 26 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа________________________________________________________________________
+
+// const str = 'avavgrjgherafevrv';
+
+// // const obj = {};
+// // for (let i = 0; i < str.length; i++) {
+// //     console.log(str[i]);
+// //     if (str[i] in obj) {
+// //         // перевірити чи є ключ в об'єкті / якщо є то додаємо 1 / якщо немає то ми просто ств такий ключ і ставимо йому 1
+// //         obj[str[i]] += 1;
+// //     } else {
+// //         obj[str[i]] = 1;
+// //     } // щоб не писати else можна  зробити continue
+// // }
+// // console.log(obj);
+
+// /// 2 варіант
+
+// const result = str.split('').reduce((acc, item) => {
+//     item in acc ? (acc[item] += 1) : (acc[item] = 1);
+//     return acc;
+// }, {});
+// console.log(result);
