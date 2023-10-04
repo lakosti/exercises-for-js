@@ -434,7 +434,7 @@
 // // const uniqueCourses = allCourses.filter((item, idx, arr) => arr.indexOf(item) === idx);
 // // console.log(uniqueCourses);
 
-////ЗАДАЧА 19 перевірити чи масив вкладений чи ні (дані з бекенду) - (лише рекурсія перевіряє чи масив вкладений) ВКЛАДЕНІСТЬ МАСИВУ____________
+////ЗАДАЧА 19 перевірити чи масив вкладений чи ні (дані з бекенду) - (лише рекурсія перевіряє чи масив вкладений) ВКЛАДЕНІСТЬ МАСИВУ // кількість вкладеності____________
 
 // const arr = [0, 1, 2, [3, [4, [45]]]];
 
@@ -560,3 +560,19 @@
 //     return acc;
 // }, {});
 // console.log(result);
+
+//ЗАДАЧА 27 сума вкладеного масива___________________________________
+
+const arr = [1, 2, 3, [4, 55, 87, [56]]];
+function getTotal(arr) {
+    let total = 0;
+    for (const item of arr) {
+        if (Array.isArray(item)) {
+            total += getTotal(item);
+        } else {
+            total += item;
+        }
+    }
+    return total;
+}
+console.log(getTotal(arr));
