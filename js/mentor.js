@@ -371,3 +371,98 @@
 //         return (acc += item);
 //     }, 0);
 // console.log(result);
+
+// ЗАДАЧА 7 написати скрипт який видаляє непотрібні значення (null, false, underfined, '', 0) ______________________________________________
+
+// const arr = [0, 1, false, 2, undefined, '', 3, null];
+
+// // for (let i = arr.length - 1; i >= 0; i -= 1) {
+// //     if (typeof arr[i] !== 'number' || !arr[i]) {
+// //         arr.splice(i, 1);
+// //     }
+// // }
+
+// //інше рішення
+
+// // for (let i = arr.length - 1; i >= 0; i -= 1) {
+// //     if (!arr[i]) {
+// //         //якщо тру
+// //         //(Boolean(arr[i]) === false)
+// //         arr.splice(i, 1);
+// //     }
+// // }
+// //або через пуш
+
+// const updatedArr = [];
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i]) {
+//         updatedArr.push(arr[i]);
+//     }
+// }
+
+// console.log(updatedArr);
+
+//ЗАДАЧА 8 дії з масивом ств цикл який буде запитувати безкінечно дані і виводити результат в консоль_________________________________________________
+
+// const words = ['red', 'blue', 'aqva', 'hello', 'orange', 'purple', 'black'];
+// let daleteWord = 0; //оголосили глобальну змінну щоб була доступна в циклі
+// do {
+//     daleteWord = Number(
+//         prompt(
+//             `Номер слова яке необхідно видалити. Воно не повинно перевищувати довжину масива ${words.length}`
+//         )
+//     );
+//     if (daleteWord < 1 || daleteWord > words.length) {
+//         alert('Таке число неможливе');
+//     }
+// } while (daleteWord < 1 || daleteWord > words.length);
+
+// const updateWord = prompt('Укажіть слово на яке потрібно замінити');
+
+// words.splice(daleteWord - 1, 1, updateWord); // щоб починалось з 1
+// const result = words.join(' '); //для join необхідна змінна
+
+// console.log(result);
+
+//ЗАДАЧА 9 напишіть функцію яка приймає два параметри початок та кінець діапазона і повертає масив цих значень, третій необов'язковий - це шаг для будови масиву //також повинно працювати і в зворотньому напрямку__________________________________________________
+
+// const range = function (start, end, step = 1) {
+//     //step = 1 by default
+//     const array = [];
+//     if (step === 0) {
+//         return; //якщо 0 то перериваємо функцію
+//     }
+//     if (step > 0) {
+//         for (let i = start; i <= end; i += step) {
+//             array.push(i);
+//         }
+//     }
+//     for (let i = start; i >= end; i -= 1) {
+//         array.push(i);
+//     }
+
+//     return array;
+// };
+// console.log(range(1, 5, 1));
+// console.log(range(5, 1, -1));
+
+//ЗАДАЧА 10 написати функцію яка отримує 2 числа, якщо обидва числа парні то функція повертає їх множення якщо числа непарні то повертається їх сума, якщо одне парне інше непарне то повертається непарне число_____________________________________________
+
+// function getNum(a, b) {
+//     const isEvenA = !(a % 2); //парне
+//     const isEvenB = !(b % 2);
+
+//     if (isEvenA && isEvenB) {
+//         return a * b;
+//     }
+//     if (!isEvenA && !isEvenB) {
+//         //не парне
+//         return a + b;
+//     }
+//     return !isEvenA ? a : b;
+// }
+// console.log(getNum(2, 6));
+// console.log(getNum(5, 3));
+// console.log(getNum(2, 5));
+
+///
