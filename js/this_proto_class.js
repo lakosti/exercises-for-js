@@ -10,6 +10,10 @@
 //геттери - отримують / виводять на екран
 //сеттери - устанавляють якісь зміни
 
+//ПРИВАТНІ властивості та методи недоступні в глобальній області видимості, доступні лише у своїй
+//статичні методи та властивості - залишаються на своєму конструкторі
+// якщо є приставка static  то this посилається на констуктор (клас) не на інстанс
+
 //якщо не знайшло метода - то помилка
 //якщо не знайшло властивості то underfined (властивість це - ключ і значення)
 //методи класів ідуть на прототип, а властивості пишуться як власні
@@ -28,7 +32,7 @@
 // this в цій фукції буде зсилатися на ств пустий об'єкт
 
 //ГЕТТЕРИ / СЕТТЕРИ
-
+//дають змогу змінити та відобразити власні властивості #property
 //мають однакові назви і працюють з однією властивістью
 //працюють із приватними властивостями - #location
 //get  -- повертає / return  //// не містить параметри //get locate (){ return this.#location}
@@ -277,3 +281,85 @@
 // console.log(Object.getPrototypeOf(mango) === Warrior.prototype); // true
 // console.log(Warrior.prototype.__proto__ === Hero.prototype); //true
 // console.log(Hero.prototype.__proto__ === Object.prototype); //true
+
+/////CLASS
+
+class User {
+    static counter = 0; // рахує кількість юзерів
+    static addUser() {
+        //user.counter += 1
+        this.counter += 1;
+        console.log(`number of users ${this.counter}`);
+    }
+    // #location;
+    constructor({ name, email, age = 18, location = 'Word', password } = {}) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        // this.#location = location;
+        this.password = password;
+        User.addUser(); //у конструкторі this посилаються на екзмепляр, але статичні методи посилаються на клас
+    }
+    sayHello() {
+        console.log(this.name);
+    }
+    // #getEmail() {
+    //     console.log(this.email);
+    // }
+
+    //get / set мають однакову назву, але не таку як назва ключа // опрацювують одну властивість
+    // get locate() {
+    //     return this.#location;
+    // }
+    // set locate(city) {
+    //     const input = prompt('Enter password');
+    //     this.#getEmail;
+    //     if (input === this.password) {
+    //         this.#location = city;
+    //         console.log(this.#location);
+    //     } else {
+    //         console.log('Wrong passwprd');
+    //     }
+    // }
+}
+// гра
+class Avatar extends User {
+    constructor({ name, email, location, password, age, damage }) {
+        super({ name, email, location, password, age, damage }); //з'єднується із батківським конструктором
+        this.damage = damage;
+    }
+    attack() {
+        console.log(`Attack with damage ${this.damage}`);
+    }
+}
+const gamer = new Avatar({
+    name: 'Avatar',
+    email: 'terfef@gmail.com',
+    location: 'Lviv',
+    password: 'dfeofmwesf',
+    damage: 700,
+});
+///////////////////
+//
+//
+//
+const test = new User({
+    name: 'User A',
+    email: 'test@gmail.com',
+    location: 'Lviv',
+    password: 'qwerty111',
+});
+// test.sayHello();
+// console.log(test.locate);
+// test.locate = 'Dnipro';
+
+const test1 = new User({
+    name: 'User B',
+    email: 'gmail@gmail.com',
+    age: 99,
+    password: 'dfrtghy121',
+});
+
+console.log(test);
+console.log(test1);
+console.log(gamer);
