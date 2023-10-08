@@ -28,3 +28,68 @@
 //
 // console.log(Object.keys(function () {})); // буде порожній масив []
 // //Object keys збирає масив ключів об'єкту // якщо немає ключів пустий масив
+
+//TASK чому = this
+
+////// 1
+
+// const objA = {
+//     age: 22,
+//     myAge() {
+//         const test = () => {
+//             console.log(this);
+//             test();
+//         };
+//     },
+// };
+// objA.myAge(); //  === obj
+//починаємо перевіряти хто цей this викликав, якщо це функція то дивимося яка саме, і хто цю функцію викликав (перший ліворуч) arrow наслідує від батька значення // якщо це просто метод об'єкта то underfined / window
+
+///// 2
+
+// const objA = {
+//     age: 22,
+//     myAge() {
+//         function test() {
+//             console.log(this);
+//         }
+//         test(); // ліворуч нікого немає
+//     },
+// };
+// objA.myAge(); //  === underfined if 'use strict' / or window
+
+///// 3
+// const objB = {
+//     age: 22,
+//     skills: {
+//         skill: ['html', 'css'],
+//         foo() {
+//             const boo = () => {
+//                 console.log(this);
+//             };
+//             boo();
+//         },
+//     },
+// };
+// objB.skills.foo(); // === skill
+
+/// 4
+// const objA = {
+//     age: 22,
+//     myAge() {
+//         const test = () => {
+//             console.log(this);
+//             // test(); //функція не викликана(тому нічого не визветься)
+//         };
+//         test(); // тепер викликана
+//     },
+// };
+
+// const objB = {
+//     age: 12,
+//     someFunction: objA.myAge,
+// };
+
+// objB.someFunction(); /// this ===  objB
+
+///5
