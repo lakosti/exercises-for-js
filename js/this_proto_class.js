@@ -284,82 +284,181 @@
 
 /////CLASS
 
-class User {
-    static counter = 0; // рахує кількість юзерів
-    static addUser() {
-        //user.counter += 1
-        this.counter += 1;
-        console.log(`number of users ${this.counter}`);
-    }
-    // #location;
-    constructor({ name, email, age = 18, location = 'Word', password } = {}) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
-        // this.#location = location;
-        this.password = password;
-        User.addUser(); //у конструкторі this посилаються на екзмепляр, але статичні методи посилаються на клас
-    }
-    sayHello() {
-        console.log(this.name);
-    }
-    // #getEmail() {
-    //     console.log(this.email);
-    // }
+// class User {
+//     static counter = 0; // рахує кількість юзерів
+//     static addUser() {
+//         //user.counter += 1
+//         this.counter += 1;
+//         console.log(`number of users ${this.counter}`);
+//     }
+//     // #location;
+//     constructor({ name, email, age = 18, location = 'Word', password } = {}) {
+//         this.name = name;
+//         this.email = email;
+//         this.age = age;
+//         // this.#location = location;
+//         this.password = password;
+//         User.addUser(); //у конструкторі this посилаються на екзмепляр, але статичні методи посилаються на клас
+//     }
+//     sayHello() {
+//         console.log(this.name);
+//     }
+//     // #getEmail() {
+//     //     console.log(this.email);
+//     // }
 
-    //get / set мають однакову назву, але не таку як назва ключа // опрацювують одну властивість
-    // get locate() {
-    //     return this.#location;
-    // }
-    // set locate(city) {
-    //     const input = prompt('Enter password');
-    //     this.#getEmail;
-    //     if (input === this.password) {
-    //         this.#location = city;
-    //         console.log(this.#location);
-    //     } else {
-    //         console.log('Wrong passwprd');
-    //     }
-    // }
-}
-// гра
-class Avatar extends User {
-    constructor({ name, email, location, password, age, damage }) {
-        super({ name, email, location, password, age, damage }); //з'єднується із батківським конструктором
-        this.damage = damage;
-    }
-    attack() {
-        console.log(`Attack with damage ${this.damage}`);
-    }
-}
-const gamer = new Avatar({
-    name: 'Avatar',
-    email: 'terfef@gmail.com',
-    location: 'Lviv',
-    password: 'dfeofmwesf',
-    damage: 700,
-});
-///////////////////
-//
-//
-//
-const test = new User({
-    name: 'User A',
-    email: 'test@gmail.com',
-    location: 'Lviv',
-    password: 'qwerty111',
-});
-// test.sayHello();
-// console.log(test.locate);
-// test.locate = 'Dnipro';
+//     //get / set мають однакову назву, але не таку як назва ключа // опрацювують одну властивість
+//     // get locate() {
+//     //     return this.#location;
+//     // }
+//     // set locate(city) {
+//     //     const input = prompt('Enter password');
+//     //     this.#getEmail;
+//     //     if (input === this.password) {
+//     //         this.#location = city;
+//     //         console.log(this.#location);
+//     //     } else {
+//     //         console.log('Wrong passwprd');
+//     //     }
+//     // }
+// }
+// // гра
+// class Avatar extends User {
+//     constructor({ name, email, location, password, age, damage }) {
+//         super({ name, email, location, password, age, damage }); //з'єднується із батківським конструктором
+//         this.damage = damage;
+//     }
+//     attack() {
+//         console.log(`Attack with damage ${this.damage}`);
+//     }
+// }
+// const gamer = new Avatar({
+//     name: 'Avatar',
+//     email: 'terfef@gmail.com',
+//     location: 'Lviv',
+//     password: 'dfeofmwesf',
+//     damage: 700,
+// });
+// ///////////////////
+// //
+// //
+// //
+// const test = new User({
+//     name: 'User A',
+//     email: 'test@gmail.com',
+//     location: 'Lviv',
+//     password: 'qwerty111',
+// });
+// // test.sayHello();
+// // console.log(test.locate);
+// // test.locate = 'Dnipro';
 
-const test1 = new User({
-    name: 'User B',
-    email: 'gmail@gmail.com',
-    age: 99,
-    password: 'dfrtghy121',
-});
+// const test1 = new User({
+//     name: 'User B',
+//     email: 'gmail@gmail.com',
+//     age: 99,
+//     password: 'dfrtghy121',
+// });
 
-console.log(test);
-console.log(test1);
-console.log(gamer);
+// console.log(test);
+// console.log(test1);
+// console.log(gamer);
+
+///////////////////////////////////////////ПРАКТИКА/////////////////////////////////////////////////////////////////////////
+
+// Example 1 - Блогер________________________________________________________
+
+// Напиши клас Blogger для створення об'єкта блогера з наступними властивостями:
+
+// email - пошта, рядок
+// age - вік, число
+// numberOfPosts - кількість постів, число
+// topics - масив тем на яких спеціалізується блогер
+// Клас чекає один параметр - об'єкт налаштувань з однойменними властивостями.
+
+// Додай метод getInfo(), який, повертає рядок: User ${пошта} is ${вік} years old and has ${кількість постів} posts.
+
+// Додай метод updatePostCount(value), який у параметрі value приймає кількість постів, які потрібно додати користувачеві.
+
+// class Blogger {
+//     constructor({ name, age, numberOfPosts, topics }) {
+//         (this.email = name),
+//             (this.age = age),
+//             (this.numberOfPosts = numberOfPosts),
+//             (this.topics = topics);
+//     }
+//     getInfo() {
+//         return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`;
+//     }
+//     updatePostCount(value) {
+//         return (this.numberOfPosts += value);
+//     }
+// }
+
+// const userA = new Blogger({
+//     name: 'yaroslava@gmail.com',
+//     age: 17,
+//     numberOfPosts: 4,
+//     topics: ['food', 'health'],
+// });
+
+// const userB = new Blogger({
+//     name: 'hovenko@gmail.com',
+//     age: 16,
+//     numberOfPosts: 2,
+//     topics: ['war', 'comics'],
+// });
+// userA.updatePostCount(2);
+// console.log(userA.getInfo());
+// console.log(userB);
+
+//// Example 2 - Сховище________________________________________________________
+
+// Напиши клас Storage який створює об'єкти для керування складом товарів. При виклику отримуватиме один аргумент - початковий масив товарів і записуватиме його властивість items.
+
+// Додай методи класу:
+
+// getItems() - повертає масив товарів.
+// addItem(item) - отримує новий товар і додає його до поточних.
+// removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних.
+
+// class Storage {
+//     constructor(items) {
+//         this.items = items;
+//     }
+//     getItems() {
+//         return this.items;
+//     }
+//     addItem(item) {
+//         if (!this.items.includes(item)) {
+//             this.items.push(item);
+//             return; // воно додасть банан а потім буде писати що банан є , тому тут потрібен return
+//         }
+
+//         console.log(`You already have this ${item}. Pease choose another item`);
+//     }
+//     removeItem(item) {
+//         const idx = this.items.indexOf(item);
+//         if (!!~idx) {
+//             // !!~  те шо було 0 = -1  === !(idx === -1) be twice not // якщо є елем
+//             // !! приведення до буля
+//             this.items.splice(idx, 1);
+//             return;
+//         }
+//         console.log(`You haven't this ${item}`);
+//     }
+// }
+
+// const storage = new Storage(['apple', 'lemon', 'grapes', 'peach']);
+
+// const items = storage.getItems();
+// console.log(items);
+
+// storage.addItem('banana');
+// storage.addItem('apple');
+// console.log(storage.items);
+
+// storage.removeItem('lemon');
+// console.log(storage.items);
+
+//EXAMPLE 3 геттери та сеттери__________________________________________
