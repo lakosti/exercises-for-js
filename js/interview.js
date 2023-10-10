@@ -653,3 +653,122 @@
 const createMatrix = function (row, colum) {
     // const matrix = [];
 };
+
+////ЗАДАЧА 32 перевірити чи є число простим (ділиться без остачі тільки на себе та на 1)___________________________________
+
+// function isPrimeNumber(num) {
+//     if (num > 1) {
+//         for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
+//             // (let i = 2; i < num; i++)
+//             if (num % i === 0) {
+//                 return 'Складне число';
+//             }
+//         }
+//         return 'Просте число';
+//     } else {
+//         return 'Число повинно бути більше 1';
+//     }
+// }
+
+// //якщо ділиться на 2 без остачі то складне в іншому випадку просте
+// console.log(isPrimeNumber(5)); //просте ділиться на 5 і 1
+// console.log(isPrimeNumber(3)); //просте ділиться на 3 і 1
+// console.log(isPrimeNumber(4)); // складне
+// console.log(isPrimeNumber(7)); //просте ділиться на 7 і 1
+// console.log(isPrimeNumber(2)); //просте ділиться на 2 і 1
+// console.log(isPrimeNumber(10)); //складне
+
+///// ЗАДАЧА 33 обчислити суму від 1 до заданого числа_________________________________
+
+// function calculateSum(num) {
+//     let total = 0;
+
+//     for (let i = 1; i <= num; i++) {
+//         total += i;
+//     }
+
+//     return total;
+// }
+// console.log(calculateSum(10));
+
+//EXAMPLE 34 геттери та сеттерию. Напиши клас User який створює об'єкт із властивостями login та email. Оголоси приватні властивості #login та #email, доступ до яких зроби через гетер та сетер login та  email__________________________________________________
+
+// class User {
+//     #login; // обов'язково оголошуємо їх зверху
+//     #email;
+//     constructor({ login, email }) {
+//         this.#login = login;
+//         this.#email = email;
+//     }
+//     get login() {
+//         return this.#login; // повертаємо значення (типу консолі)
+//     }
+//     set login(newLogin) {
+//         if (this.#login !== newLogin) {
+//             this.#login = newLogin; // перевизначаємо
+//         }
+//     }
+//     get email() {
+//         return this.#email;
+//     }
+//     set email(newEmail) {
+//         if (this.#email !== newEmail) {
+//             this.#email = newEmail;
+//         }
+//     }
+// }
+
+// const polly = new User({ login: 'yaroslava', email: 'hovenko@gmail.com' });
+
+// console.log(polly.login); // виклик гетера
+// polly.login = 'valentyna'; // виклик сеттера
+// console.log(polly.login);
+// console.log(polly.email);
+// polly.email = 'valentyna@gmail.com';
+// console.log(polly.email);
+
+//EXAMPLE 35 Напиши клас Notes який керує колекцією нотаток у властивості items. Замітка це об'єкт із властивостями text та priority. Додай класу статичну властивість Priority, у якому зберігатиметься об'єкт із пріоритетами.________________________________________________
+
+// class Notes {
+//     static Priority = {
+//         LOW: 'low',
+//         NORMAL: 'normal',
+//         HIGH: 'high',
+//     };
+//     constructor(note) {
+//         this.items = note;
+//     }
+//     addNote(note) {
+//         const isArr = this.items.some(({ text }) => text === note.text); //перевіряємо чи є в масиві і якщо немає то пушемо
+//         if (!isArr) {
+//             // include тут не працює бо це складний тип
+//             this.items.push(note);
+//         }
+//     }
+//     removeNote(text) {
+//         const idx = this.items.findIndex(({ text: noteText }) => noteText === text); // indexOf  - працює із простими значеннями
+//         if (!!~idx) {
+//             //idx !== -1 // idx > -1
+//             this.items.splice(idx, 1);
+//         }
+//     }
+//     updatePtiority(text, newPriority) {
+//         const idx = this.items.findIndex(({ text: noteText }) => noteText === text);
+//         if (!!~idx) {
+//             this.items[idx].priority = newPriority;
+//         }
+//     }
+// }
+// const myNotes = new Notes([]);
+
+// myNotes.addNote({ text: 'My first note', priority: Notes.Priority.LOW });
+// myNotes.addNote({ text: 'My first note', priority: Notes.Priority.LOW });
+// myNotes.addNote({ text: 'My second note', priority: Notes.Priority.NORMAL });
+
+// console.log(myNotes);
+
+// myNotes.removeNote('My first note');
+// console.log(myNotes);
+
+// myNotes.updatePtiority('My second note', Notes.Priority.HIGH);
+// console.log(myNotes);

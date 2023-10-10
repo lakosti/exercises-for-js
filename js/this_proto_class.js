@@ -12,7 +12,7 @@
 
 //ПРИВАТНІ властивості та методи недоступні в глобальній області видимості, доступні лише у своїй
 //статичні методи та властивості - залишаються на своєму конструкторі
-// якщо є приставка static  то this посилається на констуктор (клас) не на інстанс
+// якщо є приставка static  то this посилається на констуктор (клас) не на інстанс // статичні це ті які не будуть змінюватися
 
 //якщо не знайшло метода - то помилка
 //якщо не знайшло властивості то underfined (властивість це - ключ і значення)
@@ -36,8 +36,9 @@
 //мають однакові назви і працюють з однією властивістью
 //працюють із приватними властивостями - #location
 //get  -- повертає / return  //// не містить параметри //get locate (){ return this.#location}
-//set  -- устанавляє /// містить параметри // set locate (city){ this.#location = city}
+//set  -- устанавляє /// містить лише ОДИН параметр // set locate (city){ this.#location = city}
 //сеттери та геттери пишуться як методи а викликаютсься як властивості obj.locale, у сеттері додатково пишемо значення obj.locale = 'Sumy'
+//якщо сеттер і геттер працюють з приватною властивістью то назви можуть збігатися але не бажано, краще різні // якщо властивість буде не приватна то буде зациклення, якщо назви однаковіі
 
 ///THIS
 // 1. Якщо this викликаємо в контексті об'єкта(зліва від функції) то воно посилається на цей об'єкт
@@ -463,38 +464,82 @@
 
 //EXAMPLE 3 геттери та сеттерию. Напиши клас User який створює об'єкт із властивостями login та email. Оголоси приватні властивості #login та #email, доступ до яких зроби через гетер та сетер login та  email__________________________________________________
 
-class User {
-    #login; // обов'язково оголошуємо їх зверху
-    #email;
-    constructor({ login, email }) {
-        this.#login = login;
-        this.#email = email;
-    }
-    get login() {
-        return this.#login; // повертаємо значення (типу консолі)
-    }
-    set login(newLogin) {
-        this.#login = newLogin; // перевизначаємо
-    }
-}
+// class User {
+//     #login; // обов'язково оголошуємо їх зверху
+//     #email;
+//     constructor({ login, email }) {
+//         this.#login = login;
+//         this.#email = email;
+//     }
+//     get login() {
+//         return this.#login; // повертаємо значення (типу консолі)
+//     }
+//     set login(newLogin) {
+//         if (this.#login !== newLogin) {
+//             this.#login = newLogin; // перевизначаємо
+//         }
+//     }
+//     get email() {
+//         return this.#email;
+//     }
+//     set email(newEmail) {
+//         if (this.#email !== newEmail) {
+//             this.#email = newEmail;
+//         }
+//     }
+// }
 
-const polly = new User({ login: 'yaroslava', email: 'hovenko@gmail.com' });
+// const polly = new User({ login: 'yaroslava', email: 'hovenko@gmail.com' });
 
-console.log(polly.login); // виклик гетера
-polly.login = 'susanna'; // виклик сеттера
-console.log(polly.login);
-polly.email = 'valentyna@gmail.com';
-console.log(polly.email);
-
-//     // set locate(city) {
-//     //     const input = prompt('Enter password');
-//     //     this.#getEmail;
-//     //     if (input === this.password) {
-//     //         this.#location = city;
-//     //         console.log(this.#location);
-//     //     } else {
-//     //         console.log('Wrong passwprd');
-//     //     }
-//     // }
+// console.log(polly.login); // виклик гетера
+// polly.login = 'valentyna'; // виклик сеттера
+// console.log(polly.login);
+// console.log(polly.email);
+// polly.email = 'valentyna@gmail.com';
+// console.log(polly.email);
 
 //EXAMPLE 4 Напиши клас Notes який керує колекцією нотаток у властивості items. Замітка це об'єкт із властивостями text та priority. Додай класу статичну властивість Priority, у якому зберігатиметься об'єкт із пріоритетами.________________________________________________
+
+// class Notes {
+//     static Priority = {
+//         LOW: 'low',
+//         NORMAL: 'normal',
+//         HIGH: 'high',
+//     };
+//     constructor(note) {
+//         this.items = note;
+//     }
+//     addNote(note) {
+//         const isArr = this.items.some(({ text }) => text === note.text); //перевіряємо чи є в масиві і якщо немає то пушемо
+//         if (!isArr) {
+//             // include тут не працює бо це складний тип
+//             this.items.push(note);
+//         }
+//     }
+//     removeNote(text) {
+//         const idx = this.items.findIndex(({ text: noteText }) => noteText === text); // indexOf  - працює із простими значеннями
+//         if (!!~idx) {
+//             //idx !== -1 // idx > -1
+//             this.items.splice(idx, 1);
+//         }
+//     }
+//     updatePtiority(text, newPriority) {
+//         const idx = this.items.findIndex(({ text: noteText }) => noteText === text);
+//         if (!!~idx) {
+//             this.items[idx].priority = newPriority;
+//         }
+//     }
+// }
+// const myNotes = new Notes([]);
+
+// myNotes.addNote({ text: 'My first note', priority: Notes.Priority.LOW });
+// myNotes.addNote({ text: 'My first note', priority: Notes.Priority.LOW });
+// myNotes.addNote({ text: 'My second note', priority: Notes.Priority.NORMAL });
+
+// console.log(myNotes);
+
+// myNotes.removeNote('My first note');
+// console.log(myNotes);
+
+// myNotes.updatePtiority('My second note', Notes.Priority.HIGH);
+// console.log(myNotes);

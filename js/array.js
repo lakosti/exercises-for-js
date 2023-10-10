@@ -3,6 +3,8 @@
 // console.log(getUniqueCourses(['html', 'js', 'css', 'js']));
 //array.lenght = 0 --- очищення масиву//очистити масив
 
+//console.log([1, 2, 3] + [1, 2, 4]); ==== 1,2,31,2,4
+
 //псевдомасив
 
 // function arg() {

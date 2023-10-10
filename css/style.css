@@ -1,0 +1,20 @@
+/* .item {
+    margin-top: 75px;
+    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    background: lightgrey;
+    font-size: 56px;
+}
+.item:hover {
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */
