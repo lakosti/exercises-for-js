@@ -461,4 +461,40 @@
 // storage.removeItem('lemon');
 // console.log(storage.items);
 
-//EXAMPLE 3 геттери та сеттери__________________________________________
+//EXAMPLE 3 геттери та сеттерию. Напиши клас User який створює об'єкт із властивостями login та email. Оголоси приватні властивості #login та #email, доступ до яких зроби через гетер та сетер login та  email__________________________________________________
+
+class User {
+    #login; // обов'язково оголошуємо їх зверху
+    #email;
+    constructor({ login, email }) {
+        this.#login = login;
+        this.#email = email;
+    }
+    get login() {
+        return this.#login; // повертаємо значення (типу консолі)
+    }
+    set login(newLogin) {
+        this.#login = newLogin; // перевизначаємо
+    }
+}
+
+const polly = new User({ login: 'yaroslava', email: 'hovenko@gmail.com' });
+
+console.log(polly.login); // виклик гетера
+polly.login = 'susanna'; // виклик сеттера
+console.log(polly.login);
+polly.email = 'valentyna@gmail.com';
+console.log(polly.email);
+
+//     // set locate(city) {
+//     //     const input = prompt('Enter password');
+//     //     this.#getEmail;
+//     //     if (input === this.password) {
+//     //         this.#location = city;
+//     //         console.log(this.#location);
+//     //     } else {
+//     //         console.log('Wrong passwprd');
+//     //     }
+//     // }
+
+//EXAMPLE 4 Напиши клас Notes який керує колекцією нотаток у властивості items. Замітка це об'єкт із властивостями text та priority. Додай класу статичну властивість Priority, у якому зберігатиметься об'єкт із пріоритетами.________________________________________________
