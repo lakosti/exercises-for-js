@@ -543,3 +543,121 @@
 
 // myNotes.updatePtiority('My second note', Notes.Priority.HIGH);
 // console.log(myNotes);
+
+//Example 5 - Майстерня коштовностей________________________________________________
+
+// Напишіть метод calcTotalPrice(stoneName), який приймає назву каменю і розраховує та повертає загальну вартість каменів з таким ім'ям, ціною та кількістю з властивості stones.
+
+// const chopShop = {
+//     stones: [
+//         {
+//             name: 'Emerald',
+//             price: 1300,
+//             quantity: 4,
+//         },
+//         {
+//             name: 'Diamond',
+//             price: 2700,
+//             quantity: 3,
+//         },
+//         {
+//             name: 'Sapphire',
+//             price: 1400,
+//             quantity: 7,
+//         },
+//         {
+//             name: 'Ruby',
+//             price: 800,
+//             quantity: 2,
+//         },
+//     ],
+//     calcTotalPrice(stoneName) {
+//         const { price, quantity } = this.stones.find(({ name }) => name === stoneName);
+//         return price * quantity;
+//     },
+// };
+// const shop2 = {
+//     stones: [
+//         {
+//             name: 'Ametyst',
+//             price: 5300,
+//             quantity: 4,
+//         },
+//         {
+//             name: 'Ragnarek',
+//             price: 2700,
+//             quantity: 3,
+//         },
+//     ],
+// };
+// console.log(chopShop.calcTotalPrice('Emerald')); // 5200
+// console.log(chopShop.calcTotalPrice('Diamond')); // 8100
+// console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
+// console.log(chopShop.calcTotalPrice('Ruby')); // 1600
+
+// ///через call
+
+// console.log(chopShop.calcTotalPrice.call(shop2, 'Ametyst')); // 5200
+
+// ЗАДАЧА 6 рефакторинг коду за допомогою this___________________________
+
+// Example 2 - Телефонна книга
+// Виконайте рефакторинг методів об'єкту phonebook щоб код запрацював.
+
+// const phonebook = {
+//   contacts: [],
+//   add(contact) {
+//     const newContact = {
+//       list: 'default',
+//       ...contact,
+//       id: this.generateId(), // у метода об'єкта повинно бути this
+//       createdAt: this.getDate(), // у метода об'єкта повинно бути this
+//     };
+//     this.contacts.push(newContact); // контакти також в середині об'єкта тому також this
+//     return this.contacts
+//   },
+//   generateId() {
+//     return '_' + Math.random().toString(36).substr(2, 9);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },
+// };
+
+// console.log(
+//   phonebook.add({
+//     name: 'Mango',
+//     email: 'mango@mail.com',
+//     list: 'friends',
+//   }),
+// );
+// console.log(
+//   phonebook.add({
+//     name: 'Poly',
+//     email: 'poly@hotmail.com',
+//   }),
+// );
+
+///ЗАДАЧА 7 калькулятор _____________________________________________ опрацювання оператор нульового злиття
+
+// Створіть об'єкт calculator з трьома методами:
+
+// read(a, b)- приймає два значення та зберігає їх як властивості об'єкта.
+// add() - повертає суму збережених значень.
+// mult() - перемножує збережені значення та повертає результат.
+
+// const calculator = {
+//     read(a, b) {
+//         this.a = a;
+//         this.b = b;
+//     },
+//     add() {
+//         return a + b;
+//     },
+//     mult() {
+//         //
+//     },
+// };
+// console.log(calculator.read(2, 6));
+// console.log(calculator.add(2, 6));
+// console.log(calculator.mult(2, 5));
