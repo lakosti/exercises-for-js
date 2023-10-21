@@ -1,3 +1,61 @@
+//------------------------------------------------------------------------------------МОДУЛЬ 1
+//TASK 1
+// const makeTransaction = function (quantity, priceDroid) {
+//     return `You ordered ${quantity} droids worth ${quantity * priceDroid} credits!`
+// };
+
+// console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
+// console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
+// console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
+
+//TASK 2
+
+// const getShippingMessage = function (country, price, deliveryFee) {
+//     return `Shipping to ${country} will cost ${price + deliveryFee} credits`
+// }
+// console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
+// console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
+// console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+
+//TASK 3
+// const getElementWidth = function (content, padding, border) {
+//     return parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2
+// }
+// console.log(getElementWidth("50px", "8px", "4px")); // 74
+// console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+// console.log(getElementWidth("200px", "0px", "0px")); // 200
+
+//----------------------------------------------------------------------------------
+//МОДУЛЬ 2
+//TASK 1
+// const makeTransaction = function (quantity, pricePerDroid, customerCredits) {
+//     let total = quantity * pricePerDroid;
+//     if (total > customerCredits) {
+//         return "Insufficient funds!"
+//     }
+//     return `You ordered ${quantity} droids worth ${total} credits!`
+// }
+// console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
+// console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
+// console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
+// console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
+// console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
+
+//TASK 2
+// const formatMessage = function (message, maxLength) {
+//     if (message.length > maxLength) {
+//     return message.slice(0, maxLength) + '...'
+//     } 
+//     return message
+// }
+// console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
+// console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
+// console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
+// console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
+//-------------------------------------------------------------------------------МОДУЛЬ 3
+
 //------------------------------------------------------------------------------------МОДУЛЬ 4
 
 //TASK 1 Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.________________________________________________
