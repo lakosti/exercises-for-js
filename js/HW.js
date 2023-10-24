@@ -1,4 +1,4 @@
-//------------------------------------------------------------------------------------МОДУЛЬ 1
+//-----------------------------------------------------------------------------------------МОДУЛЬ 1
 //TASK 1
 // const makeTransaction = function (quantity, priceDroid) {
 //     return `You ordered ${quantity} droids worth ${quantity * priceDroid} credits!`
@@ -26,7 +26,8 @@
 // console.log(getElementWidth("200px", "0px", "0px")); // 200
 
 //----------------------------------------------------------------------------------
-//МОДУЛЬ 2
+//МОДУЛЬ 2 FIXME: 2 task rest
+
 //TASK 1
 // const makeTransaction = function (quantity, pricePerDroid, customerCredits) {
 //     let total = quantity * pricePerDroid;
@@ -45,7 +46,7 @@
 // const formatMessage = function (message, maxLength) {
 //     if (message.length > maxLength) {
 //     return message.slice(0, maxLength) + '...'
-//     } 
+//     }
 //     return message
 // }
 // console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
@@ -54,9 +55,9 @@
 // console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
 // console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
 // console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
-//-------------------------------------------------------------------------------МОДУЛЬ 3
+//-----------------------------------------------------------------------------------------МОДУЛЬ 3 FIXME: ALl three task rest
 
-//------------------------------------------------------------------------------------МОДУЛЬ 4
+//-----------------------------------------------------------------------------------------МОДУЛЬ 4
 
 //TASK 1 Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.________________________________________________
 
@@ -135,7 +136,7 @@
 // profile.updatePlayTime(20);
 // console.log(profile.getInfo()); // "Marco has 320 active hours!"
 
-//=-----------------------------------------------------------------------------------------МОДУЛЬ 5
+//=---------------------------------------------------------------------------------------МОДУЛЬ 5 FIXME: ONLY ONE TASK REST
 
 //TASK 1 Напиши стрілочну функцію getUserNames(users), яка прийматиме один параметр users — масив об’єктів користувачів. Функція має повертати масив імен усіх користувачів (властивість name) із масиву users.____________________________________________________
 
@@ -187,7 +188,7 @@
 //     ])
 // ); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
 
-//TASK 2
+//TASK 2 ______________________________________________
 
 // const allUsers = [
 //     {
@@ -250,4 +251,230 @@
 
 // console.log(getUsersWithFriend(allUsers, 'Adrian Cross')); // []
 
-//--------------------------------------------------------------------------- МОДУЛЬ 6
+//TASK 3 Напиши стрілочну функцію sortByDescendingFriendCount(users) , яка прийматиме один параметр users — масив об’єктів користувачів.
+
+// Функція має повертати масив усіх користувачів, відсортованих за спаданням кількостій їх друзів (властивість friends)._______________________________________
+
+// const sortByDescendingFriendCount = users =>
+//     users.toSorted((a, b) => b.friends.length - a.friends.length);
+
+// console.log(
+//     sortByDescendingFriendCount([
+//         {
+//             name: 'Moore Hensley',
+//             friends: ['Sharron Pace'],
+//             gender: 'male',
+//         },
+//         {
+//             name: 'Sharlene Bush',
+//             friends: ['Briana Decker', 'Sharron Pace'],
+//             gender: 'female',
+//         },
+//         {
+//             name: 'Ross Vazquez',
+//             friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//             gender: 'male',
+//         },
+//         {
+//             name: 'Elma Head',
+//             friends: ['Goldie Gentry', 'Aisha Tran'],
+//             gender: 'female',
+//         },
+//         {
+//             name: 'Carey Barr',
+//             friends: ['Jordan Sampson', 'Eddie Strong'],
+//             gender: 'male',
+//         },
+//         {
+//             name: 'Blackburn Dotson',
+//             friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//             gender: 'male',
+//         },
+//         {
+//             name: 'Sheree Anthony',
+//             friends: ['Goldie Gentry', 'Briana Decker'],
+//             gender: 'female',
+//         },
+//     ])
+// );
+// [
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//     gender: "male"
+//   }
+// ]
+
+//TASK 4 Напиши стрілочну функцію getTotalBalanceByGender(users, gender), яка прийматиме два параметра:
+
+// перший параметр users — масив об’єктів користувачів,
+// другий параметр gender — рядок, що зберігає стать.
+// Функція має використовувати ланцюжок виклику методів та повертати загальний баланс користувачів (властивість balance), стать яких (властивість gender) збігається зі значенням параметра gender._________________________________________________________________________________
+
+// const getTotalBalanceByGender = (users, gender) => {};
+
+// const allUsers = [
+//     {
+//         name: 'Moore Hensley',
+//         gender: 'male',
+//         balance: 2811,
+//     },
+//     {
+//         name: 'Sharlene Bush',
+//         gender: 'female',
+//         balance: 3821,
+//     },
+//     {
+//         name: 'Ross Vazquez',
+//         gender: 'male',
+//         balance: 3793,
+//     },
+//     {
+//         name: 'Elma Head',
+//         gender: 'female',
+//         balance: 2278,
+//     },
+//     {
+//         name: 'Carey Barr',
+//         gender: 'male',
+//         balance: 3951,
+//     },
+//     {
+//         name: 'Blackburn Dotson',
+//         gender: 'male',
+//         balance: 1498,
+//     },
+//     {
+//         name: 'Sheree Anthony',
+//         gender: 'female',
+//         balance: 2764,
+//     },
+// ];
+
+// console.log(getTotalBalanceByGender(allUsers, 'male')); // 12053
+
+// console.log(getTotalBalanceByGender(allUsers, 'female')); // 8863
+
+//-------------------------------------------------------------------------------- МОДУЛЬ 6 FIXME: only one tasks rest
+// TASKS 1 Перед звільненням розробник зламав вихідний код управління акаунтами користувачів нашого сервісу доставки їжі.Виконай рефакторинг методів об'єкта customer, розставивши відсутні this під час звернення до властивостей об'єкта.___________________________________________
+
+// const customer = {
+//     username: 'Mango',
+//     balance: 24000,
+//     discount: 0.1,
+//     orders: ['Burger', 'Pizza', 'Salad'],
+//     // Change code below this line
+//     getBalance() {
+//         return this.balance;
+//     },
+//     getDiscount() {
+//         return this.discount;
+//     },
+//     setDiscount(value) {
+//         this.discount = value;
+//     },
+//     getOrders() {
+//         return this.orders;
+//     },
+//     addOrder(cost, order) {
+//         this.balance -= cost - cost * this.discount;
+//         this.orders.push(order);
+//     },
+//     // Change code above this line
+// };
+
+// customer.setDiscount(0.15);
+// console.log(customer.getDiscount()); // 0.15
+// customer.addOrder(5000, 'Steak');
+// console.log(customer.getBalance()); // 19750
+// console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+
+//TASK 2
+
+// class Storage {
+//     #items;
+//     constructor(items) {
+//         this.#items = items;
+//     }
+//     getItems() {
+//         return this.#items;
+//     }
+//     addItem(newItem) {
+//         if (!!~newItem) {
+//             this.#items.push(newItem);
+//         }
+//     }
+//     removeItem(itemToRemove) {
+//         const idx = this.#items.indexOf(itemToRemove);
+//         if (!!~idx) {
+//             this.#items.splice(idx, 1);
+//         }
+//     }
+// }
+
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+//TASK 3 FIXME:
+
+// class StringBuilder {
+//     #value;
+//     constructor(initialValue) {
+//         this.#value = initialValue;
+//     }
+//     getValue() {
+//         return this.#value;
+//     }
+//     padEnd(str) {
+//         this.#value.padEnd(4, str);
+//     }
+//     padStart(str) {
+//         this.#value.padStart(4, str);
+//     }
+//     padBoth(str) {
+//         //
+//     }
+// }
+
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // "."
+// builder.padStart('^');
+// console.log(builder.getValue()); // "^."
+// builder.padEnd('^');
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth('=');
+// console.log(builder.getValue()); // "=^.^="
