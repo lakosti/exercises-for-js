@@ -1,29 +1,28 @@
 //-----------------------------------------------------------------------------------------МОДУЛЬ 1
-//TASK 1
+// //TASK 1
 // const makeTransaction = function (quantity, priceDroid) {
-//     return `You ordered ${quantity} droids worth ${quantity * priceDroid} credits!`
+//     return `You ordered ${quantity} droids worth ${quantity * priceDroid} credits!`;
 // };
-
 // console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
 // console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
 // console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
 
-//TASK 2
+// //TASK 2
 
 // const getShippingMessage = function (country, price, deliveryFee) {
-//     return `Shipping to ${country} will cost ${price + deliveryFee} credits`
-// }
-// console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
-// console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-// console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+//     return `Shipping to ${country} will cost ${price + deliveryFee} credits`;
+// };
+// console.log(getShippingMessage('Australia', 120, 50)); // "Shipping to Australia will cost 170 credits"
+// console.log(getShippingMessage('Germany', 80, 20)); // "Shipping to Germany will cost 100 credits"
+// console.log(getShippingMessage('Sweden', 100, 20)); // "Shipping to Sweden will cost 120 credits"
 
-//TASK 3
+// //TASK 3
 // const getElementWidth = function (content, padding, border) {
-//     return parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2
-// }
-// console.log(getElementWidth("50px", "8px", "4px")); // 74
-// console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-// console.log(getElementWidth("200px", "0px", "0px")); // 200
+//     return parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2;
+// };
+// console.log(getElementWidth('50px', '8px', '4px')); // 74
+// console.log(getElementWidth('60px', '12px', '8.5px')); // 101
+// console.log(getElementWidth('200px', '0px', '0px')); // 200
 
 //----------------------------------------------------------------------------------
 //МОДУЛЬ 2 FIXME: 2 task rest
