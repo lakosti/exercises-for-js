@@ -214,9 +214,9 @@
 /////без функції та масиву___________________________________
 
 // let name = 'OLEG';
-// let name = 'Сел в озере березов лес';
-// let name = '12321';
-// let name = 'Anna';
+// // let name = 'Сел в озере березов лес';
+// // let name = '12321';
+// // let name = 'Anna';
 // name = name.toLowerCase();
 // let result = '';
 // for (let i = 0; i < name.length; i++) {

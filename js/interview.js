@@ -12,7 +12,13 @@
 //true + '5' - 1 // NaN
 //при + (конкатенації зі строками) - головне буде строка  -- все приводиться до неї
 // при інших операціях головне число
-//10 / false = infinity // 10 / 0 === ділення на нуль дає нескінченність
+//10 / false  = infinity // 10 / 0 === ділення на нуль дає нескінченність
+
+//0 >= null // true
+//'0' == false // true // коли порівнюєтья з булями приводиться до числа
+// null == underfined // true // а при порівнянні з усім іншим буде false
+//0 > null // false
+//null == 0 // false
 
 //ЗАДАЧА 1 повернути літери як назву ключа а кількість разів що дублюється як властивість  - скільки раз вона зустрічається в рядку (reduce)_____________________________________________
 
@@ -783,3 +789,29 @@ const createMatrix = function (row, colum) {
 
 // myNotes.updatePtiority('My second note', Notes.Priority.HIGH);
 // console.log(myNotes);
+
+//ЗАДАЧА 36 ОТРИМАТИ ЧИСЛО З РЯДКА ___________________________________________
+
+// function getNum(str) {
+//     let num = '';
+//     for (let i = 0; i < str.length; i++) {
+//         if (!isNaN(str[i])) {
+//             num += str[i];
+//         }
+//     }
+//     return num;
+// }
+// console.log(getNum('frg50rg'));
+
+function getDiscount(totalSpent) {
+    const BASE_DISCOUNT = 0;
+    const BRONZE_DISCOUNT = 0.02;
+    const SILVER_DISCOUNT = 0.05;
+    const GOLD_DISCOUNT = 0.1;
+    let discount;
+    // Change code below this line
+
+    // Change code above this line
+    return discount;
+}
+par;
