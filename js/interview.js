@@ -814,4 +814,3 @@ function getDiscount(totalSpent) {
     // Change code above this line
     return discount;
 }
-par;
