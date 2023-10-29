@@ -803,14 +803,12 @@ const createMatrix = function (row, colum) {
 // }
 // console.log(getNum('frg50rg'));
 
-function getDiscount(totalSpent) {
-    const BASE_DISCOUNT = 0;
-    const BRONZE_DISCOUNT = 0.02;
-    const SILVER_DISCOUNT = 0.05;
-    const GOLD_DISCOUNT = 0.1;
-    let discount;
-    // Change code below this line
+//ЗАДАЧА 37 вирізати з першої по задане значення___________________________________________
 
-    // Change code above this line
-    return discount;
-}
+// function getSubstring(string, length) {
+//     return string.slice(0, length);
+// }
+// console.log(getSubstring('Hello world', 8)); //Hello wo
+// console.log(getSubstring('Hello world', 3)); // Hel
+// console.log(getSubstring('Hello world', 5)); // Hello
+// console.log(getSubstring('Hello world', 0)); // ''
