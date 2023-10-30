@@ -24,24 +24,71 @@
 // console.log(check('Кругле та яскраве', 'sun'));
 // console.log(check('Хоч не літак а крилатий', 'windmill'));
 
-//TASK LOOP while how many day`s the snail spend to get out______________________________
+//TASK 3 LOOP while how many day`s the snail spend to get out______________________________
 
 //42 m - 8 d
 //17 m - 3 d
 //18 m - 4 d
-function getDays(deps) {
-    let days;
-    let nightSpeed = -2;
-    let daySpeed = 7;
 
-    // while()
-}
+// function getDays(deps) {
+//     let days = 0;
+//     let total = 0; // пройдений шлях
+//     const nightSpeed = 2;
+//     const daySpeed = 7;
 
-//СКІЛЬКИ ГОЛОСНИХ В СЛОВІ_____________________________
+//     while (total < deps) {
+//         total += daySpeed;
+//         days += 1;
+//         //дивимось чи равлик ще не порівнявся із землею, якщо ні то віднімаємо ніч
+//         if (total < deps) {
+//             total -= nightSpeed;
+//         }
+//     }
+//     return days;
+// }
+// console.log(getDays(17));
+// console.log(getDays(42));
+// console.log(getDays(18));
 
-function countVowel(str) {
-    const vowels = 'aeiou'; // пишемо голосні котрі взагалі є
-}
+//TASK 4 СКІЛЬКИ ГОЛОСНИХ В СЛОВІ_____________________________
 
-console.log(countVowel('HELLO WORLD')); // 3
-console.log(countVowel('Junior web developer')); //8
+// function countVowel(str) {
+//     const vowels = 'aeiou'; // пишемо голосні котрі взагалі є
+//     // let numOfVowes = [];
+//     let counter = 0;
+//     str = str.toLowerCase();
+//     for (const letter of str) {
+//         if (vowels.includes(letter)) {
+//             // numOfVowes.push(letter);
+//             counter += 1;
+//         }
+//     }
+//     return counter;
+//     // return numOfVowes.length
+// }
+
+// console.log(countVowel('HELLO WORLD')); // 3
+// console.log(countVowel('Junior web developer')); //8
+
+//TASK 5 якщо два числа більше 100, то вивести найбільше з них, якщо менше 100 то b + 512____________________________________________
+
+// const a = 180;
+// const b = 10;
+
+// if (a > 100 && b > 100) {
+//     if (a > b) {
+//         console.log(a);
+//     } else {
+//         console.log(b);
+//     }
+// } else {
+//     console.log(b + 512);
+// }
+
+// TASK 6 чи закнчієтсья рядок таким символом _________________________________
+
+// let link = 'i miss you my';
+// if (!link.endsWith('dear')) {
+//     link += ' dear';
+// }
+// console.log(link);
