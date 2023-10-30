@@ -92,3 +92,15 @@
 //     link += ' dear';
 // }
 // console.log(link);
+
+//ЗАДАЧА 7 РОЗГАЛУЖЕННЯ адмін + пароль__________________________________
+
+// const input = prompt('Who are you?');
+// if (input === 'Admin'.toLowerCase()) {
+//     let password = prompt('enter your password');
+//     password === 'I admin'.toLowerCase() ? alert('Hello') : alert('Wrong password');
+// } else if (!input) {
+//     alert('Cancel');
+// } else {
+//     alert('I don`t who you are');
+// }
