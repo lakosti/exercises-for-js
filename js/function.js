@@ -503,3 +503,18 @@
 // console.log(formatTime(1444));
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+
+//ЗАДАЧА 23 вирізати розширення якщо є______________________________
+
+// function getFileName(file) {
+//     const idx = file.indexOf('.');
+//     if (!!~idx) {
+//         return file.slice(0, idx);
+//     } else {
+//         return file;
+//     }
+// }
+// console.log(getFileName('style.css'));
+// console.log(getFileName('style'));
+// console.log(getFileName('app.js'));
+// console.log(getFileName('app'));
