@@ -518,3 +518,61 @@
 // console.log(getFileName('style'));
 // console.log(getFileName('app.js'));
 // console.log(getFileName('app'));
+
+//
+//TASK 2 return type of two sum_______________________________
+
+// const typeOfSum = (a, b) => typeof (a + b);
+
+// console.log(typeOfSum(1, 2)); // number
+// console.log(typeOfSum('t', 2)); // string
+// console.log(typeOfSum(2, 't')); // string
+// console.log(typeOfSum('t', 'y')); // string
+// console.log(typeOfSum(true, 1)); // number
+// console.log(typeOfSum(null, false)); // number
+// console.log(typeOfSum(undefined, true)); // number
+
+//ЗАДАЧА 2 чи вистачить палива_________________________________
+
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => mpg * fuelLeft >= distanceToPump;
+
+// console.log(zeroFuel(50, 25, 2)); //true
+// console.log(zeroFuel(100, 50, 1)); // false
+
+// ЗАДАЧА 3 Повернути число словами___________________________
+
+// function switchItUp(number) {
+//     switch (number) {
+//         case 1:
+//             return 'One';
+//         case 2:
+//             return 'Two';
+//         case 3:
+//             return 'Three';
+//         case 4:
+//             return 'Four';
+//         case 5:
+//             return 'Five';
+//         case 6:
+//             return 'Six';
+//         case 7:
+//             return 'Seven';
+//         case 8:
+//             return 'Eight';
+//         case 9:
+//             return 'Nine';
+//         default:
+//             return 'Zero';
+//     }
+// }
+
+//  2 варіант_______
+
+// function switchItUp(number) {
+//     return ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'][number];
+// }
+
+// console.log(switchItUp(1));
+// console.log(switchItUp(8));
+// console.log(switchItUp(5));
+// console.log(switchItUp(0));
