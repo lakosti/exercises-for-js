@@ -144,12 +144,6 @@
 // console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
 // console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
-function checkFileExtension(fileName, ext) {
-    //
-}
-console.log(checkFileExtension('styles.css', '.css'));
-console.log(checkFileExtension('styles.css', '.js'));
-
 //-----------------------------------------------------------------------------------------МОДУЛЬ 4-----------------------------------------------------------------------
 
 //TASK 1 Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.________________________________________________
@@ -229,7 +223,7 @@ console.log(checkFileExtension('styles.css', '.js'));
 // profile.updatePlayTime(20);
 // console.log(profile.getInfo()); // "Marco has 320 active hours!"
 
-//=---------------------------------------------------------------------------------------МОДУЛЬ 5 FIXME: ONLY ONE TASK REST--------------------------------------------------------
+//=---------------------------------------------------------------------------------------МОДУЛЬ 5 -------------------------------------------------------
 
 //TASK 1 Напиши стрілочну функцію getUserNames(users), яка прийматиме один параметр users — масив об’єктів користувачів. Функція має повертати масив імен усіх користувачів (властивість name) із масиву users.____________________________________________________
 
@@ -434,7 +428,13 @@ console.log(checkFileExtension('styles.css', '.js'));
 // другий параметр gender — рядок, що зберігає стать.
 // Функція має використовувати ланцюжок виклику методів та повертати загальний баланс користувачів (властивість balance), стать яких (властивість gender) збігається зі значенням параметра gender._________________________________________________________________________________
 
-// const getTotalBalanceByGender = (users, gender) => {};
+// function getTotalBalanceByGender(users, gender) {
+//     const totalBalance = users
+//         .filter(user => user.gender === gender)
+//         .reduce((acc, user) => acc + user.balance, 0);
+
+//     return totalBalance;
+// }
 
 // const allUsers = [
 //     {
@@ -475,10 +475,9 @@ console.log(checkFileExtension('styles.css', '.js'));
 // ];
 
 // console.log(getTotalBalanceByGender(allUsers, 'male')); // 12053
-
 // console.log(getTotalBalanceByGender(allUsers, 'female')); // 8863
 
-//-------------------------------------------------------------------------------- МОДУЛЬ 6 FIXME: only one tasks rest-------------------------------------------------------------------
+//-------------------------------------------------------------------------------- МОДУЛЬ 6 -------------------------------------------------------------------
 // TASKS 1 Перед звільненням розробник зламав вихідний код управління акаунтами користувачів нашого сервісу доставки їжі.Виконай рефакторинг методів об'єкта customer, розставивши відсутні this під час звернення до властивостей об'єкта.___________________________________________
 
 // const customer = {
@@ -542,7 +541,7 @@ console.log(checkFileExtension('styles.css', '.js'));
 // storage.removeItem('Prolonger');
 // console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
-//TASK 3 FIXME:
+//TASK 3
 
 // class StringBuilder {
 //     #value;
@@ -553,13 +552,13 @@ console.log(checkFileExtension('styles.css', '.js'));
 //         return this.#value;
 //     }
 //     padEnd(str) {
-//         this.#value.padEnd(4, str);
+//         this.#value += str;
 //     }
 //     padStart(str) {
-//         this.#value.padStart(4, str);
+//         this.#value = str + this.#value;
 //     }
 //     padBoth(str) {
-//         //
+//         this.#value = str + this.#value + str;
 //     }
 // }
 
