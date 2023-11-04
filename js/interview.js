@@ -825,3 +825,11 @@ const createMatrix = function (row, colum) {
 // }
 // console.log(getFileName('app.js'));
 // console.log(getFileName('index'));
+
+// TASK 38 Дано випадкове невід’ємне число, ви повинні повернути цифри цього числа в масиві у зворотному порядку._______________________________________
+
+// function digitize(n) {
+//     return String(n).split('').map(Number).reverse();
+// }
+// console.log(digitize(54321));
+// console.log(digitize(0));
