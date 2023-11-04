@@ -812,3 +812,16 @@ const createMatrix = function (row, colum) {
 // console.log(getSubstring('Hello world', 3)); // Hel
 // console.log(getSubstring('Hello world', 5)); // Hello
 // console.log(getSubstring('Hello world', 0)); // ''
+
+//ЗАДАЧА 37 якщо є розширення, то видалити, якщо немає то повернути просто рядок__________________________________
+
+// function getFileName(file) {
+//     const idx = file.indexOf('.');
+//     if (!!~idx) {
+//         return file.slice(0, idx);
+//     } else {
+//         return file;
+//     }
+// }
+// console.log(getFileName('app.js'));
+// console.log(getFileName('index'));
