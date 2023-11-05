@@ -14,6 +14,7 @@
 // при інших операціях головне число
 //10 / false  = infinity // 10 / 0 === ділення на нуль дає нескінченність
 //.map(Number) --- перетворює на число
+// console.log('"Khal Drogo\'s favorite word is "athjahakar""'); -- щоб вивести спеціальний символ ставимо  перед  ним \
 
 //0 >= null // true
 //'0' == false // true // коли порівнюєтья з булями приводиться до числа
@@ -831,6 +832,11 @@ const createMatrix = function (row, colum) {
 
 // function digitize(n) {
 //     return String(n).split('').map(Number).reverse();
+// }
+
+/// інший варіант
+// function digitize(n) {
+//     return Array.from(String(n), Number).reverse();
 // }
 // console.log(digitize(54321));
 // console.log(digitize(0));
