@@ -203,3 +203,10 @@
 //   default:
 //     console.log('We hope that this page looks ok!');
 // }
+
+////////
+
+// function getFirstLetter(str) {
+//     return str.toLowerCase().startsWith('a') ? 'yes' : 'no';
+// }
+// console.log(getFirstLetter('vbcbe'));

@@ -1,7 +1,4 @@
 //ОБОВ'ЯЗКОВО ЗНАТИ ДЛЯ ІНТЕРВЬЮ
-//this
-//prototype
-//while
 // null typeof obj
 // null = 0
 // typeof NaN = number
