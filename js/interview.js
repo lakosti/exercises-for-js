@@ -1,5 +1,7 @@
 //ОБОВ'ЯЗКОВО ЗНАТИ ДЛЯ ІНТЕРВЬЮ
 // null typeof obj
+//array == obj
+// obj == obj
 // null = 0
 // typeof NaN = number
 // Number(underfined) = NaN

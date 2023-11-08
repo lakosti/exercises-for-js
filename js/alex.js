@@ -37,3 +37,5 @@
 
 // const canOpenChat = isOnline && isFriend && !isDnd;
 // console.log('Can open chat:', canOpenChat);
+
+/////
