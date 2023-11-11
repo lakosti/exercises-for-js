@@ -843,7 +843,7 @@ const createMatrix = function (row, colum) {
 // console.log(digitize(54321));
 // console.log(digitize(0));
 
-//// Додати числа за допомогою while
+//ЗАДАЧА 38 Додати числа за допомогою while
 // Функція calculateTotal(number) приймає ціле число (параметр number). Доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6. __________________________________________________________
 
 // function calculateTotal(number) {
@@ -860,3 +860,23 @@ const createMatrix = function (row, colum) {
 // console.log(calculateTotal(1));
 // console.log(calculateTotal(0));
 // console.log(calculateTotal(18));
+
+//ЗАДАЧА 39 знайти мін  і макс з кодеварса (на кодеварсі через мас вирішила)_____________________________________________
+
+// function minMax(arr) {
+//     let min = arr[0];
+//     let max = arr[0];
+//     for (const n of arr) {
+//         if (n < min) {
+//             min = n;
+//         }
+//         if (n > max) {
+//             max = n;
+//         }
+//     }
+//     return [min, max || max];
+// }
+
+// console.log(minMax([1, 2, 3, 4, 59, 8, 36])); //[1,5]
+// console.log(minMax([15, 78, 59, 32, 2, 5])); //[6, 158445]
+// console.log(minMax([5])); //[1,1]
