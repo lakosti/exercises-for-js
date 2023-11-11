@@ -3,6 +3,11 @@
 //NaN == NaN // false -- єдине значення в джс яке не дорівнює саме собі
 //.trim() -- видаляє зайві пробіли на початку і в кінці
 
+// function getLastElementMeta(array) {
+//     return [array.length - 1, array[array.length - 1]];
+// }
+// console.log(getLastElementMeta(['apple', 'peach', 'pear', 'banana'])); // [3, 'banana]
+
 //ПЕРЕВІРКА ЧИ КОРИСТУВАЧ ВВІВ ЧИСЛО__________________________________
 
 // const userNum = Number(prompt('Enter a number'));
