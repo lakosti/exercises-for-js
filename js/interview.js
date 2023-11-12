@@ -887,3 +887,30 @@ const createMatrix = function (row, colum) {
 // console.log(countSheeps([undefined])); //0
 // console.log(countSheeps([true])); //1
 // console.log(countSheeps([])); //0
+
+//ЗАДАЧА 41 ПОВЕРНУТИ КІЛЬКІСТЬ ДІЛЬНИКІВ____________________________________
+
+// const getDivisorsCnt = n => {
+//     let counter = 0;
+//     for (let i = 0; i <= n; i++) {
+//         counter += n % i === 0 ? 1 : 0;
+//     }
+//     return counter;
+// };
+
+////отпимізований варіант
+
+// const getDivisorsCnt = n => {
+//     let counter = 0;
+//     for (let i = 1; i <= Math.sqrt(n); i++) {
+//         if (n % i === 0) {
+//             counter += i * i === n ? 1 : 2;
+//         }
+//     }
+//     return counter;
+// };
+
+// console.log(getDivisorsCnt(1));
+// console.log(getDivisorsCnt(10)); //4
+// console.log(getDivisorsCnt(11));
+// console.log(getDivisorsCnt(54));
