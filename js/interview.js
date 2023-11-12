@@ -876,3 +876,14 @@ const createMatrix = function (row, colum) {
 // console.log(minMax([1, 2, 3, 4, 59, 8, 36])); //[1,5]
 // console.log(minMax([15, 78, 59, 32, 2, 5])); //[6, 158445]
 // console.log(minMax([5])); //[1,1]
+
+//ЗАДАЧА 40 повернути кількість овець // true
+
+// function countSheeps(sheep) {
+//     return sheep.filter(Boolean).length;
+// }
+// console.log(countSheeps([true, false, true, true, false])); //3
+// console.log(countSheeps([null])); //0
+// console.log(countSheeps([undefined])); //0
+// console.log(countSheeps([true])); //1
+// console.log(countSheeps([])); //0
