@@ -100,7 +100,6 @@
 // //олдскульний варіант
 
 // const letters = str.split(''); // перетворюємо в масив
-// console.log(letters);
 // let newCase = '';
 
 // for (const letter of letters) {
@@ -124,7 +123,7 @@
 
 //ЗАДАЧА 6 видалити з масиву елементи що не є типом даних number________________________________________________________
 
-// const arr = [3, 'hello', null, 42, false];
+const arr = [3, 'hello', null, 42, false];
 
 // if (isNaN(arr[i])) {
 //     console.log(arr[i]);
@@ -208,7 +207,7 @@
 //     { id: '003', likes: 8, tags: ['css', 'react', 'nodejs'] },
 // ];
 // const allTags = tweets.flatMap(tweet => tweet.tags); //поєднали всі теги
-// console.log(allTags);
+// // console.log(allTags);
 
 // const stats = allTags.reduce(
 //     (acc, item) => {
@@ -914,24 +913,27 @@ const createMatrix = function (row, colum) {
 // console.log(getDivisorsCnt(10)); //4
 // console.log(getDivisorsCnt(11));
 // console.log(getDivisorsCnt(54));
+
+//ЗАДАЧА 42 ЗУПИНКА АВТОБУСА________________________________
+
 var number = function (busStops) {
     // Good Luck!
 };
-console.log(
-    number([
-        [10, 0],
-        [3, 5],
-        [5, 8],
-    ])
-); //5
-console.log(
-    number([
-        [3, 0],
-        [9, 1],
-        [4, 10],
-        [12, 2],
-        [6, 1],
-        [7, 10],
-    ])
-); //17
-console.log(number([[0, 0]])); //0
+// console.log(
+//     number([
+//         [10, 0],
+//         [3, 5],
+//         [5, 8],
+//     ])
+// ); //5
+// console.log(
+//     number([
+//         [3, 0],
+//         [9, 1],
+//         [4, 10],
+//         [12, 2],
+//         [6, 1],
+//         [7, 10],
+//     ])
+// ); //17
+// console.log(number([[0, 0]])); //0

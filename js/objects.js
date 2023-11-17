@@ -1,11 +1,11 @@
 //обчислювальні властивості
 
-const inputName = 'color';
-const colorPickerData = {
-    color: 'red', //color: red
-    [inputName]: 'red', // color: red
-};
-console.log(colorPickerData);
+// const inputName = 'color';
+// const colorPickerData = {
+//     color: 'red', //color: red
+//     [inputName]: 'red', // color: red
+// };
+// console.log(colorPickerData);
 
 //пербір об'єкту
 
