@@ -80,3 +80,35 @@
 //     }
 // }
 // console.log(langs);
+
+//ЗАДАЧА 6 СТВОРИТИ ФУНКЦІЮ ЯКА БУДЕ ПЕРЕВІРЯТИ ЧИ КОЖНЕ ЧИСЛО МАСИВУ БІЛЬШЕ ЗА ЗНАЧЕННЯ ПО ЗАМОВЧУВАННЮ______________________________
+
+// const numbers = [25, 12, 67, 40, 18];
+// function checkValue(numbers, value) {
+//     let message = 'Success';
+//     for (const n of numbers) {
+//         if (n >= value) {
+//             message = 'Fail';
+//             return message;
+//         }
+//     }
+//     return message;
+// }
+
+// console.log(checkValue(numbers, 10));
+// console.log(checkValue(numbers, 13));
+// console.log(checkValue(numbers, 80));
+
+//ЗАДАЧА 7 СТВОРИТИ ФУНКЦІЮ ЯКА БУДЕ РОЗБИВАТИ МАСИВ НА ПЕВНУ КІЛЬКІСТЬ ЕЛЕМЕНТІВ__________________________
+
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// function getCombination(arr, count) {
+//     const result = [];
+//     for (let i = 0; i < arr.length; i += count) {
+//         const combination = arr.slice(i, i + count);
+//         result.push(combination);
+//     }
+//     return result;
+// }
+// console.log(getCombination(data, 2)); // [[1,2],[3,4], [...]...]
+// console.log(getCombination(data, 3)); // [[1,2,3],[4,5,6], [...]...]
