@@ -154,3 +154,59 @@
 //     return `Count players ${countPlayers}, average time ${(total / countPlayers).toFixed()}`;
 // }
 // console.log(getTime(players));
+
+//ЗАДАЧА 10 функція повертає імена юзерів у яких є дана книга // порахувати  вік в юзерів (перебрати масив об'єктів)__________________________________
+
+// const friends = [
+//     {
+//         name: 'Anna',
+//         books: ['Bible', 'Harry Potter'],
+//         age: 21,
+//     },
+//     { name: 'Bob', books: ['War and peace', 'Romeo and Juliet'], age: 26 },
+//     { name: 'Alice', books: ['War and peace', 'Romeo and Juliet'] },
+//     {
+//         name: 'Oleksii',
+//         books: ['Bible', 'War and peace', 'Harry Potter', 'Romeo and Juliet'],
+//         age: 26,
+//     },
+// ];
+// function getUsers(arr, bookName) {
+//     // let users = '';
+//     let users = [];
+//     for (const user of arr) {
+//         if (user.books.includes(bookName)) {
+//             // users += `${user.name}, `;
+//             users.push(user.name);
+//         }
+//     }
+//     return users.join(', '); // перетворюємо рядок
+// }
+// console.log(getUsers(friends, 'Harry Potter'));
+
+// //немає одного ключа(щоб не було NaN ми виконуємо перевірку на фолсі значення якщо прийде андефінед воно буде проігноровано, якщо значення є то додаємо)
+
+// function getTotalAge(arr) {
+//     let totalAge = 0;
+//     //1 variant // не дуже доречний варіант, значення ключа може бути фолсі значенням
+//     // if(user.age)  // === true
+//     //{ totalAge += user.age}
+//     //
+//     // 2 variant  ==== the best
+//     for (const user of arr) {
+//         if (user.hasOwnProperty('age')) {
+//             totalAge += user.age;
+//         }
+//     }
+//     return totalAge;
+
+//     // 3 variant in // перевіряє і не власні ключі
+//     // for (const user of arr) {
+//     //     if ('age' in user) {
+//     //         totalAge += user.age;
+//     //     }
+//     // }
+//     // return totalAge;
+// }
+
+// console.log(getTotalAge(friends));
