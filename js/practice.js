@@ -132,3 +132,25 @@
 //     };
 // }
 // console.log(createNewObj('pizza', 3, 120));
+
+//ЗАДАЧА 9 ПОВЕРНУТИ КІЛЬКІСТЬ ГРАВЦІВ ТА СЕРЕДНІЙ ЧАС ГРИ______________________
+
+// const players = {
+//     Den: 120,
+//     Artem: 10,
+//     Igor: 25,
+//     Egor: 40,
+//     Lew: 40,
+//     On: 40,
+// };
+
+// function getTime(obj) {
+//     const countPlayers = Object.keys(obj).length;
+//     const time = Object.values(obj);
+//     let total = 0;
+//     for (const el of time) {
+//         total += el;
+//     }
+//     return `Count players ${countPlayers}, average time ${(total / countPlayers).toFixed()}`;
+// }
+// console.log(getTime(players));
