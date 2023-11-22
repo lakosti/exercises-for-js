@@ -32,6 +32,7 @@
 //     }
 //     return result;
 // }
+
 // console.log(getCommonElements([1, 2, 3, 2, 1, 17, 1, 1, 1, 19]));
 
 //ЗАДАЧА 3 ВІДІБРАТИ ЛИШЕ ЖІНОЧІ ІМЕНА З МАСИВУ_________________________
@@ -48,6 +49,7 @@
 //     }
 //     return women;
 // }
+
 // console.log(getWomen(users, men));
 
 //ЗАДАЧА 4 ПЕРЕВІРИТИ ЧИ ЕЛЕМЕНТИ РОЗТАШОВАНІ В ПОРЯДКУ ЗРОСТАННЯ ЯКЩО НІ ЗАМІНИТИ НА ВІРНІ____________________________
@@ -67,11 +69,13 @@
 //         arr[i] = prevEl + 1;
 //     }
 // }
+
 // console.log(arr);
 
 //ЗАДАЧА 5 СОРТУВАННЯ В АЛФАВІТНОМУ ПОРЯДКУ (сортує не повністью)___________________________
 
 // const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby', 'avacode', 'bootstrap'];
+
 // // const newArr = [];
 // for (let i = 0; i < langs.length; i += 1) {
 //     if (langs[0] > langs[i]) {
@@ -84,6 +88,7 @@
 //ЗАДАЧА 6 СТВОРИТИ ФУНКЦІЮ ЯКА БУДЕ ПЕРЕВІРЯТИ ЧИ КОЖНЕ ЧИСЛО МАСИВУ БІЛЬШЕ ЗА ЗНАЧЕННЯ ПО ЗАМОВЧУВАННЮ______________________________
 
 // const numbers = [25, 12, 67, 40, 18];
+
 // function checkValue(numbers, value) {
 //     let message = 'Success';
 //     for (const n of numbers) {
@@ -102,6 +107,7 @@
 //ЗАДАЧА 7 СТВОРИТИ ФУНКЦІЮ ЯКА БУДЕ РОЗБИВАТИ МАСИВ НА ПЕВНУ КІЛЬКІСТЬ ЕЛЕМЕНТІВ__________________________
 
 // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 // function getCombination(arr, count) {
 //     const result = [];
 //     for (let i = 0; i < arr.length; i += count) {
@@ -110,5 +116,18 @@
 //     }
 //     return result;
 // }
+
 // console.log(getCombination(data, 2)); // [[1,2],[3,4], [...]...]
 // console.log(getCombination(data, 3)); // [[1,2,3],[4,5,6], [...]...]
+
+//
+//ЗАДАЧА 8 створити функцію яка повертає об'єкт з 3 ключами___________________________
+
+// function createNewObj(product, quantity, price) {
+//     return {
+//         name: product,
+//         price,
+//         quantity,
+//     };
+// }
+// console.log(createNewObj('pizza', 3, 120));
