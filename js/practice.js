@@ -210,3 +210,68 @@
 // }
 
 // console.log(getTotalAge(friends));
+
+//ЗАДАЧА 11 створити метод який буде повертати учнів факультету // та їх бали_____________________________________
+
+// const hogvargs = {
+//     griffindor: [
+//         {
+//             name: 'Harry',
+//             points: 17,
+//         },
+//         {
+//             name: 'Hermiona',
+//             points: 19,
+//         },
+//         {
+//             name: 'Ron',
+//             points: 14,
+//         },
+//     ],
+//     slizerin: [
+//         {
+//             name: 'Draco',
+//             points: 17,
+//         },
+//         {
+//             name: 'Goyl',
+//             points: 14,
+//         },
+//         {
+//             name: 'Crabbe',
+//             points: 5,
+//         },
+//     ],
+//     // getUserList(faculty) {
+//     //     if (!(faculty in this)) {
+//     //         // завжди перевіряємо чи є такий ключ в об'єкті // негативний сценарій
+//     //         return 'Not found';
+//     //     }
+//     //     const students = [];
+//     //     for (const student of this[faculty]) {
+//     //         //передаємо параметр який прийде як змінна
+//     //         students.push(student.name);
+//     //     }
+//     //     return students;
+//     //     // return students.join(', ') // або повертаємо рядком
+//     // },
+
+//     getTotalPoints(faculty) {
+//         if (!this.hasOwnProperty(faculty)) {
+//             return 'Not found';
+//         }
+//         let totalPoint = 0;
+//         for (const point of this[faculty]) {
+//             totalPoint += point.points;
+//         }
+//         return totalPoint;
+//     },
+// };
+
+// // console.log(hogvargs.getUserList('griffindor'));
+// // // console.log(hogvargs.getUserList('orlan'));
+// // console.log(hogvargs.getUserList('slizerin'));
+
+// console.log(hogvargs.getTotalPoints('griffindor'));
+// console.log(hogvargs.getTotalPoints('slizerin'));
+// console.log(hogvargs.getTotalPoints('orlan'));
