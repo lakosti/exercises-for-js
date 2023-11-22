@@ -128,6 +128,7 @@
 //         name: product,
 //         price,
 //         quantity,
+//         totalPrice: quantity * price,
 //     };
 // }
 // console.log(createNewObj('pizza', 3, 120));
