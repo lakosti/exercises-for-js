@@ -1,95 +1,115 @@
-/*
- * Типів транзакцій всього два.
- * Можна покласти чи зняти гроші з рахунку.
- */
-const TRANSACTIONS = {
-    DEPOSIT: 'deposit',
-    WITHDRAW: 'withdraw',
-};
+// /*
+//  * Типів транзакцій всього два.
+//  * Можна покласти чи зняти гроші з рахунку.
+//  */
+// const Transaction = {
+//     DEPOSIT: 'deposit',
+//     WITHDRAW: 'withdraw',
+// };
 
-/*
- * Кожна транзакція це об'єкт із властивостями: id, type та amount
- */
+// Object.freeze(Transaction);
 
-const account = {
-    // Поточний баланс рахунку
-    balance: 0,
+// /*
+//  * Кожна транзакція це об'єкт із властивостями: id, type та amount
+//  */
 
-    // Історія транзакцій
-    transactions: [],
+// const account = {
+//     // Поточний баланс рахунку
+//     balance: 0,
 
-    /*
-     * Метод створює та повертає об'єкт транзакції.
-     * Приймає суму та тип транзакції.
-     */
-    createTransaction(amount, type) {
-        return {
-            // id: this.transactions.length, // індекс масива // коли НЕ видаляються елементи
-            id: Date.now(),
-            amount,
-            type,
-        };
-    },
+//     // Історія транзакцій
+//     // transactions: [{ id: 17, amount: 1000, type: 'deposit' }], // для прикладу
+//     transactions: [],
 
-    /*
-     * Метод, що відповідає за додавання суми до балансу.
-     * Приймає суму транзакції.
-     * Викликає createTransaction для створення об'єкта транзакції
-     * після чого додає його до історії транзакцій
-     */
-    deposit(amount) {},
+//     /*
+//      * Метод створює та повертає об'єкт транзакції.
+//      * Приймає суму та тип транзакції.
+//      */
+//     createTransaction(amount, type) {
+//         return {
+//             // id: this.transactions.length, // індекс масива // коли НЕ видаляються елементи
+//             id: Date.now(),
+//             amount,
+//             type,
+//         };
+//     },
 
-    /*
-     * Метод, що відповідає за зняття суми з балансу.
-     * Приймає суму транзакції.
-     * Викликає createTransaction для створення об'єкта транзакції
-     * після чого додає його до історії транзакцій.
-     *
-     * Якщо amount більше ніж поточний баланс, виводь повідомлення
-     * про те, що зняття такої суми не можливе, недостатньо коштів.
-     */
-    withdraw(amount) {},
+//     /*
+//      * Метод, що відповідає за додавання суми до балансу.
+//      * Приймає суму транзакції.
+//      * Викликає createTransaction для створення об'єкта транзакції
+//      * після чого додає його до історії транзакцій
+//      */
+//     deposit(amount) {
+//         if (amount <= 0) {
+//             return 'Error';
+//         }
+//         const item = this.createTransaction(amount, Transaction.DEPOSIT); // викликали createTransaction для створення об'єкта кожної транзакції і зберегли її і зміну для перевикористання!!!!!!!!!!
+//         this.balance += amount;
+//         this.transactions.push(item);
+//     },
 
-    /*
-     * Метод повертає поточний баланс
-     */
-    getBalance() {
-        return this.balance;
-    },
+//     /*
+//      * Метод, що відповідає за зняття суми з балансу.
+//      * Приймає суму транзакції.
+//      * Викликає createTransaction для створення об'єкта транзакції
+//      * після чого додає його до історії транзакцій.
+//      *
+//      * Якщо amount більше ніж поточний баланс, виводь повідомлення
+//      * про те, що зняття такої суми не можливе, недостатньо коштів.
+//      */
+//     withdraw(amount) {
+//         if (amount > this.balance || amount <= 0) {
+//             return 'Not money';
+//         }
+//         const item = this.createTransaction(amount, Transaction.WITHDRAW);
+//         this.balance -= amount;
+//         this.transactions.push(item);
+//         console.log(item);
+//     },
 
-    /*
-     * Метод шукає та повертає об'єкт транзакції по id
-     */
-    getTransactionDetails(id) {},
+//     /*
+//      * Метод повертає поточний баланс
+//      */
+//     getBalance() {
+//         return this.balance;
+//     },
 
-    /*
-     * Метод повертає кількість коштів
-     * певного типу транзакції з усієї історії транзакцій
-     */
-    getTransactionTotal(type) {},
-};
+//     /*
+//      * Метод шукає та повертає об'єкт транзакції по id
+//      */
+//     getTransactionDetails(id) {
+//         //перебираємо весь масив транзакцій по айді
+//         for (const transaction of this.transactions) {
+//             if (transaction.id === id) {
+//                 return transaction;
+//             }
+//         }
+//         return 'Empty';
+//     },
 
-console.log(account.createTransaction(1000, 'deposit'));
-console.log(account.getBalance());
+//     /*
+//      * Метод повертає кількість коштів
+//      * певного типу транзакції з усієї історії транзакцій
+//      */
+//     getTransactionTotal(type) {
+//         let sum = 0;
+//         for (const transaction of this.transactions) {
+//             if (transaction.type === type) {
+//                 sum += transaction.amount;
+//             }
+//         }
+//         return sum;
+//     },
+// };
+// account.deposit(1000);
+// account.deposit(500);
+// account.withdraw(500);
+// console.log(account.getBalance());
+// console.log(account.getTransactionDetails(17));
+// console.log(account.getTransactionTotal('withdraw'));
 
-account.deposit(8000);
-account.deposit(1000);
-account.deposit(500);
-account.withdraw(1500);
-account.withdraw(15000);
-account.withdraw(-88);
-account.withdraw('hello');
-account.withdraw(800);
-
-console.log(account.getTransactionDetails(2));
-console.log(account.getTransactionDetails(0));
-console.log(account.getTransactionDetails(9));
-console.log(account.getTransactionDetails(3));
-
-console.log(account.getTransactionTotal(TRANSACTIONS.DEPOSIT));
-console.log(account.getTransactionTotal(TRANSACTIONS.WITHDRAW));
-
-console.log(account);
+// console.log(account);
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -231,3 +251,5 @@ console.log(account);
 // console.log(account.getTransactionTotal(TRANSACTIONS.WITHDRAW));
 
 // console.log(account);
+
+////////////////////////////////////// ЗІЛЛЯ ///////////////////////////////////
