@@ -275,3 +275,44 @@
 // console.log(hogvargs.getTotalPoints('griffindor'));
 // console.log(hogvargs.getTotalPoints('slizerin'));
 // console.log(hogvargs.getTotalPoints('orlan'));
+
+//ЗАДАЧА 12 СТВОРИТИ НОВИЙ КЛЮЧ І ПОЄДНАТИ ДВІ ВЛАСТИВОСТІ (РЕСТ + СПРЕД)_____________________________
+
+// function transformUserName({ name, surname, ...props }) {
+//     return {
+//         fullName: `${name} ${surname}`,
+//         ...props,
+//     };
+// }
+
+// console.log(
+//     transformUserName({
+//         name: 'Egor',
+//         surname: 'Bondar',
+//         email: 'wefef@gmail.com',
+//         city: 'Kiev',
+//     })
+// );
+
+////БЕЗ РЕСТА __________
+
+// function getFullName(obj) {
+//     const firstName = obj.name;
+//     const secondName = obj.surname;
+//     const fullName = `${firstName} ${secondName}`;
+
+//     delete obj.name;
+//     delete obj.surname;
+
+//     obj.fullName = fullName;
+
+//     return obj;
+// }
+// console.log(
+//     getFullName({
+//         name: 'Egor',
+//         surname: 'Bondar',
+//         email: 'wefef@gmail.com',
+//         city: 'Kiev',
+//     })
+// );
