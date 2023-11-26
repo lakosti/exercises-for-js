@@ -937,3 +937,15 @@ var number = function (busStops) {
 //     ])
 // ); //17
 // console.log(number([[0, 0]])); //0
+
+// ЗАДАЧА РЕКУРСІЯ -- ПОРАХУВАТИ ЧИСЛА ВІД МЕНШОГО ДО БІЛЬШОГО ___________________________
+// function countUp(n) {
+//     if (n < 1) {
+//         return [];
+//     } else {
+//         const countArray = countUp(n - 1);
+//         countArray.push(n);
+//         return countArray;
+//     }
+// }
+// console.log(countUp(5));
