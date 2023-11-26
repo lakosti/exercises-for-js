@@ -22,7 +22,14 @@ const account = {
      * Метод створює та повертає об'єкт транзакції.
      * Приймає суму та тип транзакції.
      */
-    createTransaction(amount, type) {},
+    createTransaction(amount, type) {
+        return {
+            // id: this.transactions.length, // індекс масива // коли НЕ видаляються елементи
+            id: Date.now(),
+            amount,
+            type,
+        };
+    },
 
     /*
      * Метод, що відповідає за додавання суми до балансу.
@@ -62,6 +69,7 @@ const account = {
     getTransactionTotal(type) {},
 };
 
+console.log(account.createTransaction(1000, 'deposit'));
 console.log(account.getBalance());
 
 account.deposit(8000);
