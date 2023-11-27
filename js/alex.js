@@ -2,6 +2,7 @@
 //typeof number не підходить бо NaN = number
 //NaN == NaN // false -- єдине значення в джс яке не дорівнює саме собі
 //.trim() -- видаляє зайві пробіли на початку і в кінці
+//forEach -- нічого не повертає (буде андефінед) і його не можна зупинити
 
 // function getLastElementMeta(array) {
 //     return [array.length - 1, array[array.length - 1]];
