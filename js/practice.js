@@ -316,3 +316,26 @@
 //         city: 'Kiev',
 //     })
 // );
+
+///ЗАДАЧА колбек функції // робота  з масивами // підповідно по інлайн функції зробити математичні операції______________________________________________
+
+// function each(arr, action) {
+//     const newArr = [];
+
+//     // arr.forEach(el => {
+//     //     const result = action(el);
+//     //     newArr.push(result);
+//     // });
+//     arr.forEach(el => newArr.push(action(el)));
+//     return newArr;
+// }
+///---------------------------------через map
+
+// function each(arr, action) {
+//     return arr.map(el => action(el));
+// }
+
+// console.log(each([64, 49, 36, 25, 16], value => value * 2));
+// console.log(each([64, 49, 36, 25, 16], value => value - 10));
+// console.log(each([64.5, 49.1, 36.9, 25.7, 16.3], value => Math.ceil(value)));
+// console.log(each([64.5, 49.1, 36.9, 25.7, 16.3], value => Math.floor(value)));
