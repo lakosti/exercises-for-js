@@ -11,6 +11,7 @@
 //filter -- знаходить декілька елементів які задовільняють умову // якщо нічого не знайдено ПОВЕРТАЄ ПУСТИЙ МАСИВ навіть якщо знайшло один елемент все рівно буде масив //
 //reduce -- приймає два параметра (callback, initialValue), callback(acc,i,el,arr) // інішуал велью -- початкове значення
 //flatMap -- діє на один рівень вкладеності
+// reduce  завжди повертаємо acc /// return acc
 
 // function getLastElementMeta(array) {
 //     return [array.length - 1, array[array.length - 1]];
