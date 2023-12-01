@@ -339,3 +339,68 @@
 // console.log(each([64, 49, 36, 25, 16], value => value - 10));
 // console.log(each([64.5, 49.1, 36.9, 25.7, 16.3], value => Math.ceil(value)));
 // console.log(each([64.5, 49.1, 36.9, 25.7, 16.3], value => Math.floor(value)));
+
+/// ЗАДАЧА повернути повідомлення про те чи знайдено об'єкт по айді чи ні (колбек функція)___________________________________
+
+// const products = [
+//     {
+//         id: 1,
+//         name: 'Телефон',
+//         price: 10000,
+//         description: 'Смартфон з високоякісним дисплеєм та потужним процесором.',
+//     },
+//     {
+//         id: 2,
+//         name: 'Ноутбук',
+//         price: 25000,
+//         description: 'Легкий та потужний ноутбук для роботи та розваг.',
+//     },
+//     {
+//         id: 3,
+//         name: 'Планшет',
+//         price: 8000,
+//         description: 'Компактний планшет для перегляду контенту.',
+//     },
+// ];
+
+// function getProductDetails(id, success, error) {
+//     for (const product of products) {
+//         if (product.id === id) {
+//             success(product);
+//             return;
+//         }
+//     }
+//     error(id);
+// }
+// getProductDetails(3, handleSuccess, handleError);
+// getProductDetails(44, handleSuccess, handleError);
+
+// function handleSuccess(message) {
+//     console.log(`✅ Success!`, message);
+// }
+
+// function handleError(productId) {
+//     console.log(`❌ Error! Product with ${productId} id not found`);
+// }
+
+//ЗАДАЧА повернути середнюю суму товарів // якщо масив пустий повернути No products found_____________________________________
+
+// const products = [
+//     { name: 'Apple', price: 0.99 },
+//     { name: 'Banana', price: 0.49 },
+//     { name: 'Orange', price: 0.79 },
+//     { name: 'Mango', price: 1.99 },
+// ];
+
+// function calculateAveragePrice(products, onSuccess, onError) {
+//     let total = 0;
+//     if (!products.length) {
+//         return onError('No products found'); // перериваємо
+//     }
+//     products.forEach(({ price }) => (total += price));
+//     onSuccess(total / products.length);
+// }
+// const onSuccess = averagePrice => console.log('Average price - ', averagePrice.toFixed(2)); // оскільки це лише в цьому колбеці потрібно округлити, то тут і прописуємо фіксед
+// const onError = errorMessage => console.log('Error', errorMessage);
+
+// calculateAveragePrice(products, onSuccess, onError);
