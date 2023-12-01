@@ -125,7 +125,7 @@
 
 //ЗАДАЧА 6 видалити з масиву елементи що не є типом даних number________________________________________________________
 
-const arr = [3, 'hello', null, 42, false];
+// const arr = [3, 'hello', null, 42, false];
 
 // if (isNaN(arr[i])) {
 //     console.log(arr[i]);
