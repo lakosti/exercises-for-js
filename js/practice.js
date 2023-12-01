@@ -404,3 +404,18 @@
 // const onError = errorMessage => console.log('Error', errorMessage);
 
 // calculateAveragePrice(products, onSuccess, onError);
+
+//ЗАДАЧА знайти вкладеність (рекурсія) ____________________________________
+
+// const arr = [1, 2, 3, [4, [5, 6, [7, 8, [9, [5, 6]]]]]];
+// function findDepth(arr) {
+//     let depth = 0;
+//     for (const item of arr) {
+//         if (Array.isArray(item)) {
+//             depth += 1;
+//             depth += findDepth(item);
+//         }
+//     }
+//     return depth;
+// }
+// console.log(findDepth(arr));
