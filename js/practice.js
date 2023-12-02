@@ -419,3 +419,22 @@
 //     return depth;
 // }
 // console.log(findDepth(arr));
+
+//ЗАДАЧА  порахувати середній бал студентів та повернути об'єкт з імям та балами цього студента____________________________________
+
+const students = [
+    { name: 'John', grades: [80, 85, 90] }, //  { name: "John", average: 85 }
+    { name: 'Alice', grades: [90, 95, 92] },
+    { name: 'Bob', grades: [70, 80, 75] },
+    { name: 'Emily', grades: [95, 92, 88] },
+    { name: 'David', grades: [85, 88, 90] },
+];
+
+function getAverage(arr) {
+    const result = arr.map(({ name, grades }) => {
+        const total = grades.reduce((acc, grade) => acc + grade, 0); // якщо масив примітивів можемо не повертати явно акамулятор
+        return { name, average: +(total / grades.length).toFixed() };
+    });
+    return result;
+}
+console.log(getAverage(students));
