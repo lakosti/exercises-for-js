@@ -422,19 +422,33 @@
 
 //ЗАДАЧА  порахувати середній бал студентів та повернути об'єкт з імям та балами цього студента____________________________________
 
-const students = [
-    { name: 'John', grades: [80, 85, 90] }, //  { name: "John", average: 85 }
-    { name: 'Alice', grades: [90, 95, 92] },
-    { name: 'Bob', grades: [70, 80, 75] },
-    { name: 'Emily', grades: [95, 92, 88] },
-    { name: 'David', grades: [85, 88, 90] },
-];
+// const students = [
+//     { name: 'John', grades: [80, 85, 90] }, //  { name: "John", average: 85 }
+//     { name: 'Alice', grades: [90, 95, 92] },
+//     { name: 'Bob', grades: [70, 80, 75] },
+//     { name: 'Emily', grades: [95, 92, 88] },
+//     { name: 'David', grades: [85, 88, 90] },
+// ];
 
-function getAverage(arr) {
-    const result = arr.map(({ name, grades }) => {
-        const total = grades.reduce((acc, grade) => acc + grade, 0); // якщо масив примітивів можемо не повертати явно акамулятор
-        return { name, average: +(total / grades.length).toFixed() };
-    });
-    return result;
-}
-console.log(getAverage(students));
+// function getAverage(arr) {
+//     const result = arr.map(({ name, grades }) => {
+//         const total = grades.reduce((acc, grade) => acc + grade, 0); // якщо масив примітивів можемо не повертати явно акамулятор
+//         return { name, average: Math.round(total / grades.length) };
+//     });
+//     return result;
+// }
+// console.log(getAverage(students));
+
+//ЗАДАЧА повернути імена студентів вік яких старше 20 років _____________________________________
+// const students = [
+//     { name: 'John', age: 20, gpa: 3.8 },
+//     { name: 'Alice', age: 21, gpa: 3.2 },
+//     { name: 'Bob', age: 19, gpa: 3.5 },
+//     { name: 'Emily', age: 22, gpa: 3.9 },
+//     { name: 'David', age: 20, gpa: 3.7 },
+// ];
+
+// function getAdultName(arr) {
+//     return arr.filter(({ age }) => age > 20).map(({ name }) => name);
+// }
+// console.log(getAdultName(students));
