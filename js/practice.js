@@ -452,3 +452,54 @@
 //     return arr.filter(({ age }) => age > 20).map(({ name }) => name);
 // }
 // console.log(getAdultName(students));
+
+//ЗАДАЧА Напишіть функцію, яка використовує метод find, щоб знайти книжку за її назвою (title) // Якщо книгу не знайдено повертається рядок 'Not found'_______________________________________
+
+// const books = [
+//     {
+//         title: 'JavaScript: The Good Parts',
+//         author: 'Douglas Crockford',
+//         year: 2008,
+//     },
+//     {
+//         title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+//         author: 'Robert C. Martin',
+//         year: 2008,
+//     },
+//     {
+//         title: 'The Pragmatic Programmer: Your Journey to Mastery',
+//         author: 'Andrew Hunt, David Thomas',
+//         year: 1999,
+//     },
+//     {
+//         title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+//         author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+//         year: 1994,
+//     },
+//     {
+//         title: 'Refactoring: Improving the Design of Existing Code',
+//         author: 'Martin Fowler',
+//         year: 1999,
+//     },
+// ];
+
+// function getBook(arr, title) {
+//     const result = arr.find(book => book.title == title);
+//     return result || 'Not found';
+// }
+// console.log(getBook(books, 'Design Patterns: Elements of Reusable Object-Oriented Software'));
+// console.log(getBook(books, 'Hello my sword'));
+
+//ЗАДАЧА Напишіть функцію, яка використовує метод reduce, щоб обчислити загальну вартість всіх товарів у масиві, яка розраховується як добуток ціни товару на його кількість, а потім сумується з іншими товарами.// Результат повинен бути загальною вартістю всіх товарів_______________________________________
+
+// const products = [
+//     { id: 1, name: 'T-shirt', price: 20, quantity: 3 }, // 20 * 3 = 60
+//     { id: 2, name: 'Jeans', price: 50, quantity: 2 },
+//     { id: 3, name: 'Sneakers', price: 80, quantity: 1 },
+//     { id: 4, name: 'Hat', price: 15, quantity: 4 },
+//     { id: 5, name: 'Socks', price: 5, quantity: 6 },
+// ];
+// function getTotal(arr) {
+//     return arr.reduce((acc, { price, quantity }) => acc + price * quantity, 0);
+// }
+// console.log(getTotal(products));
