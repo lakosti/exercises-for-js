@@ -120,6 +120,18 @@
 // console.log(getCombination(data, 2)); // [[1,2],[3,4], [...]...]
 // console.log(getCombination(data, 3)); // [[1,2,3],[4,5,6], [...]...]
 
+// ЗАДАЧА 8 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа
+
+// Результат на який очікуємо
+// const obj = {
+//     a: 3,
+//     b: 4,
+//     s: 3,
+//     // ...
+// }
+const str = 'absdabsrgbadgtdswwbetflg';
+const obj = {};
+
 //
 //ЗАДАЧА 8 створити функцію яка повертає об'єкт з 3 ключами___________________________
 
@@ -503,3 +515,60 @@
 //     return arr.reduce((acc, { price, quantity }) => acc + price * quantity, 0);
 // }
 // console.log(getTotal(products));
+
+//ЗАДАЧА відсортувати книжки за роком видання _______________________________________
+// const books = [
+//     {
+//         title: 'JavaScript: The Good Parts',
+//         author: 'Douglas Crockford',
+//         year: 2008,
+//     },
+//     {
+//         title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+//         author: 'Robert C. Martin',
+//         year: 2008,
+//     },
+//     {
+//         title: 'The Pragmatic Programmer: Your Journey to Mastery',
+//         author: 'Andrew Hunt, David Thomas',
+//         year: 1999,
+//     },
+//     {
+//         title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+//         author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+//         year: 1994,
+//     },
+//     {
+//         title: 'Refactoring: Improving the Design of Existing Code',
+//         author: 'Martin Fowler',
+//         year: 1999,
+//     },
+// ];
+
+// function sortByYear(arr) {
+//     return arr.toSorted((a, b) => b.year - a.year);
+// }
+// console.log(sortByYear(books));
+
+//ЗАДАЧА // Напишіть функцію, яка використовує перебираючі методи масиву map та filter, щоб отримати масив назв продуктів, ціна яких менше 2 доларів та відсортуй їх за алфавітним порядком
+
+// const products = [
+//     { id: 2, name: 'Banana', price: 0.99 },
+//     { id: 1, name: 'Apple', price: 1.99 },
+//     { id: 3, name: 'Orange', price: 2.49 },
+//     { id: 4, name: 'Grapes', price: 3.99 },
+// ];
+
+// function getSortByName(arr) {
+//     const products = arr
+//         .filter(({ price }) => price < 2)
+//         .map(({ name }) => name)
+//         .toSorted((a, b) => a.localeCompare(b));
+
+//     return products.reduce(
+//         (acc, product, i) => acc + `${i + 1} - ${product}\n`,
+//         products.length ? 'Product list: \n' : 'Products not found'
+//     );
+// }
+
+// console.log(getSortByName(products));
