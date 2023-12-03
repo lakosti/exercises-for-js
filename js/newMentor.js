@@ -210,3 +210,18 @@
 //     return str.toLowerCase().startsWith('a') ? 'yes' : 'no';
 // }
 // console.log(getFirstLetter('vbcbe'));
+
+///////////////////////////////////////////////////////ДРУГЕ ЗАНЯТТЯ///////////////////////////////////////////////////////////////////////////////////////////
+
+//TASK 1
+const str = ['JavaScript', 'HTML', 'CSS', 'React'];
+const subStr = 'S';
+const joinedArr = [];
+
+for (let i = 0; i < str.length; i += 1) {
+    if (str[i].includes(subStr)) {
+        joinedArr.push(str[i]);
+    }
+}
+console.log(`${subStr} - ${joinedArr}`);
+console.log(joinedArr);
