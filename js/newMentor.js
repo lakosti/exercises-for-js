@@ -213,15 +213,34 @@
 
 ///////////////////////////////////////////////////////ДРУГЕ ЗАНЯТТЯ///////////////////////////////////////////////////////////////////////////////////////////
 
-//TASK 1
+//TASK 1 перевірити чи входить підстрока в рядок використовуючи метод indexOf______________________________
+
 // const str = ['JavaScript', 'HTML', 'CSS', 'React'];
 // const subStr = 'S';
-// const joinedArr = [];
+// const newArr = [];
 
 // for (let i = 0; i < str.length; i += 1) {
-//     if (str[i].includes(subStr)) {
-//         joinedArr.push(str[i]);
+//     console.log(str[i]);
+//     if (str[i].indexOf(subStr) !== -1) {
+//         newArr.push(str[i]);
 //     }
 // }
-// console.log(`${subStr} - ${joinedArr}`);
-// console.log(joinedArr);
+// const joinedArr = newArr.join(', ');
+// console.log(`Масив що містить підстроку: ${subStr} - ${joinedArr}`);
+
+//TASK 2 перевірити якщо масив містить такий елемент, то видалити, якщо немає то додати в кінець масива____________________
+
+const array = ['JavaScript', 'HTML', 'CSS', 'SS'];
+const el = 'HE';
+const idx = array.indexOf(el);
+
+// if (idx !== -1) {
+//     array.splice(idx, 1);
+// } else {
+//     array.push(el);
+// }
+
+// !!~idx ---- ЯКЩО Є (!== -1)
+
+!!~idx ? array.splice(idx, 1) : array.push(el);
+console.log(array);
