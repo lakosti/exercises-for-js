@@ -230,17 +230,25 @@
 
 //TASK 2 перевірити якщо масив містить такий елемент, то видалити, якщо немає то додати в кінець масива____________________
 
-const array = ['JavaScript', 'HTML', 'CSS', 'SS'];
-const el = 'HE';
-const idx = array.indexOf(el);
+// const array = ['JavaScript', 'HTML', 'CSS', 'SS'];
+// const el = 'HE';
+// const idx = array.indexOf(el);
 
-// if (idx !== -1) {
-//     array.splice(idx, 1);
-// } else {
-//     array.push(el);
-// }
+// // if (idx !== -1) {
+// //     array.splice(idx, 1);
+// // } else {
+// //     array.push(el);
+// // }
 
-// !!~idx ---- ЯКЩО Є (!== -1)
+// // !!~idx ---- ЯКЩО Є (!== -1)
 
-!!~idx ? array.splice(idx, 1) : array.push(el);
-console.log(array);
+// !!~idx ? array.splice(idx, 1) : array.push(el);
+// console.log(array);
+
+//TASK 3 створити функцію яка буде приймати числа (зробити перевірку) і повертати найменше_________________________
+function getMinNum(a, b) {}
+
+console.log(getMinNum(5, 10));
+console.log(getMinNum(5, 's'));
+console.log(getMinNum('u', 's'));
+console.log(getMinNum(true, false));
