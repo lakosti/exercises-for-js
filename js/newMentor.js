@@ -272,3 +272,35 @@
 //     return newArr;
 // }
 // console.log(getSum(someArr)); // [33,45,39,17,25,29]
+
+//TASK 5 повернути середнє значення серед аргументів + додати перевірку на числа________________________
+
+// function calculateAvarage(...args) {
+//     // Array.from(arguments) // перетворити на повноцінний масив
+//     let sum = 0;
+//     let count = 0;
+//     for (const arg of args) {
+//         if (typeof arg === 'number') {
+//             sum += arg;
+//             count += 1; // рахуємо скільки приходить чисел
+//         }
+//     }
+//     return Math.round(sum / count); // ділимо на ці числа
+// }
+// console.log(calculateAvarage(10, 15, 20, 200));
+// console.log(calculateAvarage(10, 15, 20, 200, 10));
+
+//TASK 6  порахувати кількість голосних _____________________________________________
+
+// const str = 'This is A new line';
+// const vowels = ['a', 'e', 'i', 'o', 'u'];
+// function countVowels(str) {
+//     let count = 0;
+//     for (const s of str.toLowerCase()) {
+//         count += vowels.includes(s) ? 1 : 0;
+//     }
+//     return count;
+// }
+// console.log(countVowels(str));
+
+//TASK вивести числа від 1 до мінімального яке задане____________________________
