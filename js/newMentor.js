@@ -246,9 +246,29 @@
 // console.log(array);
 
 //TASK 3 створити функцію яка буде приймати числа (зробити перевірку) і повертати найменше_________________________
-function getMinNum(a, b) {}
 
-console.log(getMinNum(5, 10));
-console.log(getMinNum(5, 's'));
-console.log(getMinNum('u', 's'));
-console.log(getMinNum(true, false));
+// function getMinNum(a, b) {
+//     if (typeof a !== 'number' || typeof b !== 'number') {
+//         return 'It`s not a number'; //else не вівдпрацює бо поставили return
+//     }
+//     // return Math.min(a, b);
+//     return a < b ? a : b;
+// }
+
+// console.log(getMinNum(5, 3));
+// console.log(getMinNum(5, 's'));
+// console.log(getMinNum('u', 's'));
+// console.log(getMinNum(true, false));
+
+//TASK 4 напишіть функцію яка буде сумувати сусідні числа і пушити в масив__________________________________
+
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+// function getSum(arr) {
+//     const newArr = [];
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         newArr.push(arr[i] + arr[i + 1]);
+//     }
+//     return newArr;
+// }
+// console.log(getSum(someArr)); // [33,45,39,17,25,29]
