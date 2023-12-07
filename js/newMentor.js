@@ -396,17 +396,17 @@
 // Якщо об'єкт має такий ключ - поверне true
 // Є 2 варіанти рішення, спочатку напишемо функцію, потім вирішимо простим способом
 
-const obj = {
-    name: 'Igor',
-    car: 'Mercedes',
-    carColor: 'black',
-};
+// const obj = {
+//     name: 'Igor',
+//     car: 'Mercedes',
+//     carColor: 'black',
+// };
 
-function getBool(obj, key) {
-    return obj.hasOwnProperty(key);
-}
-console.log(getBool(obj, 'car')); // true
-console.log(getBool(obj, 'greet')); // true
+// function getBool(obj, key) {
+//     return obj.hasOwnProperty(key);
+// }
+// console.log(getBool(obj, 'car')); // true
+// console.log(getBool(obj, 'greet')); // false
 
 //TODO:============task-06======================================================
 // У нас є об'єкт, у якому зберігатимуться зарплати
@@ -423,20 +423,23 @@ console.log(getBool(obj, 'greet')); // true
 
 // console.log(sum);
 
-//TODO:============task-07======================================================
+//============task-07======================================================
 // Напишіть функцію, яка приймає як параметр об'єкт
 // та формує об'єкти у новому масиві у форматі [key, value]
 
 // const user = {
-//   name: 'John',
-//   surName: 'Stones',
-//   age: 20,
-//   hobby: 'tenis',
-//   haveCar: true,
-//   merried: false,
+//     name: 'John',
+//     surName: 'Stones',
+//     age: 20,
+//     hobby: 'tenis',
+//     haveCar: true,
+//     merried: false,
 // };
 
-// changeObject(user);
+// const entries = Object.entries(user);
+// for (const entry of entries) {
+//     console.log(entry);
+// }
 
 //TODO:============task-08======================================================
 // Створіть функцію multiplyNumeric(obj),
@@ -519,6 +522,8 @@ console.log(getBool(obj, 'greet')); // true
 // ];
 
 // console.log(uniq(arr1, arr2));
+//************************************************************************************************************************************************************************************************************************************************************ */
+
 //! Callback
 //TODO:============task-01=========================
 // Напишіть функцію, яка приймає два числа і колбек-функцію. Функція повинна помножити числа між собою та передати результат дії до колбек-функції. Колбек-функція повинна, у разі, якщо, це число є парним - помножити це число на себе, якщо ні - взяти квадратний корінь з цього числа, та вивести результат у консоль лог.
