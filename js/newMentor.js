@@ -353,7 +353,7 @@
 // };
 // console.log(square.calculateArea());
 
-//TODO:============task-03==============================================
+//============task-03==============================================
 // Створіть об'єкт "магазин" зі списком товарів. Напишіть метод "hasProduct", який буде перевіряти, чи є певний товар в наявності на складі магазину.
 
 // const store = {
@@ -369,9 +369,24 @@
 // console.log(store.hasProduct('apple'));
 // console.log(store.hasProduct('banana'));
 
-//TODO:============task-04==============================================
+//============task-04==============================================
 // 4. Створіть об'єкт "кошик" зі списком товарів та їх цін. Напишіть метод "calculateTotal", який буде обчислювати загальну суму товарів у кошику.
 
+// const cart = {
+//     apple: 250,
+//     banana: 10,
+//     peach: 20,
+//     plum: 75,
+//     calculateTotal() {
+//         let sum = 0;
+//         for (const key in this) {
+//             if (typeof this[key] === 'number' && this.hasOwnProperty(key)) {
+//                 sum += this[key];
+//             }
+//         }
+//         return sum;
+//     },
+// };
 // console.log(cart.calculateTotal());
 
 //! Перебір об'єктів: for...in і методи Object.keys|values|entries
