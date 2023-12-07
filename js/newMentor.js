@@ -445,14 +445,31 @@
 // Створіть функцію multiplyNumeric(obj),
 // яка множить всі числові властивості об'єкта obj на 2.
 
-// до виклику функції
-// let menu = {
-//   width: 200,
-//   height: 300,
-//   title: 'My menu',
-// };
-
+const menu = {
+    width: 200,
+    height: 300,
+    title: 'My menu',
+};
+// function multiplyNumeric(obj) {
+//     for (const key in obj) {
+//         if (typeof obj[key] === 'number') {
+//             console.log(obj[key]);
+//             obj[key] *= 2;
+//         }
+//     }
+//     return obj;
+// }
 // console.log(multiplyNumeric(menu));
+
+function multiplyNumeric(obj) {
+    for (let value of Object.values(obj)) {
+        if (typeof value === 'number') {
+            value *= 2;
+        }
+    }
+    return obj;
+}
+console.log(multiplyNumeric(menu));
 
 // після виклику функції
 // menu = {
