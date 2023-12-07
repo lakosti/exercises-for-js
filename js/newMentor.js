@@ -390,18 +390,23 @@
 // console.log(cart.calculateTotal());
 
 //! Перебір об'єктів: for...in і методи Object.keys|values|entries
-//TODO:============task-05======================================================
+
+//============task-05======================================================
 // Потрібно написати функцію, яка приймає 2 параметри obj і key, яка буде перебирати об'єкт.
 // Якщо об'єкт має такий ключ - поверне true
 // Є 2 варіанти рішення, спочатку напишемо функцію, потім вирішимо простим способом
 
-// const obj = {
-//   name: 'Igor',
-//   car: 'Mercedes',
-//   carColor: 'black',
-// };
+const obj = {
+    name: 'Igor',
+    car: 'Mercedes',
+    carColor: 'black',
+};
 
-// console.log(getBool(obj, 'car')); // true
+function getBool(obj, key) {
+    return obj.hasOwnProperty(key);
+}
+console.log(getBool(obj, 'car')); // true
+console.log(getBool(obj, 'greet')); // true
 
 //TODO:============task-06======================================================
 // У нас є об'єкт, у якому зберігатимуться зарплати
