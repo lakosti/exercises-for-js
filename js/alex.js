@@ -22,6 +22,11 @@
 // foo() -- this = window/undefined(strict)
 // obj.foo() -- this = obj
 // foo.call(obj2) -- this = obj2
+//call / apply / bind --- можуть поміняти контекст виклику функції (при колбеці)
+//call / apply викликають функцію на місці
+//bind -- не викликає функцію а повертають копію фунцію з новим зіз
+//call == (obj, ...args)
+//apply == (obj, [...args])
 
 // function getLastElementMeta(array) {
 //     return [array.length - 1, array[array.length - 1]];
