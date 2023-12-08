@@ -13,6 +13,16 @@
 //flatMap -- діє на один рівень вкладеності
 // reduce  завжди повертаємо acc /// return acc
 
+//=============THIS===========
+
+// this оголошуються в місці виклику (зліва від функції)
+//якщо функція викликаєтсья без об'єкту то у use strict -- undefined, у звичайному режимі буде посилатися на window
+//у стрілках немає this вони беруть його у батька (місце де вона створена)
+
+// foo() -- this = window/undefined(strict)
+// obj.foo() -- this = obj
+// foo.call(obj2) -- this = obj2
+
 // function getLastElementMeta(array) {
 //     return [array.length - 1, array[array.length - 1]];
 // }

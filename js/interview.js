@@ -41,6 +41,35 @@
 
 // console.log(getNum);
 
+// ЗАДАЧА 8 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа___________________________________________________
+
+// const str = 'absdabsrgbadgtdswwbetflga';
+
+// const obj = {};
+
+// // for (const letter of str) {
+// //     if (letter in obj) {
+// //         obj[letter] += 1;
+// //     } else {
+// //         obj[letter] = 1;
+// //     }
+// // }
+// // console.log(obj);
+
+// //////////////////
+
+// const result = str.split('').reduce((acc, key) => {
+//     if (key in acc) {
+//         acc[key] += 1;
+//     } else {
+//         acc[key] = 1;
+//     }
+//     return acc;
+// }, {});
+// console.log(result);
+
+/////////////////////////////////
+
 //ЗАДАЧА 2____________________________________________________
 //визначити загальну кількість авто
 //порядковий номер + назва
@@ -355,11 +384,8 @@
 //     }
 //     // let bigSalary = arr[0][1]; // значення зп першого в об'єкті 100
 //     let bigSalary = arr[0];
-//     console.log(bigSalary);
 //     for (const salary of arr) {
 //         if (salary[1] > bigSalary[1]) {
-//             console.log(salary[1]);
-//             console.log(bigSalary[1]);
 //             bigSalary = salary;
 //         }
 //     }

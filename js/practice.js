@@ -120,40 +120,11 @@
 // console.log(getCombination(data, 2)); // [[1,2],[3,4], [...]...]
 // console.log(getCombination(data, 3)); // [[1,2,3],[4,5,6], [...]...]
 
-// ЗАДАЧА 8 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа___________________________________________________
-
-// const str = 'absdabsrgbadgtdswwbetflga';
-
-// const obj = {};
-
-// // for (const letter of str) {
-// //     if (letter in obj) {
-// //         obj[letter] += 1;
-// //     } else {
-// //         obj[letter] = 1;
-// //     }
-// // }
-// // console.log(obj);
-
-// //////////////////
-
-// const result = str.split('').reduce((acc, key) => {
-//     if (key in acc) {
-//         acc[key] += 1;
-//     } else {
-//         acc[key] = 1;
-//     }
-//     return acc;
-// }, {});
-// console.log(result);
-
-/////////////////////////////////
-
 ///ЗАДАЧА ВІДІБРАТИ УНІКАЛЬНІ ЕЛЕМЕНТИ________________________________________________
 // const elem = [1, 5, 2, 6, 3, 2, 5, 1, 6];
 // const result = elem.filter((el, i, arr) => arr.indexOf(el) === i).toSorted((a, b) => a - b);
 // console.log(result);
-//
+
 //ЗАДАЧА 8 створити функцію яка повертає об'єкт з 3 ключами___________________________
 
 // function createNewObj(product, quantity, price) {
