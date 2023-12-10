@@ -272,3 +272,18 @@
 //         [5, 89, 2, 3, 4],
 //     ])
 // );
+
+//ЗАДАЧА повернути масив з новими значеннями що більше ніж встановлене значення (forEach)___________________________________________
+
+// function filterArray(numbers, value) {
+//     let newArr = [];
+//     numbers.forEach(item => (item > value ? newArr.push(item) : newArr));
+//     return newArr;
+// }
+
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4,5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41,76]
+
+//ЗАДАЧА
