@@ -483,9 +483,10 @@
 //TODO:==========task-09=============
 // Напишіть функцію updateObject, яка приймає об'єкт та повертає
 // новий об'єкт без зазначених параметрів
-// Очікуваний результат ({a: 1, b: 2, c: 3}, 'b', 'a') => {c: 3}
-
-// console.logs(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'a')); // {c: 3}
+// function updateObject(obj, item) {
+//     //
+// }
+// console.log(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'a')); // {c: 3}
 
 //! Робота з масивом об'єктів
 //TODO:============task-10==============================
@@ -493,13 +494,13 @@
 // Напишіть функцію "findTopStudent", яка буде повертати об'єкт студента з найвищим середнім балом.
 
 // const students = [
-//   { name: 'Андрій', surname: 'Іванов', grade: 4.5 },
-//   { name: 'Олександр', surname: 'Петров', grade: 3.9 },
-//   { name: 'Марія', surname: 'Сидорова', grade: 4.8 },
-//   { name: 'Ірина', surname: 'Федорова', grade: 4.2 },
+//     { name: 'Андрій', surname: 'Іванов', grade: 4.5 },
+//     { name: 'Олександр', surname: 'Петров', grade: 3.9 },
+//     { name: 'Марія', surname: 'Сидорова', grade: 4.8 },
+//     { name: 'Ірина', surname: 'Федорова', grade: 4.2 },
 // ];
-
-// console.log(findTopStudent(students));
+// const findTopStudent = students.find(({ grade }) => grade);
+// console.log(findTopStudent);
 
 //TODO:============task-11==================================================
 // Створіть масив об'єктів "книг" з властивостями "назва", "автор" та "рік видання". Напишіть функцію "findBooksByAuthor",
