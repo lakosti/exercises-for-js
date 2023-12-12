@@ -83,7 +83,7 @@ const user2 = new User('Anna', 'Stefanova', 1925, 'qwerty');
 const user3 = new User('Egor', 'Stefanova', 1936, 'qwerty');
 
 console.log(user1);
-// console.log((user.password = '1111')); // сеттер
+// console.log((user.password = '1111')); // сеттер // задаємо нове значення
 // console.log(user1.password); // геттер
 // console.log(user.password);
 console.log(user.counter);
