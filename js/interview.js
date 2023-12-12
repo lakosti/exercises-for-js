@@ -1,7 +1,23 @@
 //ОБОВ'ЯЗКОВО ЗНАТИ ДЛЯ ІНТЕРВЬЮ
 
 // new Date().getFullYear() -- поточна дата // сьогоднішня дата
-//RETURN перериває всю функцію BREAK перериває лише цикл функція далі працює
+// ЗАМИКАННЯ -- це дозволяє зберегти доступ до лексичного оточення змінних навіть якщо його не існує
+
+// function counter() {
+//     let counter = 0;
+
+//     return function () {
+//         counter += 1; // цей counter повязаний
+//         console.log(counter);
+//     };
+// }
+// const fnCallCounter = counter();
+// fnCallCounter();
+// fnCallCounter();
+// fnCallCounter();
+// fnCallCounter();
+
+// RETURN перериває всю функцію BREAK перериває лише цикл функція далі працює
 // null typeof obj
 //array == obj
 // obj == obj
