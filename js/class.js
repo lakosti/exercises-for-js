@@ -30,72 +30,124 @@
 // console.log(user.getUserAge());
 // console.log(user.getFullName());
 
+//=======================================CLASS USER================================
+
 //робимо клас щоб не перевикористовувати по декілька разів одні і ті самі методи та властивості
-class User {
-    //статичні властивості / методи
-    static counter = 0;
-    static incrementUserAmount() {
-        this.counter += 1;
-        console.log(`Created new User. User amount ${this.counter}`);
-    }
+// class User {
+//     //статичні властивості / методи
+//     static counter = 0;
+//     static incrementUserAmount() {
+//         this.counter += 1;
+//         console.log(`Created new User. User amount ${this.counter}`);
+//     }
 
-    #password;
-    //приватні властивості
-    constructor(firstName, secondName, birthDate, password) {
-        User.incrementUserAmount();
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.birthDate = birthDate;
-        this.#password = password;
-    } //публічні методи
-    getUserAge() {
-        return new Date().getFullYear() - this.birthDate;
-    }
-    getFullName() {
-        return `${this.firstName} ${this.secondName}`;
-    }
-    #checkPassword() {
-        const userPass = prompt('Enter password');
-        return userPass === this.#password;
-    }
+//     #password;
+//     //приватні властивості
+//     constructor(firstName, secondName, birthDate, password) {
+//         User.incrementUserAmount();
+//         this.firstName = firstName;
+//         this.secondName = secondName;
+//         this.birthDate = birthDate;
+//         this.#password = password;
+//     } //публічні методи
+//     getUserAge() {
+//         return new Date().getFullYear() - this.birthDate;
+//     }
+//     getFullName() {
+//         return `${this.firstName} ${this.secondName}`;
+//     }
+//     #checkPassword() {
+//         const userPass = prompt('Enter password');
+//         return userPass === this.#password;
+//     }
 
-    //геттери та сеттери
-    get password() {
-        if (this.#checkPassword()) {
-            return this.#password;
-        } else {
-            return 'Wrong password';
-        }
-    }
-    set password(newPassword) {
-        if (this.#checkPassword() && newPassword.trim().length >= 4) {
-            this.#password = newPassword;
-        } else {
-            alert('Incorrect data!');
-        }
-    }
-}
+//     //геттери та сеттери
+//     get password() {
+//         if (this.#checkPassword()) {
+//             return this.#password;
+//         } else {
+//             return 'Wrong password';
+//         }
+//     }
+//     set password(newPassword) {
+//         if (this.#checkPassword() && newPassword.trim().length >= 4) {
+//             this.#password = newPassword;
+//         } else {
+//             alert('Incorrect data!');
+//         }
+//     }
+// }
 
-const user = new User('Oleg', 'Davidson', 1978, 'qwerty');
-console.log(user);
-const user1 = new User('Vika', 'Stefanova', 1958, 'qwerty');
-const user2 = new User('Anna', 'Stefanova', 1925, 'qwerty');
-const user3 = new User('Egor', 'Stefanova', 1936, 'qwerty');
+// const user = new User('Oleg', 'Davidson', 1978, 'qwerty');
+// console.log(user);
+// const user1 = new User('Vika', 'Stefanova', 1958, 'qwerty');
+// const user2 = new User('Anna', 'Stefanova', 1925, 'qwerty');
+// const user3 = new User('Egor', 'Stefanova', 1936, 'qwerty');
 
-console.log(user1);
-// console.log((user.password = '1111')); // сеттер // задаємо нове значення
-// console.log(user1.password); // геттер
-// console.log(user.password);
-console.log(user.counter);
+// console.log(user1);
+// // console.log((user.password = '1111')); // сеттер // задаємо нове значення
+// // console.log(user1.password); // геттер
+// // console.log(user.password);
+// console.log(user.counter);
 
-///----------НАСЛІДУВАННЯ КЛАСІВ
+// ///----------НАСЛІДУВАННЯ КЛАСІВ
 
-class Student extends User {
-    constructor(firstName, secondName, birthDate, password, points) {
-        super(firstName, secondName, birthDate, password, points); // -- викликає контруктор батківсього класу
+// class Student extends User {
+//     constructor(firstName, secondName, birthDate, password, points) {
+//         super(firstName, secondName, birthDate, password, points); // -- викликає контруктор батківсього класу
 
-        this.points = points;
-    }
-}
-const student = new Student('Victor', 'Davidson', 1976, 'qwerty', 87);
-console.log(student);
+//         this.points = points;
+//     }
+// }
+// const student = new Student('Victor', 'Davidson', 1976, 'qwerty', 87);
+// console.log(student);
+
+////===================================CLASS STORAGE=========================
+/**
+ * Напиши клас Storage який створює об'єкти для керування складом товарів.
+ * При виклику отримуватиме один аргумент - початковий масив товарів і
+ * записуватиме його властивість items.
+ *
+ * Додай методи класу:
+ * - getItems() - повертає масив товарів.
+ * - addItem(item) - отримує новий товар і додає його до поточних.
+ * - removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних.
+ */
+
+// class Storage {
+//     constructor(items = []) {
+//         // завжди задаємо значення за замовчуванням щоб не було помилок
+//         this.items = items;
+//     }
+//     getItems() {
+//         return this.items;
+//     }
+//     addItem(item) {
+//         const idx = this.items.indexOf(item);
+//         if (!~idx) {
+//             this.items.push(item);
+//         }
+//     }
+//     removeItem(item) {
+//         const idx = this.items.indexOf(item);
+//         if (!~idx) {
+//             console.log(`This item not found: '${item}'`);
+//             return; // вихід
+//         }
+//         this.items.splice(idx, 1);
+//     }
+// }
+
+// const storage = new Storage(['🍎', '🍋', '🍇', '🍑']);
+
+// const items = storage.getItems();
+// console.table(items); // [ '🍎', '🍋', '🍇', '🍑' ]
+
+// storage.addItem('🍌');
+// console.table(storage.items); // [ '🍎', '🍋', '🍇', '🍑', '🍌' ]
+
+// storage.removeItem('🍋');
+// storage.removeItem('🍎');
+// storage.removeItem('kiwi');
+
+// console.table(storage.items); // ['🍇', '🍑', '🍌' ]
