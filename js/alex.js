@@ -286,4 +286,21 @@
 // console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
 // console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41,76]
 
-//ЗАДАЧА
+//ЗАДАЧА поверніть об'єкт в якому вказано кількість тегів // {js: 3, node.js:3, html:2, css:2, react:2}
+
+// const tweets = [
+//     { id: '000', likes: 5, tags: ['js', 'node.js'] },
+//     { id: '001', likes: 2, tags: ['html', 'css'] },
+//     { id: '002', likes: 17, tags: ['js', 'html', 'node.js'] },
+//     { id: '003', likes: 8, tags: ['css', 'react'] },
+//     { id: '004', likes: 0, tags: ['js', 'node.js', 'react'] },
+// ];
+// const allTags = tweets
+//     .flatMap(({ tags }) => tags)
+//     .reduce((acc, item) => {
+//         // acc.hasOwnProperty(item) ? (acc[item] += 1) : (acc[item] = 1);
+//         acc[item] = (acc[item] || 0) + 1;
+//         //якщо елемента немає буде то свт цей елемент і буде = 0, в іншому випадку буде + 1
+//         return acc;
+//     }, {});
+// console.log(allTags);
