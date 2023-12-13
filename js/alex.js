@@ -304,3 +304,22 @@
 //         return acc;
 //     }, {});
 // console.log(allTags);
+
+//ЗАДАЧА ПАЛІНДРОМ (врахування регістру і символів) ____________________________________
+
+// function isStrPAlindrom(str) {
+//     const withoutCharacter = [',', '-', ' ', '/', '!', '?'];
+
+//     const toNormalizeStr = str
+//         .toLowerCase()
+//         .split('')
+//         .map(sum => (withoutCharacter.includes(sum) ? '' : sum))
+//         .join('');
+//     console.log(toNormalizeStr);
+
+//     const reversedStr = toNormalizeStr.split('').reverse().join('');
+//     return reversedStr === toNormalizeStr;
+// }
+// console.log(isStrPAlindrom('А роза упала на лапу азора')); // true
+// console.log(isStrPAlindrom('А роза упала, на лапу азора')); // true
+// console.log(isStrPAlindrom('А роза не упала на лапу азора')); // false
