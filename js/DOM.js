@@ -1,9 +1,15 @@
+//ЧИМ МЕНШЕ МИ ЗМІНЮЄМО ДОМ ДЕРЕВО ТИМ КРАЩЕ
 // element.querySelector('selector') -- для того щоб знайти елемент за css селектором // повертає ПЕРШИЙ елемент  або NULL (якщо нічого не знайдено)
 // element.querySelectorAll('selector') -- повертає псевдомасив елементів які співпадають, інакше повертає пустий МАСИВ
 
+//innerHtml -- вміє ств нові вузли, тобто розрізняти посилання від звичайного тексту і робити їх клікабельні // він ПЕРЕЗАПИСУЄ значення на нове// щоб було і нове і старе значення то робимо +=
+// titleEl.innerHTML = ''; //  швидке очищення контейнеру
+//textContent -- все написне буде лише текстом
+
 //textHead.textContent = 'New text' --- якщо хочемо поміняти текст
-// document.body.append(titleEl); // -- в кінці сторінки
+// document.body.append(titleEl); // -- в кінець сторінки // можна передавати багато значень, не тільки вузли а і текст // тобто він приймає STRING
 // document.body.prepend(titleEl); // -- початок сторінки
+//appendChild -- можна передавати лише один вузол
 
 //ПОШУК (querySelector / querySelectorAll)
 //-- за назвою тега
@@ -107,50 +113,88 @@ elem.nextElementSibling — містить посилання на наступ�
 
 // console.log(newElement);
 
-//================СТВОРЕННЯ ТА ДОДАВАННЯ ЕЛЕМЕНТІВ
-// -- через методи
-// -- через шаблонні строки
+//=============================СТВОРЕННЯ ТА ДОДАВАННЯ ЕЛЕМЕНТІВ через МЕТОДИ
 
 //логіка: створили вузол - дадали вузол // <h1 class="page-header">Це заголовок</h1>
 
 //ЗАДАЧА СТВОРИТИ ЗАГОЛОВОК І ПОМІСТИТИ НА ПОЧАТОК СТОРІНКИ_________________
 
-const titleEl = document.createElement('h1');
-console.log(titleEl);
-titleEl.textContent = 'Це заголовок';
-titleEl.classList.add('page-header');
-// document.body.append(titleEl); // -- в кінці сторінки
-// document.body.prepend(titleEl); // -- початок сторінки
+// const titleEl = document.createElement('h1');
+// console.log(titleEl);
+// titleEl.textContent = 'Це заголовок';
+// titleEl.classList.add('page-header');
+// // document.body.append(titleEl); // -- в кінці сторінки
+// // document.body.prepend(titleEl); // -- початок сторінки
 
 //ЗАДАЧА СТВОРИТИ КАРТИНКУ І ПОМІСТИТИ В ДІВ HERO _________________
 
-const imgEl = document.createElement('img');
-imgEl.src =
-    'https://media.istockphoto.com/id/1322277517/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B4%D0%B8%D0%BA%D0%B0%D1%8F-%D1%82%D1%80%D0%B0%D0%B2%D0%B0-%D0%B2-%D0%B3%D0%BE%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%B7%D0%B0%D0%BA%D0%B0%D1%82%D0%B5.jpg?s=612x612&w=0&k=20&c=PzyOT42E_elmRShS-7hCADYhXiElZar77vEm8uxuC3Y=';
-imgEl.alt = 'new pictures';
-imgEl.width = 320;
-console.log(imgEl);
-console.dir(imgEl);
-const heroEl = document.querySelector('.hero');
-heroEl.append(titleEl, imgEl);
-//спочатку куди дадаємо(змінна) потім на початок чи кінець і що додаємо
+// const imgEl = document.createElement('img');
+// imgEl.src =
+//     'https://media.istockphoto.com/id/1322277517/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B4%D0%B8%D0%BA%D0%B0%D1%8F-%D1%82%D1%80%D0%B0%D0%B2%D0%B0-%D0%B2-%D0%B3%D0%BE%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%B7%D0%B0%D0%BA%D0%B0%D1%82%D0%B5.jpg?s=612x612&w=0&k=20&c=PzyOT42E_elmRShS-7hCADYhXiElZar77vEm8uxuC3Y=';
+// imgEl.alt = 'new pictures';
+// imgEl.width = 320;
+// console.log(imgEl);
+// console.dir(imgEl);
+// const heroEl = document.querySelector('.hero');
+// heroEl.append(titleEl, imgEl);
+// //спочатку куди дадаємо(змінна) потім на початок чи кінець і що додаємо
 
 //ЗАДАЧА СТВОРИТИ ЩЕ ОДИН ПУНКТ МЕНЮ_______________________
 
-//створити елементи
-const itemEl = document.createElement('li');
-const linkEl = document.createElement('a');
-//додати клас
-itemEl.classList.add('item');
-linkEl.classList.add('link');
-//помістити всередину
-itemEl.append(linkEl);
-//додати текстовий контент
-linkEl.textContent = 'Hobby';
-//додати атрибут
-// linkEl.setAttribute('href', './team.jpg');
-linkEl.href = './team.jpg';
-// звернення до
-const listEl = document.querySelector('.nav-list');
-listEl.append(itemEl);
-console.log(listEl);
+////створити елементи
+// const itemEl = document.createElement('li');
+// const linkEl = document.createElement('a');
+// //додати клас
+// itemEl.classList.add('item');
+// linkEl.classList.add('link');
+// //помістити всередину
+// itemEl.append(linkEl);
+// //додати текстовий контент
+// linkEl.textContent = 'Hobby';
+// //додати атрибут
+// // linkEl.setAttribute('href', './team.jpg');
+// linkEl.href = './team.jpg';
+// // звернення до
+// const listEl = document.querySelector('.nav-list');
+// listEl.append(itemEl);
+// console.log(listEl);
+
+//ЗАДАЧА НАПИСАТИ ФУНКЦІЮ ДЛЯ СТВОРЕННЯ КОЛЕКЦІЇ КОЛЬОРІВ(кнопка + зміна кольору) (КОЛЕКЦІЯ ЕЛЕМЕНТІВ)_________________
+
+// const options = [
+//     { label: 'red', color: 'red' },
+//     { label: 'green', color: 'green' },
+//     { label: 'blue', color: 'blue' },
+//     { label: 'grey', color: 'grey' },
+//     { label: 'pink', color: 'pink' },
+//     { label: 'indigo', color: '#3F51B5' },
+// ];
+
+// const colorPickerContainerEl = document.querySelector('.color-picker');
+
+// const buttonsArr = options.map(({ label, color }) => {
+//     //створили кнопку
+//     const buttonEl = document.createElement('button');
+//     //додали текстовий контент через лейбл
+//     buttonEl.textContent = label;
+//     //додали фоновий колір
+//     buttonEl.style.backgroundColor = color;
+//     //додали клас
+//     buttonEl.classList.add('color-picker-btn');
+//     //повернули кнопку
+//     return buttonEl;
+// });
+
+// console.log(buttonsArr);
+// //додали все в елемент в HTML
+// //обов'язково розпилюємо
+// colorPickerContainerEl.append(...buttonsArr);
+
+// ==============================СТВОРЕННЯ та ДОДАВАННЯ ЕЛЕМЕНТІВ ЧЕРЕЗ ШАБЛОННІ СТРОКИ
+const titleEl = document.querySelector('.title');
+console.log(titleEl);
+titleEl.innerHTML +=
+    "<a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'>Link to freecodecamp</a>";
+// titleEl.innerHTML = ''; //  швидке очищення контейнеру
+// titleEl.textContent =
+//     "<a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'>Link to freecodecamp</a>";
