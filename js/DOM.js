@@ -11,6 +11,8 @@
 // document.body.prepend(titleEl); // -- початок сторінки
 //appendChild -- можна передавати лише один вузол
 
+//insertAdjacentHTML() -- вставка розмітки
+
 //ПОШУК (querySelector / querySelectorAll)
 //-- за назвою тега
 //-- назвою класа
@@ -154,7 +156,7 @@ elem.nextElementSibling — містить посилання на наступ�
 // //додати атрибут
 // // linkEl.setAttribute('href', './team.jpg');
 // linkEl.href = './team.jpg';
-// // звернення до
+// // звернення до / отримали елемент
 // const listEl = document.querySelector('.nav-list');
 // listEl.append(itemEl);
 // console.log(listEl);
@@ -190,11 +192,19 @@ elem.nextElementSibling — містить посилання на наступ�
 // //обов'язково розпилюємо
 // colorPickerContainerEl.append(...buttonsArr);
 
-// ==============================СТВОРЕННЯ та ДОДАВАННЯ ЕЛЕМЕНТІВ ЧЕРЕЗ ШАБЛОННІ СТРОКИ
-const titleEl = document.querySelector('.title');
-console.log(titleEl);
-titleEl.innerHTML +=
-    "<a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'>Link to freecodecamp</a>";
-// titleEl.innerHTML = ''; //  швидке очищення контейнеру
-// titleEl.textContent =
+// // ==============================СТВОРЕННЯ та ДОДАВАННЯ ЕЛЕМЕНТІВ ЧЕРЕЗ ШАБЛОННІ СТРОКИ (частіше використовується)
+// const titleEl = document.querySelector('.title');
+// console.log(titleEl);
+// titleEl.innerHTML +=
 //     "<a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'>Link to freecodecamp</a>";
+// // titleEl.innerHTML = ''; //  найчастіше викор для швидке очищення контейнеру, або для перезаписання контенту (замінити старе на нове)
+// // titleEl.textContent =
+// //     "<a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'>Link to freecodecamp</a>";
+
+// //ДИНАМІЧНО ДОДАЛИ ТЕКСТ через insertAdjacentHTML
+// const pEl =
+//     '<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium in inventore qui.</p>';
+// const container = document.querySelector('.container');
+// container.insertAdjacentHTML('beforeend', pEl); // динамічно створили текст
+
+//ЗАДАЧА (ТРАНЗАКЦІЇ)___________________________________________
