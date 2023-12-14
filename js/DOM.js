@@ -1,6 +1,10 @@
 // element.querySelector('selector') -- для того щоб знайти елемент за css селектором // повертає ПЕРШИЙ елемент  або NULL (якщо нічого не знайдено)
 // element.querySelectorAll('selector') -- повертає псевдомасив елементів які співпадають, інакше повертає пустий МАСИВ
+
 //textHead.textContent = 'New text' --- якщо хочемо поміняти текст
+// document.body.append(titleEl); // -- в кінці сторінки
+// document.body.prepend(titleEl); // -- початок сторінки
+
 //ПОШУК (querySelector / querySelectorAll)
 //-- за назвою тега
 //-- назвою класа
@@ -64,7 +68,7 @@ elem.nextElementSibling — містить посилання на наступ�
 
 // const textHead = document.querySelector('.text');
 // console.dir(textHead);
-// textHead.textContent = 'New text';
+// textHead.textContent = 'New text'; // -- ЗАМІНА ТЕКСТОВОГО КОНТЕНТУ
 
 // // АТРИБУТИ (src/type/class) -- розширують тег
 
@@ -102,3 +106,51 @@ elem.nextElementSibling — містить посилання на наступ�
 // console.log(newElement.classList.contains('new-variant'));
 
 // console.log(newElement);
+
+//================СТВОРЕННЯ ТА ДОДАВАННЯ ЕЛЕМЕНТІВ
+// -- через методи
+// -- через шаблонні строки
+
+//логіка: створили вузол - дадали вузол // <h1 class="page-header">Це заголовок</h1>
+
+//ЗАДАЧА СТВОРИТИ ЗАГОЛОВОК І ПОМІСТИТИ НА ПОЧАТОК СТОРІНКИ_________________
+
+const titleEl = document.createElement('h1');
+console.log(titleEl);
+titleEl.textContent = 'Це заголовок';
+titleEl.classList.add('page-header');
+// document.body.append(titleEl); // -- в кінці сторінки
+// document.body.prepend(titleEl); // -- початок сторінки
+
+//ЗАДАЧА СТВОРИТИ КАРТИНКУ І ПОМІСТИТИ В ДІВ HERO _________________
+
+const imgEl = document.createElement('img');
+imgEl.src =
+    'https://media.istockphoto.com/id/1322277517/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%B4%D0%B8%D0%BA%D0%B0%D1%8F-%D1%82%D1%80%D0%B0%D0%B2%D0%B0-%D0%B2-%D0%B3%D0%BE%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%B7%D0%B0%D0%BA%D0%B0%D1%82%D0%B5.jpg?s=612x612&w=0&k=20&c=PzyOT42E_elmRShS-7hCADYhXiElZar77vEm8uxuC3Y=';
+imgEl.alt = 'new pictures';
+imgEl.width = 320;
+console.log(imgEl);
+console.dir(imgEl);
+const heroEl = document.querySelector('.hero');
+heroEl.append(titleEl, imgEl);
+//спочатку куди дадаємо(змінна) потім на початок чи кінець і що додаємо
+
+//ЗАДАЧА СТВОРИТИ ЩЕ ОДИН ПУНКТ МЕНЮ_______________________
+
+//створити елементи
+const itemEl = document.createElement('li');
+const linkEl = document.createElement('a');
+//додати клас
+itemEl.classList.add('item');
+linkEl.classList.add('link');
+//помістити всередину
+itemEl.append(linkEl);
+//додати текстовий контент
+linkEl.textContent = 'Hobby';
+//додати атрибут
+// linkEl.setAttribute('href', './team.jpg');
+linkEl.href = './team.jpg';
+// звернення до
+const listEl = document.querySelector('.nav-list');
+listEl.append(itemEl);
+console.log(listEl);
