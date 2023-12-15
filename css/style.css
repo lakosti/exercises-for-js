@@ -18,3 +18,8 @@
         transform: rotate(360deg);
     }
 } */
+.box-container {
+    width: 70px;
+    height: 70px;
+    outline: 1px solid black;
+}
