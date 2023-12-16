@@ -33,3 +33,17 @@
 .modal.open {
     opacity: 1;
 }
+.transaction-table {
+    border-collapse: collapse;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 8px;
+    border: 1px solid #2a2a2a;
+}
+
+.title__link {
+    display: inline-flex;
+    margin-left: 40px;
+}
