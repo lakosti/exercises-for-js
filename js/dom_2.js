@@ -1,3 +1,4 @@
+//event -- об'єкт події
 //=============================EVENTS / ПОДІЇ
 
 // 1. CLICK / подія клік______________
@@ -22,7 +23,8 @@
 // const input = document.querySelector('.input-label');
 // console.log(input);
 // input.addEventListener('input', evt => {
-//     console.log(evt);
+//     // console.log(evt.target.value); // введене значення
+//     console.log(`My name ${evt.target.value}`);
 // });
 //---------------------------------------------------------------------------------
 // -- Подія focus, blur (часто викор в парі, blur, дуже схожий до change ЗНАЧЕННЯ ВИВОДИТЬСЯ ПРИ ВТРАТІ ФОКУСУ )
@@ -33,11 +35,18 @@
 //     console.log(evt);
 // });
 //---------------------------------------------------------------------------------
-// -- Подія change (ПОДІЯ ВИВОДИТЬСЯ КОЛИ НАТИСНУЛИ ЕНТЕР)
+// -- Подія change (ПОДІЯ ВИВОДИТЬСЯ КОЛИ НАТИСНУЛИ ВТРАТИЛИ ФОКУС І ВВЕЛИ НОВЕ ЗНАЧЕННЯ )
 
 // const input = document.querySelector('.input-label');
 // console.log(input);
 // input.addEventListener('change', evt => {
-//     console.log(evt);
+//     console.log(`My name ${evt.target.value}`);
 // });
 //---------------------------------------------------------------------------------
+
+//РОБОТА З ФОРМАМИ / ПОДІЯ Submit (швидко зникає інформація)________________________
+
+const form = document.querySelector('.js-form');
+form.addEventListener('submit', event => {
+    event.preventDefault();
+});
