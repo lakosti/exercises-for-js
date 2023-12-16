@@ -23,3 +23,13 @@
     height: 70px;
     outline: 1px solid black;
 }
+.modal {
+    width: 300px;
+    height: 500px;
+    opacity: 0;
+    background-color: red;
+}
+
+.modal.open {
+    opacity: 1;
+}

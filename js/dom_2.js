@@ -1,4 +1,6 @@
-//event -- об'єкт події
+// 1. event -- об'єкт події
+// 2.event.preventDefault(); //блокування перезавантаження сторрінки
+
 //=============================EVENTS / ПОДІЇ
 
 // 1. CLICK / подія клік______________
@@ -45,8 +47,47 @@
 //---------------------------------------------------------------------------------
 
 //РОБОТА З ФОРМАМИ / ПОДІЯ Submit (швидко зникає інформація)________________________
+// ЗАДАЧА Щоб при роботі з формою створювався об'єкт
 
-const form = document.querySelector('.js-form');
-form.addEventListener('submit', event => {
-    event.preventDefault();
+// const form = document.querySelector('.js-form');
+// form.addEventListener('submit', event => {
+//     //щоб швидко не зникало виведення
+//     event.preventDefault();
+//     //вивід значення в  консоль
+//     // console.dir(event.target.elements.email.value);
+//     const data = {
+//         comment: event.target.elements.comment.value,
+//         email: event.target.elements.email.value,
+//         password: event.target.elements.password.value,
+//     };
+//     console.log(data);
+// });
+
+//РОБОТА З ФОРМАМИ (СКЛАДНІШИЙ ВАРІАНТ)_____________________________
+
+// ПОДІЇ КЛАВІАТУРИ (keydowm/keyup)_____________________
+
+// keydowm -- працює трішки швидше за keyup (спрацювує коли тільки натискаємо клавішу)
+// keyup -- спрацювує коли відпустили клавішу
+// властивості key / code
+// code  -- більш надійніша, не враховує капс і мову
+
+//ЗАДАЧА Реалізувати закриття та відкриття модалки
+
+const modalBtn = document.querySelector('.open-modal');
+const modal = document.querySelector('.modal');
+
+// потрібно видаляти слухач щоб не навантажувати браузер
+//слухач пишемо там де використовуємо, щоб він не слухав всі клавіші які користувач натискає у браузері
+
+const closeBtn = event => {
+    if (event.code === 'Escape') {
+        modal.classList.remove('open');
+        document.removeEventListener('keydown', closeBtn);
+    }
+};
+
+modalBtn.addEventListener('click', () => {
+    modal.classList.add('open');
+    document.addEventListener('keydown', closeBtn);
 });
