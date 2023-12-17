@@ -92,44 +92,82 @@
 //     document.addEventListener('keydown', closeBtn);
 // });
 
-//ЗАДАЧА АЛЬОНИ
-const books = [
-    {
-        id: '1',
-        title: `Apple. Computer evolution`,
-        author: `Володимир Невзоров`,
-        img: `https://bukva.ua/img/products/449/449532_200.jpg`,
-        plot: `Richly illustrated chronological guide to the history of computers in which
-       and structured information about the creation and development of Apple technology against the backdrop of history
-       personal computers in general.
-       The book contains descriptions of dozens of the most significant models of devices from both Apple and other manufacturers,
-       accompanied by a large number of original studio photographs.
-       The book is intended for a wide range of readers interested in the history of electronics.
-       It can also serve as a source of inspiration for designers, marketers and entrepreneurs.`,
-    },
-    {
-        id: '2',
-        title: `How to explain computer science to a child`,
-        author: `Керол Вордерман`,
-        img: `https://bukva.ua/img/products/480/480030_200.jpg`,
-        plot: `Illustrated encyclopedia in infographic format on technical, social and cultural aspects
-       in informatics. Explains step by step how children can get the most out of computers and internet services,
-       staying safe.
-       The book covers everything from data storage to life on the Internet,
-       from programming to computer attacks. About how computers function, about modern software
-       software, the device of the Internet and digital etiquette. All concepts - from hacker to bitcoin -
-       explained clearly with illustrations and diagrams.`,
-    },
-    {
-        id: '3',
-        title: `The path of the Scrum Master. #ScrumMasterWay`,
-        author: `Зузана Шохова`,
-        img: `https://bukva.ua/img/products/480/480090_200.jpg`,
-        plot: `This book will help you become an outstanding Scrum Master and achieve great results with your team.
-       It is illustrated and easy to understand - you can read it in a weekend, and use the resulting
-       knowledge throughout your career.
-       Based on 15 years of experience, Zuzana Shokhova explains the roles and responsibilities of a Scrum Master,
-       how to solve everyday tasks, what competencies are needed to become an outstanding scrum master,
-       What tools does he need to use?`,
-    },
-];
+//ЗАДАЧА АЛЬОНИ (додати розмітку книжок і зробити превью / пошук по айді)_____________________________________
+
+// const books = [
+//     {
+//         id: '1',
+//         title: `Apple. Computer evolution`,
+//         author: `Володимир Невзоров`,
+//         img: `https://bukva.ua/img/products/449/449532_200.jpg`,
+//         plot: `Richly illustrated chronological guide to the history of computers in which
+//        and structured information about the creation and development of Apple technology against the backdrop of history
+//        personal computers in general.
+//        The book contains descriptions of dozens of the most significant models of devices from both Apple and other manufacturers,
+//        accompanied by a large number of original studio photographs.
+//        The book is intended for a wide range of readers interested in the history of electronics.
+//        It can also serve as a source of inspiration for designers, marketers and entrepreneurs.`,
+//     },
+//     {
+//         id: '2',
+//         title: `How to explain computer science to a child`,
+//         author: `Керол Вордерман`,
+//         img: `https://bukva.ua/img/products/480/480030_200.jpg`,
+//         plot: `Illustrated encyclopedia in infographic format on technical, social and cultural aspects
+//        in informatics. Explains step by step how children can get the most out of computers and internet services,
+//        staying safe.
+//        The book covers everything from data storage to life on the Internet,
+//        from programming to computer attacks. About how computers function, about modern software
+//        software, the device of the Internet and digital etiquette. All concepts - from hacker to bitcoin -
+//        explained clearly with illustrations and diagrams.`,
+//     },
+//     {
+//         id: '3',
+//         title: `The path of the Scrum Master. #ScrumMasterWay`,
+//         author: `Зузана Шохова`,
+//         img: `https://bukva.ua/img/products/480/480090_200.jpg`,
+//         plot: `This book will help you become an outstanding Scrum Master and achieve great results with your team.
+//        It is illustrated and easy to understand - you can read it in a weekend, and use the resulting
+//        knowledge throughout your career.
+//        Based on 15 years of experience, Zuzana Shokhova explains the roles and responsibilities of a Scrum Master,
+//        how to solve everyday tasks, what competencies are needed to become an outstanding scrum master,
+//        What tools does he need to use?`,
+//     },
+// ];
+
+// const list = document.querySelector('.library');
+
+// const markup = books
+//     .map(
+//         ({ id, title }) =>
+//             `<li id='${id}'>
+//     <h2>${title}</h2>
+//     <button class = 'show-preview'>Show preview</button>
+// </li>`
+//     )
+//     .join('');
+
+// list.insertAdjacentHTML('afterbegin', markup);
+
+// //дадаємо подію на ВСІ кнопки, але потрібно перебрати оскільки слухач додається на елемент, а не на масив
+
+// const buttons = document.querySelectorAll('.show-preview');
+// const rigthDiv = document.querySelector('.right');
+
+// //потрібно при кліці на кнопку робити превью в правий дів на який ми отримали посилання
+// buttons.forEach(button =>
+//     button.addEventListener('click', event => {
+//         //через кнопку достукалися до батьківсього елемента і взяли айді
+//         const bookId = event.target.parentNode.id;
+//         //знаходимо айді в залежності яка книга обрана
+//         const book = books.find(({ id }) => bookId === id);
+//         const mark = `<div>
+//     <h2>${book.title}</h2>
+//     <p>${book.author}</p>
+//     <img src="${book.img}" alt="${book.title}">
+//     <p>${book.plot}</p>
+// </div>`;
+//         //щоб розмітка не додавалась а перезаписувалась то додаємо через іннер
+//         rigthDiv.innerHTML = mark;
+//     })
+// );
