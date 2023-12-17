@@ -92,7 +92,7 @@
 //     document.addEventListener('keydown', closeBtn);
 // });
 
-//ЗАДАЧА
+//ЗАДАЧА АЛЬОНИ
 const books = [
     {
         id: '1',
