@@ -334,212 +334,240 @@ elem.nextElementSibling — містить посилання на наступ�
 
 ///ЗАДАЧА РУСИЧА ДОДАТИ / ВИДАЛИТИ МАШИНИ НА САЙТі________________________
 
-const cars = [
-    {
-        model: 'Honda',
-        type: 'Civic',
-        price: 12000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
-    },
-    {
-        model: 'Audi',
-        type: 'Q7',
-        price: 40000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
-    },
-    {
-        model: 'BMW',
-        type: '5 siries',
-        price: 9000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
-    },
-    {
-        model: 'Honda',
-        type: 'Accord',
-        price: 20000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
-    },
-    {
-        model: 'Volvo',
-        type: 'XC60',
-        price: 7000,
-        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
-    },
-    {
-        model: 'Honda',
-        type: 'Civic',
-        price: 12000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
-    },
-    {
-        model: 'Audi',
-        type: 'Q7',
-        price: 40000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
-    },
-    {
-        model: 'BMW',
-        type: '5 siries',
-        price: 9000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
-    },
-    {
-        model: 'Honda',
-        type: 'Accord',
-        price: 20000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
-    },
-    {
-        model: 'Volvo',
-        type: 'XC60',
-        price: 7000,
-        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
-    },
-    {
-        model: 'Honda',
-        type: 'Civic',
-        price: 12000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
-    },
-    {
-        model: 'Audi',
-        type: 'Q7',
-        price: 40000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
-    },
-    {
-        model: 'BMW',
-        type: '5 siries',
-        price: 9000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
-    },
-    {
-        model: 'Honda',
-        type: 'Accord',
-        price: 20000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
-    },
-    {
-        model: 'Volvo',
-        type: 'XC60',
-        price: 7000,
-        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
-    },
-    {
-        model: 'Honda',
-        type: 'Civic',
-        price: 12000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
-    },
-    {
-        model: 'Audi',
-        type: 'Q7',
-        price: 40000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
-    },
-    {
-        model: 'BMW',
-        type: '5 siries',
-        price: 9000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
-    },
-    {
-        model: 'Honda',
-        type: 'Accord',
-        price: 20000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
-    },
-    {
-        model: 'Volvo',
-        type: 'XC60',
-        price: 7000,
-        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
-    },
-    {
-        model: 'Honda',
-        type: 'Civic',
-        price: 12000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
-    },
-    {
-        model: 'Audi',
-        type: 'Q7',
-        price: 40000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
-    },
-    {
-        model: 'BMW',
-        type: '5 siries',
-        price: 9000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
-    },
-    {
-        model: 'Honda',
-        type: 'Accord',
-        price: 20000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
-    },
-    {
-        model: 'Volvo',
-        type: 'XC60',
-        price: 7000,
-        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
-    },
-    {
-        model: 'Honda',
-        type: 'Civic',
-        price: 12000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
-    },
-    {
-        model: 'Audi',
-        type: 'Q7',
-        price: 40000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
-    },
-    {
-        model: 'BMW',
-        type: '5 siries',
-        price: 9000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
-    },
-    {
-        model: 'Honda',
-        type: 'Accord',
-        price: 20000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
-    },
-    {
-        id: 4,
-        model: 'Volvo',
-        type: 'XC60',
-        price: 7000,
-        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
-    },
-];
-// const carsList = document.querySelector('.cars');
+// const cars = [
+//     {
+//         model: 'Honda',
+//         type: 'Civic',
+//         price: 12000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+//     },
+//     {
+//         model: 'Audi',
+//         type: 'Q7',
+//         price: 40000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+//     },
+//     {
+//         model: 'BMW',
+//         type: '5 siries',
+//         price: 9000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Accord',
+//         price: 20000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+//     },
+//     {
+//         model: 'Volvo',
+//         type: 'XC60',
+//         price: 7000,
+//         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Civic',
+//         price: 12000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+//     },
+//     {
+//         model: 'Audi',
+//         type: 'Q7',
+//         price: 40000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+//     },
+//     {
+//         model: 'BMW',
+//         type: '5 siries',
+//         price: 9000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Accord',
+//         price: 20000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+//     },
+//     {
+//         model: 'Volvo',
+//         type: 'XC60',
+//         price: 7000,
+//         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Civic',
+//         price: 12000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+//     },
+//     {
+//         model: 'Audi',
+//         type: 'Q7',
+//         price: 40000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+//     },
+//     {
+//         model: 'BMW',
+//         type: '5 siries',
+//         price: 9000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Accord',
+//         price: 20000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+//     },
+//     {
+//         model: 'Volvo',
+//         type: 'XC60',
+//         price: 7000,
+//         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Civic',
+//         price: 12000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+//     },
+//     {
+//         model: 'Audi',
+//         type: 'Q7',
+//         price: 40000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+//     },
+//     {
+//         model: 'BMW',
+//         type: '5 siries',
+//         price: 9000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Accord',
+//         price: 20000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+//     },
+//     {
+//         model: 'Volvo',
+//         type: 'XC60',
+//         price: 7000,
+//         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Civic',
+//         price: 12000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+//     },
+//     {
+//         model: 'Audi',
+//         type: 'Q7',
+//         price: 40000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+//     },
+//     {
+//         model: 'BMW',
+//         type: '5 siries',
+//         price: 9000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Accord',
+//         price: 20000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+//     },
+//     {
+//         model: 'Volvo',
+//         type: 'XC60',
+//         price: 7000,
+//         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Civic',
+//         price: 12000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+//     },
+//     {
+//         model: 'Audi',
+//         type: 'Q7',
+//         price: 40000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+//     },
+//     {
+//         model: 'BMW',
+//         type: '5 siries',
+//         price: 9000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+//     },
+//     {
+//         model: 'Honda',
+//         type: 'Accord',
+//         price: 20000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+//     },
+//     {
+//         id: 4,
+//         model: 'Volvo',
+//         type: 'XC60',
+//         price: 7000,
+//         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+//     },
+// ];
 
 ///ГАРНИЙ ПРИКЛАД
 
+// const carsList = document.querySelector('.cars');
+
 // const markup = cars
 //     .map(
-//         ({ id, model, type, price, img }) =>
-//             `<li><img src="${img}" alt="${model}" width="300"><h2>Марка авто - ${model}</h2><h3>Модель авто - ${type}</h3><p>${price}</p></li>`
+//         ({ id = 'none', model, type, price, img }) =>
+//             // id або data атрибут вішається на спільний батьківський контейнер (лі)
+//             `<li data-id='${id}' ><img src="${img}" alt="${model}" width="300"><h2>Марка авто - ${model}</h2><h3>Модель авто - ${type}</h3><p>${price}</p></li>`
 //     )
 //     .join('');
 // carsList.insertAdjacentHTML('beforeend', markup);
 
-/////////////////////далі буде поганий приклад
+// // видалення елемента за умовою
 
-////(оскільки ми перебираємо кожен елемент окремо і по черзі додаємо в дом, тим самим змінюючи його декілька разів)
-const carsList = document.querySelector('.cars');
+// [...carsList.children].forEach(item => {
+//     if (item.dataset.id !== 'none') {
+//         item.remove();
+//     }
+// });
 
-cars.forEach(({ id, model, type, price, img }) => {
-    const markup = `<li>
-    <img src="${img}" alt="${model}" width="300">
-    <h2>Марка авто - ${model}</h2>
-    <h3>Модель авто - ${type}</h3>
-    <p>${price}</p>
-    </li>`;
-    carsList.insertAdjacentHTML('beforeend', markup);
-});
+// /////////////////////далі буде поганий приклад
+
+// ////(оскільки ми перебираємо кожен елемент окремо і по черзі додаємо в дом, тим самим змінюючи його декілька разів)
+
+// const carsList = document.querySelector('.cars');
+
+// cars.forEach(({ id, model, type, price, img }) => {
+//     const markup = `<li>
+//     <img src="${img}" alt="${model}" width="300">
+//     <h2>Марка авто - ${model}</h2>
+//     <h3>Модель авто - ${type}</h3>
+//     <p>${price}</p>
+//     </li>`;
+//     carsList.insertAdjacentHTML('beforeend', markup);
+// });
+
+//----------------ВИДАЛЕННЯ---------------------
+
+// //1. видалення всіх елементів (не дуже гарний варіант, оскільки видалення також переренджує сторінку, якщо потрібно видалити все використовуємо іннер)
+// [...carsList.children].forEach(item => {
+//     item.remove();
+// });
+
+// 2. carsList.innerHTML = '';
+
+// 3. видалення ОДНОГО елемента
+
+// [...carsList.children].forEach(item => {
+//     if (item.dataset.id !== 'none') {
+//         item.remove();
+//     }
+// });
