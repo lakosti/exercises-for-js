@@ -1,5 +1,7 @@
 // 1. event -- об'єкт події
 // 2.event.preventDefault(); //блокування перезавантаження сторрінки
+// 3. currentTarget -- на чому поставили прослуховувач подій
+// 4. target --
 
 //=============================EVENTS / ПОДІЇ
 
@@ -171,3 +173,47 @@
 //         rigthDiv.innerHTML = mark;
 //     })
 // );
+
+// ================================================================================================================================================================================================================================================================= A R T E M
+
+//Рухаємо квадрат____________________________
+
+const button = document.querySelector('.js-btn');
+const container = document.querySelector('.js-container');
+// button.addEventListener('click', onClick); // сдухач на кнопці
+container.addEventListener('click', onClick); // слухач на дів
+
+let step = 0;
+
+function onClick(evt) {
+    step += 5;
+    // container.style.backgroundColor = 'red';
+    container.style.marginLeft = `${step}px`;
+    container.style.marginTop = `${step}px`;
+
+    console.log(step);
+}
+
+////Образіти текст по кліку_________________
+
+const title = document.querySelector('.js-lorem');
+const maxLength = 13;
+const totalLength = maxLength + 3;
+title.addEventListener('click', strCut);
+
+function strCut(evt) {
+    //краще у слухачах звертатися по тагрету
+    const title = evt.currentTarget;
+    const str = title.textContent.slice(0, maxLength);
+
+    if (title.textContent.length > totalLength) {
+        const remainder = title.textContent.slice(maxLength);
+        title.setAttribute('data-title', remainder);
+        title.textContent = str + '...';
+    } else {
+        const remainder = title.dataset.title; // getAttribute
+        title.textContent = str + remainder;
+
+        console.log(remainder);
+    }
+}
