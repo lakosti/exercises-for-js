@@ -258,5 +258,15 @@
 //         box.classList.toggle('js-toggle');
 //     }
 // });
+////////////////////////////БЛОКУВАННЯ КОМБІНАЦІЙ КЛАВІШ / НЕ МОЖНА СКОПІЮВАТИ
 
-////ЗАДАЧА
+// const box = document.querySelector('.js-container');
+// document.addEventListener('keydown', evt => {
+//     if (evt.ctrlKey && evt.code === 'KeyC') {
+//         evt.preventDefault();
+//         alert('You can`t copy this text');
+//         return;
+//     }
+// });
+
+////ЗАДАЧА добавити машини в розмітку і зробити пошук по моделі або марці_______________________________________
