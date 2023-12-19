@@ -52,3 +52,6 @@
     height: 50px;
     background-color: blueviolet;
 }
+.js-toggle {
+    display: none;
+}

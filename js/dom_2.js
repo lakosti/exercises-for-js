@@ -176,7 +176,7 @@
 
 // ================================================================================================================================================================================================================================================================= A R T E M
 
-//Рухаємо квадрат____________________________
+//ЗАДАЧА  Рухаємо квадрат____________________________
 
 // const button = document.querySelector('.js-btn');
 // const container = document.querySelector('.js-container');
@@ -194,7 +194,7 @@
 //     console.log(step);
 // }
 
-////Образіти декілька варіантів тексту по кліку_________________
+////ЗАДАЧА Образіти декілька варіантів тексту по кліку_________________
 
 // const titles = document.querySelectorAll('.js-lorem');
 // titles.forEach(title => title.addEventListener('click', strCut));
@@ -220,3 +220,43 @@
 //         }
 //     }
 // }
+
+//ЗАДАЧА INPUT --отримувати дані від користувача (пошта/ логін/ пароль)
+
+// const userName = document.querySelector('.js-input');
+// userName.addEventListener('input', onInput);
+
+// function onInput(evt) {
+//     console.log(evt.currentTarget.value);
+// }
+
+//FORM
+
+// const formEl = document.querySelector('.form');
+// formEl.addEventListener('submit', evt => {
+//     // скасували дефолтну поведінку кнопки сабміт
+
+//     evt.preventDefault();
+
+//     //дестрк. з атрибутів name значення
+//     const { userName, userEmail, userNumber } = evt.currentTarget.elements;
+
+//     const data = {
+//         userName: userName.value,
+//         userEmail: userEmail.value,
+//         userNumber: userNumber.value,
+//     };
+//     console.log(data);
+// });
+
+//  ПОДІЇ КЛАВІАТУРИ ВІШАЮТЬСЯ НА ВЕСЬ ДОКУМЕНТ
+
+// const box = document.querySelector('.js-container');
+// document.addEventListener('keydown', evt => {
+//     console.log(evt);
+//     if (evt.code === 'Escape') {
+//         box.classList.toggle('js-toggle');
+//     }
+// });
+
+////ЗАДАЧА
