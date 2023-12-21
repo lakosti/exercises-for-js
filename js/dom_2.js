@@ -1,7 +1,7 @@
 // 1. event -- об'єкт події
 // 2.event.preventDefault(); //блокування перезавантаження сторрінки
-// 3. currentTarget -- на чому поставили прослуховувач подій
-// 4. target --
+// 3. currentTarget -- елемент на якому прослуховується подія
+// 4. target -- елемент який викликав подію
 
 //=============================EVENTS / ПОДІЇ
 
@@ -313,22 +313,55 @@ const cars = [
 const container = document.querySelector('.cars-lesson2');
 const searchBtn = document.querySelector('button');
 const form = document.querySelector('.search-car');
+//додавання в обране
+container.addEventListener('click', onClick);
 
-const markup = cars
-    .map(({ id, car, type, price, img }) => {
-        return `<li data-id = "${id}">
-                  <img src="${img}" alt="${car}" width="300"/>
-                  <h2>Марка: ${car}</h2>
-                  <h3>Модель: ${type}</h3>
-                  <p>Ціна - ${price}</p>
-              </li>`;
-    })
-    .join('');
-container.insertAdjacentHTML('beforeend', markup);
+function createdMarkup(arr) {
+    return arr
+        .map(({ id, car, type, price, img }) => {
+            return `<li data-id = "${id}">
+                <img src="${img}" alt="${car}" width="300"/>
+                <h2>Марка: ${car}</h2>
+                <h3>Модель: ${type}</h3>
+                <p>Ціна - ${price}</p>
+                <div class ="js-favorite">★</div>
+            </li>`;
+        })
+        .join('');
+}
+container.insertAdjacentHTML('beforeend', createdMarkup(cars));
 
-form.addEventListener('click', onClick);
+form.addEventListener('submit', onSubmit);
+
+function onSubmit(evt) {
+    evt.preventDefault();
+
+    //робимо доступ до полів
+
+    const form = evt.currentTarget;
+    console.dir(evt.currentTarget);
+    const { query, select } = form.elements;
+
+    //значення полів
+
+    console.dir(query.value);
+    console.dir(select.value);
+
+    //вібираємо машини за умовою
+
+    const searchCar = cars.filter(
+        //             car || type      -- значення змінної
+        item => item[select.value].toLowerCase() === query.value.trim().toLowerCase()
+    );
+    // якщо знайшло співпадіння то замінили на нове
+
+    container.innerHTML = createdMarkup(searchCar);
+    console.log(searchCar);
+}
+
+////додавання в обране
 
 function onClick(evt) {
-    evt.preventDefault();
-    console.log(evt);
+    console.log(evt.currentTarget); //те шо прослуховується (в даному випадку список container)
+    console.log(evt.target); // на чому відпрацювала подія (по чому клікнули)
 }
