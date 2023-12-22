@@ -313,6 +313,7 @@ const cars = [
 const container = document.querySelector('.cars-lesson2');
 const searchBtn = document.querySelector('button');
 const form = document.querySelector('.search-car');
+const favoriteList = document.querySelector('.js-favorite-list');
 //додавання в обране
 container.addEventListener('click', onClick);
 
@@ -359,9 +360,25 @@ function onSubmit(evt) {
     console.log(searchCar);
 }
 
-////додавання в обране
+////додавання в обране при кліці на зірочку
 
 function onClick(evt) {
-    console.log(evt.currentTarget); //те шо прослуховується (в даному випадку список container)
-    console.log(evt.target); // на чому відпрацювала подія (по чому клікнули)
+    // console.log(evt.currentTarget); //те шо прослуховується (в даному випадку список container)
+    // console.log(evt.target); // на чому відпрацювала подія (по чому клікнули)
+
+    //перевіряємо щоб ми клікнули прямо на зірочку
+    if (evt.target.classList.contains('js-favorite')) {
+        evt.target.classList.add('active');
+
+        //беремо айді шоб визначити по якому саме елементу клацнув користувач
+        //closest -- доступ до першого батьківсього елемента (айді на лішці)
+        const { id } = evt.target.closest('li').dataset;
+        const { car, type } = cars.find(({ id: carId }) => carId === Number(id));
+        addFavorite(`${car}  ${type}`);
+    }
+}
+//робить розмітку і додає ту машину яку потрібно
+
+function addFavorite(currentCar) {
+    favoriteList.insertAdjacentHTML('beforeend', `<li>${currentCar}</li>`);
 }
