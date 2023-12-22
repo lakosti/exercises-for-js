@@ -67,6 +67,26 @@
 
 //РОБОТА З ФОРМАМИ (СКЛАДНІШИЙ ВАРІАНТ)_____________________________
 
+// const form = document.querySelector('.js-form');
+// const obj = {
+//     //// можна і не казувати ключі підставляться автоматично
+//     // email: '',
+//     // password: '',
+// };
+// const inputs = document.querySelectorAll(' input');
+// inputs.forEach(input =>
+//     input.addEventListener('input', evt => {
+//         obj[evt.target.name] = evt.target.value;
+//         ///  ключ об'єкта        значення об'єкта
+//         // ключ підставляється із змінної name
+//     })
+// );
+// form.addEventListener('submit', event => {
+//     event.preventDefault();
+
+//     console.log(obj);
+// });
+
 // ПОДІЇ КЛАВІАТУРИ (keydowm/keyup)_____________________
 
 // keydowm -- працює трішки швидше за keyup (спрацювує коли тільки натискаємо клавішу)
@@ -271,114 +291,114 @@
 
 ////ЗАДАЧА добавити машини в розмітку і зробити пошук по моделі або марці_______________________________________
 
-const cars = [
-    {
-        id: 1,
-        car: 'Honda',
-        type: 'Civic',
-        price: 12000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
-    },
-    {
-        id: 2,
-        car: 'Audi',
-        type: 'Q7',
-        price: 40000,
-        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
-    },
-    {
-        id: 33,
-        car: 'BMW',
-        type: '5 siries',
-        price: 9000,
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
-    },
-    {
-        id: 3,
-        car: 'Honda',
-        type: 'Accord',
-        price: 20000,
-        number: '+380000000000',
-        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
-    },
-    {
-        id: 4,
-        car: 'Volvo',
-        type: 'XC60',
-        price: 7000,
-        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
-    },
-];
+// const cars = [
+//     {
+//         id: 1,
+//         car: 'Honda',
+//         type: 'Civic',
+//         price: 12000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+//     },
+//     {
+//         id: 2,
+//         car: 'Audi',
+//         type: 'Q7',
+//         price: 40000,
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+//     },
+//     {
+//         id: 33,
+//         car: 'BMW',
+//         type: '5 siries',
+//         price: 9000,
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+//     },
+//     {
+//         id: 3,
+//         car: 'Honda',
+//         type: 'Accord',
+//         price: 20000,
+//         number: '+380000000000',
+//         img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+//     },
+//     {
+//         id: 4,
+//         car: 'Volvo',
+//         type: 'XC60',
+//         price: 7000,
+//         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+//     },
+// ];
 
-const container = document.querySelector('.cars-lesson2');
-const searchBtn = document.querySelector('button');
-const form = document.querySelector('.search-car');
-const favoriteList = document.querySelector('.js-favorite-list');
-//додавання в обране
-container.addEventListener('click', onClick);
+// const container = document.querySelector('.cars-lesson2');
+// const searchBtn = document.querySelector('button');
+// const form = document.querySelector('.search-car');
+// const favoriteList = document.querySelector('.js-favorite-list');
+// //додавання в обране
+// container.addEventListener('click', onClick);
 
-function createdMarkup(arr) {
-    return arr
-        .map(({ id, car, type, price, img }) => {
-            return `<li data-id = "${id}">
-                <img src="${img}" alt="${car}" width="300"/>
-                <h2>Марка: ${car}</h2>
-                <h3>Модель: ${type}</h3>
-                <p>Ціна - ${price}</p>
-                <div class ="js-favorite">★</div>
-            </li>`;
-        })
-        .join('');
-}
-container.insertAdjacentHTML('beforeend', createdMarkup(cars));
+// function createdMarkup(arr) {
+//     return arr
+//         .map(({ id, car, type, price, img }) => {
+//             return `<li data-id = "${id}">
+//                 <img src="${img}" alt="${car}" width="300"/>
+//                 <h2>Марка: ${car}</h2>
+//                 <h3>Модель: ${type}</h3>
+//                 <p>Ціна - ${price}</p>
+//                 <div class ="js-favorite">★</div>
+//             </li>`;
+//         })
+//         .join('');
+// }
+// container.insertAdjacentHTML('beforeend', createdMarkup(cars));
 
-form.addEventListener('submit', onSubmit);
+// form.addEventListener('submit', onSubmit);
 
-function onSubmit(evt) {
-    evt.preventDefault();
+// function onSubmit(evt) {
+//     evt.preventDefault();
 
-    //робимо доступ до полів
+//     //робимо доступ до полів
 
-    const form = evt.currentTarget;
-    console.dir(evt.currentTarget);
-    const { query, select } = form.elements;
+//     const form = evt.currentTarget;
+//     console.dir(evt.currentTarget);
+//     const { query, select } = form.elements;
 
-    //значення полів
+//     //значення полів
 
-    console.dir(query.value);
-    console.dir(select.value);
+//     console.dir(query.value);
+//     console.dir(select.value);
 
-    //вібираємо машини за умовою
+//     //вібираємо машини за умовою
 
-    const searchCar = cars.filter(
-        //             car || type      -- значення змінної
-        item => item[select.value].toLowerCase() === query.value.trim().toLowerCase()
-    );
-    // якщо знайшло співпадіння то замінили на нове
+//     const searchCar = cars.filter(
+//         //             car || type      -- значення змінної
+//         item => item[select.value].toLowerCase() === query.value.trim().toLowerCase()
+//     );
+//     // якщо знайшло співпадіння то замінили на нове
 
-    container.innerHTML = createdMarkup(searchCar);
-    console.log(searchCar);
-}
+//     container.innerHTML = createdMarkup(searchCar);
+//     console.log(searchCar);
+// }
 
-////додавання в обране при кліці на зірочку
+// ////додавання в обране при кліці на зірочку
 
-function onClick(evt) {
-    // console.log(evt.currentTarget); //те шо прослуховується (в даному випадку список container)
-    // console.log(evt.target); // на чому відпрацювала подія (по чому клікнули)
+// function onClick(evt) {
+//     // console.log(evt.currentTarget); //те шо прослуховується (в даному випадку список container)
+//     // console.log(evt.target); // на чому відпрацювала подія (по чому клікнули)
 
-    //перевіряємо щоб ми клікнули прямо на зірочку
-    if (evt.target.classList.contains('js-favorite')) {
-        evt.target.classList.add('active');
+//     //перевіряємо щоб ми клікнули прямо на зірочку
+//     if (evt.target.classList.contains('js-favorite')) {
+//         evt.target.classList.add('active');
 
-        //беремо айді шоб визначити по якому саме елементу клацнув користувач
-        //closest -- доступ до першого батьківсього елемента (айді на лішці)
-        const { id } = evt.target.closest('li').dataset;
-        const { car, type } = cars.find(({ id: carId }) => carId === Number(id));
-        addFavorite(`${car}  ${type}`);
-    }
-}
-//робить розмітку і додає ту машину яку потрібно
+//         //беремо айді шоб визначити по якому саме елементу клацнув користувач
+//         //closest -- доступ до першого батьківсього елемента (айді на лішці)
+//         const { id } = evt.target.closest('li').dataset;
+//         const { car, type } = cars.find(({ id: carId }) => carId === Number(id));
+//         addFavorite(`${car}  ${type}`);
+//     }
+// }
+// //робить розмітку і додає ту машину яку потрібно
 
-function addFavorite(currentCar) {
-    favoriteList.insertAdjacentHTML('beforeend', `<li>${currentCar}</li>`);
-}
+// function addFavorite(currentCar) {
+//     favoriteList.insertAdjacentHTML('beforeend', `<li>${currentCar}</li>`);
+// }
