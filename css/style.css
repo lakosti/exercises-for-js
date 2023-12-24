@@ -64,3 +64,27 @@
 .active {
     color: gold;
 }
+
+/* LESSON 3 */
+.container-lesson_3 {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.item-red {
+    background-color: red;
+}
+.item-green {
+    background-color: green;
+}
+
+.item-black {
+    background-color: black;
+}
