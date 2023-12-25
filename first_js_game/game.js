@@ -1,4 +1,12 @@
 const container = document.querySelector('.js-content');
+
+//створюємо гравця // гра завжди починається з х
+let player = 'X';
+
+//потрібно запамятовувати куди ходив користувач // масив id
+let historyX = [];
+let historyO = [];
+
 //МАСИВ ВИГРАШНИХ КОМБІНАЦІЙ
 const wins = [
     [1, 2, 3],
@@ -10,13 +18,6 @@ const wins = [
     [1, 5, 9],
     [3, 5, 7],
 ];
-//створюємо гравця // гра завжди починається з х
-let player = 'X';
-
-//потрібно запамятовувати куди ходив користувач // масив id
-let historyX = [];
-let historyO = [];
-
 function createMarkup() {
     let createDiv = '';
     // Дадати дів (item) до розмітки
@@ -24,7 +25,7 @@ function createMarkup() {
         createDiv += `<div class="item js-item" data-id = '${i}'></div>`;
         //створився один дів а нам потрібно накопичити відовідно до значення фору
     }
-    //в контейнер додаємо цей дів/розмітку
+    //в контейнер додаємо цей дів/розмітку // потрібно її змінювати при кожній грі
     container.innerHTML = createDiv;
 }
 
@@ -43,7 +44,7 @@ function onClick(evt) {
     let result = false;
     //деструкр з приведенням до типу НЕ ПРАЦЮЄ = undefined
     const id = Number(target.dataset.id);
-
+    const isEndGame = historyO.length + historyX.length === 9;
     //пушемо клітинки  по яким ходили юзери
     if (player === 'X') {
         historyX.push(id);
@@ -61,7 +62,13 @@ function onClick(evt) {
         alert(`Winner is ${player}`);
         resetGame();
         return;
+        //коли ніхто не виграв
+    } else if (isEndGame) {
+        alert(`Sorry! Try again`);
+        resetGame();
+        return;
     }
+    //потім заново перевизначаємо гравця
     player = player === 'X' ? 'O' : 'X';
 }
 

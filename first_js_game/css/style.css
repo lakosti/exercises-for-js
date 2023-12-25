@@ -22,6 +22,7 @@
     cursor: pointer;
     vertical-align: middle;
     transition: background 0.1s;
+    /* прибирає мигаючий курсор */
     user-select: none;
 }
 
