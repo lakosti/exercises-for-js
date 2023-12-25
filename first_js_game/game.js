@@ -10,35 +10,71 @@ const wins = [
     [1, 5, 9],
     [3, 5, 7],
 ];
-// Дадати дів (item) до розмітки
-let createDiv = '';
+//створюємо гравця // гра завжди починається з х
 let player = 'X';
 
-//потрібно запамятовувати куди ходив користувач
+//потрібно запамятовувати куди ходив користувач // масив id
 let historyX = [];
 let historyO = [];
 
-for (let i = 1; i < 10; i += 1) {
-    createDiv += `<div class="item js-item" data-id = '${i}'></div>`;
+function createMarkup() {
+    let createDiv = '';
+    // Дадати дів (item) до розмітки
+    for (let i = 1; i < 10; i += 1) {
+        createDiv += `<div class="item js-item" data-id = '${i}'></div>`;
+        //створився один дів а нам потрібно накопичити відовідно до значення фору
+    }
+    //в контейнер додаємо цей дів/розмітку
+    container.innerHTML = createDiv;
 }
 
-container.innerHTML = createDiv;
-// виділяємо окремо кожен айтем
+createMarkup();
+// виділяємо окремо кожен айтем //клік на кожен айтем
 container.addEventListener('click', onClick);
 
 function onClick(evt) {
-    //витягуємо таргет
+    //витягуємо таргет щоб не звертатися через крапку (evt.target)
     const { target } = evt;
     // ОБОВ'ЯЗКОВО контролюємо щоб користувач клачнув саме на вміст квадрата а не на його бордер || перевірка на вміст (якщо шось є то уже не можна клацнути)
     if (!target.classList.contains('js-item') || target.textContent) {
         return;
     }
-    const { id } = target.dataset;
-    if () {
-        //
+
+    let result = false;
+    //деструкр з приведенням до типу НЕ ПРАЦЮЄ = undefined
+    const id = Number(target.dataset.id);
+
+    //пушемо клітинки  по яким ходили юзери
+    if (player === 'X') {
+        historyX.push(id);
+        //задаємо значення резалту (true/false)
+        result = isWinner(historyX);
     } else {
-        //
+        historyO.push(id);
+        result = isWinner(historyO);
     }
+
     target.textContent = player;
+
+    //якщо резалт true то оголошуємо переможця і скидаємо гру
+    if (result) {
+        alert(`Winner is ${player}`);
+        resetGame();
+        return;
+    }
     player = player === 'X' ? 'O' : 'X';
+}
+
+//перевіряє історію ходів і чи вона = виграшним ходам // true false
+
+function isWinner(arr) {
+    //якщо хоч один із масивів тру то перевіряємо кожен елемент
+    return wins.some(item => item.every(id => arr.includes(id)));
+}
+
+function resetGame() {
+    createMarkup();
+    historyO = [];
+    historyX = [];
+    player = 'X';
 }
