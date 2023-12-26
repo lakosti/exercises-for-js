@@ -23,6 +23,9 @@
     text-decoration: none;
     color: inherit;
 }
+.custom-links a:hover {
+    color: rgb(92, 100, 84);
+}
 .box-container {
     width: 70px;
     height: 70px;
