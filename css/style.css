@@ -18,7 +18,12 @@
         transform: rotate(360deg);
     }
 } */
-
+img {
+    display: block;
+}
+ul {
+    list-style: none;
+}
 .custom-links a {
     text-decoration: none;
     color: inherit;
@@ -90,4 +95,28 @@
 
 .item-black {
     background-color: black;
+}
+
+/* делегування подій */
+
+.cars {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.cars img {
+    height: 200px;
+}
+h2 {
+    padding: 0;
+    margin: 0;
+}
+.instance-style {
+    padding: 20px;
+    width: 700px;
+    height: 530px;
+    background-color: aliceblue;
+    border-radius: 8px;
 }
