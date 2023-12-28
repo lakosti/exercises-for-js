@@ -18,7 +18,7 @@
         transform: rotate(360deg);
     }
 } */
-img {
+/* img {
     display: block;
 }
 ul {
@@ -71,10 +71,11 @@ ul {
 
 .active {
     color: gold;
-}
+} */
 
-/* LESSON 3 */
-.container-lesson_3 {
+/* TODO: LESSON 3 */
+
+/* .container-lesson_3 {
     margin: 20px 0;
     display: flex;
     align-items: center;
@@ -95,11 +96,11 @@ ul {
 
 .item-black {
     background-color: black;
-}
+} */
 
-/* делегування подій */
+/* TODO: делегування подій */
 
-.cars {
+/* .cars {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -119,4 +120,15 @@ h2 {
     height: 530px;
     background-color: aliceblue;
     border-radius: 8px;
+} */
+
+/* TODO: throttle / debounce */
+
+.valid {
+    outline: none;
+    border-color: green;
+}
+.invalid {
+    outline: none;
+    border-color: red;
 }
