@@ -79,68 +79,68 @@
 // а ті обє'кти в яких айді співпав видалити з масиву.
 // (Потрібно мутувати масив, створювати новий не потрібно)_________________________________________
 
-const products = [
-    {
-        id: 'sku1',
-        qty: 1,
-    },
-    {
-        id: 'sku2',
-        qty: 2,
-    },
-    {
-        id: 'sku3',
-        qty: 3,
-    },
-    {
-        id: 'sku1',
-        qty: 6,
-    },
-    {
-        id: 'sku1',
-        qty: 8,
-    },
-    {
-        id: 'sku1',
-        qty: 6,
-    },
-    {
-        id: 'sku1',
-        qty: 6,
-    },
-    {
-        id: 'sku1',
-        qty: 6,
-    },
-    {
-        id: 'sku2',
-        qty: 19,
-    },
-    {
-        id: 'sku4',
-        qty: 1,
-    },
-    {
-        id: 'sku1',
-        qty: 8,
-    },
-];
+// const products = [
+//     {
+//         id: 'sku1',
+//         qty: 1,
+//     },
+//     {
+//         id: 'sku2',
+//         qty: 2,
+//     },
+//     {
+//         id: 'sku3',
+//         qty: 3,
+//     },
+//     {
+//         id: 'sku1',
+//         qty: 6,
+//     },
+//     {
+//         id: 'sku1',
+//         qty: 8,
+//     },
+//     {
+//         id: 'sku1',
+//         qty: 6,
+//     },
+//     {
+//         id: 'sku1',
+//         qty: 6,
+//     },
+//     {
+//         id: 'sku1',
+//         qty: 6,
+//     },
+//     {
+//         id: 'sku2',
+//         qty: 19,
+//     },
+//     {
+//         id: 'sku4',
+//         qty: 1,
+//     },
+//     {
+//         id: 'sku1',
+//         qty: 8,
+//     },
+// ];
 
-//порівнюємо перший з наступними -- використовуємо цикл в циклі
+// //порівнюємо перший з наступними -- використовуємо цикл в циклі
 
-function getQuantity(arr) {
-    for (let i = 0; i < arr.length; i += 1) {
-        for (let j = i + 1; j < arr.length; j += 1) {
-            if (arr[i].id === arr[j].id) {
-                arr[i].qty += arr[j].qty;
-                arr.splice(j, 1);
-                j -= 1;
-            }
-        }
-    }
-}
-getQuantity(products);
-console.log(products);
+// function getQuantity(arr) {
+//     for (let i = 0; i < arr.length; i += 1) {
+//         for (let j = i + 1; j < arr.length; j += 1) {
+//             if (arr[i].id === arr[j].id) {
+//                 arr[i].qty += arr[j].qty;
+//                 arr.splice(j, 1);
+//                 j -= 1;
+//             }
+//         }
+//     }
+// }
+// getQuantity(products);
+// console.log(products);
 
 //ЗАДАЧА 2 У кожному масиві, а є унікальний рядок, у якому не повторюються літери. Знайдіть і виведіть цей рядок__________________________
 // ["abc", "acb", "bac", "foo", "bca", "cab", "cba"]
