@@ -124,11 +124,41 @@ h2 {
 
 /* TODO: throttle / debounce */
 
-.valid {
+/* .valid {
     outline: none;
     border-color: green;
 }
 .invalid {
     outline: none;
     border-color: red;
+} */
+
+/* PHONE LIST */
+.phone-list {
+    list-style: none;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-item {
+    border-radius: 8px;
+    padding: 15px;
+    outline: 2px solid rgb(184, 184, 187);
+}
+.phone-item img {
+    height: 200px;
+    object-fit: contain;
+}
+
+.modal {
+    margin: 0 auto;
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
 }

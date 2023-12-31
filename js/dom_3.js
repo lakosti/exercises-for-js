@@ -145,52 +145,74 @@
  * бібліотеку basicLightbox (https://github.com/electerious/basicLightbox
  */
 
-const products = [
-    {
-        id: 1,
-        img: 'https://www.vodafone.ua/shop/media/wysiwyg/novosti/Capture_1_large.JPG',
-        name: 'Monitor',
-        price: 3000,
-        description: '23-inch monitor with Full HD resolution.',
-    },
-    {
-        id: 2,
-        img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzWqRMI3HQiDfICHAmbArmaP4uOOIjfz0sDITv0dfkpb0mbbgX',
-        name: 'Laptop',
-        price: 20000,
-        description: 'Lightweight and powerful laptop with a 15-inch display and SSD.',
-    },
-    {
-        id: 3,
-        img: 'https://cdn.27.ua/799/66/39/6841913_1.jpeg',
-        name: 'Smartphone',
-        price: 8000,
-        description: 'Equipped with a triple camera and a multi-core processor.',
-    },
-    {
-        id: 4,
-        img: 'https://cdn.27.ua/799/b6/16/4371990_1.jpeg',
-        name: 'Tablet',
-        price: 12000,
-        description: '10-inch tablet with high performance and a Retina display.',
-    },
-];
-const phoneList = document.querySelector('.phone-list');
-const markup = products
-    .map(
-        ({ id, img, name, price }) => `            <li data-id='${id}'>
-                <div>
-        <img src="${img}" alt="${name}" width='300'>
-                    <h3>${name}</h3>
-                    <p>Ціна: ${price} грн</p>
-                </div>
-            </li>`
-    )
-    .join('');
+// const products = [
+//     {
+//         id: 1,
+//         img: 'https://www.vodafone.ua/shop/media/wysiwyg/novosti/Capture_1_large.JPG',
+//         name: 'Monitor',
+//         price: 3000,
+//         description: '23-inch monitor with Full HD resolution.',
+//     },
+//     {
+//         id: 2,
+//         img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzWqRMI3HQiDfICHAmbArmaP4uOOIjfz0sDITv0dfkpb0mbbgX',
+//         name: 'Laptop',
+//         price: 20000,
+//         description: 'Lightweight and powerful laptop with a 15-inch display and SSD.',
+//     },
+//     {
+//         id: 3,
+//         img: 'https://cdn.27.ua/799/66/39/6841913_1.jpeg',
+//         name: 'Smartphone',
+//         price: 8000,
+//         description: 'Equipped with a triple camera and a multi-core processor.',
+//     },
+//     {
+//         id: 4,
+//         img: 'https://cdn.27.ua/799/b6/16/4371990_1.jpeg',
+//         name: 'Tablet',
+//         price: 12000,
+//         description: '10-inch tablet with high performance and a Retina display.',
+//     },
+// ];
+// const phoneList = document.querySelector('.phone-list');
+// function createMarkup(arr) {
+//     return arr
+//         .map(
+//             ({ id, img, name, price }) => `            <li class='phone-item' data-id='${id}'>
+//         <img src="${img}" alt="${name}" width='300'>
+//                     <h2>${name}</h2>
+//                     <p>Ціна: ${price} грн</p>
+//             </li>`
+//         )
+//         .join('');
+// }
 
-phoneList.insertAdjacentHTML('beforeend', markup);
-phoneList.addEventListener('click', onClick);
+// // phoneList.insertAdjacentHTML('beforeend', createMarkup(products));
+// phoneList.innerHTML = createMarkup(products);
 
-function onClick(evt) {
-    //
-}
+// phoneList.addEventListener('click', onClick);
+
+// function onClick(evt) {
+//     // перевірка куди клацаємо
+//     // якщо таргет = карент таргет то значить ми клацаємо на контейнер а нам це не потрібно (evt.target === evt.currentTarget)
+//     if (evt.target.classList.contains('phone-list')) {
+//         return;
+//     }
+//     //найближчий елемент по селектору до класу який вказаний
+//     // куди б ми не натиснули буде лішка
+//     const liEL = evt.target.closest('.phone-item');
+//     const productId = Number(liEL.dataset.id);
+
+//     //знаходимо обєкт по кліку
+//     const findId = products.find(({ id }) => productId === id);
+//     const instance = basicLightbox.create(`
+//      <div class='modal'>
+//         <img src="${findId.img}" alt="${findId.name}" width='300'>
+//                     <h2>${findId.name}</h2>
+//                     <p>Ціна: ${findId.price} грн</p>
+//                     <p>${findId.description}</p>
+//             </div>
+//     `);
+//     instance.show();
+// }
