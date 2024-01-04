@@ -144,4 +144,85 @@
 // console.log(products);
 
 //ЗАДАЧА 2 У кожному масиві, а є унікальний рядок, у якому не повторюються літери. Знайдіть і виведіть цей рядок__________________________
+
 // ["abc", "acb", "bac", "foo", "bca", "cab", "cba"]
+
+//////////////////////////////////////////////////////////////////
+
+////TASK LIBRARY__________________________________________________________________________
+
+// const books = [
+//     {
+//         id: '1',
+//         title: `Apple. Computer evolution`,
+//         author: `Володимир Невзоров`,
+//         img: `https://bukva.ua/img/products/449/449532_200.jpg`,
+//         plot: `Richly illustrated chronological guide to the history of computers in which
+//        and structured information about the creation and development of Apple technology against the backdrop of history
+//        personal computers in general.
+//        The book contains descriptions of dozens of the most significant models of devices from both Apple and other manufacturers,
+//        accompanied by a large number of original studio photographs.
+//        The book is intended for a wide range of readers interested in the history of electronics.
+//        It can also serve as a source of inspiration for designers, marketers and entrepreneurs.`,
+//     },
+//     {
+//         id: '2',
+//         title: `How to explain `,
+//         author: `Керол Вордерман`,
+//         img: `https://bukva.ua/img/products/480/480030_200.jpg`,
+//         plot: `Illustrated encyclopedia in infographic format on technical, social and cultural aspects
+//        in informatics. Explains step by step how children can get the most out of computers and internet services,
+//        staying safe.
+//        The book covers everything from data storage to life on the Internet,
+//        from programming to computer attacks. About how computers function, about modern software
+//        software, the device of the Internet and digital etiquette. All concepts - from hacker to bitcoin -
+//        explained clearly with illustrations and diagrams.`,
+//     },
+//     {
+//         id: '3',
+//         title: `The path of the Scrum`,
+//         author: `Зузана Шохова`,
+//         img: `https://bukva.ua/img/products/480/480090_200.jpg`,
+//         plot: `This book will help you become an outstanding Scrum Master and achieve great results with your team.
+//        It is illustrated and easy to understand - you can read it in a weekend, and use the resulting
+//        knowledge throughout your career.
+//        Based on 15 years of experience, Zuzana Shokhova explains the roles and responsibilities of a Scrum Master,
+//        how to solve everyday tasks, what competencies are needed to become an outstanding scrum master,
+//        What tools does he need to use?`,
+//     },
+// ];
+
+// const right = document.querySelector('.right-box');
+// const left = document.querySelector('.left-box');
+
+// const markup = books
+//     .map(
+//         ({ id, title, img }) => `
+//         <div class='div-el' data-id='${id}'>
+//         <img src="${img}" alt="${title}" width = '200'/>
+//         <h3>${title}</h3>
+//         <button class='btn-preview'>Show more info</button>
+//         </div>`
+//     )
+//     .join('');
+
+// left.innerHTML = markup;
+
+// const btns = document.querySelectorAll('.btn-preview');
+// btns.forEach(btn => btn.addEventListener('click', onClick));
+
+// function onClick(evt) {
+//     //ВИТЯГТИ АЙДІ
+//     //1 спосіб
+//     const idEl = evt.target.closest('.div-el').dataset.id;
+//     //2 спосіб
+//     // const bookId = evt.target.parentElement.dataset.id;
+//     const findEL = books.find(({ id }) => id === idEl);
+//     const instance = basicLightbox.create(`<div class='modal-window'>
+//                     <img src="${findEL.img}" alt="">
+//                     <h2>${findEL.title}</h2>
+//                     <p>${findEL.plot}</p>
+//                 </div>`);
+//     instance.show();
+//     // right.innerHTML = instance;
+// }

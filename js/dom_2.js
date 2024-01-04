@@ -171,28 +171,28 @@
 
 // list.insertAdjacentHTML('afterbegin', markup);
 
-// //дадаємо подію на ВСІ кнопки, але потрібно перебрати оскільки слухач додається на елемент, а не на масив
+//дадаємо подію на ВСІ кнопки, але потрібно перебрати оскільки слухач додається на елемент, а не на масив
 
-// const buttons = document.querySelectorAll('.show-preview');
-// const rigthDiv = document.querySelector('.right');
+const buttons = document.querySelectorAll('.show-preview');
+const rigthDiv = document.querySelector('.right');
 
-// //потрібно при кліці на кнопку робити превью в правий дів на який ми отримали посилання
-// buttons.forEach(button =>
-//     button.addEventListener('click', event => {
-//         //через кнопку достукалися до батьківсього елемента і взяли айді
-//         const bookId = event.target.parentNode.id;
-//         //знаходимо айді в залежності яка книга обрана
-//         const book = books.find(({ id }) => bookId === id);
-//         const mark = `<div>
-//     <h2>${book.title}</h2>
-//     <p>${book.author}</p>
-//     <img src="${book.img}" alt="${book.title}">
-//     <p>${book.plot}</p>
-// </div>`;
-//         //щоб розмітка не додавалась а перезаписувалась то додаємо через іннер
-//         rigthDiv.innerHTML = mark;
-//     })
-// );
+//потрібно при кліці на кнопку робити превью в правий дів на який ми отримали посилання
+buttons.forEach(button =>
+    button.addEventListener('click', event => {
+        //через кнопку достукалися до батьківсього елемента і взяли айді
+        const bookId = event.target.parentNode.id;
+        //знаходимо айді в залежності яка книга обрана
+        const book = books.find(({ id }) => bookId === id);
+        const mark = `<div>
+    <h2>${book.title}</h2>
+    <p>${book.author}</p>
+    <img src="${book.img}" alt="${book.title}">
+    <p>${book.plot}</p>
+</div>`;
+        //щоб розмітка не додавалась а перезаписувалась то додаємо через іннер
+        rigthDiv.innerHTML = mark;
+    })
+);
 
 // ================================================================================================================================================================================================================================================================= A R T E M
 

@@ -134,7 +134,7 @@ h2 {
 } */
 
 /* PHONE LIST */
-.phone-list {
+/* .phone-list {
     list-style: none;
     gap: 30px;
     display: flex;
@@ -161,4 +161,27 @@ h2 {
     text-align: center;
     background-color: white;
     border-radius: 8px;
+} */
+/* LIBRARY TRAINING */
+/* .library-box {
+    display: flex;
 }
+.left-box {
+    width: 250px;
+    background-color: rgb(210, 175, 241);
+}
+.left-box div {
+    margin: 0 auto;
+}
+.right-box {
+    width: 400px;
+    background-color: rgb(222, 204, 238);
+}
+
+.modal-window {
+    padding: 15px;
+    border-radius: 8px;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+} */
