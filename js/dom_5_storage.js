@@ -1,7 +1,7 @@
 //localStarage -- не можемо передавати функції чи методи об'єкту лише рядки, зберігаються зміни між вкладками
 //Session Storage -- більше секйюрні речі (емайл) не передається між вкладками, існує в межах однієї вкладки
-//JSON.parse -- привести до того типу даних шо було (приводимо з рядка у JS формат (масив/об'єкт))
-//JSON.stingify -- привести до рядка
+//JSON.parse -- привести до того типу даних шо було (приводимо з рядка у JS формат (масив/об'єкт)) ПРИ ПАРСИНГУ РЯДКА БУДЕ ЕРОР
+//JSON.stingify -- привести до рядка (якщо дані масив чи об'єкт)
 
 // localStorage.setItem('key', 'value') -- зберегти значення  одне
 // localStorage.getItem('key'); -- отримати значення одне
@@ -36,5 +36,35 @@
 
 const STORAGE_KEY = 'feedback-msg';
 
-const form = document.querySelector('.fedback-form');
-const textarea = form.querySelector('textarea');
+const form = document.querySelector('.feedback-form');
+const textarea = document.querySelector('textarea');
+
+form.addEventListener('submit', onSubmit);
+
+function onSubmit(evt) {
+    evt.preventDefault();
+    //видалення повідомлення із сховища при сабміті
+    localStorage.removeItem(STORAGE_KEY);
+    //очистка форми
+    evt.currentTarget.reset();
+}
+
+//отримати значення поля і записати в ЛС
+textarea.addEventListener('input', onInput);
+
+function onInput(evt) {
+    const value = evt.target.value;
+    localStorage.setItem(STORAGE_KEY, value);
+}
+
+function getInfoFromStorage() {
+    // отримуємо дані зі сховища
+    const data = localStorage.getItem(STORAGE_KEY);
+    //якщо в локал сторадж щось є то записуємо в форму якщо немає то робимо по дефолту
+    if (data) {
+        // якщо шось є (тру)
+        textarea.value = data;
+    }
+}
+
+getInfoFromStorage();
