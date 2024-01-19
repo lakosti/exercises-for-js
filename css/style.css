@@ -187,17 +187,29 @@ h2 {
 } */
 
 /* ASYNC */
-
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 .div-cont {
+    display: none;
+    overflow: hidden;
+    width: 500px;
+    height: 300px;
     position: relative;
 }
 
 .advertising {
     display: block;
     background-color: white;
-    width: 100px;
+    width: 80px;
     height: 20px;
-    right: 362 px;
-    bottom: 592px;
+    bottom: 20px;
+    right: 20px;
     position: absolute;
+}
+
+.active {
+    display: block;
 }
