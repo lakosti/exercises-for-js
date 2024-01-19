@@ -34,37 +34,43 @@
 
 ////// WORK WITH FORM  /////////
 
-const STORAGE_KEY = 'feedback-msg';
+// const STORAGE_KEY = 'feedback-msg';
 
-const form = document.querySelector('.feedback-form');
-const textarea = document.querySelector('textarea');
+// const form = document.querySelector('.feedback-form');
+// const textarea = document.querySelector('textarea');
 
-form.addEventListener('submit', onSubmit);
+// form.addEventListener('submit', onSubmit);
 
-function onSubmit(evt) {
-    evt.preventDefault();
-    //видалення повідомлення із сховища при сабміті
-    localStorage.removeItem(STORAGE_KEY);
-    //очистка форми
-    evt.currentTarget.reset();
-}
+// function onSubmit(evt) {
+//     evt.preventDefault();
+//     //видалення повідомлення із сховища при сабміті
+//     localStorage.removeItem(STORAGE_KEY);
+//     //очистка форми
+//     evt.currentTarget.reset();
+// }
 
-//отримати значення поля і записати в ЛС
-textarea.addEventListener('input', onInput);
+// //отримати значення поля і записати в ЛС
+// textarea.addEventListener('input', onInput);
 
-function onInput(evt) {
-    const value = evt.target.value;
-    localStorage.setItem(STORAGE_KEY, value);
-}
+// function onInput(evt) {
+//     const value = evt.target.value;
+//     localStorage.setItem(STORAGE_KEY, value);
+// }
 
-function getInfoFromStorage() {
-    // отримуємо дані зі сховища
-    const data = localStorage.getItem(STORAGE_KEY);
-    //якщо в локал сторадж щось є то записуємо в форму якщо немає то робимо по дефолту
-    if (data) {
-        // якщо шось є (тру)
-        textarea.value = data;
-    }
-}
+// function getInfoFromStorage() {
+//     // отримуємо дані зі сховища
+//     const data = localStorage.getItem(STORAGE_KEY);
+//     //якщо в локал сторадж щось є то записуємо в форму якщо немає то робимо по дефолту
+//     if (data) {
+//         // якщо шось є (тру)
+//         textarea.value = data;
+//     }
+// }
 
-getInfoFromStorage();
+// getInfoFromStorage();
+
+/////////////////////////////////////////////////////   TODO:FORM 2 (З ДВОМА ПОЛЯМИ) /////////////////////////////////////////////
+
+//////
+
+///
