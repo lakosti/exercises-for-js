@@ -74,71 +74,71 @@
 
 ////отримуємо через дом доступ до даних
 
-const dayOfWeek = document.querySelector('.date-day');
-const dayOfMonth = document.querySelector('.date');
-const month = document.querySelector('.date-month');
-const year = document.querySelector('.date-year');
-const timeCounter = document.querySelector('.digital-clock');
-const secondArrow = document.querySelector('.clock-seconds__arrow');
-const minuteArrow = document.querySelector('.clock-minutes__arrow');
-const hourArrow = document.querySelector('.clock-hours__arrow');
+// const dayOfWeek = document.querySelector('.date-day');
+// const dayOfMonth = document.querySelector('.date');
+// const month = document.querySelector('.date-month');
+// const year = document.querySelector('.date-year');
+// const timeCounter = document.querySelector('.digital-clock');
+// const secondArrow = document.querySelector('.clock-seconds__arrow');
+// const minuteArrow = document.querySelector('.clock-minutes__arrow');
+// const hourArrow = document.querySelector('.clock-hours__arrow');
 
-const daysOfWeeks = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота'];
+// const daysOfWeeks = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота'];
 
-const namesOfMonth = [
-    'Січень',
-    'Лютий',
-    'Березень',
-    'Квітень',
-    'Травень',
-    'Червень',
-    'Липень',
-    'Серпень',
-    'Вересень',
-    'Жовтень',
-    'Листопад',
-    'Грудень',
-];
+// const namesOfMonth = [
+//     'Січень',
+//     'Лютий',
+//     'Березень',
+//     'Квітень',
+//     'Травень',
+//     'Червень',
+//     'Липень',
+//     'Серпень',
+//     'Вересень',
+//     'Жовтень',
+//     'Листопад',
+//     'Грудень',
+// ];
 
-//ПРИ РОБОТІ З ЧАСОМ НЕОБХІДНО ВИКОРИСТОВУВАТИ СЕТ ІНТЕРВАЛ (шоб оновлювались дані на сайті кожної секунди)
+// //ПРИ РОБОТІ З ЧАСОМ НЕОБХІДНО ВИКОРИСТОВУВАТИ СЕТ ІНТЕРВАЛ (шоб оновлювались дані на сайті кожної секунди)
 
-setInterval(() => {
-    //обов'язково поміщаємо сюди об'єкт ДЕЙТ -- шоб щоразу отримувати точну щосекундну дату
-    const date = new Date();
+// setInterval(() => {
+//     //обов'язково поміщаємо сюди об'єкт ДЕЙТ -- шоб щоразу отримувати точну щосекундну дату
+//     const date = new Date();
 
-    //отримуємо актуальні дані з дейту
-    const currentDay = daysOfWeeks[date.getDay()]; //субота
-    const currentDayOfMonth = date.getDate();
-    const currentMonth = namesOfMonth[date.getMonth()];
-    const currentYear = date.getFullYear();
+//     //отримуємо актуальні дані з дейту
+//     const currentDay = daysOfWeeks[date.getDay()]; //субота
+//     const currentDayOfMonth = date.getDate();
+//     const currentMonth = namesOfMonth[date.getMonth()];
+//     const currentYear = date.getFullYear();
 
-    //електро годинник
-    const currentHours = date.getHours();
-    const currentMinutes = date.getMinutes();
-    const currentSeconds = date.getSeconds();
-    const currentTimeFormat = `${currentHours.toString().padStart(2, '0')} : ${currentMinutes
-        .toString()
-        .padStart(2, '0')} : ${currentSeconds.toString().padStart(2, '0')}`;
+//     //електро годинник
+//     const currentHours = date.getHours();
+//     const currentMinutes = date.getMinutes();
+//     const currentSeconds = date.getSeconds();
+//     const currentTimeFormat = `${currentHours.toString().padStart(2, '0')} : ${currentMinutes
+//         .toString()
+//         .padStart(2, '0')} : ${currentSeconds.toString().padStart(2, '0')}`;
 
-    //механічний годинник
-    //всього годинник робить оберт в 360 градусів потрібно знайти скільки градусів годинник тратить на 1 секунду/хвилину і помножити на поточну секунду/хвилину
-    const mechanicalSecond = (360 / 60) * currentSeconds;
-    const mechanicalMinute = (360 / 60) * currentMinutes;
-    const mechanicalHour = (360 / 12) * currentHours + (360 / 12 / 60) * currentMinutes;
-    //щоб знайти годину і вона коректно відображалась дізнаємося за скільки градусів проходить одна година і до цих градусів дадаємо значення залишку поточних хвилин
+//     //механічний годинник
+//     //всього годинник робить оберт в 360 градусів потрібно знайти скільки градусів годинник тратить на 1 секунду/хвилину і помножити на поточну секунду/хвилину
+//     const mechanicalSecond = (360 / 60) * currentSeconds;
+//     const mechanicalMinute = (360 / 60) * currentMinutes;
+//     const mechanicalHour = (360 / 12) * currentHours + (360 / 12 / 60) * currentMinutes;
+//     //щоб знайти годину і вона коректно відображалась дізнаємося за скільки градусів проходить одна година і до цих градусів дадаємо значення залишку поточних хвилин
 
-    //присвоюємо дані з дейту до ДОМ
-    dayOfWeek.textContent = currentDay;
-    dayOfMonth.textContent = currentDayOfMonth;
-    month.textContent = currentMonth;
-    year.textContent = currentYear;
+//     //присвоюємо дані з дейту до ДОМ
+//     dayOfWeek.textContent = currentDay;
+//     dayOfMonth.textContent = currentDayOfMonth;
+//     month.textContent = currentMonth;
+//     year.textContent = currentYear;
 
-    timeCounter.textContent = `Поточний час: ${currentTimeFormat}`;
+//     timeCounter.textContent = `Поточний час: ${currentTimeFormat}`;
 
-    secondArrow.style.transform = `rotate(${mechanicalSecond}deg)`;
-    minuteArrow.style.transform = `rotate(${mechanicalMinute}deg)`;
-    hourArrow.style.transform = `rotate(${mechanicalHour}deg)`;
-}, 1000);
+//     secondArrow.style.transform = `rotate(${mechanicalSecond}deg)`;
+//     minuteArrow.style.transform = `rotate(${mechanicalMinute}deg)`;
+//     hourArrow.style.transform = `rotate(${mechanicalHour}deg)`;
+// }, 1000);
 
 //  ---------------------------- таймер від 10 до 1 --------------------------
 
