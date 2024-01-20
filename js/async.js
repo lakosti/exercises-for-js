@@ -7,6 +7,7 @@
 ////////////////////////////////////Date//////////////////////////////////////
 
 // Поточна дата в мілісекундах console.log(Date.now());
+//ДАТА У ВИГЛЯДІ ОБ'ЄКТУ З ЯКОГО МОЖНА ВИТЯГНУТИ ВСІ ВІДОМОСТІ new Date()
 
 // --------------------------отримати поточнй місяць------------------------
 
@@ -110,6 +111,7 @@ year.textContent = currentYear;
 // const id = setInterval(() => {
 //     counter -= 1;
 //     timeCounter.textContent = counter;
+
 //     if (!counter) {
 //         clearInterval(id);
 //         timeCounter.textContent = 'The End';
@@ -118,4 +120,5 @@ year.textContent = currentYear;
 ///
 
 ///ГОДИННИК
+
 const timeCounter = document.querySelector('.digital-clock');
