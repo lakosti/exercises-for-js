@@ -30,14 +30,14 @@
 // const currentMonth = namesOfMonth[date.getMonth()];
 // console.log(currentMonth);
 
-// -----------------------------отримати ПОТОЧНИЙ ДЕНЬ --------------------------
+//// -----------------------------отримати ПОТОЧНИЙ ДЕНЬ --------------------------
 
 // const date = new Date();
 // const daysOfWeeks = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота'];
 // const currentDay = daysOfWeeks[date.getDay()];
 // console.log(currentDay);
 
-// -----------------------------приклад РЕКЛАМИ------------------------
+//// -----------------------------приклад РЕКЛАМИ------------------------
 
 // const box = document.querySelector('.div-cont');
 // const timer = document.querySelector('.js-timer');
@@ -62,69 +62,85 @@
 //     box.style.display = 'none';
 // }
 
-// ----------------------------------------- ГОДИННИК АРТЕМА ----------------------------------------------
+//// ----------------------------------------- ГОДИННИК АРТЕМА ----------------------------------------------
 
-//ЩОБ ПРАЦЮВАТИ З ОБ'ЄКТОМ ДЕЙТ ОБОВ'ЯЗКОВО ОГОЛОШУЄМО ЙОГО
+////ЩОБ ПРАЦЮВАТИ З ОБ'ЄКТОМ ДЕЙТ ОБОВ'ЯЗКОВО ОГОЛОШУЄМО ЙОГО
+////ПРИ РОБОТІ З ЧАСОМ НЕОБХІДНО ВИКОРИСТОВУВАТИ СЕТ ІНТЕРВАЛ (шоб оновлювались дані на сайті кожної секунди)
+
+////1. ДЕНЬ ТИЖНЯ getDay() + масив
+////2. ДЕНЬ МІСЯЦЬ getDate()
+////3. МІСЯЦЬ getMonth() + масив
+////4. РІК getFullYear()
+
+////отримуємо через дом доступ до даних
+
+const dayOfWeek = document.querySelector('.date-day');
+const dayOfMonth = document.querySelector('.date');
+const month = document.querySelector('.date-month');
+const year = document.querySelector('.date-year');
+const timeCounter = document.querySelector('.digital-clock');
+const secondArrow = document.querySelector('.clock-seconds__arrow');
+const minuteArrow = document.querySelector('.clock-minutes__arrow');
+const hourArrow = document.querySelector('.clock-hours__arrow');
+
+const daysOfWeeks = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота'];
+
+const namesOfMonth = [
+    'Січень',
+    'Лютий',
+    'Березень',
+    'Квітень',
+    'Травень',
+    'Червень',
+    'Липень',
+    'Серпень',
+    'Вересень',
+    'Жовтень',
+    'Листопад',
+    'Грудень',
+];
+
 //ПРИ РОБОТІ З ЧАСОМ НЕОБХІДНО ВИКОРИСТОВУВАТИ СЕТ ІНТЕРВАЛ (шоб оновлювались дані на сайті кожної секунди)
 
-//1. ДЕНЬ ТИЖНЯ getDay() + масив
-//2. ДЕНЬ МІСЯЦЬ getDate()
-//3. МІСЯЦЬ getMonth() + масив
-//4. РІК getFullYear()
+setInterval(() => {
+    //обов'язково поміщаємо сюди об'єкт ДЕЙТ -- шоб щоразу отримувати точну щосекундну дату
+    const date = new Date();
 
-//отримуємо через дом доступ до даних
-// const dayOfWeek = document.querySelector('.date-day');
-// const dayOfMonth = document.querySelector('.date');
-// const month = document.querySelector('.date-month');
-// const year = document.querySelector('.date-year');
-// const timeCounter = document.querySelector('.digital-clock');
+    //отримуємо актуальні дані з дейту
+    const currentDay = daysOfWeeks[date.getDay()]; //субота
+    const currentDayOfMonth = date.getDate();
+    const currentMonth = namesOfMonth[date.getMonth()];
+    const currentYear = date.getFullYear();
 
-// const daysOfWeeks = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота'];
+    //електро годинник
+    const currentHours = date.getHours();
+    const currentMinutes = date.getMinutes();
+    const currentSeconds = date.getSeconds();
+    const currentTimeFormat = `${currentHours.toString().padStart(2, '0')} : ${currentMinutes
+        .toString()
+        .padStart(2, '0')} : ${currentSeconds.toString().padStart(2, '0')}`;
 
-// const namesOfMonth = [
-//     'Січень',
-//     'Лютий',
-//     'Березень',
-//     'Квітень',
-//     'Травень',
-//     'Червень',
-//     'Липень',
-//     'Серпень',
-//     'Вересень',
-//     'Жовтень',
-//     'Листопад',
-//     'Грудень',
-// ];
+    //механічний годинник
+    //всього годинник робить оберт в 360 градусів потрібно знайти скільки градусів годинник тратить на 1 секунду/хвилину і помножити на поточну секунду/хвилину
+    const mechanicalSecond = (360 / 60) * currentSeconds;
+    const mechanicalMinute = (360 / 60) * currentMinutes;
+    const mechanicalHour = (360 / 12) * currentHours + (360 / 12 / 60) * currentMinutes;
+    //щоб знайти годину і вона коректно відображалась дізнаємося за скільки градусів проходить одна година і до цих градусів дадаємо значення залишку поточних хвилин
 
-// //ПРИ РОБОТІ З ЧАСОМ НЕОБХІДНО ВИКОРИСТОВУВАТИ СЕТ ІНТЕРВАЛ (шоб оновлювались дані на сайті кожної секунди)
+    //присвоюємо дані з дейту до ДОМ
+    dayOfWeek.textContent = currentDay;
+    dayOfMonth.textContent = currentDayOfMonth;
+    month.textContent = currentMonth;
+    year.textContent = currentYear;
 
-// setInterval(() => {
-//     //обов'язково поміщаємо сюди об'єкт ДЕЙТ
-//     const date = new Date();
+    timeCounter.textContent = `Поточний час: ${currentTimeFormat}`;
 
-//     //отримуємо актуальні дані з дейту
-//     const currentDay = daysOfWeeks[date.getDay()]; //субота
-//     const currentDayOfMonth = date.getDate();
-//     const currentMonth = namesOfMonth[date.getMonth()];
-//     const currentYear = date.getFullYear();
+    secondArrow.style.transform = `rotate(${mechanicalSecond}deg)`;
+    minuteArrow.style.transform = `rotate(${mechanicalMinute}deg)`;
+    hourArrow.style.transform = `rotate(${mechanicalHour}deg)`;
+}, 1000);
 
-//     //електро годинник
-//     const currentHours = date.getHours();
-//     const currentMinutes = date.getMinutes();
-//     const currentSeconds = date.getSeconds();
-//     const currentTimeFormat = `${currentHours.toString().padStart(2, '0')} : ${currentMinutes
-//         .toString()
-//         .padStart(2, '0')} : ${currentSeconds.toString().padStart(2, '0')}`;
-
-//     //присвоюємо дані з дейту до ДОМ
-//     dayOfWeek.textContent = currentDay;
-//     dayOfMonth.textContent = currentDayOfMonth;
-//     month.textContent = currentMonth;
-//     year.textContent = currentYear;
-//     timeCounter.textContent = `Поточний час: ${currentTimeFormat}`;
-// }, 1000);
-
-//  ------------------ таймер від 10 до 1 --------------------------
+//  ---------------------------- таймер від 10 до 1 --------------------------
 
 // const timeCounter = document.querySelector('.digital-clock');
 // let counter = 11;
