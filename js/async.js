@@ -1,8 +1,18 @@
 // синхронний код завжди в пріоритеті
 // ІВЕНТ ЛУП - колстек -> web Api (асинхронні) -> черга(після виконання асинхронний код очікує в черзі, і лише коли ВСІ синхронні функції будуть виконані буде виконуватися асинхрон )
 
-// setTimeout -- для годинника/таймера (кожну секунду змінюємо) -- викор. в парі з датами / годинами // ПОВЕРТАЮТЬСЯ ЧИСЛОВИЙ ID
-// setInterval -- появляється через певний інтервал (реклама) // ПОВЕРТАЮТЬСЯ ЧИСЛОВИЙ ID
+// setTimeout -- для годинника/таймера (кожну секунду змінюємо) -- викор. в парі з датами / годинами // ПОВЕРТАЮТЬСЯ ЧИСЛОВИЙ ID // видаляється також по id // ПРИЙМАЄ (КОЛБЕК,ЗАТРИМКУ,ПАРАМЕТРИ)
+
+// const id = setTimeout(
+//     (name, country) => {
+//         console.log(`Hello ${name} from ${country}`);
+//     },
+//     1000,
+//     'Alex',
+//     'Ukraine'
+// );
+
+// setInterval -- появляється через певний інтервал (реклама) // ПОВЕРТАЮТЬСЯ ЧИСЛОВИЙ ID //// видаляється також по id
 
 ////////////////////////////////////Date//////////////////////////////////////
 
@@ -187,3 +197,35 @@
 
 //     return { days, hours, minutes, seconds };
 // }
+
+///////////////////    ПОКАЗ/ЗАКРИТТЯ ПОВІДОМЛЕННЯ    //////////////////////////////////
+
+//1 показуємо та ховаємо додаючи клас is-visible
+//2 ховаємо через певний час
+//3 ховаємо при кліці
+//4 очищуємо таймер
+
+// const notification = document.querySelector('.js-alert');
+// const NOTIFICATION_DELAY = 3000;
+// let timeId = null;
+
+// function onNotificationClick() {
+//     hideNotification();
+//     clearTimeout(timeId);
+// }
+// //показ повідомлення (коли повідомлення показано тоді і пишемо основну логіку)
+// function showNotification() {
+//     notification.classList.add('is-visible');
+//     //коли повідомлення відкрите тоді і додаємо слухач на закриття
+//     notification.addEventListener('click', onNotificationClick);
+//     timeId = setTimeout(() => {
+//         hideNotification();
+//         console.log('Закрилось через 3 секунди');
+//     }, NOTIFICATION_DELAY);
+// }
+// function hideNotification() {
+//     notification.classList.remove('is-visible');
+//     notification.removeEventListener('click', onNotificationClick);
+// }
+
+// showNotification();

@@ -286,3 +286,18 @@ body {
     font-size: 60px;
     text-shadow: 3px 3px 2px #cecbcd;
 }
+
+/* ALEX */
+
+.alert {
+    opacity: 0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: greenyellow;
+    transition: opacity linear 250ms;
+}
+.is-visible {
+    opacity: 1;
+    transition: opacity linear 250ms;
+}
