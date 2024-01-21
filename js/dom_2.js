@@ -173,26 +173,26 @@
 
 //дадаємо подію на ВСІ кнопки, але потрібно перебрати оскільки слухач додається на елемент, а не на масив
 
-const buttons = document.querySelectorAll('.show-preview');
-const rigthDiv = document.querySelector('.right');
+// const buttons = document.querySelectorAll('.show-preview');
+// const rigthDiv = document.querySelector('.right');
 
-//потрібно при кліці на кнопку робити превью в правий дів на який ми отримали посилання
-buttons.forEach(button =>
-    button.addEventListener('click', event => {
-        //через кнопку достукалися до батьківсього елемента і взяли айді
-        const bookId = event.target.parentNode.id;
-        //знаходимо айді в залежності яка книга обрана
-        const book = books.find(({ id }) => bookId === id);
-        const mark = `<div>
-    <h2>${book.title}</h2>
-    <p>${book.author}</p>
-    <img src="${book.img}" alt="${book.title}">
-    <p>${book.plot}</p>
-</div>`;
-        //щоб розмітка не додавалась а перезаписувалась то додаємо через іннер
-        rigthDiv.innerHTML = mark;
-    })
-);
+// //потрібно при кліці на кнопку робити превью в правий дів на який ми отримали посилання
+// buttons.forEach(button =>
+//     button.addEventListener('click', event => {
+//         //через кнопку достукалися до батьківсього елемента і взяли айді
+//         const bookId = event.target.parentNode.id;
+//         //знаходимо айді в залежності яка книга обрана
+//         const book = books.find(({ id }) => bookId === id);
+//         const mark = `<div>
+//     <h2>${book.title}</h2>
+//     <p>${book.author}</p>
+//     <img src="${book.img}" alt="${book.title}">
+//     <p>${book.plot}</p>
+// </div>`;
+//         //щоб розмітка не додавалась а перезаписувалась то додаємо через іннер
+//         rigthDiv.innerHTML = mark;
+//     })
+// );
 
 // ================================================================================================================================================================================================================================================================= A R T E M
 
@@ -402,3 +402,52 @@ buttons.forEach(button =>
 // function addFavorite(currentCar) {
 //     favoriteList.insertAdjacentHTML('beforeend', `<li>${currentCar}</li>`);
 // }
+
+////////////////// РОБОТА З ФОРМОЮ + ЗБЕРЕЖЕННЯ ДАНИХ В ЛОКАЛ СТОРАДЖ //////////////
+
+// const form = document.querySelector('.js-form');
+// const KEY_LC = 'storage_key';
+// form.addEventListener('submit', onSubmit);
+// form.addEventListener('input', onInput);
+
+// function onSubmit(evt) {
+//     evt.preventDefault();
+
+//     const email = evt.target.elements.email.value;
+//     const password = evt.target.elements.password.value;
+//     const comment = evt.target.elements.comment.value;
+
+//     if (!email || !password) {
+//         alert('Please fill all date');
+//         return;
+//     }
+//     const date = {
+//         email,
+//         password,
+//         comment,
+//     };
+//     console.log(date);
+//     form.reset();
+//     localStorage.removeItem(KEY_LC);
+// }
+
+// function onInput(evt) {
+//     const email = form.elements.email.value;
+//     const comment = form.elements.comment.value;
+
+//     const value = {
+//         email,
+//         comment,
+//     };
+//     localStorage.setItem(KEY_LC, JSON.stringify(value));
+// }
+
+// function getInfoFromStorage() {
+//     const localValue = JSON.parse(localStorage.getItem(KEY_LC)) ?? {};
+
+//     form.elements.email.value = localValue.email || '';
+//     form.elements.comment.value = localValue.comment || '';
+// }
+// getInfoFromStorage();
+
+////ІНШИЙ СПОСІБ ЗБЕРЕЖЕННЯ ДАНИХ З ФОРМИ
