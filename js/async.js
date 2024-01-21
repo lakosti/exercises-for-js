@@ -213,16 +213,19 @@
 //     hideNotification();
 //     clearTimeout(timeId);
 // }
+
 // //показ повідомлення (коли повідомлення показано тоді і пишемо основну логіку)
 // function showNotification() {
 //     notification.classList.add('is-visible');
 //     //коли повідомлення відкрите тоді і додаємо слухач на закриття
 //     notification.addEventListener('click', onNotificationClick);
+
 //     timeId = setTimeout(() => {
 //         hideNotification();
 //         console.log('Закрилось через 3 секунди');
 //     }, NOTIFICATION_DELAY);
 // }
+
 // function hideNotification() {
 //     notification.classList.remove('is-visible');
 //     notification.removeEventListener('click', onNotificationClick);
