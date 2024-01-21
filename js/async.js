@@ -211,13 +211,13 @@
 
 // function onNotificationClick() {
 //     hideNotification();
-//     clearTimeout(timeId);
+//     clearTimeout(timeId); // очищуємо таймер шоб не йшов відлік далі коли повідомлення закрите
 // }
 
 // //показ повідомлення (коли повідомлення показано тоді і пишемо основну логіку)
 // function showNotification() {
 //     notification.classList.add('is-visible');
-//     //коли повідомлення відкрите тоді і додаємо слухач на закриття
+//     //тільки коли повідомлення відкрите тоді і додаємо слухач на закриття
 //     notification.addEventListener('click', onNotificationClick);
 
 //     timeId = setTimeout(() => {
