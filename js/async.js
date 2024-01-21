@@ -232,3 +232,65 @@
 // }
 
 // showNotification();
+
+////////////////////////////////// DATE /////////////////////////
+
+// const date = new Date();
+// console.log(date.toLocaleTimeString('en-US')); //вивід часу в Амер стилі
+// console.log(date.toLocaleTimeString('ua-UK')); //вивід часу в укр стилі
+
+//ВІДНІМАННЯ ДАТ
+
+// const targetDate = new Date('20 January 2024');
+// const diff = date - targetDate;
+// console.log(diff / 1000 / 60 / 60 / 24); // скільки днів пройшло
+
+// -------------------------------- ALEX TIMER ---------------------------------
+const startBtn = document.querySelector('button[data-action-start]');
+const stopBtn = document.querySelector('button[data-action-stop]');
+const timerDom = document.querySelector('.clockface');
+
+class Timer {
+    constructor() {
+        //
+    }
+
+    start() {
+        //
+    }
+
+    stop() {
+        //
+    }
+
+    getTimeComponents(time) {
+        const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+        const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+
+        return { hours, mins, secs };
+    }
+
+    /*
+     * Приймає число, перетворює його в рядок і додає в початок 0, якщо число менше 2-х знаків
+     */
+    pad(value) {
+        return String(value).padStart(2, '0');
+    }
+}
+
+const timer = new Timer({
+    onTick: updateClockface,
+});
+
+startBtn.addEventListener('click', timer.start.bind(timer));
+stopBtn.addEventListener('click', timer.stop.bind(timer));
+
+/*
+ * - Приймає час в мілісекундах
+ * - Вираховує скільки в них вміщається годин/хвилин/секунд
+ * - Рисує інтерфейс
+ */
+function updateClockface({ hours, mins, secs }) {
+    clockface.textContent = `${hours}:${mins}:${secs}`;
+}
