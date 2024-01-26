@@ -246,23 +246,43 @@
 // console.log(diff / 1000 / 60 / 60 / 24); // скільки днів пройшло
 
 // -------------------------------- ALEX TIMER ---------------------------------
+
 const startBtn = document.querySelector('button[data-action-start]');
 const stopBtn = document.querySelector('button[data-action-stop]');
-const timerDom = document.querySelector('.clockface');
+const clockface = document.querySelector('.js-clockface');
 
 class Timer {
-    constructor() {
-        //
+    constructor({ onTick }) {
+        this.onTick = onTick; //функція яка буде оновлювати кожну секунжу
+        this.isActive = false; // перевірка чи активний таймер
+        this.intervalId = null; // айді таймера - для подальної його зупинки
+        this.initTimer();
     }
 
     start() {
-        //
+        //якщо таймер активний то виходимо
+        if (this.isActive) {
+            return;
+        }
+        this.isActive = true; // якщо ні то робимо активним
+        const startTime = Date.now(); // дата старту в мілісекундах
+        this.intervalId = setInterval(() => {
+            const currentTime = Date.now(); // отримуємо новий час кожну секунду
+            const diff = currentTime - startTime;
+            const time = this.getTimeComponents(diff);
+
+            this.onTick(time); // записуємо час на циферблат
+        }, 1000);
     }
 
     stop() {
-        //
+        this.isActive = false;
+        clearInterval(this.intervalId);
     }
-
+    initTimer() {
+        const time = this.getTimeComponents(0);
+        this.onTick(time);
+    }
     getTimeComponents(time) {
         const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
