@@ -247,70 +247,72 @@
 
 // -------------------------------- ALEX TIMER ---------------------------------
 
-const startBtn = document.querySelector('button[data-action-start]');
-const stopBtn = document.querySelector('button[data-action-stop]');
-const clockface = document.querySelector('.js-clockface');
+// const startBtn = document.querySelector('button[data-action-start]');
+// const stopBtn = document.querySelector('button[data-action-stop]');
+// const clockface = document.querySelector('.js-clockface');
 
-class Timer {
-    constructor({ onTick }) {
-        this.onTick = onTick; //функція яка буде оновлювати кожну секунжу
-        this.isActive = false; // перевірка чи активний таймер
-        this.intervalId = null; // айді таймера - для подальної його зупинки
-        this.initTimer();
-    }
+// class Timer {
+//     constructor({ onTick }) {
+//         this.onTick = onTick; //функція яка буде оновлювати кожну секунжу
+//         this.isActive = false; // перевірка чи активний таймер
+//         this.intervalId = null; // айді таймера - для подальної його зупинки
+//         this.initTimer();
+//     }
 
-    start() {
-        //якщо таймер активний то виходимо
-        if (this.isActive) {
-            return;
-        }
-        this.isActive = true; // якщо ні то робимо активним
-        const startTime = Date.now(); // дата старту в мілісекундах
-        this.intervalId = setInterval(() => {
-            const currentTime = Date.now(); // отримуємо новий час кожну секунду
-            const diff = currentTime - startTime;
-            const time = this.getTimeComponents(diff);
+//     start() {
+//         //якщо таймер активний то виходимо
+//         if (this.isActive) {
+//             return;
+//         }
+//         this.initTimer();
 
-            this.onTick(time); // записуємо час на циферблат
-        }, 1000);
-    }
+//         this.isActive = true; // якщо ні то робимо активним
+//         const startTime = Date.now(); // дата старту в мілісекундах
+//         this.intervalId = setInterval(() => {
+//             const currentTime = Date.now(); // отримуємо новий час кожну секунду
+//             const diff = currentTime - startTime;
+//             const time = this.getTimeComponents(diff);
 
-    stop() {
-        this.isActive = false;
-        clearInterval(this.intervalId);
-    }
-    initTimer() {
-        const time = this.getTimeComponents(0);
-        this.onTick(time);
-    }
-    getTimeComponents(time) {
-        const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-        const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-        const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+//             this.onTick(time); // записуємо час на циферблат
+//         }, 1000);
+//     }
 
-        return { hours, mins, secs };
-    }
+//     stop() {
+//         this.isActive = false;
+//         clearInterval(this.intervalId);
+//     }
+//     initTimer() {
+//         const time = this.getTimeComponents(0);
+//         this.onTick(time);
+//     }
+//     getTimeComponents(time) {
+//         const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+//         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+//         const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
-    /*
-     * Приймає число, перетворює його в рядок і додає в початок 0, якщо число менше 2-х знаків
-     */
-    pad(value) {
-        return String(value).padStart(2, '0');
-    }
-}
+//         return { hours, mins, secs };
+//     }
 
-const timer = new Timer({
-    onTick: updateClockface,
-});
+//     /*
+//      * Приймає число, перетворює його в рядок і додає в початок 0, якщо число менше 2-х знаків
+//      */
+//     pad(value) {
+//         return String(value).padStart(2, '0');
+//     }
+// }
 
-startBtn.addEventListener('click', timer.start.bind(timer));
-stopBtn.addEventListener('click', timer.stop.bind(timer));
+// const timer = new Timer({
+//     onTick: updateClockface,
+// });
 
-/*
- * - Приймає час в мілісекундах
- * - Вираховує скільки в них вміщається годин/хвилин/секунд
- * - Рисує інтерфейс
- */
-function updateClockface({ hours, mins, secs }) {
-    clockface.textContent = `${hours}:${mins}:${secs}`;
-}
+// startBtn.addEventListener('click', timer.start.bind(timer));
+// stopBtn.addEventListener('click', timer.stop.bind(timer));
+
+// /*
+//  * - Приймає час в мілісекундах
+//  * - Вираховує скільки в них вміщається годин/хвилин/секунд
+//  * - Рисує інтерфейс
+//  */
+// function updateClockface({ hours, mins, secs }) {
+//     clockface.textContent = `${hours}:${mins}:${secs}`;
+// }
