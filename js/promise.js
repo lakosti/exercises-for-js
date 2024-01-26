@@ -152,7 +152,7 @@
  *
  * Після натиснення на кнопку "Start game"
  * в кожному віконці по черзі має з'являтись
- * смайлик з затримкою в 1 секунду ('🤑' або '👿')
+ * смайлик з затримкою в 1 секунду ('✅' або '❌')
  *
  * Під час обробки кожного віконця створи масив з Promis-ами
  * в якому кожен з них буде відповідати за своє віконце,
@@ -178,12 +178,45 @@
  6. робимо перевірку на переможця, якщо всі однакові (наприклад, всі fullfilled або всі rejected) - то ми перемогли + записати цей результат у параграф
 */
 
-const startGameBtn = document.querySelector('.start-btn');
-const container = document.querySelector('.container');
-const result = document.querySelector('.result');
+// const startGameBtn = document.querySelector('.start-btn');
+// const container = document.querySelector('.container');
+// const result = document.querySelector('.result');
 
-startGameBtn.addEventListener('click', onclick);
+// startGameBtn.addEventListener('click', onclick);
 
-function onclick({ target }) {
-    target.disabled = true;
-}
+// function onclick({ target }) {
+//     target.disabled = true;
+
+//     const items = [...container.children].map(() => {
+//         return new Promise((res, rej) => {
+//             const isWinner = Math.random() > 0.5;
+
+//             if (isWinner) {
+//                 res('✅');
+//             } else {
+//                 rej('❌');
+//             }
+//         });
+//     });
+//     //обробка всіх промісів  Promise.allSettled
+//     Promise.allSettled(items).then(items => {
+//         items.forEach((item, i) => {
+//             result.textContent = '';
+//             container.children[i].textContent = ''; // очистка всіх полів перед новою грою
+
+//             //додаємо смайлики у всі контейнери в залежності чи фулфілд чи ріджект
+//             setTimeout(() => {
+//                 container.children[i].textContent = item.value || item.reason;
+//             }, 1000 * (i + 1));
+
+//             const winnerCombination =
+//                 items.every(({ status }) => status === 'fulfilled') ||
+//                 items.every(({ status }) => status === 'rejected');
+
+//             setTimeout(() => {
+//                 target.disabled = false;
+//                 result.textContent = winnerCombination ? 'Your winner' : 'Your loser';
+//             }, 1000 * items.length);
+//         });
+//     });
+// }
