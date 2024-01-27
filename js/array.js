@@ -1,4 +1,4 @@
-// перевірка на унікальні елементи
+// перевірка на унікальні елементи   ===== new Set(arr)
 // const getUniqueCourses = arr.filter((course, idx, arr) => arr.indexOf(course === idx));
 // console.log(getUniqueCourses(['html', 'js', 'css', 'js']));
 //array.lenght = 0 --- очищення масиву//очистити масив
