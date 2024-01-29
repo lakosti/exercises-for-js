@@ -2,6 +2,7 @@
 // 404 помилка рахується як позитивна тому її потрібно додатково оброблювати
 // throw new Error == викид помилки - перевод проміс в стан rejected -- і потім відразу переходимо до catch
 // кожен then повертає результат наступного
+// аунтифікація -- доступ за допомогою апі ключа
 
 // АРХІТЕКТУРНА СИСТЕМА :
 // 1. REST -- швидка, легко парситься, не дуже секюрна базується на JSON
@@ -55,3 +56,23 @@
 // function createLi({ id, title }) {
 //     return `<li><h2>${id}</h2><p>${title}</p></li>`;
 // }
+
+//////////////////////////////////////// АУНТИФІКАЦІЯ ///////////////////////////////
+
+// fetch('https://pixabay.com/api/?key=42030111-51447223cbabab8b20d1b63f9&q=yellow+flowers');
+
+// const BASE_URL = 'https://pixabay.com/api';
+// const API_KEY = '42030111-51447223cbabab8b20d1b63f9';
+
+// const url = `${BASE_URL}/?key=${API_KEY}&q=green+cars`;
+
+// //BASE
+// fetch(url)
+//     .then(resp => {
+//         if (!resp.ok) {
+//             throw new Error(resp.status);
+//         }
+//         return resp.json();
+//     })
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
