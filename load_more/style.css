@@ -1,0 +1,26 @@
+.js-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.js-list li {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 500px;
+    width: 300px;
+}
+ul,
+li {
+    list-style: none;
+}
+img {
+    display: block;
+    height: 400px;
+    width: 100%;
+}
+.js-load {
+    /* display: block; */
+    margin: 0 auto;
+}
