@@ -59,4 +59,34 @@
 //     console.error(error);
 // }
 
-///////////////////////////// ALEX 2 lesson /////////////////////////////////////
+//////////////////////////////////////// POKEMON API перепис на асинхрон ////////////////////////////////////
+
+// import { fetchPokemon } from './services/pokemonApi.js'; // named import fetch fn
+// import renderPokemonCard from './templates/pockemonMarkup.js'; // default export
+
+// const cardContainer = document.querySelector('.card-container');
+// const searchForm = document.querySelector('.search-form');
+
+// searchForm.addEventListener('submit', handleSearch);
+
+// async function handleSearch(evt) {
+//     evt.preventDefault();
+
+//     const form = evt.currentTarget;
+//     const query = form.elements.query.value;
+
+//     //перепис на async (огортаємо в try/catch шоб відловити помилки)
+//     try {
+//         const data = await fetchPokemon(query);
+//         renderPokemonCard(data, cardContainer); // cardContainer -- для експорту шоб не ст додатковий файл куди виносимо всі змінні, бо оскільки вона створена тут в тому файлі вона недоступна і ми їх таким чином пов'язуємо
+//     } catch {
+//         onFetchError();
+//     } finally {
+//         form.reset();
+//     }
+// }
+
+// function onFetchError() {
+//     cardContainer.innerHTML = '';
+//     alert('Упс, щось пішло не так і ми не знайшли вашого покемона!');
+// }
