@@ -302,7 +302,7 @@ h2 {
 } */
 
 /* ALEX GAME */
-*,
+/* *,
 *::before,
 *::after {
     box-sizing: border-box;
@@ -364,4 +364,4 @@ td {
 
 .result {
     list-style: none;
-}
+} */

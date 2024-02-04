@@ -1,26 +1,26 @@
-// АВТОРИЗАЦІЯ ЗА ДОПОМОГОЮ БІАРЕР ТОКЕНА -- IO39UvhoTS5EmE-_ffa-  (https://the-one-api.dev/documentation)
+// // АВТОРИЗАЦІЯ ЗА ДОПОМОГОЮ БІАРЕР ТОКЕНА -- IO39UvhoTS5EmE-_ffa-  (https://the-one-api.dev/documentation)
 
-// const BASE_URL = 'https://the-one-api.dev/v2/';
-// const END_POINT = 'character';
-// const TOKEN = 'IO39UvhoTS5EmE-_ffa-';
-// function getCharacter() {
-//     const param = new URLSearchParams({
-//         limit: 30,
-//         page: 1,
-//     });
+// // const BASE_URL = 'https://the-one-api.dev/v2/';
+// // const END_POINT = 'character';
+// // const TOKEN = 'IO39UvhoTS5EmE-_ffa-';
+// // function getCharacter() {
+// //     const param = new URLSearchParams({
+// //         limit: 30,
+// //         page: 1,
+// //     });
 
-//     const option = {
-//         method: 'GET',
-//         headers: {
-//             Authorization: `Bearer ${TOKEN}`,
-//         },
-//     };
+// //     const option = {
+// //         method: 'GET',
+// //         headers: {
+// //             Authorization: `Bearer ${TOKEN}`,
+// //         },
+// //     };
 
-//     fetch(`${BASE_URL}${END_POINT}?${param}`, option).then(resp => console.log(resp));
-// }
-// getCharacter();
+// //     fetch(`${BASE_URL}${END_POINT}?${param}`, option).then(resp => console.log(resp));
+// // }
+// // getCharacter();
 
-//////////////////////////// ПАГІНАЦІЯ LOAD MORE //////////////////////////
+// //////////////////////////// ПАГІНАЦІЯ LOAD MORE //////////////////////////
 
 // const list = document.querySelector('.js-list');
 // const load = document.querySelector('.js-load');
