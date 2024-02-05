@@ -5,9 +5,12 @@
  * розкритий текст приховується.Нажимаючи на інші елементи меню, попередньо відкриті елементи не закриваються.
  */
 
-//TODO:=========task-02=======Pagination==========
-/**
- * Викоритовуй шаблон пагінації з файлу[pagination.html](./pagination.html) для розробки функціоналу пагінатора.
- * Використовуй поширення подій.Додавай клас`active` на поточну сторінку. Створи допоміжну функцію`updateActivePage`, яка повинна обновляти активний клас.
- * Функція`handleClick`повинна викликатися коли відбувається клік на елементі`pagination`.
- */
+// const list = document.querySelector('.js-accordion-list');
+// list.addEventListener('click', evt => {
+//     //evt.target === currentTarget
+//     if (evt.target.nodeName !== 'BUTTON') {
+//         return;
+//     }
+//     // nextElementSibling -- наступий сусід
+//     evt.target.nextElementSibling.classList.toggle('active');
+// });
