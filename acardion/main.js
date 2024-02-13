@@ -5,12 +5,12 @@
  * розкритий текст приховується.Нажимаючи на інші елементи меню, попередньо відкриті елементи не закриваються.
  */
 
-// const list = document.querySelector('.js-accordion-list');
-// list.addEventListener('click', evt => {
-//     //evt.target === currentTarget
-//     if (evt.target.nodeName !== 'BUTTON') {
-//         return;
-//     }
-//     // nextElementSibling -- наступий сусід
-//     evt.target.nextElementSibling.classList.toggle('active');
-// });
+const list = document.querySelector('.js-accordion-list');
+list.addEventListener('click', evt => {
+    //evt.target === currentTarget
+    if (evt.target.nodeName !== 'BUTTON') {
+        return;
+    }
+    // nextElementSibling -- наступий сусід
+    evt.target.nextElementSibling.classList.toggle('active');
+});

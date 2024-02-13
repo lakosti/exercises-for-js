@@ -1,4 +1,3 @@
-/* common */
 * {
     box-sizing: border-box;
 }
@@ -26,8 +25,6 @@ ul {
     padding: 0;
 }
 
-/* components */
-
 .task-title {
     font-size: 20px;
     font-style: italic;
@@ -45,7 +42,6 @@ ul {
     text-align: center;
 }
 
-/* accordion */
 .accordion-list {
     display: flex;
     flex-direction: column;
@@ -79,4 +75,84 @@ ul {
 }
 .panel.active {
     display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.resizer {
+    min-width: 100cqi;
+    overflow: hidden;
+    resize: horizontal;
+}
+
+/* LIBBARY - Simple slider  /// HORIZONTAL SCROLL */
+
+/* body {
+    scroll-behavior: smooth;
+    scroll-margin-top: 100px;
+} */
+
+.horizontal-media-scroller {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: calc(30px / 2);
+
+    overflow-x: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 30px;
+}
+.horizontal-media-scroller figure {
+    scroll-snap-align: start;
+}
+
+/* RUNNING LINE */
+
+@keyframes grow-progress {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+#progress {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1em;
+    background-color: red;
+
+    transform-origin: 0 50%;
+    animation: grow-progress auto linear;
+    animation-timeline: scroll();
+}
+
+/* LIGHBOX */
+.lighbox {
+    display: none;
+}
+
+.lighbox:target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000000d8;
+}
+
+.div-wrap-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
