@@ -17,7 +17,7 @@ function onControlsBtnClick(evt) {
     //переводимо текстовий контент в числовий
     let currentCounter = Number(refs.displayEl.textContent);
 
-    //витягуємо значення кнопки
+    //витягуємо значення кнопки по дата атрибуту
     const clickBtn = evt.target.dataset.action;
     if (clickBtn === 'decrease') {
         currentCounter -= 1;
