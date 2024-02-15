@@ -1,22 +1,38 @@
-// ## 2. Theme switcher
+// const input = document.querySelector('#theme-switch');
+// const body = document.querySelector('body');
+// const LS_KEY = 'colorTheme';
 
-// - Створи файли html і js (./themeSwitch.html, ./themeSwitch.js)
-// - Використовуй local storage для зберігання вибраної теми (dark / light)
+// input.addEventListener('click', onClick);
 
-// ```js
-// const themeSwitcher = document.getElementById('theme-switch');
-
-// // light theme is default, that's why themeSwitcher is unchecked
-// themeSwitcher.checked = false;
-
-// function onCheckBoxChange() {
-//   // if you change theme to dark, add 'dark' class and remove previus, add this change to local storage
-//   // if you select light theme do the same work but add 'light' class
+// function onClick() {
+//     if (input.checked === true) {
+//         darkTheme();
+//     } else {
+//         lightTheme();
+//     }
+//     // визначаємо поточну тему
+//     const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
+//     localStorage.setItem(LS_KEY, currentTheme);
 // }
 
-// function setThemeOnLoad() {
-//   // this helpful function should call every time when you update page, to check what theme was seted to local storage
-//   // you should get data from LS and set saved theme to body
-//   // don't forget about themeSwitcher, if current theme is dark, it should be checked
+// //поміщаюємо у функцію шоб спрацювало лише після того як спрацює перша функція
+// document.addEventListener('DOMContentLoaded', function () {
+//     const savedTheme = localStorage.getItem(LS_KEY);
+
+//     if (savedTheme === 'dark') {
+//         darkTheme();
+//         input.checked = true; // встановлюємо чекбокс як вибраний (якщо TRUE === DARK )
+//     } else {
+//         lightTheme();
+//         input.checked = false; // (FALSE === LIGHT)
+//     }
+// });
+
+// function lightTheme() {
+//     body.classList.remove('dark');
+//     body.classList.add('light');
 // }
-// ```
+// function darkTheme() {
+//     body.classList.remove('light');
+//     body.classList.add('dark');
+// }
