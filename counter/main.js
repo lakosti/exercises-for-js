@@ -9,16 +9,21 @@
 // - При кліку на кнопку data-action="reset" роби counter = 0
 
 import { refs } from './refs.js';
+const { controlsBtn, savesBtn, displayEl } = refs;
 
-refs.controlsBtn.addEventListener('click', onControlsBtnClick);
-refs.savesBtn.addEventListener('click', onSaveBtnClick);
+controlsBtn.addEventListener('click', onControlsBtnClick);
+savesBtn.addEventListener('click', onSaveBtnClick);
+document.addEventListener('DOMContentLoaded', renderPage);
+//DOMContentLoaded -- коли все загрузилось запускається вона
+
+//переводимо текстовий контент (0) в числовий
+let currentCounter = Number(displayEl.textContent);
+const LS_KEY = 'counter';
 
 function onControlsBtnClick(evt) {
-    //переводимо текстовий контент в числовий
-    let currentCounter = Number(refs.displayEl.textContent);
-
     //витягуємо значення кнопки по дата атрибуту
     const clickBtn = evt.target.dataset.action;
+
     if (clickBtn === 'decrease') {
         currentCounter -= 1;
     }
@@ -28,16 +33,32 @@ function onControlsBtnClick(evt) {
     if (clickBtn === 'reset') {
         currentCounter = 0;
     }
-    //відмалювуємо в розмітці
 
-    refs.displayEl.textContent = currentCounter;
+    //відмалювуємо в розмітці
+    updateDisplay();
 }
 
+//зберігаємо дані в localStorage
 function onSaveBtnClick(evt) {
     const clickBtn = evt.target.dataset.action;
     if (clickBtn === 'save') {
-        localStorage.setItem('counter', currentCounter);
+        return localStorage.setItem(LS_KEY, currentCounter);
+    }
+    //очищаємо локал
+    localStorage.removeItem(LS_KEY);
+}
+
+//забираємо дані з localStorage
+function renderPage() {
+    const dataFromLocalStorage = localStorage.getItem(LS_KEY);
+    //якщо в локал сторадж щось є, то записуємо на дісплей
+    if (dataFromLocalStorage) {
+        currentCounter = Number(dataFromLocalStorage);
+
+        updateDisplay();
     }
 }
 
-//робота з localStorage
+function updateDisplay() {
+    displayEl.textContent = currentCounter;
+}
