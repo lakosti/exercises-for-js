@@ -20,7 +20,7 @@
 
 // RETURN перериває всю функцію BREAK перериває лише цикл функція далі працює
 // null typeof obj
-//array == obj
+// array == obj
 // obj == obj
 // null = 0
 // typeof NaN = number
@@ -45,7 +45,7 @@
 //0 > null // false
 //null == 0 // false
 
-//ЗАДАЧА 1 повернути літери як назву ключа а кількість разів що дублюється як властивість  - скільки раз вона зустрічається в рядку (reduce)_____________________________________________
+//* ЗАДАЧА 1 повернути літери як назву ключа а кількість разів що дублюється як властивість  - скільки раз вона зустрічається в рядку (reduce)_____________________________________________
 
 // const str = 'gughrgrjjgiorgjrildgegergrg';
 
@@ -59,7 +59,7 @@
 
 // console.log(getNum);
 
-// ЗАДАЧА 8 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа___________________________________________________
+//* ЗАДАЧА 8 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа___________________________________________________
 
 // const str = 'absdabsrgbadgtdswwbetflga';
 
@@ -88,7 +88,7 @@
 
 /////////////////////////////////
 
-///ЗАДАЧА ПОВЕРНУТИ НАЙБІЛЬШЕ ЧИСЛО З ПІДМАСИВУ____________________________________________________
+//* ЗАДАЧА ПОВЕРНУТИ НАЙБІЛЬШЕ ЧИСЛО З ПІДМАСИВУ____________________________________________________
 
 // function largestNum(arr) {
 //     // return arr.map(item => Math.max(...item));
@@ -104,7 +104,7 @@
 //     ])
 // );
 
-//ЗАДАЧА 2____________________________________________________
+//* ЗАДАЧА 2
 //визначити загальну кількість авто
 //порядковий номер + назва
 //якщо ар пустий то "Вибачте авто немає"
@@ -126,7 +126,7 @@
 // console.log(logCars(['Honda', 'BMW', 'Accord', 'Golf', 'ASX', 'Reno', 'Mazda']));
 // console.log(logCars([]));
 
-//ЗАДАЧА 3 обробка значення underfined __________________________
+//* ЗАДАЧА 3 обробка значення underfined __________________________
 
 //є корзина з фруктами потрібно порахувати які і скільки фруктів всього
 // const fruits = [
@@ -147,7 +147,7 @@
 // }, {});
 // console.log(result);
 
-//ЗАДАЧА 4 пошук найменшого числа в масиві_______________________________________
+//* ЗАДАЧА 4 пошук найменшого числа в масиві_______________________________________
 
 // const numbers = [51, 18, 13, 24, 7, 85, 19];
 // let smallestNumber = numbers[0];
@@ -159,7 +159,7 @@
 // }
 // console.log('smallestNumber :', smallestNumber);
 
-//ЗАДАЧА 5 змінити регістр // інверсія букв______________________________
+//* ЗАДАЧА 5 змінити регістр // інверсія букв______________________________
 
 // const str = 'JavaScript';
 
@@ -187,7 +187,7 @@
 // }
 // console.log(newCase);
 
-//ЗАДАЧА 6 видалити з масиву елементи що не є типом даних number________________________________________________________
+//* ЗАДАЧА 6 видалити з масиву елементи що не є типом даних number________________________________________________________
 
 // const arr = [3, 'hello', null, 42, false];
 
@@ -213,7 +213,7 @@
 // }
 // console.log(arr);
 
-//ЗАДАЧА 7 відсортувати в алфавітному порядку__________________________________
+//* ЗАДАЧА 7 відсортувати в алфавітному порядку__________________________________
 
 // const langs = ['c++', 'python', 'bjava', 'ahaskel', 'php', 'ruby'];
 
@@ -226,7 +226,7 @@
 // }
 // console.log(langs);
 
-//ЗАДАЧА 8 рядок який виводить години та хвилини в консоль як на годиннику / ГОДИННИК______________________________
+//* ЗАДАЧА 8 рядок який виводить години та хвилини в консоль як на годиннику / ГОДИННИК______________________________
 
 // const time = 70;
 // const hours = Math.floor(time / 60);
@@ -239,7 +239,7 @@
 //console.log(`${hours.toString().padStart(2, 0)}:${minutes.toString().padStart(2, 0)}`);
 /////
 
-//ЗАДАЧА 9 числа додаються поки не натисните кенсел /cancel // зациклення робить за допомогою do while_________________________________________________
+//* ЗАДАЧА 9 числа додаються поки не натисните кенсел /cancel // зациклення робить за допомогою do while_________________________________________________
 
 // let inputValue = prompt('Enter number');
 // let check = false;
@@ -256,7 +256,7 @@
 //     }
 // } while (check);
 
-//ЗАДАЧА 10 зробити першу літеру великою / заглавною_________________________________
+//* ЗАДАЧА 10 зробити першу літеру великою / заглавною_________________________________
 
 // const str = 'string not starting';
 // const largestStr = str[0].toUpperCase();
@@ -286,7 +286,7 @@
 // );
 // console.log(stats);
 
-//ЗАДАЧА 11 калькулятор________________________________________
+//* ЗАДАЧА 11 калькулятор________________________________________
 
 // const arr = [2, 6, 1, 7, 3];
 
@@ -311,9 +311,7 @@
 // console.log(each(arr, add)); //add - це наш другий параметр - колбек
 // console.log(each(arr, substract));
 
-//Задача 12 __________________________________________________
-
-// Створити функцію createProduct(obj, callback) -яка приймає об'єкт товару без id а також колбек, Функція ств об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому ств об'єкт
+//* Задача 12 Створити функцію createProduct(obj, callback) -яка приймає об'єкт товару без id а також колбек, Функція ств об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому ств об'єкт
 //logProduct (product) колбек приймає об'єкт продукту і логуючий його в консоль
 //logTotalPrice(product) - колбек що приймає об'єкт продукту і логіює загальну вартість товару в консоль
 
@@ -337,7 +335,7 @@
 // createProduct({ name: 'apple', price: 30, quantity: 3 }, logProduct);
 // createProduct({ name: 'peach', price: 40, quantity: 5 }, logTotalPrice);
 
-//ЗАДАЧА 13 РАВЛИК за день равлик проповзає на 7 м в гору а за ніч спускається на 2 метри вниз // за скільки він пройде 42 м , 17 м, 18 м____________________________________________
+//* ЗАДАЧА 13 РАВЛИК за день равлик проповзає на 7 м в гору а за ніч спускається на 2 метри вниз // за скільки він пройде 42 м , 17 м, 18 м____________________________________________
 
 // function getDays(deps) {
 //     const daySpeed = 7;
@@ -362,7 +360,7 @@
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
 
-//ЗАДАЧА 14 маніпуляції з об'єктом // вивести ключ і значення_______________________________
+//* ЗАДАЧА 14 маніпуляції з об'єктом // вивести ключ і значення_______________________________
 
 // const user = {
 //     name: 'John',
@@ -375,7 +373,7 @@
 //     console.log(`${key} : ${user[key]}`);
 // }
 
-//ЗАДАЧА 15 перебрати об'єкт та просумувати_____________________
+//* ЗАДАЧА 15 перебрати об'єкт та просумувати_____________________
 // const salaries = {
 //     mango: 100,
 //     poly: 160,
@@ -399,7 +397,7 @@
 // }
 // console.log(total);
 
-//ЗАДАЧА 15 ств функцію яка повертає ім'я працівника знайбільшою зп / зарплатою
+//* ЗАДАЧА 15 ств функцію яка повертає ім'я працівника знайбільшою зп / зарплатою
 
 // якщо об'єкт пустий то повертається null
 ///Object.entries  + деструкт
@@ -447,7 +445,7 @@
 
 // console.log(topSalary(salaries));
 
-//ЗАДАЧА 16 написати функцію яка перевііряє чи є елемент саме простим об'єктом а не масивом, чи null______________________________________
+//* ЗАДАЧА 16 написати функцію яка перевііряє чи є елемент саме простим об'єктом а не масивом, чи null______________________________________
 
 // function isObj(payload) {
 //     return typeof payload === 'object' && !Array.isArray(payload) && payload !== null;
@@ -458,7 +456,7 @@
 // console.log(isObj(1));
 // console.log(isObj(undefined));
 
-//ЗАДАЧА 17 використовуючи колбеки зробити операції з функціями + передати старий об'єкт та створити id
+//* ЗАДАЧА 17 використовуючи колбеки зробити операції з функціями + передати старий об'єкт та створити id
 
 //function createProduct - створює новий об'єкт з id та розпилює туди старий об'єкт і приймає колбек___________________________________________
 // function createProduct(obj, callback) {
@@ -477,7 +475,7 @@
 // createProduct({ name: 'apple', price: 30, quantity: 3 }, logProduct);
 // createProduct({ name: 'peach', price: 20, quantity: 5 }, logTotalPrice);
 
-//ЗАДАЧА 17 напишіть функцію яка приймає два параметри (масив чисел, колбек) // функція повертає  новий масив кожен елемент якого є результатом виконання колбек__________________________________
+//* ЗАДАЧА 17 напишіть функцію яка приймає два параметри (масив чисел, колбек) // функція повертає  новий масив кожен елемент якого є результатом виконання колбек__________________________________
 // function each(arr, action) {
 //     const items = []; // повертає пустий масив
 
@@ -501,7 +499,7 @@
 // console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.ceil(value)));
 // console.log(each([1.2, 2.6, 2.3, 11.6], value => Math.floor(value)));
 
-////ЗАДАЧА 18 відбір унікальних елементів / неповторюваних___________________________
+//* ЗАДАЧА 18 відбір унікальних елементів / неповторюваних___________________________
 
 // const students = [
 //     { name: 'Манго', courses: ['математика', 'фізика'] },
@@ -517,7 +515,7 @@
 // // const uniqueCourses = allCourses.filter((item, idx, arr) => arr.indexOf(item) === idx);
 // // console.log(uniqueCourses);
 
-////ЗАДАЧА 19 перевірити чи масив вкладений чи ні (дані з бекенду) - (лише рекурсія перевіряє чи масив вкладений) ВКЛАДЕНІСТЬ МАСИВУ // кількість вкладеності____________
+//* ЗАДАЧА 19 перевірити чи масив вкладений чи ні (дані з бекенду) - (лише рекурсія перевіряє чи масив вкладений) ВКЛАДЕНІСТЬ МАСИВУ // кількість вкладеності____________
 
 // const arr = [0, 1, 2, [3, [4, [45]]]];
 
@@ -534,10 +532,7 @@
 // }
 // console.log(findDepth(arr));
 
-//ЗАДАЧА 20 знайти щасливе число - те яке зустрічається скільки ж раз скільки і його значення____________________ (наприклад 333)
-// let num = 122423335566;
-
-//ЗАДАЧА 21 ПЕРЕБІР УНІКАЛЬНИХ ЕЛЕМЕНТІВ________________________________________
+//* ЗАДАЧА 21 ПЕРЕБІР УНІКАЛЬНИХ ЕЛЕМЕНТІВ________________________________________
 // const users = [
 //     { id: 1, name: 'John', age: 18, skills: ['JavaScript', 'HTML', 'CSS'] },
 //     { id: 2, name: 'Alice', age: 32, skills: ['Python', 'Data Analysis'] },
@@ -560,7 +555,7 @@
 // console.log(result);
 
 //
-//ЗАДАЧА 22 пошук книги за назвою, якщо не знайдено то Not found_____________________________
+//* ЗАДАЧА 22 пошук книги за назвою, якщо не знайдено то Not found_____________________________
 
 // const books = [
 //     {
@@ -598,7 +593,7 @@
 // console.log(getBook(books, 'Hello'));
 // console.log(getBook(books, 'Refactoring: Improving the Design of Existing Code'));
 
-//ЗАДАЧА  25 відсортувати за ціною менше 2 дол і вивести в алфавітному порядку + порядковий номер і перенос рядка, якщо не знайдено то нот фаунд_________________________
+//* ЗАДАЧА  25 відсортувати за ціною менше 2 дол і вивести в алфавітному порядку + порядковий номер і перенос рядка, якщо не знайдено то нот фаунд_________________________
 
 // const products = [
 //     { id: 2, name: 'Banana', price: 0.99 }, //
@@ -620,7 +615,7 @@
 // }
 // console.log(getProduct(products));
 
-//ЗАДАЧА 26 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа________________________________________________________________________
+//* ЗАДАЧА 26 Є рядок в якому довільна кількість літер, гарантовано в рядку немає пробілів та розділових знаків, потрібно повернути об'єкт де кожна літера буде ключем, а кількість разів яку вона дублюється буде значенням ключа________________________________________________________________________
 
 // const str = 'avavgrjgherafevrv';
 
@@ -644,7 +639,7 @@
 // }, {});
 // console.log(result);
 
-//ЗАДАЧА 27 сума вкладеного масива (рекурсія)___________________________________
+//* ЗАДАЧА 27 сума вкладеного масива (рекурсія)___________________________________
 
 // const arr = [1, 2, 3, [4, 55, 87, [56]]];
 // function getTotal(arr) {
@@ -660,7 +655,7 @@
 // }
 // console.log(getTotal(arr));
 
-// ЗАДАЧА 28 написати скрипт який видаляє непотрібні значення (null, false, underfined, '', 0) ______________________________________________
+//* ЗАДАЧА 28 написати скрипт який видаляє непотрібні значення (null, false, underfined, '', 0) ______________________________________________
 
 // const arr = [0, 1, false, 2, undefined, '', 3, null];
 
@@ -690,7 +685,7 @@
 
 // console.log(arr);
 
-//ЗАДАЧА 29  написати функцію яка отримує 2 числа, якщо обидва числа парні то функція повертає їх множення якщо числа непарні то повертається їх сума, якщо одне парне інше непарне то повертається непарне число_____________________________________________
+//*ЗАДАЧА 29  написати функцію яка отримує 2 числа, якщо обидва числа парні то функція повертає їх множення якщо числа непарні то повертається їх сума, якщо одне парне інше непарне то повертається непарне число_____________________________________________
 
 // function getNum(a, b) {
 //     const isEvenA = !(a % 2); //парне
@@ -709,7 +704,7 @@
 // console.log(getNum(5, 3));
 // console.log(getNum(2, 5));
 
-//ЗАДАЧА 30 напишіть функцію яка приймає два параметри початок та кінець діапазона і повертає масив цих значень, третій необов'язковий - це шаг для будови масиву //також повинно працювати і в зворотньому напрямку__________________________________________________
+//* ЗАДАЧА 30 напишіть функцію яка приймає два параметри початок та кінець діапазона і повертає масив цих значень, третій необов'язковий - це шаг для будови масиву //також повинно працювати і в зворотньому напрямку__________________________________________________
 
 // const range = function (start, end, step = 1) {
 //     //step = 1 by default
@@ -731,13 +726,7 @@
 // console.log(range(1, 5, 1));
 // console.log(range(5, 1, -1));
 
-// ЗАДАЧА 31 додавання матриці / матриця. Містить рандомне число від 0 до 100 та додати дві матриці_______________________________________ M - 2 (09.06)
-
-const createMatrix = function (row, colum) {
-    // const matrix = [];
-};
-
-////ЗАДАЧА 32 перевірити чи є число простим (ділиться без остачі тільки на себе та на 1)___________________________________
+//*ЗАДАЧА 32 перевірити чи є число простим (ділиться без остачі тільки на себе та на 1)___________________________________
 
 // function isPrimeNumber(num) {
 //     if (num > 1) {
@@ -753,7 +742,7 @@ const createMatrix = function (row, colum) {
 //     }
 // }
 
-// //якщо ділиться на 2 без остачі то складне в іншому випадку просте
+//якщо ділиться на 2 без остачі то складне в іншому випадку просте
 // console.log(isPrimeNumber(5)); //просте ділиться на 5 і 1
 // console.log(isPrimeNumber(3)); //просте ділиться на 3 і 1
 // console.log(isPrimeNumber(4)); // складне
@@ -761,7 +750,7 @@ const createMatrix = function (row, colum) {
 // console.log(isPrimeNumber(2)); //просте ділиться на 2 і 1
 // console.log(isPrimeNumber(10)); //складне
 
-///// ЗАДАЧА 33 обчислити суму від 1 до заданого числа_________________________________
+//* ЗАДАЧА 33 обчислити суму від 1 до заданого числа_________________________________
 
 // function calculateSum(num) {
 //     let total = 0;
@@ -774,7 +763,7 @@ const createMatrix = function (row, colum) {
 // }
 // console.log(calculateSum(10));
 
-//EXAMPLE 34 геттери та сеттерию. Напиши клас User який створює об'єкт із властивостями login та email. Оголоси приватні властивості #login та #email, доступ до яких зроби через гетер та сетер login та  email__________________________________________________
+//*EXAMPLE 34 геттери та сеттерию. Напиши клас User який створює об'єкт із властивостями login та email. Оголоси приватні властивості #login та #email, доступ до яких зроби через гетер та сетер login та  email__________________________________________________
 
 // class User {
 //     #login; // обов'язково оголошуємо їх зверху
@@ -810,7 +799,7 @@ const createMatrix = function (row, colum) {
 // polly.email = 'valentyna@gmail.com';
 // console.log(polly.email);
 
-//EXAMPLE 35 Напиши клас Notes який керує колекцією нотаток у властивості items. Замітка це об'єкт із властивостями text та priority. Додай класу статичну властивість Priority, у якому зберігатиметься об'єкт із пріоритетами.________________________________________________
+//*EXAMPLE 35 Напиши клас Notes який керує колекцією нотаток у властивості items. Замітка це об'єкт із властивостями text та priority. Додай класу статичну властивість Priority, у якому зберігатиметься об'єкт із пріоритетами.________________________________________________
 
 // class Notes {
 //     static Priority = {
@@ -856,7 +845,7 @@ const createMatrix = function (row, colum) {
 // myNotes.updatePtiority('My second note', Notes.Priority.HIGH);
 // console.log(myNotes);
 
-//ЗАДАЧА 36 ОТРИМАТИ ЧИСЛО З РЯДКА ___________________________________________
+//*ЗАДАЧА 36 ОТРИМАТИ ЧИСЛО З РЯДКА ___________________________________________
 
 // function getNum(str) {
 //     let num = '';
@@ -869,7 +858,7 @@ const createMatrix = function (row, colum) {
 // }
 // console.log(getNum('frg50rg'));
 
-//ЗАДАЧА 37 вирізати з першої по задане значення___________________________________________
+//*ЗАДАЧА 37 вирізати з першої по задане значення___________________________________________
 
 // function getSubstring(string, length) {
 //     return string.slice(0, length);
@@ -879,7 +868,7 @@ const createMatrix = function (row, colum) {
 // console.log(getSubstring('Hello world', 5)); // Hello
 // console.log(getSubstring('Hello world', 0)); // ''
 
-//ЗАДАЧА 37 якщо є розширення, то видалити, якщо немає то повернути просто рядок__________________________________
+//*ЗАДАЧА 37 якщо є розширення, то видалити, якщо немає то повернути просто рядок__________________________________
 
 // function getFileName(file) {
 //     const idx = file.indexOf('.');
@@ -892,7 +881,7 @@ const createMatrix = function (row, colum) {
 // console.log(getFileName('app.js'));
 // console.log(getFileName('index'));
 
-// TASK 38 Дано випадкове невід’ємне число, ви повинні повернути цифри цього числа в масиві у зворотному порядку._______________________________________
+//* TASK 38 Дано випадкове невід’ємне число, ви повинні повернути цифри цього числа в масиві у зворотному порядку._______________________________________
 
 // function digitize(n) {
 //     return String(n).split('').map(Number).reverse();
@@ -905,7 +894,7 @@ const createMatrix = function (row, colum) {
 // console.log(digitize(54321));
 // console.log(digitize(0));
 
-//ЗАДАЧА 38 Додати числа за допомогою while
+//*ЗАДАЧА 38 Додати числа за допомогою while
 // Функція calculateTotal(number) приймає ціле число (параметр number). Доповни код функції так, щоб вона повертала суму всіх цілих чисел від одиниці до цього числа включно. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6. __________________________________________________________
 
 // function calculateTotal(number) {
@@ -923,7 +912,7 @@ const createMatrix = function (row, colum) {
 // console.log(calculateTotal(0));
 // console.log(calculateTotal(18));
 
-//ЗАДАЧА 39 знайти мін  і макс з кодеварса (на кодеварсі через мас вирішила)_____________________________________________
+//*ЗАДАЧА 39 знайти мін і макс з кодеварса (на кодеварсі через мас вирішила)_____________________________________________
 
 // function minMax(arr) {
 //     let min = arr[0],
@@ -939,7 +928,7 @@ const createMatrix = function (row, colum) {
 // console.log(minMax([15, 78, 59, 32, 2, 5])); //[6, 158445]
 // console.log(minMax([5])); //[1,1]
 
-//ЗАДАЧА 40 повернути кількість овець // true
+//*ЗАДАЧА 40 повернути кількість овець // true
 
 // function countSheeps(sheep) {
 //     return sheep.filter(Boolean).length;
@@ -950,7 +939,7 @@ const createMatrix = function (row, colum) {
 // console.log(countSheeps([true])); //1
 // console.log(countSheeps([])); //0
 
-//ЗАДАЧА 41 ПОВЕРНУТИ КІЛЬКІСТЬ ДІЛЬНИКІВ____________________________________
+//*ЗАДАЧА 41 ПОВЕРНУТИ КІЛЬКІСТЬ ДІЛЬНИКІВ____________________________________
 
 // const getDivisorsCnt = n => {
 //     let counter = 0;
@@ -977,31 +966,8 @@ const createMatrix = function (row, colum) {
 // console.log(getDivisorsCnt(11));
 // console.log(getDivisorsCnt(54));
 
-//ЗАДАЧА 42 ЗУПИНКА АВТОБУСА________________________________
+//* ЗАДАЧА 42 РЕКУРСІЯ -- ПОРАХУВАТИ ЧИСЛА ВІД МЕНШОГО ДО БІЛЬШОГО ___________________________
 
-var number = function (busStops) {
-    // Good Luck!
-};
-// console.log(
-//     number([
-//         [10, 0],
-//         [3, 5],
-//         [5, 8],
-//     ])
-// ); //5
-// console.log(
-//     number([
-//         [3, 0],
-//         [9, 1],
-//         [4, 10],
-//         [12, 2],
-//         [6, 1],
-//         [7, 10],
-//     ])
-// ); //17
-// console.log(number([[0, 0]])); //0
-
-// ЗАДАЧА РЕКУРСІЯ -- ПОРАХУВАТИ ЧИСЛА ВІД МЕНШОГО ДО БІЛЬШОГО ___________________________
 // function countUp(n) {
 //     if (n < 1) {
 //         return [];
@@ -1012,3 +978,570 @@ var number = function (busStops) {
 //     }
 // }
 // console.log(countUp(5));
+
+//*ЗАДАЧА 43 ВИДАЛИТИ ТІ ЩО НЕ Є ЧИСЛОМ__________________________________________
+
+// const array = [3, 'hello', null, 42, false];
+
+// // for (let i = 0; i < array.length; i += 1) {
+// //     if (typeof array[i] !== 'number') {
+// //         array.splice(i, 1);
+// //         i -= 1;
+// //     }
+// // }
+
+// /////////////////////////////// 2-й варіант
+
+// for (let i = array.length - 1; i >= 0; i -= 1) {
+//     if (typeof array[i] !== 'number') {
+//         array.splice(i, 1);
+//     }
+// }
+// console.log(array);
+
+//* ЗАДАЧА 44 ПОКАЗАТИ//ЗАПУШИТИ ТІ ЩО ДУБЛЮЮТЬСЯ ___________________________________
+
+// function getCommonElements(arr) {
+//     let result = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr.includes(arr[i], i + 1)) {
+//             // i + 1 чи входить елемент з масив за виключенням мене самого
+//             if (!result.includes(arr[i])) {
+//                 result.push(arr[i]);
+//             } //якщо такого елемента ще немає, то тоді тільки додай
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(getCommonElements([1, 2, 3, 2, 1, 17, 1, 1, 1, 19]));
+
+//* ЗАДАЧА 45  ВІДІБРАТИ ЛИШЕ ЖІНОЧІ ІМЕНА З МАСИВУ_________________________
+
+// const users = ['Artem', 'Anna', 'Larisa', 'Maksim', 'Svetlana', 'Roman'];
+// const men = ['Artem', 'Maksim', 'Roman'];
+
+// function getWomen(users, men) {
+//     let women = [];
+//     for (const user of users) {
+//         if (!men.includes(user)) {
+//             women.push(user);
+//         }
+//     }
+//     return women;
+// }
+
+// console.log(getWomen(users, men));
+
+//* ЗАДАЧА 46 ПЕРЕВІРИТИ ЧИ ЕЛЕМЕНТИ РОЗТАШОВАНІ В ПОРЯДКУ ЗРОСТАННЯ ЯКЩО НІ ЗАМІНИТИ НА ВІРНІ____________________________
+
+// // const arr = [1, 2, 3, 1, 5, 6, 1, 1, 9]; // 1,2,3,4,5,6,7,8,9
+// const arr = [1, 2, 34, 35, 36, 37, 38, 39];
+
+// for (let i = 1; i < arr.length; i++) {
+//     const currentEl = arr[i];
+//     const prevEl = arr[i - 1];
+
+//     // if (currentEl - prevEl !== 1) {
+//     //     arr[i] = prevEl + 1;
+//     // }
+//     // трішки друга умова
+//     if (currentEl <= prevEl) {
+//         arr[i] = prevEl + 1;
+//     }
+// }
+
+// console.log(arr);
+
+//* ЗАДАЧА 47 СОРТУВАННЯ В АЛФАВІТНОМУ ПОРЯДКУ (сортує не повністью)___________________________
+
+// const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby', 'avacode', 'bootstrap'];
+
+// // const newArr = [];
+// for (let i = 0; i < langs.length; i += 1) {
+//     if (langs[0] > langs[i]) {
+//         const result = langs.splice(i, 1)[0]; // перевотврюємо в рядок [0]
+//         langs.unshift(result);
+//     }
+// }
+// console.log(langs);
+
+//* ЗАДАЧА 48 СТВОРИТИ ФУНКЦІЮ ЯКА БУДЕ ПЕРЕВІРЯТИ ЧИ КОЖНЕ ЧИСЛО МАСИВУ БІЛЬШЕ ЗА ЗНАЧЕННЯ ПО ЗАМОВЧУВАННЮ______________________________
+
+// const numbers = [25, 12, 67, 40, 18];
+
+// function checkValue(numbers, value) {
+//     let message = 'Success';
+//     for (const n of numbers) {
+//         if (n >= value) {
+//             message = 'Fail';
+//             return message;
+//         }
+//     }
+//     return message;
+// }
+
+// console.log(checkValue(numbers, 10));
+// console.log(checkValue(numbers, 13));
+// console.log(checkValue(numbers, 80));
+
+//* ЗАДАЧА 49 СТВОРИТИ ФУНКЦІЮ ЯКА БУДЕ РОЗБИВАТИ МАСИВ НА ПЕВНУ КІЛЬКІСТЬ ЕЛЕМЕНТІВ__________________________
+
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// function getCombination(arr, count) {
+//     const result = [];
+//     for (let i = 0; i < arr.length; i += count) {
+//         const combination = arr.slice(i, i + count);
+//         result.push(combination);
+//     }
+//     return result;
+// }
+
+// console.log(getCombination(data, 2)); // [[1,2],[3,4], [...]...]
+// console.log(getCombination(data, 3)); // [[1,2,3],[4,5,6], [...]...]
+
+//* 50 ЗАДАЧА ВІДІБРАТИ УНІКАЛЬНІ ЕЛЕМЕНТИ________________________________________________
+// const elem = [1, 5, 2, 6, 3, 2, 5, 1, 6];
+// const result = elem.filter((el, i, arr) => arr.indexOf(el) === i).toSorted((a, b) => a - b);
+// console.log(result);
+
+//* ЗАДАЧА 51 створити функцію яка повертає об'єкт з 3 ключами___________________________
+
+// function createNewObj(product, quantity, price) {
+//     return {
+//         name: product,
+//         price,
+//         quantity,
+//         totalPrice: quantity * price,
+//     };
+// }
+// console.log(createNewObj('pizza', 3, 120));
+
+//* ЗАДАЧА 52 ПОВЕРНУТИ КІЛЬКІСТЬ ГРАВЦІВ ТА СЕРЕДНІЙ ЧАС ГРИ______________________
+
+// const players = {
+//     Den: 120,
+//     Artem: 10,
+//     Igor: 25,
+//     Egor: 40,
+//     Lew: 40,
+//     On: 40,
+// };
+
+// function getTime(obj) {
+//     const countPlayers = Object.keys(obj).length;
+//     const time = Object.values(obj);
+//     let total = 0;
+//     for (const el of time) {
+//         total += el;
+//     }
+//     return `Count players ${countPlayers}, average time ${(total / countPlayers).toFixed()}`;
+// }
+// console.log(getTime(players));
+
+//* ЗАДАЧА 53 функція повертає імена юзерів у яких є дана книга // порахувати  вік в юзерів (перебрати масив об'єктів)__________________________________
+
+// const friends = [
+//     {
+//         name: 'Anna',
+//         books: ['Bible', 'Harry Potter'],
+//         age: 21,
+//     },
+//     { name: 'Bob', books: ['War and peace', 'Romeo and Juliet'], age: 26 },
+//     { name: 'Alice', books: ['War and peace', 'Romeo and Juliet'] },
+//     {
+//         name: 'Oleksii',
+//         books: ['Bible', 'War and peace', 'Harry Potter', 'Romeo and Juliet'],
+//         age: 26,
+//     },
+// ];
+// function getUsers(arr, bookName) {
+//     // let users = '';
+//     let users = [];
+//     for (const user of arr) {
+//         if (user.books.includes(bookName)) {
+//             // users += `${user.name}, `;
+//             users.push(user.name);
+//         }
+//     }
+//     return users.join(', '); // перетворюємо рядок
+// }
+// console.log(getUsers(friends, 'Harry Potter'));
+
+// //немає одного ключа(щоб не було NaN ми виконуємо перевірку на фолсі значення якщо прийде андефінед воно буде проігноровано, якщо значення є то додаємо)
+
+// function getTotalAge(arr) {
+//     let totalAge = 0;
+//     //1 variant // не дуже доречний варіант, значення ключа може бути фолсі значенням
+//     // if(user.age)  // === true
+//     //{ totalAge += user.age}
+//     //
+//     // 2 variant  ==== the best
+//     for (const user of arr) {
+//         if (user.hasOwnProperty('age')) {
+//             totalAge += user.age;
+//         }
+//     }
+//     return totalAge;
+
+//     // 3 variant in // перевіряє і не власні ключі
+//     // for (const user of arr) {
+//     //     if ('age' in user) {
+//     //         totalAge += user.age;
+//     //     }
+//     // }
+//     // return totalAge;
+// }
+
+// console.log(getTotalAge(friends));
+
+//* ЗАДАЧА 54 створити метод який буде повертати учнів факультету // та їх бали_____________________________________
+
+// const hogvargs = {
+//     griffindor: [
+//         {
+//             name: 'Harry',
+//             points: 17,
+//         },
+//         {
+//             name: 'Hermiona',
+//             points: 19,
+//         },
+//         {
+//             name: 'Ron',
+//             points: 14,
+//         },
+//     ],
+//     slizerin: [
+//         {
+//             name: 'Draco',
+//             points: 17,
+//         },
+//         {
+//             name: 'Goyl',
+//             points: 14,
+//         },
+//         {
+//             name: 'Crabbe',
+//             points: 5,
+//         },
+//     ],
+//     // getUserList(faculty) {
+//     //     if (!(faculty in this)) {
+//     //         // завжди перевіряємо чи є такий ключ в об'єкті // негативний сценарій
+//     //         return 'Not found';
+//     //     }
+//     //     const students = [];
+//     //     for (const student of this[faculty]) {
+//     //         //передаємо параметр який прийде як змінна
+//     //         students.push(student.name);
+//     //     }
+//     //     return students;
+//     //     // return students.join(', ') // або повертаємо рядком
+//     // },
+
+//     getTotalPoints(faculty) {
+//         if (!this.hasOwnProperty(faculty)) {
+//             return 'Not found';
+//         }
+//         let totalPoint = 0;
+//         for (const point of this[faculty]) {
+//             totalPoint += point.points;
+//         }
+//         return totalPoint;
+//     },
+// };
+
+// // console.log(hogvargs.getUserList('griffindor'));
+// // // console.log(hogvargs.getUserList('orlan'));
+// // console.log(hogvargs.getUserList('slizerin'));
+
+// console.log(hogvargs.getTotalPoints('griffindor'));
+// console.log(hogvargs.getTotalPoints('slizerin'));
+// console.log(hogvargs.getTotalPoints('orlan'));
+
+//* ЗАДАЧА 55 СТВОРИТИ НОВИЙ КЛЮЧ І ПОЄДНАТИ ДВІ ВЛАСТИВОСТІ (РЕСТ + СПРЕД)_____________________________
+
+// function transformUserName({ name, surname, ...props }) {
+//     return {
+//         fullName: `${name} ${surname}`,
+//         ...props,
+//     };
+// }
+
+// console.log(
+//     transformUserName({
+//         name: 'Egor',
+//         surname: 'Bondar',
+//         email: 'wefef@gmail.com',
+//         city: 'Kiev',
+//     })
+// );
+
+////БЕЗ РЕСТА __________
+
+// function getFullName(obj) {
+//     const firstName = obj.name;
+//     const secondName = obj.surname;
+//     const fullName = `${firstName} ${secondName}`;
+
+//     delete obj.name;
+//     delete obj.surname;
+
+//     obj.fullName = fullName;
+
+//     return obj;
+// }
+// console.log(
+//     getFullName({
+//         name: 'Egor',
+//         surname: 'Bondar',
+//         email: 'wefef@gmail.com',
+//         city: 'Kiev',
+//     })
+// );
+
+//* ЗАДАЧА 56 колбек функції // робота  з масивами // підповідно по інлайн функції зробити математичні операції______________________________________________
+
+// function each(arr, action) {
+//     const newArr = [];
+
+//     // arr.forEach(el => {
+//     //     const result = action(el);
+//     //     newArr.push(result);
+//     // });
+//     arr.forEach(el => newArr.push(action(el)));
+//     return newArr;
+// }
+///---------------------------------через map
+
+// function each(arr, action) {
+//     return arr.map(el => action(el));
+// }
+
+// console.log(each([64, 49, 36, 25, 16], value => value * 2));
+// console.log(each([64, 49, 36, 25, 16], value => value - 10));
+// console.log(each([64.5, 49.1, 36.9, 25.7, 16.3], value => Math.ceil(value)));
+// console.log(each([64.5, 49.1, 36.9, 25.7, 16.3], value => Math.floor(value)));
+
+//* ЗАДАЧА 57 повернути повідомлення про те чи знайдено об'єкт по айді чи ні (колбек функція)___________________________________
+
+// const products = [
+//     {
+//         id: 1,
+//         name: 'Телефон',
+//         price: 10000,
+//         description: 'Смартфон з високоякісним дисплеєм та потужним процесором.',
+//     },
+//     {
+//         id: 2,
+//         name: 'Ноутбук',
+//         price: 25000,
+//         description: 'Легкий та потужний ноутбук для роботи та розваг.',
+//     },
+//     {
+//         id: 3,
+//         name: 'Планшет',
+//         price: 8000,
+//         description: 'Компактний планшет для перегляду контенту.',
+//     },
+// ];
+
+// function getProductDetails(id, success, error) {
+//     for (const product of products) {
+//         if (product.id === id) {
+//             success(product);
+//             return;
+//         }
+//     }
+//     error(id);
+// }
+// getProductDetails(3, handleSuccess, handleError);
+// getProductDetails(44, handleSuccess, handleError);
+
+// function handleSuccess(message) {
+//     console.log(`✅ Success!`, message);
+// }
+
+// function handleError(productId) {
+//     console.log(`❌ Error! Product with ${productId} id not found`);
+// }
+
+//* 58 ЗАДАЧА повернути середнюю суму товарів // якщо масив пустий повернути No products found_____________________________________
+
+// const products = [
+//     { name: 'Apple', price: 0.99 },
+//     { name: 'Banana', price: 0.49 },
+//     { name: 'Orange', price: 0.79 },
+//     { name: 'Mango', price: 1.99 },
+// ];
+
+// function calculateAveragePrice(products, onSuccess, onError) {
+//     let total = 0;
+//     if (!products.length) {
+//         return onError('No products found'); // перериваємо
+//     }
+//     products.forEach(({ price }) => (total += price));
+//     onSuccess(total / products.length);
+// }
+// const onSuccess = averagePrice => console.log('Average price - ', averagePrice.toFixed(2)); // оскільки це лише в цьому колбеці потрібно округлити, то тут і прописуємо фіксед
+// const onError = errorMessage => console.log('Error', errorMessage);
+
+// calculateAveragePrice(products, onSuccess, onError);
+
+//* ЗАДАЧА 59 знайти вкладеність (рекурсія) ____________________________________
+
+// const arr = [1, 2, 3, [4, [5, 6, [7, 8, [9, [5, 6]]]]]];
+// function findDepth(arr) {
+//     let depth = 0;
+//     for (const item of arr) {
+//         if (Array.isArray(item)) {
+//             depth += 1;
+//             depth += findDepth(item);
+//         }
+//     }
+//     return depth;
+// }
+// console.log(findDepth(arr));
+
+//* ЗАДАЧА 60 порахувати середній бал студентів та повернути об'єкт з імям та балами цього студента____________________________________
+
+// const students = [
+//     { name: 'John', grades: [80, 85, 90] }, //  { name: "John", average: 85 }
+//     { name: 'Alice', grades: [90, 95, 92] },
+//     { name: 'Bob', grades: [70, 80, 75] },
+//     { name: 'Emily', grades: [95, 92, 88] },
+//     { name: 'David', grades: [85, 88, 90] },
+// ];
+
+// function getAverage(arr) {
+//     const result = arr.map(({ name, grades }) => {
+//         const total = grades.reduce((acc, grade) => acc + grade, 0); // якщо масив примітивів можемо не повертати явно акамулятор
+//         return { name, average: Math.round(total / grades.length) };
+//     });
+//     return result;
+// }
+// console.log(getAverage(students));
+
+//* ЗАДАЧА 61 повернути імена студентів вік яких старше 20 років _____________________________________
+// const students = [
+//     { name: 'John', age: 20, gpa: 3.8 },
+//     { name: 'Alice', age: 21, gpa: 3.2 },
+//     { name: 'Bob', age: 19, gpa: 3.5 },
+//     { name: 'Emily', age: 22, gpa: 3.9 },
+//     { name: 'David', age: 20, gpa: 3.7 },
+// ];
+
+// function getAdultName(arr) {
+//     return arr.filter(({ age }) => age > 20).map(({ name }) => name);
+// }
+// console.log(getAdultName(students));
+
+//* ЗАДАЧА 62 Напишіть функцію, яка використовує метод find, щоб знайти книжку за її назвою (title) // Якщо книгу не знайдено повертається рядок 'Not found'_______________________________________
+
+// const books = [
+//     {
+//         title: 'JavaScript: The Good Parts',
+//         author: 'Douglas Crockford',
+//         year: 2008,
+//     },
+//     {
+//         title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+//         author: 'Robert C. Martin',
+//         year: 2008,
+//     },
+//     {
+//         title: 'The Pragmatic Programmer: Your Journey to Mastery',
+//         author: 'Andrew Hunt, David Thomas',
+//         year: 1999,
+//     },
+//     {
+//         title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+//         author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+//         year: 1994,
+//     },
+//     {
+//         title: 'Refactoring: Improving the Design of Existing Code',
+//         author: 'Martin Fowler',
+//         year: 1999,
+//     },
+// ];
+
+// function getBook(arr, title) {
+//     const result = arr.find(book => book.title == title);
+//     return result || 'Not found';
+// }
+// console.log(getBook(books, 'Design Patterns: Elements of Reusable Object-Oriented Software'));
+// console.log(getBook(books, 'Hello my sword'));
+
+//* ЗАДАЧА 63 Напишіть функцію, яка використовує метод reduce, щоб обчислити загальну вартість всіх товарів у масиві, яка розраховується як добуток ціни товару на його кількість, а потім сумується з іншими товарами.// Результат повинен бути загальною вартістю всіх товарів_______________________________________
+
+// const products = [
+//     { id: 1, name: 'T-shirt', price: 20, quantity: 3 }, // 20 * 3 = 60
+//     { id: 2, name: 'Jeans', price: 50, quantity: 2 },
+//     { id: 3, name: 'Sneakers', price: 80, quantity: 1 },
+//     { id: 4, name: 'Hat', price: 15, quantity: 4 },
+//     { id: 5, name: 'Socks', price: 5, quantity: 6 },
+// ];
+// function getTotal(arr) {
+//     return arr.reduce((acc, { price, quantity }) => acc + price * quantity, 0);
+// }
+// console.log(getTotal(products));
+
+//* ЗАДАЧА 64 відсортувати книжки за роком видання _______________________________________
+// const books = [
+//     {
+//         title: 'JavaScript: The Good Parts',
+//         author: 'Douglas Crockford',
+//         year: 2008,
+//     },
+//     {
+//         title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+//         author: 'Robert C. Martin',
+//         year: 2008,
+//     },
+//     {
+//         title: 'The Pragmatic Programmer: Your Journey to Mastery',
+//         author: 'Andrew Hunt, David Thomas',
+//         year: 1999,
+//     },
+//     {
+//         title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+//         author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+//         year: 1994,
+//     },
+//     {
+//         title: 'Refactoring: Improving the Design of Existing Code',
+//         author: 'Martin Fowler',
+//         year: 1999,
+//     },
+// ];
+
+// function sortByYear(arr) {
+//     return arr.toSorted((a, b) => b.year - a.year);
+// }
+// console.log(sortByYear(books));
+
+//* ЗАДАЧА 65 Напишіть функцію, яка використовує перебираючі методи масиву map та filter, щоб отримати масив назв продуктів, ціна яких менше 2 доларів та відсортуй їх за алфавітним порядком
+
+// const products = [
+//     { id: 2, name: 'Banana', price: 0.99 },
+//     { id: 1, name: 'Apple', price: 1.99 },
+//     { id: 3, name: 'Orange', price: 2.49 },
+//     { id: 4, name: 'Grapes', price: 3.99 },
+// ];
+
+// function getSortByName(arr) {
+//     const products = arr
+//         .filter(({ price }) => price < 2)
+//         .map(({ name }) => name)
+//         .toSorted((a, b) => a.localeCompare(b));
+
+//     return products.reduce(
+//         (acc, product, i) => acc + `${i + 1} - ${product}\n`,
+//         products.length ? 'Product list: \n' : 'Products not found'
+//     );
+// }
+
+// console.log(getSortByName(products));

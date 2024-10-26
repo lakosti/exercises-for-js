@@ -122,3 +122,109 @@
 // console.log(message);
 
 /////NEW NEW NEW NEW NEW NEW NEW NEW NEW//////
+// function sum(numbers) {
+//     return numbers.reduce((total, num) => total + num, 0);
+// }
+
+// console.log(sum([])); //0
+// console.log(sum([1, 5.2, 4, 0, -1])); //9.2
+
+//!
+// 1. number
+// 2 number.length 4 / 6
+// 3 number > 0
+
+// function validatePIN(pin) {
+//     const number = Number(pin);
+//     console.log(number);
+//     // const rightLength = pin.length === 4 || pin.length === 6;
+//     // let hasNonNumeric = false;
+//     // for (const n of pin) {
+//     //     if (isNaN(n)) {
+//     //         hasNonNumeric = true;
+//     //         break;
+//     //     }
+//     // }
+//     // return rightLength && !hasNonNumeric;
+// }
+// console.log(validatePIN('1234')); //true
+// console.log(validatePIN('123456')); // true
+// console.log(validatePIN('er4586')); // false
+// console.log(validatePIN('-124')); // false
+// console.log(validatePIN('.124')); // false
+// console.log(validatePIN('1')); // false
+// console.log(validatePIN('0000')); // true
+// console.log(validatePIN('')); // false
+// console.log(validatePIN('40.2')); // false
+// console.log(validatePIN('123'));
+
+//* TASK
+// function fn(str) {
+//     const max = Math.max(...str); // 16
+//     let total = 0;
+//     for (const s of str) {
+//         if (s !== max) {
+//             total += s;
+//         }
+//     }
+//     return total === max ? true : false;
+// }
+
+// console.log(fn([5, 7, 16, 1, 2])); // false
+// console.log(fn([3, 5, -1, 8, 12])); // false
+// console.log(fn([4, 8, 12])); // true
+
+//* TASK
+// function fn(str) {
+//     const arr = str.split('');
+//     const space = arr.indexOf(' ');
+
+//     const firstLetter = arr.slice(0, space);
+//     const secondLetter = arr.slice(space + 1);
+
+//     const capitalizedFirst = firstLetter[0].toUpperCase() + firstLetter.slice(1).join('');
+//     const capitalizedSecond = secondLetter[0].toUpperCase() + secondLetter.slice(1).join('');
+
+//     return (
+//         capitalizedFirst.split('').reverse().join('') +
+//         ' ' +
+//         capitalizedSecond.split('').reverse().join('')
+//     );
+// }
+// console.log(fn('yaroslava hovenko'));
+// console.log(fn('hre wod'));
+
+//* TASK
+
+// function between(a, b) {
+//     let result = [];
+//     for (let i = a; i <= b; i++) {
+//         result.push(i);
+//     }
+//     return result;
+// }
+
+// console.log(between(1, 4)); // [1,2,3,4]
+// console.log(between(-2, 2)); // [-2, -1, 0, 1, 2]
+
+// function sumArray(array) {
+//     let sum = 0;
+
+//     const min = Math.min(...array);
+//     const max = Math.max(...array);
+
+//     for (const n of array) {
+//         if (n !== min && n !== max) {
+//             sum += n;
+//         }
+//     }
+
+//     return sum;
+// }
+
+// console.log(sumArray([6, 2, 1, 8, 10]));
+// console.log(sumArray([-6, -20, -1, -10, -12]));
+// console.log(sumArray([6]));
+// console.log(sumArray([6, 1]));
+// console.log(sumArray([]));
+// console.log(sumArray([null]));
